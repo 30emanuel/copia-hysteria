@@ -1,0 +1,64 @@
+.contact {
+    width: 100%;
+    height: 120vh;
+    background-color: var(--bg-primary-color);
+    color: white;
+    display: flex;
+
+    .text {
+        width: 57%;
+        height: 100%;
+        margin-left: 74px;
+        display: flex;
+        justify-content: center;
+        align-items: left;
+        flex-direction: column;
+
+        h2 {
+            font-size: 252px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+
+        div {
+            display: flex;
+            width: 100%;
+            margin-left: 40%;
+            flex-direction: column;
+            font-family: var(--font-secondary);
+
+            h3 {
+                font-size: 62px;
+                font-style: normal;
+                font-weight: 200;
+                line-height: normal;
+            }
+
+            h4 {
+                font-size: 37px;
+                font-style: normal;
+                font-weight: 300;
+                line-height: normal;
+                margin-top: 20px;
+            }
+
+            p {
+                font-size: 24px;
+                margin-top: 20px;
+                font-style: normal;
+                font-weight: 300;
+                line-height: normal;
+            }
+            .social{
+                display: flex;
+                flex-direction: row;
+                margin-left: 0%;
+                margin-top: 10px;
+                svg{
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+}

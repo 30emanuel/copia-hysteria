@@ -1,0 +1,100 @@
+.collaborators {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--bg-color-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .text {
+        width: 100%;
+        height: 100%;
+        margin-left: 56px;
+        display: flex;
+        justify-content: center;
+        align-items: left;
+        color: white;
+        flex-direction: column;
+        .button{
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+
+        h2 {
+            font-size: 252px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+
+        p {
+            font-family: var(--font-secondary);
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: 47px;
+            letter-spacing: 1.32px;
+            max-width: 725px;
+        }
+    }
+
+    .background {
+        display: none;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        pointer-events: none;
+
+        .collaborators-circle {
+            width: 1473px;
+            height: 1473px;
+            border-radius: 100%;
+            border: 1px solid white;
+            position: absolute;
+            margin-top: -100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .collaborators-circle-center {
+                width: 800.36px;
+                height: 800.36px;
+                border-radius: 100%;
+                border: 1px solid white;
+                margin-top: -20%;
+                margin-left: 13%;
+            }
+        }
+    }
+
+    .modal-collaborators{
+        width: 100%;
+        height: 100%;
+        opacity: 0.949999988079071;
+        background: #151515;
+        display: flex;
+        padding: 54px 431px 0px 431px;
+        flex-direction: column;
+        align-items: center;
+        gap: 56px;
+        transform: translateX(-100%);
+        transition: 1s;
+        top: 0;
+        position: fixed;
+        &.active{
+            transform: translateX(0%);
+        }
+        .names{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            .collaborator{
+                display: flex;
+            }
+        }
+    }
+}

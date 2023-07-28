@@ -1,0 +1,249 @@
+.modalproject {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    overflow-x: hidden;
+    animation: moveUp 1s;
+    z-index: 7;
+    background-color: var(--color-text-secondary);
+
+    .modal-header {
+        display: flex;
+        z-index: 5;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        position: fixed;
+
+        div {
+            padding: 40px 62px;
+        }
+
+        svg {
+            cursor: pointer;
+        }
+    }
+
+    h2 {
+        width: 100%;
+        font-size: 128px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    .project {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: left;
+        align-items: left;
+        flex-direction: column;
+        background-color: var(--color-text-secondary);
+        padding-top: 150px;
+
+        .title {
+            z-index: 1;
+            height: 128px;
+            margin-left: 88px;
+            margin-bottom: -50px;
+        }
+
+        .project-about {
+            margin-left: 88px;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            font-family: var(--font-secondary);
+            justify-content: left;
+
+            .text {
+                width: 530px;
+                display: flex;
+                flex-direction: column;
+                margin-right: 49px;
+                margin-top: 82px;
+
+                .stream {
+                    display: flex;
+
+                    .line {
+                        width: 5px;
+                        height: 100%;
+                        background-color: white;
+                    }
+
+                    .type {
+                        font-size: 30px;
+                        font-style: normal;
+                        font-weight: 300;
+                        line-height: normal;
+                        margin-right: 24px;
+                    }
+
+                    .streamname {
+                        margin-left: 24px;
+                        font-size: 30px;
+                        font-style: normal;
+                        font-weight: 700;
+                        line-height: normal;
+                    }
+                }
+
+                .paragraph {
+                    margin-top: 32px;
+                    font-size: 24px;
+                    font-style: normal;
+                    font-weight: 200;
+                    line-height: 41px;
+                }
+
+                .credits {
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: left;
+                    flex-wrap: wrap;
+
+                    .credit {
+                        display: flex;
+                        margin-top: 32px;
+
+                        p {
+                            font-size: 22px;
+                            font-style: normal;
+                            font-weight: 300;
+                            line-height: normal;
+                        }
+
+                        .name {
+                            font-weight: 600;
+                            margin-left: 16px;
+                        }
+                    }
+                }
+            }
+
+            .image {
+                width: 1253px;
+                height: 100%;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                }
+            }
+        }
+    }
+
+    .gallery {
+        width: 100%;
+        background-color: var(--bg-color-primary);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        .video {
+            width: 1766px;
+            height: 986px;
+            z-index: 2;
+            margin-top: -15%;
+            -webkit-box-shadow: 4px 0px 25px 2px rgba(0, 0, 0, 0.75);
+            -moz-box-shadow: 4px 0px 25px 2px rgba(0, 0, 0, 0.75);
+            box-shadow: 4px 0px 25px 2px rgba(0, 0, 0, 0.75);
+
+            video {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+
+        .images {
+            display: flex;
+            justify-content: center;
+            z-index: 0;
+            width: 100%;
+            height: 600px;
+            margin-top: -50px;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+
+        .middle{
+            width: 1766px;
+            height: 986px;
+            z-index: 2;
+            margin-top: -5%;
+            -webkit-box-shadow: 4px 0px 25px 2px rgba(0, 0, 0, 0.75);
+            -moz-box-shadow: 4px 0px 25px 2px rgba(0, 0, 0, 0.75);
+            box-shadow: 4px 0px 25px 2px rgba(0, 0, 0, 0.75);
+
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+    }
+    .footer{
+        width: 100%;
+        padding-top: 300px;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 50px;
+        background-color: var(--bg-color-primary);
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        .title{
+            display: flex;
+            z-index: 2;
+            padding: 0px 10px;
+            justify-content: space-between;
+            width: 100%;
+            font-size: 128px;
+        }
+        .outher-projects{
+            width: 95%;
+            height: 500px;
+            margin-top: -40px;
+            z-index: 0;
+            display: flex;
+            justify-content: space-between;
+
+            .outher-project{
+                width: 100%;
+                height: 100%;
+
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                }
+            }
+        }
+    }
+}
+
+@keyframes moveUp {
+    from {
+        transform: translateY(100vh);
+    }
+
+    to {
+        transform: translateY(0vh);
+    }
+}
