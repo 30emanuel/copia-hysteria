@@ -84,6 +84,14 @@ export const ModalProject = ({ index, showModal, projects }) => {
                             return (
                                 <div className='outher-project' key={indexProject} onClick={() => setIndexCurrent(indexProject)}>
                                     <img src={project.image} alt={project.name} />
+                                    <div className="info">
+                                        <h3>{project.name}</h3>
+                                        <div className='text'>
+                                            <p>{project.type}</p>
+                                            <p className='line'></p>
+                                            <p className='stream'>{project.stream}</p>
+                                        </div>
+                                    </div>
                                 </div>
                             )
                         }

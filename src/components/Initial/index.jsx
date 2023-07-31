@@ -129,8 +129,8 @@ export const Initial = () => {
                 }
             })
             gsap.to('.circle-bottom', {
-                y: '56vh',
-                x: '20%',
+                y: '60vh',
+                x: '19.5%',
                 width: '1080px',
                 height: '1080px',
                 scrollTrigger: {
@@ -141,8 +141,8 @@ export const Initial = () => {
                 },
                 onComplete: () => {
                     gsap.to('.circle-bottom', {
-                        y: '115vh',
-                        x: '10%',
+                        y: '108vh',
+                        x: '11%',
                         width: '1702px',
                         height: '1702px',
                         border: '3 solid white',

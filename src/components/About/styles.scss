@@ -9,7 +9,7 @@
     .text {
         display: flex;
         z-index: 3;
-        margin-top: -13%;
+        margin-top: -12%;
         .title {
             margin-top: -50px;
             h2 {
@@ -31,14 +31,17 @@
         }
 
         .paragraph {
-            width: 641px;
-            height: 264px;
+            width: 653px;
+            height: 100%;
             font-family: var(--font-secondary);
-            margin-left: 80px;
-            margin-top: 100px;
+            margin-top: 80px;
+            margin-left: 90px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
 
             p {
-                font-size: 20px;
+                font-size: 24px;
                 font-style: normal;
                 font-weight: 300;
                 line-height: 39px;

@@ -29,9 +29,9 @@ export const Home = () => {
       <Header />
       <Initial />
       <About />
-      <Projects />
+      <Projects showScroll={showScroll}/>
       <Brandlab showScroll={showScroll}/>
-      <Collaborators/>
+      <Collaborators showScroll={showScroll}/>
       <Contact/>
     </div>
   )

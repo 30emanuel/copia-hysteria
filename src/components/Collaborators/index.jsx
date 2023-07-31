@@ -2,20 +2,34 @@ import { useEffect, useState } from 'react'
 import './styles.scss'
 import { gsap } from 'gsap'
 
-export const Collaborators = () => {
+export const Collaborators = ({showScroll}) => {
     const [modalOpen, setModalOpen] = useState(false)
 
     const toggleModal = () => {
+        showScroll(modalOpen)
         setModalOpen(!modalOpen)
     }
 
     const collaborators = [
-        {name: 'Lorem', function: 'Diretor'},
-        {name: 'Lorem', function: 'Diretor'},
-        {name: 'Lorem', function: 'Diretor'},
-        {name: 'Lorem', function: 'Diretor'},
-        {name: 'Lorem', function: 'Diretor'},
-        {name: 'Lorem', function: 'Diretor'},
+        { name: 'Lorem', function: 'Diretor' },
+        { name: 'Lorem', function: 'Diretor' },
+        { name: 'Lorem', function: 'Diretor' },
+        { name: 'Lorem', function: 'Diretor' },
+        { name: 'Lorem', function: 'Diretor' },
+        { name: 'Lorem', function: 'Diretor' },
+        { name: 'Lorem', function: 'Diretor' },
+        { name: 'Lorem', function: 'Diretor' },
+        { name: 'Lorem', function: 'Diretor' },
+        { name: 'Lorem', function: 'Diretor' },
+        { name: 'Lorem', function: 'Diretor' },
+        { name: 'Lorem', function: 'Diretor' },
+        { name: 'Lorem', function: 'Diretor' },
+        { name: 'Lorem', function: 'Diretor' },
+        { name: 'Lorem', function: 'Diretor' },
+        { name: 'Lorem', function: 'Diretor' },
+        { name: 'Lorem', function: 'Diretor' },
+        { name: 'Lorem', function: 'Diretor' },
+        { name: 'Lorem', function: 'Diretor' },
     ]
 
     useEffect(() => {
@@ -30,7 +44,7 @@ export const Collaborators = () => {
             },
         })
         gsap.to('.collaborators-circle', {
-            y: '96%',
+            y: '98%',
             x: '51%',
             scrollTrigger: {
                 trigger: '.collaborators',
@@ -50,7 +64,8 @@ export const Collaborators = () => {
             },
         })
         gsap.to('.collaborators-circle-center', {
-            x: '-45%',
+            x: '-60%',
+            y: '-5%',
             scrollTrigger: {
                 trigger: '.collaborators',
                 start: "bottom 200px",
@@ -84,16 +99,19 @@ export const Collaborators = () => {
                 </div>
             </div>
             <div className={`modal-collaborators ${modalOpen ? 'active' : ''}`}>
-                <svg onClick={toggleModal} xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none">
-                    <circle cx="32" cy="32" r="32" fill="black" />
-                </svg>
+                <div className='button' onClick={toggleModal}>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                        <path d="M29.2168 1.39075L1.39083 29.2167" stroke="white" stroke-width="2.2069" />
+                        <path d="M29.2168 29.2168L1.39083 1.39083" stroke="white" stroke-width="2.2069" />
+                    </svg>
+                </div>
                 <div className='names'>
-                {collaborators.map((collaborator) => (
-                    <div className='collaborator'>
-                        <p>{collaborator.name}</p>
-                        <p>{collaborator.function}</p>
-                    </div>
-                ))}
+                    {collaborators.map((collaborator) => (
+                        <div className='collaborator'>
+                            <p className='function'>{collaborator.function}</p>
+                            <p className='name'>{collaborator.name}</p>
+                        </div>
+                    ))}
                 </div>
             </div>
         </div>

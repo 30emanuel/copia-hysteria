@@ -7,7 +7,7 @@
     width: 100%;
 
     div {
-        padding: 40px 62px;
+        padding: 30px 62px;
     }
 }
 
@@ -40,7 +40,7 @@ svg{
         justify-content: center;
         align-items: left;
         padding-left: 62px;
-        color: var(--color-text-primary);
+        color: var(--color-text-third);
         flex-direction: column;
 
         h2 {
@@ -51,10 +51,8 @@ svg{
             margin-top: 20px;
         }
         h2:hover{
-            color: var(--color-text-secondary);
+            color: white;
             transition: 0.5s;
-            transform: 0.5s;
-            transform: translateY(-5px);
         }
     }
 
