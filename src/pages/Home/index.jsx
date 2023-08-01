@@ -10,6 +10,7 @@ import {Contact} from '../../components/Contact'
 
 
 export const Home = () => {
+  const [backgroundColor, setBackgroundColor] = useState('var(--bg-color-primary)')
 
   const showScroll = (value) =>{
     if(value === false){
@@ -25,14 +26,14 @@ export const Home = () => {
   }, [])
 
   return (
-    <div className="home" >
+    <div className="home"  style={{backgroundColor: backgroundColor}}>
       <Header />
       <Initial />
       <About />
       <Projects showScroll={showScroll}/>
       <Brandlab showScroll={showScroll}/>
-      <Collaborators showScroll={showScroll}/>
-      <Contact/>
+      <Collaborators showScroll={showScroll} setBackgroundColor={setBackgroundColor}/>
+      <Contact />
     </div>
   )
 }

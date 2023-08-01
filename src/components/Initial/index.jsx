@@ -13,7 +13,7 @@ export const Initial = () => {
     const [showText, setShowText] = useState(false)
 
     const playAllVideos = () => {
-        const videos = document.querySelectorAll('video');
+        const videos = document.querySelectorAll('video')
         videos.forEach((video) => {
             /*video.play()*/
         })
@@ -84,8 +84,10 @@ export const Initial = () => {
                 },
             })
             gsap.to('.circle', {
-                width: '723px',
-                height: '723px',
+                width: '1187px',
+                height: '1187px',
+                x: '-61%',
+                y: '-30%',
                 scrollTrigger: {
                     trigger: '.center',
                     start: "bottom bottom",
@@ -103,14 +105,14 @@ export const Initial = () => {
                 }
             })
             gsap.to('.circle-top', {
-                y: '205vh',
-                x: '-35%',
+                y: '180vh',
+                x: '-95vw',
                 width: '925px',
                 height: '925px',
                 scrollTrigger: {
                     trigger: '.circle-top',
-                    start: "bottom 100vh",
-                    end: 'bottom 100vh',
+                    start: "bottom 110vh",
+                    end: 'bottom 110vh',
                     scrub: 0.5,
                 },
                 onComplete: () => {
@@ -120,17 +122,17 @@ export const Initial = () => {
                         width: '1156px',
                         height: '1156px',
                         scrollTrigger: {
-                            trigger: '.circle-top',
-                            start: "top top",
-                            end: "top top",
+                            trigger: '.circle-bottom',
+                            start: "center center",
+                            end: 'center center',
                             scrub: 0.5,
                         },
                     })
                 }
             })
             gsap.to('.circle-bottom', {
-                y: '60vh',
-                x: '19.5%',
+                y: '65vh',
+                x: '13%',
                 width: '1080px',
                 height: '1080px',
                 scrollTrigger: {

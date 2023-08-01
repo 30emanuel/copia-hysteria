@@ -15,6 +15,7 @@
         margin-bottom: -27%;
         margin-right: 40%;
         transition: 0.5s;
+        pointer-events: none;
         &.hover{
             font-size: 100px;
             margin-right: 78%;
@@ -29,11 +30,14 @@
         justify-content: end;
         align-items: end;
         pointer-events: none;
+        svg{
+            margin-top: 10px;
+        }
     }
 
     .slide {
-        width: 925px;
-        height: 528px;
+        width: 925.526px;
+        height: 520.608px;
         margin-left: 35%;
         margin-top: 20%;
         margin-bottom: 1.3%;
@@ -42,8 +46,8 @@
         transition: 0.5s;
         
         &:hover {
-            width: 70%;
-            height: 70%;
+            width: 1244.444px;
+            height: 700px;
             margin-left: 20%;
             margin-top: -20%;
         }
@@ -105,7 +109,6 @@
             }
 
             &:hover {
-                z-index: 2;
                 .info{
                     display: flex;
 

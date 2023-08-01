@@ -2,59 +2,87 @@
     width: 100%;
     height: 100vh;
     color: var(--color-text-primary);
-    display: flex; 
+    display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    .blur{
+        width: 1000px;
+        height: 1000px;
+        opacity: 0.5;
+        top: -100vh;
+        left: -50vw;
+        position: absolute;
+        border-radius: 100%;
+        background-color: var(--color-blur);
+        filter: blur(100px);
+    }
 
     .text {
         display: flex;
+        justify-content: end;
+        align-items: center;
+        flex-direction: column;
         z-index: 3;
-        margin-top: -12%;
+        width: 100%;
+        height: 100%;
+        margin-left: 200px;
+        margin-top: -200px;
+
         .title {
-            margin-top: -50px;
+            margin-left: -50px;
             h2 {
                 font-size: 252px;
                 font-style: normal;
                 font-weight: 400;
                 line-height: normal;
-                margin-left: 30px;
+                margin-top: -50px;
             }
 
             h3 {
                 font-size: 210px;
-                margin-bottom: -43px;
-                margin-left: 20px;
                 font-style: normal;
                 font-weight: 400;
                 line-height: normal;
+                margin-left: -183px;
             }
         }
 
         .paragraph {
             width: 653px;
-            height: 100%;
+            height: 271px;
             font-family: var(--font-secondary);
-            margin-top: 80px;
-            margin-left: 90px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            margin-left: 230px;
 
             p {
                 font-size: 24px;
                 font-style: normal;
                 font-weight: 300;
-                line-height: 39px;
-                letter-spacing: 1.1px;
+                line-height: 43px;
+                letter-spacing: 1.32px;
             }
-
-            p.power {
-                margin-top: 10%;
-            }
-
-            a {
-                color: inherit;
-            }
+        }
+    }
+    .footer {
+        width: 100%;
+        margin-right: 42px;
+        margin-top: 150px;
+        display: flex;
+        justify-content: end;
+        align-items: end;
+        color: white;
+        font-family: var(--font-secondary);
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 39px;
+        letter-spacing: 1.1px;
+        a{
+            text-decoration-line: underline;
+            margin-left: 5px;
+        }
+        a:visited{
+            color: white;
         }
     }
 }

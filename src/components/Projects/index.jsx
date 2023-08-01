@@ -7,15 +7,13 @@ import 'swiper/css/scrollbar'
 import { register } from 'swiper/element/bundle'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { ModalProject } from '../ModalProject'
-
-
 register()
-
 
 export const Projects = ({ showScroll }) => {
     const [slideHover, setSlideHover] = useState(false)
     const [selectedProject, setSelectedProject] = useState(0)
     const [showModal, setShowModal] = useState(false)
+    const [slideHoverIndex, setSlideHoverIndex] = useState(0)
 
     const projects = [
         {
@@ -67,6 +65,11 @@ export const Projects = ({ showScroll }) => {
         },
     ]
 
+    const projectIndex = []
+    for (let i = projects.length - 1; i >= 0; i--) {
+        projectIndex.push(i)
+    }
+
     const toggleHover = () => {
         setSlideHover(!slideHover)
     }
@@ -93,7 +96,8 @@ export const Projects = ({ showScroll }) => {
                 >
                     {projects.map((slide, index) => (
                         <SwiperSlide key={index}
-                            onClick={() => toggleModal(index)} className='slide-item' style={{zIndex: `${index === 0 ? '1' : ''}`}}>
+                            onClick={() => toggleModal(index)} className='slide-item' style={{ zIndex: `${slideHoverIndex === index ? '20' : projectIndex[index]}` }} 
+                            onMouseEnter={()=> setSlideHoverIndex(index)} onMouseLeave={()=> setSlideHoverIndex(0)}>
                             <div className="image">
                                 <img src={slide.image} alt={slide.name} />
                             </div>

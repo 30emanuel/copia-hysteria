@@ -4,6 +4,7 @@
     background-color: transparent;
     display: flex;
     justify-content: center;
+    pointer-events: none;
     align-items: center;
     .brandlab-background{
         background-color: var(--bg-color-secondary);

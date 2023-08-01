@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import './styles.scss'
 import { gsap } from 'gsap'
 
-export const Collaborators = ({showScroll}) => {
+export const Collaborators = ({ showScroll, setBackgroundColor }) => {
     const [modalOpen, setModalOpen] = useState(false)
 
     const toggleModal = () => {
@@ -32,6 +32,13 @@ export const Collaborators = ({showScroll}) => {
         { name: 'Lorem', function: 'Diretor' },
     ]
 
+    const circlesImages = {
+        top: 'https://hysteria.uxdir.com/wp-content/uploads/2023/03/DESNUDE-03.jpg',
+        left: 'https://hysteria.uxdir.com/wp-content/uploads/2023/03/ABRE-ALAS-01.jpg',
+        right: 'https://hysteria.uxdir.com/wp-content/uploads/2023/03/DVFMS-02.jpg',
+        low: 'https://hysteria.uxdir.com/wp-content/uploads/2023/03/DESNUDE-03.jpg'
+    }
+
     useEffect(() => {
         gsap.to('.background', {
             y: '0%',
@@ -42,6 +49,37 @@ export const Collaborators = ({showScroll}) => {
                 end: "top center",
                 scrub: 0.5,
             },
+            onComplete: () => {
+                setBackgroundColor('var(--bg-color-four)')
+            },
+            onReverseComplete: () => {
+                setBackgroundColor('var(--bg-color-primary)')
+            }
+        })
+        gsap.to('.collaborators', {
+            scrollTrigger: {
+                trigger: '.collaborators',
+                start: "center 100px",
+                end: "center 100px",
+                scrub: 0.5,
+            },
+            onComplete: () => {
+                setBackgroundColor('var(--bg-color-four)')
+            },
+            onReverseComplete: () => {
+                setBackgroundColor('var(--bg-color-four)')
+            }
+        })
+        gsap.to('.collaborators', {
+            scrollTrigger: {
+                trigger: '.collaborators',
+                start: "bottom 200px",
+                end: "bottom 200px",
+                scrub: 0.5,
+            },
+            onComplete: () => {
+                setBackgroundColor('var(--bg-color-primary)')
+            }
         })
         gsap.to('.collaborators-circle', {
             y: '98%',
@@ -73,6 +111,15 @@ export const Collaborators = ({showScroll}) => {
                 scrub: 0.5,
             },
         })
+        gsap.to('.circle-collaborators', {
+            display: 'flex',
+            scrollTrigger: {
+                trigger: '.collaborators',
+                start: "center center",
+                end: "center center",
+                scrub: 0.5,
+            },
+        })
     }, [])
 
     return (
@@ -97,6 +144,20 @@ export const Collaborators = ({showScroll}) => {
                 <div className="collaborators-circle">
                     <div className="collaborators-circle-center"></div>
                 </div>
+            </div>
+            <div className="circle-collaborators">
+                <div className="collaborator-top"
+                    style={{ backgroundImage: `url(${circlesImages.top})`, backgroundColor: 'lightgray', backgroundPosition: '50%', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}
+                ></div>
+                <div className="collaboator-left" 
+                    style={{ backgroundImage: `url(${circlesImages.left})`, backgroundColor: 'lightgray', backgroundPosition: '50%', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}
+                ></div>
+                <div className="collaboator-right"
+                    style={{ backgroundImage: `url(${circlesImages.right})`, backgroundColor: 'lightgray', backgroundPosition: '50%', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}
+                ></div>
+                <div className="collaboator-low"
+                    style={{ backgroundImage: `url(${circlesImages.low})`, backgroundColor: 'lightgray', backgroundPosition: '50%', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}
+                ></div>
             </div>
             <div className={`modal-collaborators ${modalOpen ? 'active' : ''}`}>
                 <div className='button' onClick={toggleModal}>
