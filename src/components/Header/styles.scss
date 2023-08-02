@@ -5,9 +5,11 @@
     position: fixed;
     z-index: 4;
     width: 100%;
+    pointer-events: none;
 
     div {
         padding: 30px 62px;
+        pointer-events: visible;
     }
 }
 
@@ -42,15 +44,21 @@ svg{
         padding-left: 62px;
         color: var(--bg-color-four);
         flex-direction: column;
+        gap: 10px;
 
-        h2 {
+        a {
             font-size: 128px;
             font-style: normal;
             font-weight: 400;
             line-height: 128px;
-            margin-top: 20px;
+            color: var(--bg-color-four);
+            cursor: pointer;
+            text-decoration: none;
         }
-        h2:hover{
+        a:visited{
+            color: var(--bg-color-four);
+        }
+        a:hover{
             color: white;
             transition: 0.5s;
         }
@@ -58,13 +66,14 @@ svg{
 
     .menu-footer {
         width: 100%;
+        margin-top: 50px;
         display: flex;
-        align-items: center;
+        align-items: end;
         justify-content: space-between;
 
         p {
             padding: 40px 62px;
-            color: var(--color-text-secondary);
+            color: white;
             font-size: 40px;
             font-style: normal;
             font-weight: 300;

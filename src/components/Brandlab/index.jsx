@@ -157,6 +157,7 @@ export const Brandlab = ({ showScroll }) => {
 
     return (
         <div className='brandlab'>
+            <div id='brandlab'></div>
             {showText &&
                 <div className="front">
                     <div className="texts">

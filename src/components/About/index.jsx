@@ -16,7 +16,7 @@ export const About = () => {
             },
             onComplete: ()=>{
                 gsap.to('.blur', {
-                    y: '280vh',
+                    y: '270vh',
                     scrollTrigger: {
                         trigger: '.about',
                         start: "bottom 100px",
@@ -26,13 +26,31 @@ export const About = () => {
                 })
             }
         })
+        gsap.to('.about-text', {
+            display: 'flex',
+            scrollTrigger: {
+                trigger: '.about',
+                start: "top center",
+                end: 'top center',
+                scrub: 0.5,
+            },
+        })
+        gsap.to('.footer', {
+            display: 'flex',
+            scrollTrigger: {
+                trigger: '.about',
+                start: "top center",
+                end: 'top center',
+                scrub: 0.5,
+            },
+        })
     },[])
 
     return (
-        <div className='about'>
+        <div className='about' id='about'>
             <div className="blur"></div>
-            <div className="text">
-                <div className="title">
+            <div className="about-text">
+                <div className="about-title">
                     <h3>quem é</h3>
                     <h2>hysteria</h2>
                 </div>

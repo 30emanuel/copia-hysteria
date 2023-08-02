@@ -144,7 +144,7 @@ export const Initial = () => {
                 onComplete: () => {
                     gsap.to('.circle-bottom', {
                         y: '108vh',
-                        x: '11%',
+                        x: '12%',
                         width: '1702px',
                         height: '1702px',
                         border: '3 solid white',
@@ -179,7 +179,7 @@ export const Initial = () => {
     })
 
     return (
-        <div className='start'>
+        <div className='start' id='home'>
             {showFirstAnimation &&
                 <div className="animation">
                     <animated.img style={logoProps} src={Logo} alt="Logo" className="logo" />

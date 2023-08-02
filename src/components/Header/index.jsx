@@ -16,21 +16,21 @@ export const Header = () => {
             <div className={`menu ${showMenu ? 'active' : ''}`}>
                 <div className="menu-header">
                     <div>
-                        <img src={LogoBlack} alt="logo" />
+                        <img src={LogoWhite} alt="logo" />
                     </div>
                     <div>
                         <svg onClick={togleMenu} xmlns="http://www.w3.org/2000/svg" width="23" height="21" viewBox="0 0 23 21" fill="none">
-                            <path d="M2 2L20 19" stroke="#1F1F1F" stroke-width="3" stroke-linecap="round" />
-                            <path d="M2 19L20 2" stroke="#1F1F1F" stroke-width="3" stroke-linecap="round" />
+                            <path d="M2 2L20 19" stroke="white" stroke-width="3" stroke-linecap="round" />
+                            <path d="M2 19L20 2" stroke="white" stroke-width="3" stroke-linecap="round" />
                         </svg>
                     </div>
                 </div>
                 <div className="menu-items">
-                    <h2>home</h2>
-                    <h2>quem é hysteria</h2>
-                    <h2>projetos</h2>
-                    <h2>brand lab</h2>
-                    <h2>contato</h2>
+                    <a href='#home' onClick={togleMenu}>home</a>
+                    <a href='#about' onClick={togleMenu}>quem é hysteria</a>
+                    <a href='#projects' onClick={togleMenu}>projetos</a>
+                    <a href='#brandlab' onClick={togleMenu}>brand lab</a>
+                    <a href='#contact' onClick={togleMenu}>contato</a>
                 </div>
                 <div className="menu-footer">
                     <p>política de privacidade</p>

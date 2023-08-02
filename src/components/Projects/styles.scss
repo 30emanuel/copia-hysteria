@@ -9,7 +9,9 @@
     overflow: hidden;
     z-index: 2;
 
-    h2 {
+    .projects-title {
+        display: none;
+        animation: fade-in 1s ease-in-out forwards;
         font-size: 252px;
         z-index: 2;
         margin-bottom: -27%;
@@ -50,6 +52,11 @@
             height: 700px;
             margin-left: 20%;
             margin-top: -20%;
+        }
+
+        .swiper{
+            display: none;
+            animation: fade-in 1s ease-in-out forwards;
         }
 
         
@@ -124,7 +131,7 @@
 
 @keyframes fade-in {
     from {
-        opacity: 0;
+        opacity: 0.2;
     }
 
     to {

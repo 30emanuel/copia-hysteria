@@ -4,12 +4,11 @@
     background-color: var(--bg-primary-color);
     color: white;
     display: flex;
-
     .text {
         width: 57%;
         height: 100vh;
         margin-left: 74px;
-        display: flex;
+        display: none;
         justify-content: center;
         align-items: left;
         flex-direction: column;
@@ -17,8 +16,10 @@
         h2 {
             font-size: 252px;
             font-style: normal;
+            display: flex;
             font-weight: 400;
             line-height: normal;
+            animation: fade-title 1s ease-in-out forwards;
         }
 
         div {
@@ -33,6 +34,7 @@
                 font-style: normal;
                 font-weight: 200;
                 line-height: normal;
+                animation: move-text 0.5s ease-in-out forwards;
             }
 
             h4 {
@@ -41,6 +43,7 @@
                 font-weight: 300;
                 line-height: normal;
                 margin-top: 20px;
+                animation: move-text 0.6s ease-in-out forwards;
             }
 
             p {
@@ -49,16 +52,41 @@
                 font-style: normal;
                 font-weight: 300;
                 line-height: normal;
+                animation: move-text 0.7s ease-in-out forwards;
             }
             .social{
                 display: flex;
                 flex-direction: row;
                 margin-left: 0%;
                 margin-top: 10px;
+                animation: move-text 0.9s ease-in-out forwards;
                 svg{
                     margin-right: 10px;
                 }
             }
         }
+    }
+}
+
+@keyframes fade-title {
+    from {
+        opacity: 0;
+        transform: translateY(-10vh);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0vh);
+    }
+}
+
+@keyframes move-text {
+    from {
+        transform: translateY(10vh);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0vh);
     }
 }

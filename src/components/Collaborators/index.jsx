@@ -82,7 +82,7 @@ export const Collaborators = ({ showScroll, setBackgroundColor }) => {
             }
         })
         gsap.to('.collaborators-circle', {
-            y: '98%',
+            y: '100%',
             x: '51%',
             scrollTrigger: {
                 trigger: '.collaborators',
@@ -117,13 +117,24 @@ export const Collaborators = ({ showScroll, setBackgroundColor }) => {
                 trigger: '.collaborators',
                 start: "center center",
                 end: "center center",
+            },
+        })
+        gsap.to('.blur-collaborators', {
+            y: '70%',
+            x: '-120%',
+            opacity: 0.5,
+            scrollTrigger: {
+                trigger: '.collaborators',
+                start: "bottom 200px",
+                end: "bottom 200px",
                 scrub: 0.5,
             },
         })
     }, [])
 
     return (
-        <div className='collaborators'>
+        <div className='collaborators' id='collaborators'>
+            <div className="blur-collaborators"></div>
             <div className="text">
                 <h2>colaboradoras</h2>
                 <p>Mais de 1000 colaboradoras espalhadas pelo Brasil e pelo mundo, entre artistas, roteiristas, pesquisadoras, filmmakers, diretoras e produtoras, que trazem suas ideias e talentos na cocriação dos projetos.</p>

@@ -18,8 +18,8 @@
         filter: blur(100px);
     }
 
-    .text {
-        display: flex;
+    .about-text {
+        display: none;
         justify-content: end;
         align-items: center;
         flex-direction: column;
@@ -27,14 +27,17 @@
         width: 100%;
         height: 100%;
         margin-left: 200px;
-        margin-top: -200px;
+        margin-top: 150px;
 
-        .title {
+        .about-title {
+            flex-direction: column;
+            animation: move-up 1s ease-in-out forwards;
             margin-left: -50px;
             h2 {
                 font-size: 252px;
                 font-style: normal;
                 font-weight: 400;
+                animation: fade 1s ease-in-out forwards;
                 line-height: normal;
                 margin-top: -50px;
             }
@@ -43,6 +46,7 @@
                 font-size: 210px;
                 font-style: normal;
                 font-weight: 400;
+                animation: fade 1s ease-in-out forwards;
                 line-height: normal;
                 margin-left: -183px;
             }
@@ -53,6 +57,7 @@
             height: 271px;
             font-family: var(--font-secondary);
             margin-left: 230px;
+            animation: fade 1.5s ease-in-out forwards;
 
             p {
                 font-size: 24px;
@@ -66,8 +71,8 @@
     .footer {
         width: 100%;
         margin-right: 42px;
-        margin-top: 150px;
-        display: flex;
+        margin-top: 100px;
+        display: none;
         justify-content: end;
         align-items: end;
         color: white;
@@ -77,6 +82,7 @@
         font-weight: 300;
         line-height: 39px;
         letter-spacing: 1.1px;
+        animation: move-footer 1s ease-in-out forwards;
         a{
             text-decoration-line: underline;
             margin-left: 5px;
@@ -84,5 +90,36 @@
         a:visited{
             color: white;
         }
+    }
+}
+
+@keyframes move-up {
+    from {
+        transform: translateY(30vh);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0vh);
+        opacity: 1;
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+@keyframes move-footer {
+    from {
+        transform: translateY(50vh);
+    }
+
+    to {
+        transform: translateY(0vh);
     }
 }

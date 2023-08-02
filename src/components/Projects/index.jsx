@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './styles.scss'
 import 'swiper/css'
 import 'swiper/css/navigation'
@@ -7,6 +7,7 @@ import 'swiper/css/scrollbar'
 import { register } from 'swiper/element/bundle'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { ModalProject } from '../ModalProject'
+import { gsap } from 'gsap'
 register()
 
 export const Projects = ({ showScroll }) => {
@@ -80,10 +81,31 @@ export const Projects = ({ showScroll }) => {
         setSelectedProject(index)
     }
 
+    useEffect(() => {
+        gsap.to('.projects-title ', {
+            display: 'flex',
+            scrollTrigger: {
+                trigger: '.projects',
+                start: "top center",
+                end: 'top center',
+                scrub: 0.5,
+            },
+        })
+        gsap.to('.swiper', {
+            display: 'block',
+            scrollTrigger: {
+                trigger: '.projects',
+                start: "top center",
+                end: 'top center',
+                scrub: 0.5,
+            },
+        })
+    }, [])
+
 
     return (
-        <div className='projects'>
-            <h2 className={slideHover ? 'hover' : ''}>projetos</h2>
+        <div className='projects' id='projects'>
+            <h2 className={slideHover ? 'projects-title hover' : 'projects-title'}>projetos</h2>
             <div className='slide'
                 onMouseEnter={toggleHover}
                 onMouseLeave={toggleHover}
@@ -93,11 +115,12 @@ export const Projects = ({ showScroll }) => {
                     style={{
                         overflow: 'visible',
                     }}
+                    className='swiper'
                 >
                     {projects.map((slide, index) => (
                         <SwiperSlide key={index}
-                            onClick={() => toggleModal(index)} className='slide-item' style={{ zIndex: `${slideHoverIndex === index ? '20' : projectIndex[index]}` }} 
-                            onMouseEnter={()=> setSlideHoverIndex(index)} onMouseLeave={()=> setSlideHoverIndex(0)}>
+                            onClick={() => toggleModal(index)} className='slide-item' style={{ zIndex: `${slideHoverIndex === index ? '20' : projectIndex[index]}` }}
+                            onMouseEnter={() => setSlideHoverIndex(index)} onMouseLeave={() => setSlideHoverIndex(0)}>
                             <div className="image">
                                 <img src={slide.image} alt={slide.name} />
                             </div>

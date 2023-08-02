@@ -1,12 +1,25 @@
 import { useEffect } from 'react'
 import './styles.scss'
+import { gsap } from 'gsap'
 
 export const Contact = () => {
 
+    useEffect(() => {
+        gsap.to('.text', {
+            display: 'flex',
+            scrollTrigger: {
+                trigger: '.contact',
+                start: "top top",
+                end: "top top",
+                scrub: 0.5
+            },
+        })
+    }, [])
+
     return (
-        <div className='contact'>
+        <div className='contact' id='contact'>
             <div className="text">
-                <h2>contato</h2>
+                <h2 className='contact-title'>contato</h2>
                 <div>
                     <h3>contato@hysteria.com.br</h3>
                     <h4>Política de privacidade</h4>
