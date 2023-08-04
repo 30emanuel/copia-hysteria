@@ -1,7 +1,6 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import './styles.scss'
 import { gsap } from 'gsap'
-import { useState } from 'react'
 import { useSpring, animated } from 'react-spring'
 
 export const Brandlab = ({ showScroll }) => {
@@ -39,8 +38,8 @@ export const Brandlab = ({ showScroll }) => {
             },
         })
         gsap.to('.brandlab-background', {
-            width: '2933px',
-            height: '2933px',
+            width: '152.8646vw',
+            height: '271.7593vh',
             transition: 1,
             scrollTrigger: {
                 trigger: '.brandlab',
@@ -61,8 +60,8 @@ export const Brandlab = ({ showScroll }) => {
             },
         })
         gsap.to('.brandlab-circle', {
-            width: '1849px',
-            height: '1849px',
+            width: '96.3542vw',
+            height: '171.5741vh',
             transition: 1,
             scrollTrigger: {
                 trigger: '.brandlab',
@@ -72,8 +71,8 @@ export const Brandlab = ({ showScroll }) => {
             },
         })
         gsap.to('.brandlab-circle-center', {
-            width: '1106px',
-            height: '1106px',
+            width: '57.6042vw',
+            height: '102.4074vh',
             transition: 1,
             scrollTrigger: {
                 trigger: '.brandlab',
@@ -161,8 +160,8 @@ export const Brandlab = ({ showScroll }) => {
             {showText &&
                 <div className="front">
                     <div className="texts">
-                        <animated.h2 style={title}>brandlab</animated.h2>
-                        <animated.p style={texts}>Queremos que a sua marca conte histórias originais e corajosas com a Hysteria. A estratégia de parceria é sempre customizada: já prestamos consultoria, fizemos pesquisas, criamos roteiros e produzimos conteúdo para os mais diversos formatos e escalas. </animated.p>
+                        <animated.h2 style={title} className='titles'>brandlab</animated.h2>
+                        <animated.p style={texts} className='paragraphs'>Queremos que a sua marca conte histórias originais e corajosas com a Hysteria. A estratégia de parceria é sempre customizada: já prestamos consultoria, fizemos pesquisas, criamos roteiros e produzimos conteúdo para os mais diversos formatos e escalas. </animated.p>
                         <animated.h3 style={texts}>Gostamos mesmo é de provocar impacto na narrativa e aumentar a conexão das conversas com seu público.</animated.h3>
                     </div>
                     <animated.div style={moveup} className="brandlab-video">

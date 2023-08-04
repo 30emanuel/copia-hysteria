@@ -1,6 +1,6 @@
 .about {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     color: var(--color-text-primary);
     display: flex;
     justify-content: center;
@@ -12,6 +12,8 @@
         opacity: 0.5;
         top: -100vh;
         left: -50vw;
+        overflow: hidden;
+        display: none;
         position: absolute;
         border-radius: 100%;
         background-color: var(--color-blur);
@@ -22,23 +24,20 @@
         display: none;
         justify-content: end;
         align-items: center;
+        overflow: hidden;
         flex-direction: column;
         z-index: 3;
         width: 100%;
         height: 100%;
         margin-left: 200px;
-        margin-top: 150px;
+        margin-top: 5%;
 
         .about-title {
             flex-direction: column;
             animation: move-up 1s ease-in-out forwards;
             margin-left: -50px;
             h2 {
-                font-size: 252px;
-                font-style: normal;
-                font-weight: 400;
                 animation: fade 1s ease-in-out forwards;
-                line-height: normal;
                 margin-top: -50px;
             }
 
@@ -54,18 +53,8 @@
 
         .paragraph {
             width: 653px;
-            height: 271px;
-            font-family: var(--font-secondary);
             margin-left: 230px;
             animation: fade 1.5s ease-in-out forwards;
-
-            p {
-                font-size: 24px;
-                font-style: normal;
-                font-weight: 300;
-                line-height: 43px;
-                letter-spacing: 1.32px;
-            }
         }
     }
     .footer {
@@ -121,5 +110,41 @@
 
     to {
         transform: translateY(0vh);
+    }
+}
+
+@media(max-width: 1600px){
+    .about{
+        .about-text {
+            margin-left: 20%;
+            .about-title{
+                h3{
+                    font-size: 184px;
+                    margin-left: -180px;
+                }
+                h2{
+                    margin-top: -50px;
+                }
+            }
+        }
+    }
+}
+@media(max-width: 1399px){
+    .about{
+        .about-text {
+            margin-top: 0%;
+            .about-title{
+                h3{
+                    font-size: 146px;
+                    margin-left: -140px;
+                }
+                h2{
+                    margin-top: -30px;
+                }
+            }
+        }
+        .footer{
+            margin-top: 50px;
+        }
     }
 }

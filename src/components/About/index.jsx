@@ -6,6 +6,7 @@ export const About = () => {
 
     useEffect(()=>{
         gsap.to('.blur', {
+            display: 'block',
             y: '200vh',
             x: '90vw',
             scrollTrigger: {
@@ -52,10 +53,10 @@ export const About = () => {
             <div className="about-text">
                 <div className="about-title">
                     <h3>quem é</h3>
-                    <h2>hysteria</h2>
+                    <h2 className='titles'>hysteria</h2>
                 </div>
                 <div className="paragraph">
-                    <p>Hysteria é um selo de criação e produção que reúne mulheres e olhares diversos no centro das narrativas. Nossos filmes, séries e conteúdos são distribuídos na TV, no cinema, no streaming e em plataformas digitais. Temos histórias para emocionar, rir, chorar, indignar, inspirar e propor novas visões de mundo.</p>
+                    <p className='paragraphs'>Hysteria é um selo de criação e produção que reúne mulheres e olhares diversos no centro das narrativas. Nossos filmes, séries e conteúdos são distribuídos na TV, no cinema, no streaming e em plataformas digitais. Temos histórias para emocionar, rir, chorar, indignar, inspirar e propor novas visões de mundo.</p>
                 </div>
             </div>
             <div className="footer">

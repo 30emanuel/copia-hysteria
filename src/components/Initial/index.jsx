@@ -68,7 +68,28 @@ export const Initial = () => {
             setShowText(true)
             playAllVideos()
             gsap.to('.center-container', {
-                y: '135vh',
+                y: '103vh',
+                x: '-38vw',
+                scrollTrigger: {
+                    trigger: '.center-container',
+                    start: "bottom bottom",
+                    scrub: 0.5,
+                },
+                onComplete: ()=>{
+                    gsap.to('.center-container', {
+                        y: '95vh',
+                        scrollTrigger: {
+                            trigger: '.circle-bottom',
+                            start: "center center",
+                            end: 'center center',
+                            scrub: 0.5,
+                        },
+                    })
+                }
+            })
+            gsap.to('.circle', {
+                width: '61.8229vw',
+                height: '109.9074vh',
                 scrollTrigger: {
                     trigger: '.center-container',
                     start: "bottom bottom",
@@ -83,32 +104,11 @@ export const Initial = () => {
                     scrub: 0.5,
                 },
             })
-            gsap.to('.circle', {
-                width: '1187px',
-                height: '1187px',
-                x: '-61%',
-                y: '-30%',
-                scrollTrigger: {
-                    trigger: '.center',
-                    start: "bottom bottom",
-                    scrub: 0.5,
-                },
-                onComplete: () => {
-                    gsap.to('.circle', {
-                        y: '-50%',
-                        scrollTrigger: {
-                            trigger: '.center',
-                            start: "center center",
-                            scrub: 0.5,
-                        },
-                    })
-                }
-            })
             gsap.to('.circle-top', {
                 y: '180vh',
                 x: '-95vw',
-                width: '925px',
-                height: '925px',
+                width: '48.1771vw',
+                height: '85.6481vh',
                 scrollTrigger: {
                     trigger: '.circle-top',
                     start: "bottom 110vh",
@@ -117,10 +117,10 @@ export const Initial = () => {
                 },
                 onComplete: () => {
                     gsap.to('.circle-top', {
-                        x: '-36%',
-                        y: '169vh',
-                        width: '1156px',
-                        height: '1156px',
+                        x: '-25vw',
+                        y: '175vh',
+                        width: '60.2083vw',
+                        height: '107.037vh',
                         scrollTrigger: {
                             trigger: '.circle-bottom',
                             start: "center center",
@@ -133,8 +133,8 @@ export const Initial = () => {
             gsap.to('.circle-bottom', {
                 y: '65vh',
                 x: '13%',
-                width: '1080px',
-                height: '1080px',
+                width: '56.25vw',
+                height: '100vh',
                 scrollTrigger: {
                     trigger: '.circle-bottom',
                     start: "center center",
@@ -143,10 +143,10 @@ export const Initial = () => {
                 },
                 onComplete: () => {
                     gsap.to('.circle-bottom', {
-                        y: '108vh',
-                        x: '12%',
-                        width: '1702px',
-                        height: '1702px',
+                        y: '112vh',
+                        x: '10.5vw',
+                        width: '88.5417vw',
+                        height: '157.407vh',
                         border: '3 solid white',
                         scrollTrigger: {
                             trigger: '.circle-bottom',

@@ -12,7 +12,6 @@
     .projects-title {
         display: none;
         animation: fade-in 1s ease-in-out forwards;
-        font-size: 252px;
         z-index: 2;
         margin-bottom: -27%;
         margin-right: 40%;
@@ -103,6 +102,7 @@
 
                 .subtitle {
                     display: flex;
+                    font-family: var(--font-secondary);
 
                     .line {
                         margin-left: 20px;
@@ -136,5 +136,44 @@
 
     to {
         opacity: 1;
+    }
+}
+
+@media(max-width: 1600px){
+    .projects{
+        .projects-title {
+            &.hover{
+                font-size: 64px;
+                margin-right: 78%;
+                margin-bottom: 18.5%;
+            }
+        }
+        .slide {
+            width: 50%;
+            height: 50%;
+            &:hover {
+                width: 70%;
+                height: 70%;
+            }
+            .slide-item {
+                .info {
+                    margin-top: 30%;
+                    
+                    h3 {
+                        font-size: 42px;
+                    }
+    
+                    h4 {
+                        font-size: 24px;
+                    }
+                    .subtitle {
+                        .line {
+                            width: 3px;
+                            height: 20px;
+                        }
+                    }
+                }
+            }
+        }
     }
 }

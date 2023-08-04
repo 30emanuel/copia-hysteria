@@ -54,16 +54,7 @@
 
         .texts{
             z-index: 2;
-            h2{
-                font-size: 252px;
-                font-weight: 400;
-                line-height: 252px;
-            }
             p{
-                font-size: 24px;
-                font-family: var(--font-secondary);
-                line-height: 47px;
-                font-weight: 300;
                 max-width: 790px;
                 margin-right: 50px;
             }
@@ -101,4 +92,97 @@
             }
         }
     }
+}
+
+@media (max-width: 1600px){
+    .brandlab{
+        .front{
+            .brandlab-video{
+                width: 800px;
+                height: 800px;
+                .video-circle{
+                    width: 1000px;
+                    height: 1000px;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 1500px){
+    .brandlab{
+        .brandlab-background{
+            .brandlab-circle{
+                .brandlab-circle-center{
+                    margin-top: 5%;
+                }
+            }
+        }
+        .front{
+            .texts{
+                padding-left: 50px;
+                p{
+                    max-width: 730px;
+                    font-size: 24px;
+                }
+            }
+            .brandlab-video{
+                width: 700px;
+                height: 700px;
+                .video-circle{
+                    width: 800px;
+                    height: 800px;
+                }
+            }
+        }
+    } 
+}
+
+@media (max-width: 1400px){
+    .brandlab{
+        .front{
+            padding-right: 50px;
+            .texts{
+                h2{
+                    font-size: 200px;
+                }
+            }
+            .brandlab-video{
+                width: 600px;
+                height: 600px;
+                .video-circle{
+                    width: 700px;
+                    height: 700px;
+                }
+            }
+        }
+    } 
+}
+@media (max-width: 1300px){
+    .brandlab{
+        .front{
+            padding-right: 50px;
+            margin-bottom: 29%;
+            .texts{
+                h2{
+                    font-size: 182px;
+                }
+                p{
+                    max-width: 600px;
+                    font-size: 22px;
+                }
+                h3{
+                    max-width: 600px;
+                    font-size: 20px;
+                }
+            }
+            .brandlab-video{
+                width: 600px;
+                height: 600px;
+                .video-circle{
+                    width: 700px;
+                    height: 700px;
+                }
+            }
+        }
+    } 
 }

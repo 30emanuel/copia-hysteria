@@ -6,6 +6,7 @@
     display: flex;
     .text {
         width: 57%;
+        margin-top: 2vh;
         height: 100vh;
         margin-left: 74px;
         display: none;
@@ -14,11 +15,7 @@
         flex-direction: column;
 
         h2 {
-            font-size: 252px;
-            font-style: normal;
             display: flex;
-            font-weight: 400;
-            line-height: normal;
             animation: fade-title 1s ease-in-out forwards;
         }
 
@@ -88,5 +85,37 @@
     to {
         opacity: 1;
         transform: translateY(0vh);
+    }
+}
+
+@media (max-width: 1399px){
+    .contact{
+        .text{
+            div{
+                h3{
+                    font-size: 40px;
+                }
+                h4 {
+                    font-size: 32px;
+                }
+                p{
+                    font-size: 16px;
+                }
+                .social{
+                    svg{
+                        width: 50px;
+                        height: 50px;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 1299px){
+    .contact{
+        height: 130vh;
+        .text{
+            margin-top: 20vh;
+        }
     }
 }

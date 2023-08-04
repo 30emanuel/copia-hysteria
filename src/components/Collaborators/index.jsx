@@ -82,8 +82,8 @@ export const Collaborators = ({ showScroll, setBackgroundColor }) => {
             }
         })
         gsap.to('.collaborators-circle', {
-            y: '100%',
-            x: '51%',
+            y: '70vh',
+            x: '40vw',
             scrollTrigger: {
                 trigger: '.collaborators',
                 start: "top center",
@@ -92,8 +92,8 @@ export const Collaborators = ({ showScroll, setBackgroundColor }) => {
             },
         })
         gsap.to('.background', {
-            y: '110%',
-            x: '-51%',
+            y: '110vh',
+            x: '-52vw',
             scrollTrigger: {
                 trigger: '.collaborators',
                 start: "bottom 200px",
@@ -102,8 +102,8 @@ export const Collaborators = ({ showScroll, setBackgroundColor }) => {
             },
         })
         gsap.to('.collaborators-circle-center', {
-            x: '-60%',
-            y: '-5%',
+            x: '-26vw',
+            y: '-3vh',
             scrollTrigger: {
                 trigger: '.collaborators',
                 start: "bottom 200px",
@@ -115,14 +115,14 @@ export const Collaborators = ({ showScroll, setBackgroundColor }) => {
             display: 'flex',
             scrollTrigger: {
                 trigger: '.collaborators',
-                start: "center center",
-                end: "center center",
+                start: "top 200px",
+                end: "top 200px",
             },
         })
         gsap.to('.blur-collaborators', {
-            y: '70%',
-            x: '-120%',
-            opacity: 0.5,
+            y: '70vh',
+            x: '-50vw',
+            opacity: 0.8,
             scrollTrigger: {
                 trigger: '.collaborators',
                 start: "bottom 200px",
@@ -136,8 +136,8 @@ export const Collaborators = ({ showScroll, setBackgroundColor }) => {
         <div className='collaborators' id='collaborators'>
             <div className="blur-collaborators"></div>
             <div className="text">
-                <h2>colaboradoras</h2>
-                <p>Mais de 1000 colaboradoras espalhadas pelo Brasil e pelo mundo, entre artistas, roteiristas, pesquisadoras, filmmakers, diretoras e produtoras, que trazem suas ideias e talentos na cocriação dos projetos.</p>
+                <h2 className='titles'>colaboradoras</h2>
+                <p className='paragraphs'>Mais de 1000 colaboradoras espalhadas pelo Brasil e pelo mundo, entre artistas, roteiristas, pesquisadoras, filmmakers, diretoras e produtoras, que trazem suas ideias e talentos na cocriação dos projetos.</p>
                 <div className='button' onClick={toggleModal}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="164" height="68" viewBox="0 0 164 68" fill="none">
                         <g clip-path="url(#clip0_493_446)">

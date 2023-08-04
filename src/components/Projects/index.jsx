@@ -105,7 +105,7 @@ export const Projects = ({ showScroll }) => {
 
     return (
         <div className='projects' id='projects'>
-            <h2 className={slideHover ? 'projects-title hover' : 'projects-title'}>projetos</h2>
+            <h2 className={slideHover ? 'titles projects-title hover' : 'titles projects-title'}>projetos</h2>
             <div className='slide'
                 onMouseEnter={toggleHover}
                 onMouseLeave={toggleHover}

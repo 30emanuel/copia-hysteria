@@ -8,9 +8,9 @@ export const Contact = () => {
         gsap.to('.text', {
             display: 'flex',
             scrollTrigger: {
-                trigger: '.contact',
-                start: "top top",
-                end: "top top",
+                trigger: '.collaborators',
+                start: "bottom 200px",
+                end: "bottom 200px",
                 scrub: 0.5
             },
         })
@@ -19,7 +19,7 @@ export const Contact = () => {
     return (
         <div className='contact' id='contact'>
             <div className="text">
-                <h2 className='contact-title'>contato</h2>
+                <h2 className='titles contact-title'>contato</h2>
                 <div>
                     <h3>contato@hysteria.com.br</h3>
                     <h4>Política de privacidade</h4>
