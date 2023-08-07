@@ -15,6 +15,7 @@
         overflow: hidden;
         display: none;
         position: absolute;
+        pointer-events: none;
         border-radius: 100%;
         background-color: var(--color-blur);
         filter: blur(100px);
@@ -54,7 +55,7 @@
         .paragraph {
             width: 653px;
             margin-left: 230px;
-            animation: fade 1.5s ease-in-out forwards;
+            animation: fade 2s ease-in-out forwards;
         }
     }
     .footer {
@@ -145,6 +146,13 @@
         }
         .footer{
             margin-top: 50px;
+        }
+    }
+}
+@media(max-width: 1299px){
+    .about{
+        .about-text {
+            margin-top: 10%;
         }
     }
 }

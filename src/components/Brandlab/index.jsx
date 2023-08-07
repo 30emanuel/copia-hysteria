@@ -38,8 +38,7 @@ export const Brandlab = ({ showScroll }) => {
             },
         })
         gsap.to('.brandlab-background', {
-            width: '152.8646vw',
-            height: '271.7593vh',
+            display: 'flex',
             transition: 1,
             scrollTrigger: {
                 trigger: '.brandlab',
@@ -60,9 +59,7 @@ export const Brandlab = ({ showScroll }) => {
             },
         })
         gsap.to('.brandlab-circle', {
-            width: '96.3542vw',
-            height: '171.5741vh',
-            transition: 1,
+            display: 'flex',
             scrollTrigger: {
                 trigger: '.brandlab',
                 start: "top center",
@@ -71,9 +68,7 @@ export const Brandlab = ({ showScroll }) => {
             },
         })
         gsap.to('.brandlab-circle-center', {
-            width: '57.6042vw',
-            height: '102.4074vh',
-            transition: 1,
+            display: 'flex',
             scrollTrigger: {
                 trigger: '.brandlab',
                 start: "top center",

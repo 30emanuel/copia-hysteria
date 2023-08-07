@@ -82,8 +82,8 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 60.42vw;
-            height: 107.04vh;
+            width: 1156px;
+            height: 1156px;
             border-radius: 100%;
             overflow: hidden;
             border: 2px solid white;
@@ -119,8 +119,8 @@
     .circle-bottom {
         position: absolute;
         z-index: 3;
-        width: 60.42vw;
-        height: 107.04vh;
+        width: 1156px;
+        height: 1156px;
         border-radius: 100%;
         border: 2px solid white;
         box-shadow: 0px 4px 94px 0px rgba(0, 0, 0, 0.568);
@@ -139,26 +139,110 @@
         transform: translate(-50%, -50%);
     }
 }
-@media (max-width: 1600px) {
-    .start{
+
+@media (max-width: 1799px) {
+    .start {
+        .center {
+            .circle {
+                width: 1050px;
+                height: 1050px;
+            }
+        }
+
+        .circle-top,
+        .circle-bottom {
+            width: 1050px;
+            height: 1050px;
+        }
+
         .text {
             h1 {
-                font-size: 288px;
+                font-size: 320px;
                 line-height: normal;
             }
         }
     }
 }
-@media (max-width: 1399px) {
-    .start{
+
+@media (max-width: 1600px) {
+    .start {
+        .center {
+            .circle {
+                width: 950px;
+                height: 950px;
+            }
+        }
+
+        .circle-top,
+        .circle-bottom {
+            width: 950px;
+            height: 950px;
+        }
+
         .text {
             h1 {
-                font-size: 256px;
+                font-size: 348px;
                 line-height: normal;
             }
-            h2{
+        }
+    }
+}
+
+@media (max-width: 1500px) {
+    .start {
+        .center {
+            .circle {
+                width: 900px;
+                height: 900px;
+            }
+        }
+
+        .circle-top,
+        .circle-bottom {
+            width: 900px;
+            height: 900px;
+        }
+        .text {
+            h1 {
+                font-size: 264px;
+                line-height: normal;
+            }
+
+            h2 {
                 font-size: 72px;
             }
+        }
+    }
+}
+@media (max-width: 1400px) {
+    .start {
+        .center {
+            .circle {
+                width: 800px;
+                height: 800px;
+            }
+        }
+
+        .circle-top,
+        .circle-bottom {
+            width: 800px;
+            height: 800px;
+        }
+    }
+}
+@media (max-width: 1299px) {
+    .start {
+        .center {
+            .circle {
+                width: 750px;
+                height: 750px;
+            }
+        }
+
+        .circle-top,
+        .circle-bottom {
+            width: 750px;
+            height: 750px;
         }
     }
 }

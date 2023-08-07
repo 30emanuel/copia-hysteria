@@ -31,8 +31,8 @@ export const About = () => {
             display: 'flex',
             scrollTrigger: {
                 trigger: '.about',
-                start: "top center",
-                end: 'top center',
+                start: "center center",
+                end: 'center center',
                 scrub: 0.5,
             },
         })
@@ -40,8 +40,8 @@ export const About = () => {
             display: 'flex',
             scrollTrigger: {
                 trigger: '.about',
-                start: "top center",
-                end: 'top center',
+                start: "center center",
+                end: 'center center',
                 scrub: 0.5,
             },
         })

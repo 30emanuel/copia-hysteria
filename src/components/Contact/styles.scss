@@ -1,12 +1,12 @@
 .contact {
     width: 100%;
-    height: 120vh;
+    min-height: 140vh;
     background-color: var(--bg-primary-color);
     color: white;
     display: flex;
     .text {
         width: 57%;
-        margin-top: 2vh;
+        margin-top: 20vh;
         height: 100vh;
         margin-left: 74px;
         display: none;
@@ -22,7 +22,7 @@
         div {
             display: flex;
             width: 100%;
-            margin-left: 40%;
+            margin-left: 38%;
             flex-direction: column;
             font-family: var(--font-secondary);
 
@@ -113,7 +113,7 @@
 }
 @media (max-width: 1299px){
     .contact{
-        height: 130vh;
+        height: 140vh;
         .text{
             margin-top: 20vh;
         }

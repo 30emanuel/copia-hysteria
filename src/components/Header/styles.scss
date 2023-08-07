@@ -92,7 +92,34 @@ svg {
     transform: translateY(0);
 }
 
-@media (max-height: 900px) {
+@media (max-height: 1050px){
+    .menu{
+        .menu-items {
+            margin-top: 10px;
+            gap: 10px;
+            a {
+                font-size: 120px;
+            }
+        }
+        .menu-footer{
+            margin-top: 10px;
+            p{
+                font-size: 32px;
+            }
+        }
+    }
+}
+@media (max-height: 900px){
+    .menu{
+        .menu-items {
+            a {
+                font-size: 96px;
+            }
+        }
+    }
+}
+
+@media (max-height: 768px) {
     .header{
         div{
             img{
@@ -106,6 +133,23 @@ svg {
         }
     }
     .menu{
+        .menu-items {
+            margin-top: 5px;
+            gap: 15px;
+            a {
+                font-size: 72px;
+            }
+        }
+        .menu-footer{
+            margin-top: 10px;
+            p{
+                font-size: 32px;
+            }
+        }
+    }
+}
+@media (max-height: 720px) {
+    .menu{
         div{
             img{
                 width: 150px;
@@ -117,28 +161,10 @@ svg {
             }
         }
         .menu-items {
-            margin-top: 10px;
-            gap: 30px;
+            margin-top: 0px;
+            gap: 10px;
             a {
-                font-size: 80px;
-            }
-        }
-        .menu-footer{
-            margin-top: 10px;
-            p{
-                font-size: 32px;
-            }
-        }
-    }
-}
-
-@media (max-height: 720px) {
-    .menu{
-        .menu-items {
-            margin-top: 5px;
-            gap: 15px;
-            a {
-                font-size: 62px;
+                font-size: 64px;
             }
         }
         .menu-footer{

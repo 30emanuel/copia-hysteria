@@ -82,8 +82,8 @@ export const Collaborators = ({ showScroll, setBackgroundColor }) => {
             }
         })
         gsap.to('.collaborators-circle', {
-            y: '70vh',
-            x: '40vw',
+            y: '65vh',
+            x: '39vw',
             scrollTrigger: {
                 trigger: '.collaborators',
                 start: "top center",
@@ -96,18 +96,18 @@ export const Collaborators = ({ showScroll, setBackgroundColor }) => {
             x: '-52vw',
             scrollTrigger: {
                 trigger: '.collaborators',
-                start: "bottom 200px",
-                end: "bottom 200px",
+                start: "bottom 20vh",
+                end: "bottom 20vh",
                 scrub: 0.5,
             },
         })
         gsap.to('.collaborators-circle-center', {
-            x: '-26vw',
+            x: '-21vw',
             y: '-3vh',
             scrollTrigger: {
                 trigger: '.collaborators',
-                start: "bottom 200px",
-                end: "bottom 200px",
+                start: "bottom 20vh",
+                end: "bottom 20vh",
                 scrub: 0.5,
             },
         })
@@ -125,8 +125,8 @@ export const Collaborators = ({ showScroll, setBackgroundColor }) => {
             opacity: 0.8,
             scrollTrigger: {
                 trigger: '.collaborators',
-                start: "bottom 200px",
-                end: "bottom 200px",
+                start: "bottom 20vh",
+                end: "bottom 20vh",
                 scrub: 0.5,
             },
         })

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import './styles.scss'
 import { useSpring, animated } from 'react-spring'
 import Logo from '../../assets/logo-black.png'
@@ -11,6 +11,9 @@ export const Initial = () => {
     const [showRest, setShowRest] = useState(false)
     const [growBall, setGrowBall] = useState(false)
     const [showText, setShowText] = useState(false)
+    const circleCenter = useRef(null)
+    const circleTop = useRef(null)
+    const circleBottom = useRef(null)
 
     const playAllVideos = () => {
         const videos = document.querySelectorAll('video')
@@ -77,7 +80,7 @@ export const Initial = () => {
                 },
                 onComplete: ()=>{
                     gsap.to('.center-container', {
-                        y: '95vh',
+                        y: '93vh',
                         scrollTrigger: {
                             trigger: '.circle-bottom',
                             start: "center center",
@@ -88,8 +91,8 @@ export const Initial = () => {
                 }
             })
             gsap.to('.circle', {
-                width: '61.8229vw',
-                height: '109.9074vh',
+                width: `calc(${circleCenter.current.offsetWidth}px + 27px)`,
+                height: `calc(${circleCenter.current.offsetWidth}px + 27px)`,
                 scrollTrigger: {
                     trigger: '.center-container',
                     start: "bottom bottom",
@@ -106,9 +109,9 @@ export const Initial = () => {
             })
             gsap.to('.circle-top', {
                 y: '180vh',
-                x: '-95vw',
-                width: '48.1771vw',
-                height: '85.6481vh',
+                x: '-93vw',
+                width: `calc(${circleTop.current.offsetWidth}px - 235px)`,
+                height: `calc(${circleTop.current.offsetWidth}px - 235px)`,
                 scrollTrigger: {
                     trigger: '.circle-top',
                     start: "bottom 110vh",
@@ -117,12 +120,12 @@ export const Initial = () => {
                 },
                 onComplete: () => {
                     gsap.to('.circle-top', {
-                        x: '-25vw',
+                        x: '-20vw',
                         y: '175vh',
-                        width: '60.2083vw',
-                        height: '107.037vh',
+                        width: `calc(${circleTop.current.offsetWidth}px + 227px)`,
+                        height: `calc(${circleTop.current.offsetWidth}px + 227px)`,
                         scrollTrigger: {
-                            trigger: '.circle-bottom',
+                            trigger: '.projects',
                             start: "center center",
                             end: 'center center',
                             scrub: 0.5,
@@ -132,9 +135,9 @@ export const Initial = () => {
             })
             gsap.to('.circle-bottom', {
                 y: '65vh',
-                x: '13%',
-                width: '56.25vw',
-                height: '100vh',
+                x: '11.8vw',
+                width: `calc(${circleBottom.current.offsetWidth}px - 80px)`,
+                height: `calc(${circleBottom.current.offsetWidth}px - 80px)`,
                 scrollTrigger: {
                     trigger: '.circle-bottom',
                     start: "center center",
@@ -143,15 +146,15 @@ export const Initial = () => {
                 },
                 onComplete: () => {
                     gsap.to('.circle-bottom', {
-                        y: '112vh',
+                        y: '108vh',
                         x: '10.5vw',
-                        width: '88.5417vw',
-                        height: '157.407vh',
+                        width: `calc(${circleBottom.current.offsetWidth}px + 618px)`,
+                        height: `calc(${circleBottom.current.offsetWidth}px + 618px)`,
                         border: '3 solid white',
                         scrollTrigger: {
-                            trigger: '.circle-bottom',
-                            start: "bottom bottom",
-                            end: "bottom bottom",
+                            trigger: '.projects',
+                            start: "center center",
+                            end: 'center center',
                             scrub: 0.5,
                         },
                     })
@@ -189,7 +192,7 @@ export const Initial = () => {
             {showSecondAnimation &&
                 <animated.div style={moveUp} className='center-container'>
                     <animated.div className='center' style={ballGrow}>
-                        <div className="circle">
+                        <div className="circle" ref={circleCenter}>
                             <video playsInline muted loop src='https://uxdir.com/files/videos/hysteria-—home.webm' className='video'></video>
                         </div>
                     </animated.div>
@@ -210,8 +213,8 @@ export const Initial = () => {
                         <animated.h1 style={fadeDownTwo}>histórias</animated.h1>
                         <animated.h2 style={fadeDownThird}>para contar</animated.h2>
                     </div>
-                    <div className="circle-top"></div>
-                    <div className="circle-bottom"></div>
+                    <div className="circle-top" ref={circleTop}></div>
+                    <div className="circle-bottom" ref={circleBottom}></div>
                 </>
             }
         </div >
