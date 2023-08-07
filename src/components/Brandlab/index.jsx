@@ -44,7 +44,6 @@ export const Brandlab = ({ showScroll }) => {
                 trigger: '.projects',
                 start: "bottom top",
                 end: "bottom top",
-                markers: true
             },
         })
         gsap.to('.brandlab-circle-center', {
