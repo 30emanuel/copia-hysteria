@@ -10,8 +10,6 @@
         width: 1000px;
         height: 1000px;
         opacity: 0.5;
-        top: -100vh;
-        left: -50vw;
         overflow: hidden;
         display: none;
         position: absolute;
@@ -22,7 +20,7 @@
     }
 
     .about-text {
-        display: none;
+        display: flex;
         justify-content: end;
         align-items: center;
         overflow: hidden;
@@ -55,14 +53,14 @@
         .paragraph {
             width: 653px;
             margin-left: 230px;
-            animation: fade 2s ease-in-out forwards;
+            animation: fade 1s ease-in-out forwards;
         }
     }
     .footer {
         width: 100%;
         margin-right: 42px;
         margin-top: 100px;
-        display: none;
+        display: flex;
         justify-content: end;
         align-items: end;
         color: white;

@@ -10,7 +10,7 @@
     z-index: 2;
 
     .projects-title {
-        display: none;
+        display: flex;
         animation: fade-in 1s ease-in-out forwards;
         z-index: 2;
         margin-bottom: -27%;
@@ -54,7 +54,7 @@
         }
 
         .swiper{
-            display: none;
+            display: flex;
             animation: fade-in 1s ease-in-out forwards;
         }
 

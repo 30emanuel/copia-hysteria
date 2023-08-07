@@ -1,10 +1,12 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import './styles.scss'
 import { gsap } from 'gsap'
 import { useSpring, animated } from 'react-spring'
 
 export const Brandlab = ({ showScroll }) => {
     const [showText, setShowText] = useState(false)
+    const [showBackground, setShowBackground] = useState(false)
+    const elementRef = useRef(null)
 
     const moveup = useSpring({
         translateY: showText ? '0%' : '20%',
@@ -15,60 +17,37 @@ export const Brandlab = ({ showScroll }) => {
         translateY: showText ? '0' : '50%',
         opacity: showText ? '1' : '0',
         color: showText ? 'var(--bg-color-primary)' : 'white',
-        config: {duration: 700},
+        config: { duration: 700 },
     })
 
     const texts = useSpring({
         translateY: showText ? '0' : '100%',
         opacity: showText ? '1' : '0',
-        config: {duration: 700},
+        config: { duration: 700 },
     })
+
+    const scrollToBackground = () =>{
+        showScroll(false)
+        elementRef.current.scrollIntoView({ behavior: 'smooth'})
+    }
 
     useEffect(() => {
         gsap.to('.brandlab', {
             onStart: () => {
-                showScroll(false)
-                setShowText(false)
+                setShowBackground(true)
+                scrollToBackground()
+                const timeoutId = setTimeout(() => {
+                    clearTimeout(timeoutId)
+                }, 500)
             },
             scrollTrigger: {
-                trigger: '.brandlab',
-                start: "top center",
-                end: "top center",
-                scrub: 0.5,
-            },
-        })
-        gsap.to('.brandlab-background', {
-            display: 'flex',
-            transition: 1,
-            scrollTrigger: {
-                trigger: '.brandlab',
-                start: "top center",
-                end: "top center",
-                scrub: 0.5,
-            },
-            onReverseComplete: () =>{
-                setShowText(false)
-            }
-        })
-        gsap.to('.front', {
-            display: 'block',
-            scrollTrigger: {
-                trigger: '.brandlab',
-                start: "top center",
-                end: "top center",
-            },
-        })
-        gsap.to('.brandlab-circle', {
-            display: 'flex',
-            scrollTrigger: {
-                trigger: '.brandlab',
-                start: "top center",
-                end: "top center",
-                scrub: 0.5,
+                trigger: '.projects',
+                start: "bottom top",
+                end: "bottom top",
+                markers: true
             },
         })
         gsap.to('.brandlab-circle-center', {
-            display: 'flex',
             scrollTrigger: {
                 trigger: '.brandlab',
                 start: "top center",
@@ -77,57 +56,11 @@ export const Brandlab = ({ showScroll }) => {
             },
             onComplete: () => {
                 const delay = 2000
-                showScroll(false)
                 const timeoutId = setTimeout(() => {
                     gsap.to('.brandlab-circle', {
                         backgroundColor: 'var(--bg-color-third)',
-                        scrollTrigger: {
-                            trigger: '.brandlab',
-                            start: "top center",
-                            end: "top center",
-                            scrub: 0.5,
-                        },
                         onComplete: () => {
                             setShowText(true)
-                            gsap.to('.brandlab-circle', {
-                                width: '0px',
-                                height: '0px',
-                                transition: 1,
-                                scrollTrigger: {
-                                    trigger: '.brandlab',
-                                    start: "bottom bottom",
-                                    end: "bottom bottom",
-                                    scrub: 0.5,
-                                },
-                                onComplete: ()=>{
-                                    setShowText(false)
-                                },
-                                onReverseComplete: ()=>{
-                                    setShowText(true)
-                                }
-                            })
-                            gsap.to('.brandlab-circle-center', {
-                                width: '0px',
-                                height: '0px',
-                                transition: 1,
-                                scrollTrigger: {
-                                    trigger: '.brandlab',
-                                    start: "bottom bottom",
-                                    end: "bottom bottom",
-                                    scrub: 0.5,
-                                },
-                            })
-                            gsap.to('.brandlab-background', {
-                                width: '0px',
-                                height: '0px',
-                                transition: 1,
-                                scrollTrigger: {
-                                    trigger: '.brandlab',
-                                    start: "bottom bottom",
-                                    end: "bottom bottom",
-                                    scrub: 0.5,
-                                },
-                            })
                         }
                     })
                     gsap.to('.brandlab-circle-center', {
@@ -151,7 +84,7 @@ export const Brandlab = ({ showScroll }) => {
 
     return (
         <div className='brandlab'>
-            <div id='brandlab'></div>
+            <div id='brandlab' ref={elementRef}></div>
             {showText &&
                 <div className="front">
                     <div className="texts">
@@ -165,11 +98,13 @@ export const Brandlab = ({ showScroll }) => {
                     </animated.div>
                 </div>
             }
-            <div className='brandlab-background'>
-                <div className="brandlab-circle">
-                    <div className="brandlab-circle-center"></div>
+            {showBackground &&
+                <div className='brandlab-background' >
+                    <div className="brandlab-circle">
+                        <div className="brandlab-circle-center"></div>
+                    </div>
                 </div>
-            </div>
+            }
         </div>
     )
 }

@@ -82,9 +82,9 @@ export const Initial = () => {
                     gsap.to('.center-container', {
                         y: '93vh',
                         scrollTrigger: {
-                            trigger: '.circle-bottom',
-                            start: "center center",
-                            end: 'center center',
+                            trigger: '.projects',
+                            start: "top top",
+                            end: 'top top',
                             scrub: 0.5,
                         },
                     })
@@ -113,9 +113,8 @@ export const Initial = () => {
                 width: `calc(${circleTop.current.offsetWidth}px - 235px)`,
                 height: `calc(${circleTop.current.offsetWidth}px - 235px)`,
                 scrollTrigger: {
-                    trigger: '.circle-top',
-                    start: "bottom 110vh",
-                    end: 'bottom 110vh',
+                    trigger: '.center-container',
+                    start: "bottom bottom",
                     scrub: 0.5,
                 },
                 onComplete: () => {
@@ -126,7 +125,7 @@ export const Initial = () => {
                         height: `calc(${circleTop.current.offsetWidth}px + 227px)`,
                         scrollTrigger: {
                             trigger: '.projects',
-                            start: "center center",
+                            start: "top center",
                             end: 'center center',
                             scrub: 0.5,
                         },
@@ -139,9 +138,8 @@ export const Initial = () => {
                 width: `calc(${circleBottom.current.offsetWidth}px - 80px)`,
                 height: `calc(${circleBottom.current.offsetWidth}px - 80px)`,
                 scrollTrigger: {
-                    trigger: '.circle-bottom',
-                    start: "center center",
-                    end: 'center center',
+                    trigger: '.center-container',
+                    start: "bottom bottom",
                     scrub: 0.5,
                 },
                 onComplete: () => {
@@ -153,7 +151,7 @@ export const Initial = () => {
                         border: '3 solid white',
                         scrollTrigger: {
                             trigger: '.projects',
-                            start: "center center",
+                            start: "top center",
                             end: 'center center',
                             scrub: 0.5,
                         },
