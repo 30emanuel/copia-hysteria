@@ -82,7 +82,7 @@ export const Home = () => {
       <About />
       <Projects showScroll={showScroll} projects={projects} setShowListProjects={setShowListProjects}/>
       {showListProjects &&
-        <ProjectsList projects={projects} showModal={setShowListProjects} />
+        <ProjectsList projects={projects} showModal={setShowListProjects} showScroll={showScroll} />
       }
       <Brandlab showScroll={showScroll} />
       <Collaborators showScroll={showScroll} />
