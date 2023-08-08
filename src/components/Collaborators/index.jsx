@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import './styles.scss'
 import { gsap } from 'gsap'
 
-export const Collaborators = ({ showScroll, setBackgroundColor }) => {
+export const Collaborators = ({ showScroll }) => {
     const [modalOpen, setModalOpen] = useState(false)
 
     const toggleModal = () => {
@@ -49,12 +49,6 @@ export const Collaborators = ({ showScroll, setBackgroundColor }) => {
                 end: "top center",
                 scrub: 0.5,
             },
-            onComplete: () => {
-                setBackgroundColor('var(--bg-color-four)')
-            },
-            onReverseComplete: () => {
-                setBackgroundColor('var(--bg-color-primary)')
-            }
         })
         gsap.to('.collaborators', {
             scrollTrigger: {
@@ -63,12 +57,6 @@ export const Collaborators = ({ showScroll, setBackgroundColor }) => {
                 end: "center 100px",
                 scrub: 0.5,
             },
-            onComplete: () => {
-                setBackgroundColor('var(--bg-color-four)')
-            },
-            onReverseComplete: () => {
-                setBackgroundColor('var(--bg-color-four)')
-            }
         })
         gsap.to('.collaborators', {
             scrollTrigger: {
@@ -77,9 +65,6 @@ export const Collaborators = ({ showScroll, setBackgroundColor }) => {
                 end: "bottom 200px",
                 scrub: 0.5,
             },
-            onComplete: () => {
-                setBackgroundColor('var(--bg-color-primary)')
-            }
         })
         gsap.to('.collaborators-circle', {
             y: '65vh',

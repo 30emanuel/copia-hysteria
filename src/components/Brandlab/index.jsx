@@ -7,6 +7,7 @@ export const Brandlab = ({ showScroll }) => {
     const [showText, setShowText] = useState(false)
     const [showBackground, setShowBackground] = useState(false)
     const elementRef = useRef(null)
+    const circleRef = useRef(null)
 
     const moveup = useSpring({
         translateY: showText ? '0%' : '20%',
@@ -26,9 +27,16 @@ export const Brandlab = ({ showScroll }) => {
         config: { duration: 700 },
     })
 
-    const scrollToBackground = () =>{
+    const scrollToBackground = () => {
         showScroll(false)
-        elementRef.current.scrollIntoView({ behavior: 'smooth'})
+        elementRef.current.scrollIntoView({ behavior: 'smooth' })
+    }
+
+    const playVideo = () => {
+        const videos = document.querySelectorAll('.video-brandlab')
+        videos.forEach((video) => {
+            video.play()
+        })
     }
 
     useEffect(() => {
@@ -51,6 +59,7 @@ export const Brandlab = ({ showScroll }) => {
                 trigger: '.brandlab',
                 start: "top center",
                 end: "top center",
+                once: true,
                 scrub: 0.5,
             },
             onComplete: () => {
@@ -64,16 +73,21 @@ export const Brandlab = ({ showScroll }) => {
                     })
                     gsap.to('.brandlab-circle-center', {
                         border: '1px solid red',
+                        marginTop: '-100vh',
+                        marginLeft: '70vw',
+                        width: `calc(${circleRef.current.offsetWidth}px + 192px)`,
+                        height: `calc(${circleRef.current.offsetHeight}px + 192px)`,
                         scrollTrigger: {
                             trigger: '.brandlab',
                             start: "top center",
                             end: "top center",
-                            scrub: 0.5,
+                            once: true
                         },
                     })
                     clearTimeout(timeoutId)
                 }, delay)
                 const timeScroll = setTimeout(() => {
+                    playVideo()
                     showScroll(true)
                     clearTimeout(timeScroll)
                 }, 3000)
@@ -93,16 +107,16 @@ export const Brandlab = ({ showScroll }) => {
                     </div>
                     <animated.div style={moveup} className="brandlab-video">
                         <div className="video-circle"></div>
-                        <video muted loop src='https://uxdir.com/files/videos/hysteria-—home.webm'></video>
+                        <video className='video-brandlab' muted loop src='https://uxdir.com/files/videos/hysteria-—home.webm'></video>
                     </animated.div>
                 </div>
             }
             {showBackground &&
-                <div className='brandlab-background' >
+                <><div className='brandlab-background'>
                     <div className="brandlab-circle">
-                        <div className="brandlab-circle-center"></div>
                     </div>
                 </div>
+                    <div className="brandlab-circle-center" ref={circleRef}></div></>
             }
         </div>
     )

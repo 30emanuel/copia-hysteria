@@ -7,7 +7,7 @@
     animation: moveUp 1s;
     scroll-behavior: smooth;
     z-index: 7;
-    background-color: var(--color-text-secondary);
+    background-color: var(--bg-color-primary);
 
     .modal-header {
         display: flex;
@@ -42,7 +42,6 @@
         justify-content: left;
         align-items: left;
         flex-direction: column;
-        background-color: var(--color-text-secondary);
         padding-top: 150px;
 
         .title {
@@ -237,7 +236,7 @@
 
     .footer {
         width: 100%;
-        padding-top: 300px;
+        padding-top: 200px;
         padding-left: 20px;
         padding-right: 20px;
         padding-bottom: 50px;
