@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import './styles.scss'
 import { gsap } from 'gsap'
 
-export const About = () => {
+export const About = ({text}) => {
     const [showText, setShowText] = useState(false)
 
     useEffect(() => {
@@ -37,11 +37,11 @@ export const About = () => {
                     <div className="blur"></div>
                     <div className="about-text">
                         <div className="about-title">
-                            <h3>quem é</h3>
-                            <h2 className='titles'>hysteria</h2>
+                            <h3>{text.tituloSecundario}</h3>
+                            <h2 className='titles'>{text.titulo}</h2>
                         </div>
                         <div className="paragraph">
-                            <p className='paragraphs'>Hysteria é um selo de criação e produção que reúne mulheres e olhares diversos no centro das narrativas. Nossos filmes, séries e conteúdos são distribuídos na TV, no cinema, no streaming e em plataformas digitais. Temos histórias para emocionar, rir, chorar, indignar, inspirar e propor novas visões de mundo.</p>
+                            <p className='paragraphs'>{text.texto}</p>
                         </div>
                     </div>
                     <div className="footer">

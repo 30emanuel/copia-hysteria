@@ -5,7 +5,7 @@ import Logo from '../../assets/logo-black.png'
 import { gsap } from 'gsap'
 
 
-export const Initial = ({showScroll}) => {
+export const Initial = ({showScroll, data}) => {
     const [showFirstAnimation, setShowFirstAnimation] = useState(true)
     const [showSecondAnimation, setShowSecondAnimation] = useState(false)
     const [showRest, setShowRest] = useState(false)
@@ -214,9 +214,9 @@ export const Initial = ({showScroll}) => {
                         </animated.div>
                     </div>
                     <div className='text'>
-                        <animated.h2 style={fadeDownOne}>mulheres com</animated.h2>
-                        <animated.h1 style={fadeDownTwo}>histórias</animated.h1>
-                        <animated.h2 style={fadeDownThird}>para contar</animated.h2>
+                        <animated.h2 style={fadeDownOne}>{data.textoCima}</animated.h2>
+                        <animated.h1 style={fadeDownTwo}>{data.textoCentro}</animated.h1>
+                        <animated.h2 style={fadeDownThird}>{data.textoBaixo}</animated.h2>
                     </div>
                     <div className="circle-top" ref={circleTop}></div>
                     <div className="circle-bottom" ref={circleBottom}></div>
