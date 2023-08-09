@@ -207,6 +207,29 @@
         }
     }
 }
+@media (max-width: 1500px) and (min-height: 1000px) {
+    .brandlab {
+        .brandlab-circle-center {
+            width: 706px;
+            height: 706px;
+        }
+        .brandlab-background {
+            width: 2500px;
+            height: 2500px;
+    
+            .brandlab-circle {
+                width: 1380px;
+                height: 1380px;
+                margin-bottom: 50vh;
+            }
+        }
+        .front{
+            .text{
+                margin-right: 50vw;
+            }
+        }
+    }
+}
 @media (max-width: 1400px) and (min-height: 990px){
     .brandlab {
         margin-top: 800px;
@@ -241,29 +264,6 @@
                     width: 632px;
                     height: 632px;
                 }
-            }
-        }
-    }
-}
-@media (min-height: 1000px) and (max-width: 1500px){
-    .brandlab {
-        .brandlab-circle-center {
-            width: 706px;
-            height: 706px;
-        }
-        .brandlab-background {
-            width: 2500px;
-            height: 2500px;
-    
-            .brandlab-circle {
-                width: 1380px;
-                height: 1380px;
-                margin-bottom: 50vh;
-            }
-        }
-        .front{
-            .text{
-                margin-right: 50vw;
             }
         }
     }
