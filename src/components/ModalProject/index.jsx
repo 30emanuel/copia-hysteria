@@ -53,7 +53,7 @@ export const ModalProject = ({ index, showModal, projects }) => {
                             <h3 className='streamname'>{projects[indexCurrent].stream}</h3>
                         </div>
                         <div className="paragraph">
-                            <p>{projects[indexCurrent].sobre}</p>
+                            <p>{projects[indexCurrent].texto}</p>
                         </div>
                         <div className="credits">
                             <div className="credit">
