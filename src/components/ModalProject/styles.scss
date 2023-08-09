@@ -349,9 +349,15 @@
 
 @media(max-width: 1600px) {
     .modalproject {
+        h2{
+            font-size: 112px;
+        }
+        .project{
+            padding-top: 100px;
+        }
         .gallery {
             .video {
-                margin-top: -5%;
+                margin-top: 0vh;
                 width: 90%;
                 height: 90%;
             }
@@ -364,9 +370,6 @@
 }
 @media(max-width: 1399px){
     .modalproject{
-        h2{
-            font-size: 112px;
-        }
         .project{
             padding-top: 100px;
             .project-about{
@@ -377,22 +380,16 @@
             }
         }
         .gallery {
-            .video {
-                margin-top: -5%;
-            }
-
             .middle {
                 width: 90%;
             }
         }
     }
 }
-@media(max-width: 1399px){
+@media(max-width: 1199px){
     .modalproject{
-        .gallery {
-            .video {
-                margin-top: -2%;
-            }
+        h2{
+            font-size: 72px;
         }
     }
 }

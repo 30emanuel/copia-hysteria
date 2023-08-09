@@ -4,6 +4,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 0;
 
     .blur-collaborators {
         width: 1000px;
@@ -335,8 +336,11 @@
     }
 }
 
-@media(max-width: 1300px) {
+@media(max-width: 1300px) and (max-height: 790px) {
     .collaborators {
+        .text{
+            margin-top: 150px;
+        }
         .background {
             .collaborators-circle {
                 margin-top: -88vh;
@@ -355,6 +359,13 @@
                 width: 70px;
                 height: 80px;
             }
+        }
+    }
+}
+@media(max-width: 1300px) and (min-height: 800px) {
+    .collaborators {
+        .text{
+            margin-top: 300px;
         }
     }
 }

@@ -1,11 +1,11 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import './styles.scss'
 import { useSpring, animated } from 'react-spring'
 import Logo from '../../assets/logo-black.png'
 import { gsap } from 'gsap'
 
 
-export const Initial = () => {
+export const Initial = ({showScroll}) => {
     const [showFirstAnimation, setShowFirstAnimation] = useState(true)
     const [showSecondAnimation, setShowSecondAnimation] = useState(false)
     const [showRest, setShowRest] = useState(false)
@@ -14,6 +14,7 @@ export const Initial = () => {
     const circleCenter = useRef(null)
     const circleTop = useRef(null)
     const circleBottom = useRef(null)
+    const startRef = useRef(null)
 
     const playAllVideos = () => {
         const videos = document.querySelectorAll('video')
@@ -68,6 +69,7 @@ export const Initial = () => {
         translateX: showRest ? '0%' : '-50%',
         config: { duration: 200 },
         onRest: () => {
+            showScroll(true)
             setShowText(true)
             playAllVideos()
             gsap.to('.center-container', {
@@ -179,8 +181,13 @@ export const Initial = () => {
         config: { duration: 1200 },
     })
 
+    useEffect(()=>{
+        startRef.current.scrollIntoView({ behavior: 'smooth' })
+        showScroll(false)
+    },[])
+
     return (
-        <div className='start' id='home'>
+        <div className='start' id='home' ref={startRef}>
             {showFirstAnimation &&
                 <div className="animation">
                     <animated.img style={logoProps} src={Logo} alt="Logo" className="logo" />

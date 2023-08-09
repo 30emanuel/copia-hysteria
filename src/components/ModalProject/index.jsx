@@ -3,7 +3,7 @@ import LogoWhite from '../../assets/logo-white.png'
 import { useState, useRef } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
-export const ModalProject = ({ index, showModal, projects, setShowListProjects }) => {
+export const ModalProject = ({ index, showModal, projects }) => {
     const [indexCurrent, setIndexCurrent] = useState(index)
     const modalRef = useRef(null)
     const [videoIsPlay, setVideoIsPlay] = useState(false)
@@ -28,11 +28,6 @@ export const ModalProject = ({ index, showModal, projects, setShowListProjects }
         }
     }
 
-    const toggleModal = () => {
-        setShowListProjects(true)
-        showModal(false)
-    }
-
     return (
         <div className='modalproject' ref={modalRef}>
             <div className='modal-header'>
@@ -40,7 +35,7 @@ export const ModalProject = ({ index, showModal, projects, setShowListProjects }
                     <img src={LogoWhite} alt="logo" />
                 </div>
                 <div>
-                    <svg onClick={() => toggleModal()} xmlns="http://www.w3.org/2000/svg" width="23" height="21" viewBox="0 0 23 21" fill="none">
+                    <svg onClick={() => showModal(false)} xmlns="http://www.w3.org/2000/svg" width="23" height="21" viewBox="0 0 23 21" fill="none">
                         <path d="M2 2L20 19" stroke="white" stroke-width="3" stroke-linecap="round" />
                         <path d="M2 19L20 2" stroke="white" stroke-width="3" stroke-linecap="round" />
                     </svg>
