@@ -37,11 +37,11 @@ export const About = ({text}) => {
                     <div className="blur"></div>
                     <div className="about-text">
                         <div className="about-title">
-                            <h3>{text.tituloSecundario}</h3>
-                            <h2 className='titles'>{text.titulo}</h2>
+                            <h3>{text.titleSecondary}</h3>
+                            <h2 className='titles'>{text.title}</h2>
                         </div>
                         <div className="paragraph">
-                            <p className='paragraphs'>{text.texto}</p>
+                            <p className='paragraphs'>{text.text}</p>
                         </div>
                     </div>
                     <div className="footer">

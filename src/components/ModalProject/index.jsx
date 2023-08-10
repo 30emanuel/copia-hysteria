@@ -43,39 +43,39 @@ export const ModalProject = ({ index, showModal, projects }) => {
             </div>
             <div className='project'>
                 <div className="title">
-                    <h2>{projects[indexCurrent].nome}</h2>
+                    <h2>{projects[indexCurrent].name}</h2>
                 </div>
                 <div className="project-about">
                     <div className="text">
                         <div className='stream'>
-                            <h3 className='type'>{projects[indexCurrent].tipo}</h3>
+                            <h3 className='type'>{projects[indexCurrent].typeProject}</h3>
                             <div className='line'></div>
                             <h3 className='streamname'>{projects[indexCurrent].stream}</h3>
                         </div>
                         <div className="paragraph">
-                            <p>{projects[indexCurrent].texto}</p>
+                            <p>{projects[indexCurrent].text}</p>
                         </div>
                         <div className="credits">
                             <div className="credit">
                                 <p>Criado por</p>
-                                <p className='name'>{projects[indexCurrent].criadoPor}</p>
+                                <p className='name'>{projects[indexCurrent].createdby}</p>
                             </div>
                             <div className="credit">
                                 <p>Direção</p>
-                                <p className='name'>{projects[indexCurrent].direcao}</p>
+                                <p className='name'>{projects[indexCurrent].direction}</p>
                             </div>
                             <div className="credit">
                                 <p>Apoio</p>
-                                <p className='name'>{projects[indexCurrent].apoio}</p>
+                                <p className='name'>{projects[indexCurrent].support}</p>
                             </div>
                             <div className="credit">
                                 <p>Realização</p>
-                                <p className='name'>{projects[indexCurrent].realizacao}</p>
+                                <p className='name'>{projects[indexCurrent].realization}</p>
                             </div>
                         </div>
                     </div>
                     <div className="image">
-                        <img src={projects[indexCurrent].imagemPrincipal.url} alt={projects[indexCurrent].name} />
+                        <img src={projects[indexCurrent].imageMain.url} alt={projects[indexCurrent].name} />
                     </div>
                 </div>
             </div>
@@ -92,15 +92,15 @@ export const ModalProject = ({ index, showModal, projects }) => {
                     }
                 </div>
                 <div className="images">
-                    <img src={projects[indexCurrent].imagem1.url} alt="" />
-                    <img src={projects[indexCurrent].imagem2.url} alt="" />
+                    <img src={projects[indexCurrent].image1.url} alt="" />
+                    <img src={projects[indexCurrent].image2.url} alt="" />
                 </div>
                 <div className="middle">
-                    <img src={projects[indexCurrent].imagemMeio.url} alt="" />
+                    <img src={projects[indexCurrent].imageMiddle.url} alt="" />
                 </div>
                 <div className="images">
-                    <img src={projects[indexCurrent].imagem3.url} alt="" />
-                    <img src={projects[indexCurrent].imagem4.url} alt="" />
+                    <img src={projects[indexCurrent].image3.url} alt="" />
+                    <img src={projects[indexCurrent].image4.url} alt="" />
                 </div>
             </div>
             <div className='footer'>
@@ -139,11 +139,11 @@ export const ModalProject = ({ index, showModal, projects }) => {
                         if (indexProject !== indexCurrent) {
                             return (
                                 <SwiperSlide className='outher-project' key={indexProject} onClick={() => changeProject(indexProject)}>
-                                    <img src={project.imagemPrincipal.url} alt={project.nome} />
+                                    <img src={project.imageMain.url} alt={project.name} />
                                     <div className="info">
-                                        <h3>{project.nome}</h3>
+                                        <h3>{project.name}</h3>
                                         <div className='text'>
-                                            <p>{project.tipo}</p>
+                                            <p>{project.typeProject}</p>
                                             <p className='line'></p>
                                             <p className='stream'>{project.stream}</p>
                                         </div>

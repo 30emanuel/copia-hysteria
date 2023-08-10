@@ -214,9 +214,9 @@ export const Initial = ({showScroll, data}) => {
                         </animated.div>
                     </div>
                     <div className='text'>
-                        <animated.h2 style={fadeDownOne}>{data.textoCima}</animated.h2>
-                        <animated.h1 style={fadeDownTwo}>{data.textoCentro}</animated.h1>
-                        <animated.h2 style={fadeDownThird}>{data.textoBaixo}</animated.h2>
+                        <animated.h2 style={fadeDownOne}>{data.textUp}</animated.h2>
+                        <animated.h1 style={fadeDownTwo}>{data.textMiddle}</animated.h1>
+                        <animated.h2 style={fadeDownThird}>{data.textLow}</animated.h2>
                     </div>
                     <div className="circle-top" ref={circleTop}></div>
                     <div className="circle-bottom" ref={circleBottom}></div>

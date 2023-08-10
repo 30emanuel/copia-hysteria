@@ -3,7 +3,7 @@ import './styles.scss'
 import { gsap } from 'gsap'
 import { useSpring, animated } from 'react-spring'
 
-export const Brandlab = ({ showScroll }) => {
+export const Brandlab = ({ showScroll, text }) => {
     const [showText, setShowText] = useState(false)
     const [showBackground, setShowBackground] = useState(false)
     const elementRef = useRef(null)
@@ -71,19 +71,21 @@ export const Brandlab = ({ showScroll }) => {
                             setShowText(true)
                         }
                     })
-                    gsap.to('.brandlab-circle-center', {
-                        border: '1px solid red',
-                        marginTop: '-100vh',
-                        marginLeft: '70vw',
-                        width: `calc(${circleRef.current.offsetWidth}px + 192px)`,
-                        height: `calc(${circleRef.current.offsetHeight}px + 192px)`,
-                        scrollTrigger: {
-                            trigger: '.brandlab',
-                            start: "top center",
-                            end: "top center",
-                            once: true
-                        },
-                    })
+                    if(circleRef.current){
+                        gsap.to('.brandlab-circle-center', {
+                            border: '1px solid red',
+                            marginTop: '-100vh',
+                            marginLeft: '70vw',
+                            width: `calc(${circleRef.current.offsetWidth}px + 192px)`,
+                            height: `calc(${circleRef.current.offsetHeight}px + 192px)`,
+                            scrollTrigger: {
+                                trigger: '.brandlab',
+                                start: "top center",
+                                end: "top center",
+                                once: true
+                            },
+                        })
+                    }
                     clearTimeout(timeoutId)
                 }, delay)
                 const timeScroll = setTimeout(() => {
@@ -102,8 +104,8 @@ export const Brandlab = ({ showScroll }) => {
                 <div className="front">
                     <div className="texts">
                         <animated.h2 style={title} className='titles'>brandlab</animated.h2>
-                        <animated.p style={texts} className='paragraphs'>Queremos que a sua marca conte histórias originais e corajosas com a Hysteria. A estratégia de parceria é sempre customizada: já prestamos consultoria, fizemos pesquisas, criamos roteiros e produzimos conteúdo para os mais diversos formatos e escalas. </animated.p>
-                        <animated.h3 style={texts}>Gostamos mesmo é de provocar impacto na narrativa e aumentar a conexão das conversas com seu público.</animated.h3>
+                        <animated.p style={texts} className='paragraphs'>{text.text}</animated.p>
+                        <animated.h3 style={texts}>{text.textSecondary}</animated.h3>
                     </div>
                     <animated.div style={moveup} className="brandlab-video">
                         <div className="video-circle"></div>

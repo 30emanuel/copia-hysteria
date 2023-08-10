@@ -1,60 +1,60 @@
 export const HOME_QUERY = `
 {
-  inicio{
+  initial{
     videoUrl,
-    textoCima,
-    textoCentro,
-    textoBaixo
+    textUp,
+    textMiddle,
+    textLow
   },
-  sobre {
-    texto,
-    tituloSecundario,
-    titulo
+  about {
+    text,
+    titleSecondary,
+    title
   },
-  allProjetos {
-    nome,
-    tipo,
+  allProjects {
+    name,
+    typeProject,
     stream,
-    imagemPrincipal {
+    imageMain {
       url
     },
-    texto,
-    criadoPor,
-    realizacao,
-    apoio,
-    direcao,
+    text,
+    createdby,
+    realization,
+    support,
+    direction,
     videourl,
-    imagem1 {
+    image1 {
       url
     },
-    imagem2 {
+    image2 {
       url
     },
-    imagemMeio {
+    imageMiddle {
       url
     },
-    imagem3 {
+    image3 {
       url
     },
-    imagem4 {
+    image4 {
       url
     }
   },
   brandlab{
-    texto,
-    textoSecundario,
+    text,
+    textSecondary,
     videoUrl
   }
-  allColaboradores{
-    nome,
-    funcao
+  allCollaborators{
+    name,
+    function
   }
-  colaboradoresTexto{
-    texto
+  collaboratorsText{
+    text
   }
-  contato{
+  contact{
   	email,
     youtubeLink,
     instagramLink
   }
-}`;
+}`

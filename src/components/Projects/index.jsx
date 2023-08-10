@@ -67,14 +67,14 @@ export const Projects = ({ showScroll, projects }) => {
                                     onClick={() => toggleModal(index)} className='slide-item' style={{ zIndex: `${slideHoverIndex === index ? '20' : projectIndex[index]}` }}
                                     onMouseEnter={() => setSlideHoverIndex(index)} onMouseLeave={() => setSlideHoverIndex(0)}>
                                     <div className="image">
-                                        <img src={slide.imagemPrincipal.url} alt={slide.nome} />
+                                        <img src={slide.imageMain.url} alt={slide.name} />
                                     </div>
                                     <div className="info">
                                         <div className="name">
-                                            <h3>{slide.nome}</h3>
+                                            <h3>{slide.name}</h3>
                                         </div>
                                         <div className="subtitle">
-                                            <h4>{slide.tipo}</h4>
+                                            <h4>{slide.typeProject}</h4>
                                             <div className='line'></div>
                                             <h4 className='stream'>{slide.stream}</h4>
                                         </div>

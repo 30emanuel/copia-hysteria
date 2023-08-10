@@ -100,7 +100,7 @@ export const Collaborators = ({ showScroll, text, collaborators }) => {
             <div className="blur-collaborators"></div>
             <div className="text">
                 <h2 className='titles'>colaboradoras</h2>
-                <p className='paragraphs'>{text.texto}</p>
+                <p className='paragraphs'>{text.text}</p>
                 <div className='button' onClick={toggleModal}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="164" height="68" viewBox="0 0 164 68" fill="none">
                         <g clip-path="url(#clip0_493_446)">
@@ -143,8 +143,8 @@ export const Collaborators = ({ showScroll, text, collaborators }) => {
                 <div className='names'>
                     {collaborators.map((collaborator) => (
                         <div className='collaborator'>
-                            <p className='function'>{collaborator.funcao}</p>
-                            <p className='name'>{collaborator.nome}</p>
+                            <p className='function'>{collaborator.function}</p>
+                            <p className='name'>{collaborator.name}</p>
                         </div>
                     ))}
                 </div>

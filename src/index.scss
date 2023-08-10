@@ -53,6 +53,7 @@ table {
   :root{
 	--color-text-primary: white;
 	--color-text-secondary: #1F1F1F;
+	--color-loading: #1F1F1F;
 	--color-blur: #E95858;
 	--bg-color-primary: #E52D43;
 	--bg-color-secondary: #242424;
@@ -65,6 +66,7 @@ table {
 html{
 	font-family: var(--font-primary);
 	scroll-behavior: smooth;
+	
 }
 body{
 	overflow-x: hidden;
