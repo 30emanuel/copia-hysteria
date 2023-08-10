@@ -412,6 +412,28 @@
         .background {
             .collaborators-circle {
                 margin-top: -80vh;
+                width: 1050px;
+                height: 1050px;
+                .collaborators-circle-center {
+                    width: 600px;
+                    height: 600px;
+                    margin-top: -50vh;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 1300px) and (min-height: 900px){
+    .collaborators {
+        .text{
+            margin-top: 200px;
+            h2{
+                font-size: 184px;
+            }
+        }
+        .background {
+            .collaborators-circle {
+                margin-top: -60vh;
 
                 .collaborators-circle-center {
                     width: 600px;
@@ -419,6 +441,9 @@
                     margin-top: -50vh;
                 }
             }
+        }
+        .circle-collaborators {
+            margin-top: 500px;
         }
     }
 }
