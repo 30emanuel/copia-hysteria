@@ -14,10 +14,11 @@ import SyncLoader from "react-spinners/SyncLoader"
 import Swal from 'sweetalert2'
 
 export const Home = () => {
-  const [windowSize, setWindowSize] = useState({
+  const windowSize ={
     width: window.innerWidth,
     height: window.innerHeight,
-  })
+  }
+
   const { loading, error, data } = useQuery(HOME_QUERY)
 
   if (error) {
@@ -51,7 +52,7 @@ export const Home = () => {
       }
     }
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener('resize', handleResize)
 
     return () => {
       window.removeEventListener('resize', handleResize)

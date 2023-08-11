@@ -28,7 +28,6 @@ export const Brandlab = ({ showScroll, text }) => {
     })
 
     const scrollToBackground = () => {
-        showScroll(false)
         elementRef.current.scrollIntoView({ behavior: 'smooth' })
     }
 
@@ -43,10 +42,11 @@ export const Brandlab = ({ showScroll, text }) => {
         gsap.to('.brandlab', {
             onStart: () => {
                 setShowBackground(true)
-                scrollToBackground()
+                showScroll(false)
                 const timeoutId = setTimeout(() => {
+                    scrollToBackground()
                     clearTimeout(timeoutId)
-                }, 500)
+                }, 100)
             },
             scrollTrigger: {
                 trigger: '.projects',
@@ -71,7 +71,7 @@ export const Brandlab = ({ showScroll, text }) => {
                             setShowText(true)
                         }
                     })
-                    if(circleRef.current){
+                    if (circleRef.current) {
                         gsap.to('.brandlab-circle-center', {
                             border: '1px solid red',
                             marginTop: '-100vh',
@@ -114,11 +114,13 @@ export const Brandlab = ({ showScroll, text }) => {
                 </div>
             }
             {showBackground &&
-                <><div className='brandlab-background'>
-                    <div className="brandlab-circle">
+                <>
+                    <div className='brandlab-background'>
+                        <div className="brandlab-circle">
+                        </div>
                     </div>
-                </div>
-                    <div className="brandlab-circle-center" ref={circleRef}></div></>
+                    <div className="brandlab-circle-center" ref={circleRef}></div>
+                </>
             }
         </div>
     )

@@ -9,9 +9,10 @@ export const About = ({text}) => {
         gsap.to('.blur', {
             scrollTrigger: {
                 trigger: '.about',
-                start: "top top",
-                end: 'top top',
+                start: "top 200px",
+                end: 'top 200px',
                 scrub: 0.5,
+
             },
             onStart: ()=>{
                 setShowText(true)
