@@ -27,10 +27,11 @@ export const Brandlab = ({ showScroll, text }) => {
         config: { duration: 700 },
     })
 
-    const scrollToBackground = () => {
+    const scrollToBackground = async () => {
         var link = document.createElement("a")
         link.href = '#brandlab'
-        link.click()
+        await link.click()
+        showScroll(false)
     }
 
     const playVideo = () => {
@@ -45,10 +46,6 @@ export const Brandlab = ({ showScroll, text }) => {
             onStart: () => {
                 setShowBackground(true)
                 scrollToBackground()
-                const timeoutId = setTimeout(() => {
-                    showScroll(false)
-                    clearTimeout(timeoutId)
-                }, 200)
             },
             scrollTrigger: {
                 trigger: '.projects',
