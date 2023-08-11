@@ -48,7 +48,7 @@ export const Brandlab = ({ showScroll, text }) => {
                 const timeoutId = setTimeout(() => {
                     showScroll(false)
                     clearTimeout(timeoutId)
-                }, 100)
+                }, 200)
             },
             scrollTrigger: {
                 trigger: '.projects',
