@@ -44,9 +44,9 @@ export const Brandlab = ({ showScroll, text }) => {
         gsap.to('.brandlab', {
             onStart: () => {
                 setShowBackground(true)
-                showScroll(false)
+                scrollToBackground()
                 const timeoutId = setTimeout(() => {
-                    scrollToBackground()
+                    showScroll(false)
                     clearTimeout(timeoutId)
                 }, 100)
             },
