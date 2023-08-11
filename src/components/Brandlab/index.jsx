@@ -28,7 +28,9 @@ export const Brandlab = ({ showScroll, text }) => {
     })
 
     const scrollToBackground = () => {
-        elementRef.current.scrollIntoView({ behavior: 'smooth' })
+        var link = document.createElement("a")
+        link.href = '#brandlab'
+        link.click()
     }
 
     const playVideo = () => {
