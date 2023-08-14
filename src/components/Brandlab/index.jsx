@@ -27,11 +27,8 @@ export const Brandlab = ({ showScroll, text }) => {
         config: { duration: 700 },
     })
 
-    const scrollToBackground = async () => {
-        var link = document.createElement("a")
-        link.href = '#brandlab'
-        await link.click()
-        showScroll(false)
+    const scrollToBackground = () => {
+        elementRef.current.scrollIntoView({ behavior: 'smooth' })
     }
 
     const playVideo = () => {
@@ -45,7 +42,11 @@ export const Brandlab = ({ showScroll, text }) => {
         gsap.to('.brandlab', {
             onStart: () => {
                 setShowBackground(true)
-                scrollToBackground()
+                showScroll(false)
+                const timeoutId = setTimeout(() => {
+                    scrollToBackground()
+                    clearTimeout(timeoutId)
+                }, 100)
             },
             scrollTrigger: {
                 trigger: '.projects',
