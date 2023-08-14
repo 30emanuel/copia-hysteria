@@ -61,15 +61,15 @@ export const Brandlab = ({ showScroll, text }) => {
                 once: true,
                 scrub: 0.5,
             },
+            onStart: () =>{
+                scrollToBackground()
+                showScroll(false)
+            },
             onComplete: () => {
                 const delay = 2000
                 const timeoutId = setTimeout(() => {
                     gsap.to('.brandlab-circle', {
                         backgroundColor: 'var(--bg-color-third)',
-                        onStart: () =>{
-                            scrollToBackground()
-                            showScroll(false)
-                        },
                         onComplete: () => {
                             setShowText(true)
                         }
