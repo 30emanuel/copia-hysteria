@@ -55,9 +55,9 @@ export const Brandlab = ({ showScroll, text }) => {
         })
         gsap.to('.brandlab-circle-center', {
             scrollTrigger: {
-                trigger: '.brandlab',
-                start: "top center",
-                end: "top center",
+                trigger: '.projects',
+                start: "bottom top",
+                end: "bottom top",
                 once: true,
                 scrub: 0.5,
             },
