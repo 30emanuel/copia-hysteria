@@ -47,6 +47,10 @@ export const Brandlab = ({ showScroll, text }) => {
                 setShowBackground(true)
                 scrollToBackground()
             },
+            onComplete: () => {
+                scrollToBackground()
+                setShowText(true)
+            },
             scrollTrigger: {
                 trigger: '.projects',
                 start: "bottom top",
