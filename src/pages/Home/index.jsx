@@ -14,10 +14,11 @@ import SyncLoader from "react-spinners/SyncLoader"
 import Swal from 'sweetalert2'
 
 export const Home = () => {
-  const windowSize ={
+  const windowSize = {
     width: window.innerWidth,
     height: window.innerHeight,
   }
+  const [showSecondPart, setShowSecondPart] = useState(false)
 
   const { loading, error, data } = useQuery(HOME_QUERY)
 
@@ -62,7 +63,7 @@ export const Home = () => {
 
   return (
     <div className="home" >
-      {loading  &&
+      {loading &&
         <div className='loading'>
           <img src={Logo} alt="Logo" />
           <SyncLoader className='spinner' color={'var(--color-loading)'} />
@@ -71,12 +72,16 @@ export const Home = () => {
       {!loading && !error &&
         <>
           <Header />
-          <Initial showScroll={showScroll} data={data.initial}/>
+          <Initial showScroll={showScroll} data={data.initial} setShowSecondPart={setShowSecondPart}/>
           <About text={data.about} />
           <Projects showScroll={showScroll} projects={data.allProjects} />
-          <Brandlab showScroll={showScroll} text={data.brandlab} />
-          <Collaborators showScroll={showScroll} text={data.collaboratorsText} collaborators={data.allCollaborators} />
-          <Contact contact={data.contact} />
+          {showSecondPart &&
+            <>
+              <Brandlab showScroll={showScroll} text={data.brandlab} />
+              <Collaborators showScroll={showScroll} text={data.collaboratorsText} collaborators={data.allCollaborators} />
+              <Contact contact={data.contact} />
+            </>
+          }
         </>
       }
     </div>

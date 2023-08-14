@@ -5,7 +5,7 @@ import Logo from '../../assets/logo-black.png'
 import { gsap } from 'gsap'
 
 
-export const Initial = ({showScroll, data}) => {
+export const Initial = ({showScroll, data, setShowSecondPart}) => {
     const [showFirstAnimation, setShowFirstAnimation] = useState(true)
     const [showSecondAnimation, setShowSecondAnimation] = useState(false)
     const [showRest, setShowRest] = useState(false)
@@ -68,6 +68,7 @@ export const Initial = ({showScroll, data}) => {
         translateX: showRest ? '0%' : '-50%',
         config: { duration: 200 },
         onRest: () => {
+            setShowSecondPart(true)
             showScroll(true)
             setShowText(true)
             playAllVideos()

@@ -3,7 +3,7 @@ import './styles.scss'
 import { gsap } from 'gsap'
 import { useSpring, animated } from 'react-spring'
 
-export const Brandlab = ({ showScroll, text, }) => {
+export const Brandlab = ({ showScroll, text}) => {
     const [showText, setShowText] = useState(false)
     const [showBackground, setShowBackground] = useState(false)
     const elementRef = useRef(null)
