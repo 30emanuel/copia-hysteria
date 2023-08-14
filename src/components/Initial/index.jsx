@@ -14,7 +14,6 @@ export const Initial = ({showScroll, data}) => {
     const circleCenter = useRef(null)
     const circleTop = useRef(null)
     const circleBottom = useRef(null)
-    const startRef = useRef(null)
 
     const playAllVideos = () => {
         const videos = document.querySelectorAll('video')
@@ -182,12 +181,11 @@ export const Initial = ({showScroll, data}) => {
     })
 
     useEffect(()=>{
-        startRef.current.scrollIntoView()
         showScroll(false)
     },[])
 
     return (
-        <div className='start' id='home' ref={startRef}>
+        <div className='start' id='home'>
             {showFirstAnimation &&
                 <div className="animation">
                     <animated.img style={logoProps} src={Logo} alt="Logo" className="logo" />
