@@ -29,6 +29,9 @@ export const Brandlab = ({ showScroll, text }) => {
 
     const scrollToBackground = () => {
         elementRef.current.scrollIntoView({ behavior: 'smooth' })
+        elementRef.current.scrollIntoView({ behavior: 'smooth' })
+        elementRef.current.scrollIntoView({ behavior: 'smooth' })
+        elementRef.current.scrollIntoView({ behavior: 'smooth' })
     }
 
     const playVideo = () => {
