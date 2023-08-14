@@ -141,12 +141,16 @@ export const Collaborators = ({ showScroll, text, collaborators }) => {
                     </svg>
                 </div>
                 <div className='names'>
-                    {collaborators.map((collaborator) => (
-                        <div className='collaborator'>
-                            <p className='function'>{collaborator.function}</p>
-                            <p className='name'>{collaborator.name}</p>
-                        </div>
-                    ))}
+                    <div className="function">
+                        {collaborators.map((collaborator) => (
+                            <p>{collaborator.function}</p>
+                        ))}
+                    </div>
+                    <div className="name">
+                        {collaborators.map((collaborator) => (
+                            <p>{collaborator.name}</p>
+                        ))}
+                    </div>
                 </div>
             </div>
         </div>
