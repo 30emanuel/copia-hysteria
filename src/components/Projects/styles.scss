@@ -17,6 +17,7 @@
         margin-right: 40%;
         transition: 0.5s;
         pointer-events: none;
+        z-index: 4;
         &.hover{
             font-size: 100px;
             margin-right: 78%;
