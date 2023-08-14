@@ -71,6 +71,7 @@ export const Brandlab = ({ showScroll, text }) => {
                     gsap.to('.brandlab-circle', {
                         backgroundColor: 'var(--bg-color-third)',
                         onComplete: () => {
+                            scrollToBackground()
                             setShowText(true)
                         }
                     })
