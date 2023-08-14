@@ -2,7 +2,7 @@ import { Header } from '../../components/Header'
 import { Initial } from '../../components/Initial'
 import { Projects } from '../../components/Projects'
 import './styles.scss'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { Brandlab } from '../../components/Brandlab'
 import { Collaborators } from '../../components/Collaborators'
 import { About } from '../../components/About'
@@ -18,6 +18,7 @@ export const Home = () => {
     width: window.innerWidth,
     height: window.innerHeight,
   }
+  const refHome = useRef(null)
 
   //const { loading, error, data } = useQuery(HOME_QUERY)
   const loading = false
@@ -183,8 +184,9 @@ export const Home = () => {
   }
 
   useEffect(() => {
+    refHome.current.scrollTop = 0
     const handleResize = () => {
-      const newWidth = window.innerWidth;
+      const newWidth = window.innerWidth
       const newHeight = window.innerHeight
 
       if (newWidth !== windowSize.width || newHeight !== windowSize.height) {
@@ -200,7 +202,7 @@ export const Home = () => {
   }, [])
 
   return (
-    <div className="home">
+    <div className="home" ref={refHome}>
       {loading  &&
         <div className='loading'>
           <img src={Logo} alt="Logo" />
