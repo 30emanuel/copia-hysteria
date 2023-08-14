@@ -182,7 +182,7 @@ export const Initial = ({showScroll, data}) => {
     })
 
     useEffect(()=>{
-        startRef.current.scrollIntoView({ behavior: 'smooth' })
+        startRef.current.scrollIntoView()
         showScroll(false)
     },[])
 
