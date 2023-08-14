@@ -2,7 +2,7 @@ import { Header } from '../../components/Header'
 import { Initial } from '../../components/Initial'
 import { Projects } from '../../components/Projects'
 import './styles.scss'
-import { useEffect, useState, } from 'react'
+import { useEffect, useRef, useState, } from 'react'
 import { Brandlab } from '../../components/Brandlab'
 import { Collaborators } from '../../components/Collaborators'
 import { About } from '../../components/About'
@@ -18,6 +18,7 @@ export const Home = () => {
     width: window.innerWidth,
     height: window.innerHeight,
   }
+  const homeRef = useRef(null)
 
   //const { loading, error, data } = useQuery(HOME_QUERY)
   const loading = false
@@ -183,6 +184,7 @@ export const Home = () => {
   }
 
   useEffect(() => {
+    homeRef.current.scrollTop = 0
     const handleResize = () => {
       const newWidth = window.innerWidth
       const newHeight = window.innerHeight
@@ -200,7 +202,7 @@ export const Home = () => {
   }, [])
 
   return (
-    <div className="home">
+    <div className="home" ref={homeRef}>
       {loading  &&
         <div className='loading'>
           <img src={Logo} alt="Logo" />
@@ -213,7 +215,7 @@ export const Home = () => {
           <Initial showScroll={showScroll} data={data.initial} />
           <About text={data.about} />
           <Projects showScroll={showScroll} projects={data.allProjects} />
-          <Brandlab showScroll={showScroll} text={data.brandlab} />
+          <Brandlab showScroll={showScroll} text={data.brandlab}/>
           <Collaborators showScroll={showScroll} text={data.collaboratorsText} collaborators={data.allCollaborators} />
           <Contact contact={data.contact} />
         </>
