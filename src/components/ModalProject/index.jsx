@@ -81,15 +81,11 @@ export const ModalProject = ({ index, showModal, projects }) => {
             </div>
             <div className="gallery">
                 <div className="video">
-                    <video onClick={toggleVideo} src={projects[indexCurrent].videourl} className='video-project'>
-                    </video>
-                    {!videoIsPlay &&
-                        <div className='button-video' onClick={toggleVideo}>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none">
-                                <path d="M20 15V35L35 25L20 15Z" fill="white" />
-                            </svg>
-                        </div>
-                    }
+                    <iframe
+                        width="100%"
+                        height="100%"
+                        src={`https://www.youtube.com/embed/trpXg33QHUM?autoplay=0&controls=0&showinfo=0&rel=0&modestbranding=1&fs=0`}
+                    />
                 </div>
                 <div className="images">
                     <img src={projects[indexCurrent].image1.url} alt="" />
