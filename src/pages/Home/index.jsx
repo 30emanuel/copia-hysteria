@@ -54,7 +54,7 @@ export const Home = () => {
       }
     }
 
-    window.addEventListener('resize', handleResize)
+   window.addEventListener('resize', handleResize)
 
     return () => {
       window.removeEventListener('resize', handleResize)

@@ -32,13 +32,18 @@
         flex-direction: column;
 
         .button {
+            animation: moveUp 0.8s;
             svg{
                 cursor: pointer;
             }
         }
+        .titles{
+            animation: moveDown 0.8s;
+        }
 
         p {
             max-width: 725px;
+            animation: moveUp 0.8s;
         }
     }
 
@@ -195,6 +200,16 @@
                 text-align: right;
             }
         }
+    }
+}
+
+@keyframes moveDown {
+    from {
+        transform: translateY(-10vh);
+    }
+
+    to {
+        transform: translateY(0vh);
     }
 }
 
