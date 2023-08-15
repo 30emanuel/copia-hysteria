@@ -6,25 +6,12 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 export const ModalProject = ({ index, showModal, projects }) => {
     const [indexCurrent, setIndexCurrent] = useState(index)
     const modalRef = useRef(null)
-    const [videoIsPlay, setVideoIsPlay] = useState(false)
+    const videoId = projects[index].videourl.split('v=')[1]
 
     const changeProject = (index) => {
         setIndexCurrent(index)
-        const video = document.querySelector('.video-project')
-        video.pause()
-        setVideoIsPlay(false)
         if (modalRef.current) {
             modalRef.current.scrollTop = 0
-        }
-    }
-
-    const toggleVideo = () => {
-        const video = document.querySelector('.video-project')
-        setVideoIsPlay((prev) => !prev)
-        if (videoIsPlay) {
-            video.pause()
-        } else {
-            video.play()
         }
     }
 
@@ -82,10 +69,11 @@ export const ModalProject = ({ index, showModal, projects }) => {
             <div className="gallery">
                 <div className="video">
                     <iframe
-                        width="100%"
-                        height="100%"
-                        src={`https://www.youtube.com/embed/trpXg33QHUM?autoplay=0&controls=0&showinfo=0&rel=0&modestbranding=1&fs=0`}
-                    />
+                        className='video-gallery'
+                        src={`https://www.youtube.com/embed/${videoId}`}
+                        frameBorder="0"
+                        allowFullScreen
+                    ></iframe>
                 </div>
                 <div className="images">
                     <img src={projects[indexCurrent].image1.url} alt="" />

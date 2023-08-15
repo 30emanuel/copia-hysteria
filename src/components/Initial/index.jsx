@@ -5,7 +5,7 @@ import Logo from '../../assets/logo-black.png'
 import { gsap } from 'gsap'
 
 
-export const Initial = ({ showScroll, data, setShowSecondPart }) => {
+export const Initial = ({showScroll, data, setShowSecondPart}) => {
     const [showFirstAnimation, setShowFirstAnimation] = useState(true)
     const [showSecondAnimation, setShowSecondAnimation] = useState(false)
     const [showRest, setShowRest] = useState(false)
@@ -16,10 +16,10 @@ export const Initial = ({ showScroll, data, setShowSecondPart }) => {
     const circleBottom = useRef(null)
 
     const playAllVideos = () => {
-        //const videos = document.querySelectorAll('video')
-        //videos.forEach((video) => {
-        //video.play()
-        //})
+        const videos = document.querySelectorAll('video')
+        videos.forEach((video) => {
+            video.play()
+        })
     }
 
     const ballProps = useSpring({
@@ -80,7 +80,7 @@ export const Initial = ({ showScroll, data, setShowSecondPart }) => {
                     start: "bottom bottom",
                     scrub: 0.5,
                 },
-                onComplete: () => {
+                onComplete: ()=>{
                     gsap.to('.center-container', {
                         y: '93vh',
                         scrollTrigger: {
@@ -181,9 +181,9 @@ export const Initial = ({ showScroll, data, setShowSecondPart }) => {
         config: { duration: 1200 },
     })
 
-    useEffect(() => {
+    useEffect(()=>{
         showScroll(false)
-    }, [])
+    },[])
 
     return (
         <div className='start' id='home'>
@@ -197,15 +197,7 @@ export const Initial = ({ showScroll, data, setShowSecondPart }) => {
                 <animated.div style={moveUp} className='center-container'>
                     <animated.div className='center' style={ballGrow}>
                         <div className="circle" ref={circleCenter}>
-                            <iframe
-                                className='video'
-                                title="YouTube Video"
-                                width="560"
-                                height="315"
-                                src={`https://www.youtube.com/embed/8BLQlU-bQDw?autoplay=1&muted=1`}
-                                frameBorder="0"
-                                allowFullScreen
-                            ></iframe>
+                            <video playsInline muted loop src='https://uxdir.com/files/videos/hysteria-—home.webm' className='video'></video>
                         </div>
                     </animated.div>
                 </animated.div>
@@ -214,26 +206,10 @@ export const Initial = ({ showScroll, data, setShowSecondPart }) => {
                 <>
                     <div className='background'>
                         <animated.div style={leftSlide} className="video-left">
-                            <iframe
-                                className='video'
-                                title="YouTube Video"
-                                width="560"
-                                height="315"
-                                src={`https://www.youtube.com/embed/8BLQlU-bQDw?autoplay=1&muted=1`}
-                                frameBorder="0"
-                                allowFullScreen
-                            ></iframe>
+                            <video muted loop src='https://uxdir.com/files/videos/hysteria-—home.webm' className='video'></video>
                         </animated.div>
                         <animated.div style={rightSlide} className="video-right">
-                            <iframe
-                                className='video'
-                                title="YouTube Video"
-                                width="560"
-                                height="315"
-                                src={`https://www.youtube.com/embed/8BLQlU-bQDw?autoplay=1&muted=1`}
-                                frameBorder="0"
-                                allowFullScreen
-                            ></iframe>
+                            <video muted loop src='https://uxdir.com/files/videos/hysteria-—home.webm' className='video'></video>
                         </animated.div>
                     </div>
                     <div className='text'>
