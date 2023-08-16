@@ -21,7 +21,7 @@ export const Home = () => {
   const [showSecondPart, setShowSecondPart] = useState(false)
 
   const { loading, error, data } = useQuery(HOME_QUERY)
-
+  
   if (error) {
     Swal.fire({
       icon: 'error',
