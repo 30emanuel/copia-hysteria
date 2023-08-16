@@ -4,7 +4,10 @@ export const HOME_QUERY = `
     videoUrl,
     textUp,
     textMiddle,
-    textLow
+    textLow,
+    teste{
+    url
+  }
   },
   about {
     text,
@@ -50,7 +53,19 @@ export const HOME_QUERY = `
     function
   }
   collaboratorsText{
-    text
+    text,
+    imageTop{
+      url
+    },
+    imageLeft{
+      url
+    },
+    imageRight{
+      url
+    },
+    imageLow{
+      url
+    }
   }
   contact{
   	email,

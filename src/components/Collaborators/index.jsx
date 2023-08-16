@@ -11,13 +11,6 @@ export const Collaborators = ({ showScroll, text, collaborators }) => {
         setModalOpen(!modalOpen)
     }
 
-    const circlesImages = {
-        top: 'https://hysteria.uxdir.com/wp-content/uploads/2023/03/DESNUDE-03.jpg',
-        left: 'https://hysteria.uxdir.com/wp-content/uploads/2023/03/ABRE-ALAS-01.jpg',
-        right: 'https://hysteria.uxdir.com/wp-content/uploads/2023/03/DVFMS-02.jpg',
-        low: 'https://hysteria.uxdir.com/wp-content/uploads/2023/03/DESNUDE-03.jpg'
-    }
-
     useEffect(() => {
         gsap.to('.background', {
             y: '0%',
@@ -127,16 +120,16 @@ export const Collaborators = ({ showScroll, text, collaborators }) => {
             </div>
             <div className="circle-collaborators">
                 <div className="collaborator-top"
-                    style={{ backgroundImage: `url(${circlesImages.top})`, backgroundColor: 'lightgray', backgroundPosition: '50%', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}
+                    style={{ backgroundImage: `url(${text.imageTop.url})`, backgroundColor: 'lightgray', backgroundPosition: '50%', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}
                 ></div>
                 <div className="collaboator-left"
-                    style={{ backgroundImage: `url(${circlesImages.left})`, backgroundColor: 'lightgray', backgroundPosition: '50%', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}
+                    style={{ backgroundImage: `url(${text.imageLeft.url})`, backgroundColor: 'lightgray', backgroundPosition: '50%', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}
                 ></div>
                 <div className="collaboator-right"
-                    style={{ backgroundImage: `url(${circlesImages.right})`, backgroundColor: 'lightgray', backgroundPosition: '50%', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}
+                    style={{ backgroundImage: `url(${text.imageRight.url})`, backgroundColor: 'lightgray', backgroundPosition: '50%', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}
                 ></div>
                 <div className="collaboator-low"
-                    style={{ backgroundImage: `url(${circlesImages.low})`, backgroundColor: 'lightgray', backgroundPosition: '50%', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}
+                    style={{ backgroundImage: `url(${text.imageLow.url})`, backgroundColor: 'lightgray', backgroundPosition: '50%', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}
                 ></div>
             </div>
             <div className={`modal-collaborators ${modalOpen ? 'active' : ''}`}>

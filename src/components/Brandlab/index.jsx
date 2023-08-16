@@ -119,7 +119,7 @@ export const Brandlab = ({ showScroll, text}) => {
                     </div>
                     <animated.div style={moveup} className="brandlab-video">
                         <div className="video-circle"></div>
-                        <video className='video-brandlab' muted loop src='https://uxdir.com/files/videos/hysteria-—home.webm'></video>
+                        <video className='video-brandlab' muted loop src={text.videoUrl}></video>
                     </animated.div>
                 </div>
             }
