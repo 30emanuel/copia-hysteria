@@ -4,10 +4,7 @@ export const HOME_QUERY = `
     videoUrl,
     textUp,
     textMiddle,
-    textLow,
-    teste{
-    url
-  }
+    textLow
   },
   about {
     text,
