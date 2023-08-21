@@ -31,6 +31,10 @@
         z-index: 2;
         flex-direction: column;
 
+        .titles{
+            color: var(--color-text-third);
+        }
+
         .button {
             animation: moveUp 0.8s;
             svg{

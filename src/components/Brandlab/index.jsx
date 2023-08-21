@@ -17,7 +17,6 @@ export const Brandlab = ({ showScroll, text}) => {
     const title = useSpring({
         translateY: showText ? '0' : '50%',
         opacity: showText ? '1' : '0',
-        color: showText ? 'var(--bg-color-primary)' : 'white',
         config: { duration: 700 },
     })
 
@@ -72,7 +71,7 @@ export const Brandlab = ({ showScroll, text}) => {
                 const delay = 2000
                 const timeoutId = setTimeout(() => {
                     gsap.to('.brandlab-circle', {
-                        backgroundColor: 'var(--bg-color-third)',
+                        backgroundColor: 'var(--bg-color-four)',
                         onStart: () => {
                             scrollToBackground()
                         },
@@ -81,9 +80,12 @@ export const Brandlab = ({ showScroll, text}) => {
                             setShowText(true)
                         }
                     })
+                    gsap.to('.brandlab-background', {
+                        backgroundColor: 'var(--bg-color-primary)',
+                    })
                     if (circleRef.current) {
                         gsap.to('.brandlab-circle-center', {
-                            border: '1px solid red',
+                            border: '1px solid var(--bg-color-four)',
                             marginTop: '-100vh',
                             marginLeft: '70vw',
                             width: `calc(${circleRef.current.offsetWidth}px + 192px)`,

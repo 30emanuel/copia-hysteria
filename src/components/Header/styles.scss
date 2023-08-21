@@ -45,7 +45,7 @@ svg {
         justify-content: center;
         align-items: left;
         padding-left: 62px;
-        color: var(--bg-color-four);
+        color: var(--color-text-third);
         flex-direction: column;
         gap: 10px;
 
@@ -54,13 +54,13 @@ svg {
             font-style: normal;
             font-weight: 400;
             line-height: normal;
-            color: var(--bg-color-four);
+            color: var(--color-text-third);
             cursor: pointer;
             text-decoration: none;
         }
 
         a:visited {
-            color: var(--bg-color-four);
+            color: var(--color-text-third);
         }
 
         a:hover {
