@@ -121,14 +121,14 @@ export const Initial = ({showScroll, data, setShowSecondPart}) => {
                 },
                 onComplete: () => {
                     gsap.to('.circle-top', {
-                        x: '-20vw',
-                        y: '175vh',
-                        width: `calc(${circleTop.current.offsetWidth}px + 227px)`,
-                        height: `calc(${circleTop.current.offsetWidth}px + 227px)`,
+                        x: '25vw',
+                        y: '275vh',
+                        width: `calc(${circleTop.current.offsetWidth}px + 835px)`,
+                        height: `calc(${circleTop.current.offsetWidth}px + 835px)`,
                         scrollTrigger: {
                             trigger: '.projects',
-                            start: "top center",
-                            end: 'center center',
+                            start: "top top",
+                            end: 'top 200px',
                             scrub: 0.5,
                         },
                     })
@@ -147,14 +147,14 @@ export const Initial = ({showScroll, data, setShowSecondPart}) => {
                 onComplete: () => {
                     gsap.to('.circle-bottom', {
                         y: '108vh',
-                        x: '10.5vw',
-                        width: `calc(${circleBottom.current.offsetWidth}px + 618px)`,
-                        height: `calc(${circleBottom.current.offsetWidth}px + 618px)`,
+                        x: '39.5vw',
+                        width: `calc(${circleBottom.current.offsetWidth}px + 1341px)`,
+                        height: `calc(${circleBottom.current.offsetWidth}px + 1341px)`,
                         border: '3 solid white',
                         scrollTrigger: {
                             trigger: '.projects',
-                            start: "top center",
-                            end: 'center center',
+                            start: "top top",
+                            end: 'top 200px',
                             scrub: 0.5,
                         },
                     })

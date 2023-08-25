@@ -22,27 +22,6 @@ export const Home = () => {
 
   const { loading, error, data } = useQuery(HOME_QUERY)
 
-  if (error) {
-    Swal.fire({
-      icon: 'error',
-      title: 'Erro',
-      text: 'Não foi possível buscar as informações. Tente novamente mais tarde.',
-      showConfirmButton: false,
-      allowOutsideClick: false,
-      customClass: 'modal'
-    })
-  }
-
-  const showScroll = (value) => {
-    if (value === false) {
-      document.documentElement.style.overflow = 'hidden'
-      document.body.scroll = "no"
-    } else {
-      document.documentElement.style.overflowY = 'visible'
-      document.body.scroll = "yes"
-    }
-  }
-
   useEffect(() => {
     window.scrollTo(0, 0)
     const handleResize = () => {

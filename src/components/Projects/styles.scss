@@ -1,129 +1,72 @@
-.projects {
+.projects{
     width: 100%;
-    height: 100vh;
+    height: 100%;
     display: flex;
-    justify-content: end;
+    justify-content: left;
     flex-direction: column;
-    align-items: center;
-    color: white;
-    overflow: hidden;
-    z-index: 2;
-
-    .projects-title {
-        display: flex;
-        animation: fade-in 1s ease-in-out forwards;
-        z-index: 2;
-        margin-bottom: -27%;
-        margin-right: 40%;
-        transition: 0.5s;
-        pointer-events: none;
-        z-index: 4;
-        &.hover{
-            font-size: 100px;
-            margin-right: 78%;
-            margin-bottom: 18.5%;
+    z-index: 1;
+    .title{
+        margin-top: 340px;
+        z-index: 5;
+        h1{
+            color: white;
+            margin-left: 72px;
         }
     }
-    .arrow{
-        position: absolute;
-        z-index: 3;
+    .list-project{
         width: 100%;
-        display: flex;
-        justify-content: end;
-        align-items: end;
-        pointer-events: none;
-        svg{
-            margin-top: 10px;
-        }
-    }
-
-    .slide {
-        width: 925.526px;
-        height: 520.608px;
-        margin-left: 35%;
-        margin-top: 20%;
-        margin-bottom: 1.3%;
-        overflow: visible;
-        cursor: pointer;
-        transition: 0.5s;
-        
-        &:hover {
-            width: 1244.444px;
-            height: 700px;
-            margin-left: 20%;
-            margin-top: -20%;
-        }
-
-        .swiper{
+        z-index: 4;
+        height: 100%;
+        margin-top: -80px;
+        .project{
+            width: 100%;
+            height: 628px;
+            cursor: pointer;
+            color: white;
             display: flex;
-            animation: fade-in 1s ease-in-out forwards;
-        }
-
-        
-        .slide-item {
-            width: 90%;
-            height: 90%;
-            margin-left: -27%;
-
-            .image{
-                position: absolute;
-            }
-
-            img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                object-position: center;
-                border-radius: 30% 0 30% 0;
-                transition: 0.5s;
-            }
-
-            .info {
-                display: none;
-                flex-direction: column;
-                width: 100%;
-                height: 100%;
-                padding: 5%;
-                margin-top: 35%;
-                
-                h3 {
-                    font-size: 64px;
-                    line-height: 80px;
-                    animation: fade-in 1s ease-in-out forwards;
-                }
-
-                h4 {
-                    font-size: 32px;
-                    animation: fade-in 1s ease-in-out forwards;
-                }
-
-                .stream {
-                    font-weight: bolder;
-                }
-
-                .subtitle {
+            justify-content: left;
+            align-items: center;
+            background-position: center;
+            background-size: 100%;
+            transition: 0.5s;
+            &:hover{
+                background-size: 110%;
+                .text{
                     display: flex;
+                }
+            }
+            .text{
+                display: none;
+                animation: fade-in 1s ease-in-out forwards;
+                flex-direction: column;
+                margin-left: 72px;
+                h3{
+                    font-size: 79.452px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                }
+                .stream{
+                    display: flex;
+                    justify-content: left;
+                    align-items: center;
+                    text-align: center;
                     font-family: var(--font-secondary);
-
-                    .line {
+                    p{
+                        font-size: 24px;
+                        font-style: normal;
+                        line-height: normal;
+                    }
+                    .bold{
+                        font-weight: 700;
+                    }
+                    .line{
                         margin-left: 20px;
                         margin-right: 20px;
-                        width: 3px;
-                        height: 32px;
+                        width: 1px;
+                        height: 20px;
                         background-color: white;
-                        animation: fade-in 1s ease-in-out forwards;
                     }
-                }
-            }
-
-            &:hover {
-                .info{
-                    display: flex;
-
-                }
-                img{
-                    border-radius: 17% 0 17% 0;
-                    z-index: 1;
                 }
             }
         }
@@ -132,52 +75,10 @@
 
 @keyframes fade-in {
     from {
-        opacity: 0.2;
+        opacity: 0;
     }
 
     to {
         opacity: 1;
-    }
-}
-
-@media(max-width: 1600px){
-    .projects{
-        .arrow{
-            margin-bottom: 4vh;
-        }
-        .projects-title {
-            &.hover{
-                font-size: 64px;
-                margin-right: 78%;
-                margin-bottom: 18.5%;
-            }
-        }
-        .slide {
-            width: 50%;
-            height: 50%;
-            &:hover {
-                width: 70%;
-                height: 70%;
-            }
-            .slide-item {
-                .info {
-                    margin-top: 30%;
-                    
-                    h3 {
-                        font-size: 42px;
-                    }
-    
-                    h4 {
-                        font-size: 24px;
-                    }
-                    .subtitle {
-                        .line {
-                            width: 3px;
-                            height: 20px;
-                        }
-                    }
-                }
-            }
-        }
     }
 }

@@ -82,6 +82,8 @@ export const Brandlab = ({ showScroll, text}) => {
                     })
                     gsap.to('.brandlab-background', {
                         backgroundColor: 'var(--bg-color-primary)',
+                        width: '0px',
+                        height: '0px'
                     })
                     if (circleRef.current) {
                         gsap.to('.brandlab-circle-center', {
@@ -128,8 +130,8 @@ export const Brandlab = ({ showScroll, text}) => {
             {showBackground &&
                 <>
                     <div className='brandlab-background'>
-                        <div className="brandlab-circle">
-                        </div>
+                    </div>
+                    <div className="brandlab-circle">
                     </div>
                     <div className="brandlab-circle-center" ref={circleRef}></div>
                 </>

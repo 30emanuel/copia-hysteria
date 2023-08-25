@@ -17,38 +17,24 @@ export const Collaborators = ({ showScroll, text, collaborators }) => {
             display: 'block',
             scrollTrigger: {
                 trigger: '.collaborators',
-                start: "top center",
-                end: "top center",
+                start: "top 200px",
+                end: "top 200px",
                 scrub: 0.5,
+                once: true
             },
             onStart: () => {
                 setShowText(true)
             }
-        })
-        gsap.to('.collaborators', {
-            scrollTrigger: {
-                trigger: '.collaborators',
-                start: "center 100px",
-                end: "center 100px",
-                scrub: 0.5,
-            },
-        })
-        gsap.to('.collaborators', {
-            scrollTrigger: {
-                trigger: '.collaborators',
-                start: "bottom 200px",
-                end: "bottom 200px",
-                scrub: 0.5,
-            },
         })
         gsap.to('.collaborators-circle', {
             y: '65vh',
             x: '39vw',
             scrollTrigger: {
                 trigger: '.collaborators',
-                start: "top center",
-                end: "top center",
+                start: "top 200px",
+                end: "top 200px",
                 scrub: 0.5,
+                once: true
             },
         })
         gsap.to('.background', {
@@ -79,22 +65,10 @@ export const Collaborators = ({ showScroll, text, collaborators }) => {
                 end: "top 200px",
             },
         })
-        gsap.to('.blur-collaborators', {
-            y: '70vh',
-            x: '-50vw',
-            opacity: 0.8,
-            scrollTrigger: {
-                trigger: '.collaborators',
-                start: "bottom 20vh",
-                end: "bottom 20vh",
-                scrub: 0.5,
-            },
-        })
     }, [])
 
     return (
         <div className='collaborators' id='collaborators'>
-            <div className="blur-collaborators"></div>
             {showText &&
                 <div className="text">
                     <h2 className='titles'>colaboradoras</h2>
