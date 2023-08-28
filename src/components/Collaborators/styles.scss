@@ -42,18 +42,7 @@
         z-index: 0;
         position: absolute;
         pointer-events: none;
-
-        .falling-circle{
-            width: 800.364px;
-            height: 800.364px;
-            background-color: var(--bg-color-four);
-            border-radius: 100%;
-            position: absolute;
-            margin-top: -85vh;
-            margin-left: 30vw;
-            z-index: 0;
-        }
-
+        
         .collaborators-circle {
             width: 1473px;
             height: 1473px;

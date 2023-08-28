@@ -51,26 +51,13 @@ export const Collaborators = ({ showScroll, text, collaborators }) => {
         gsap.to('.collaborators-circle-center', {
             x: '-21vw',
             y: '-3vh',
+            backgroundColor: 'var(--bg-color-four)',
             scrollTrigger: {
                 trigger: '.collaborators',
                 start: "bottom 20vh",
                 end: "bottom 20vh",
                 scrub: 0.5,
             },
-            onStart: ()=>{
-                gsap.to('.falling-circle', {
-                    width: `${circleCenter.current.offsetWidth}`,
-                    height: `${circleCenter.current.offsetWidth}`,
-                    y: '66.3vh',
-                    x: '13.2vw',
-                    scrollTrigger: {
-                        trigger: '.collaborators',
-                        start: "bottom 20vh",
-                        end: "bottom 20vh",
-                        scrub: 1,
-                    },
-                })
-            }
         })
         gsap.to('.circle-collaborators', {
             display: 'flex',
