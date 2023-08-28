@@ -1,6 +1,7 @@
 import './styles.scss'
 import { useState } from 'react'
 import { ModalProject } from '../ModalProject'
+import { gsap } from 'gsap'
 
 export const Projects = ({ showScroll, projects }) => {
     const [showModal, setShowModal] = useState(false)
@@ -11,6 +12,17 @@ export const Projects = ({ showScroll, projects }) => {
         setShowModal(!showModal)
         setSelectedProject(index)
     }
+
+    gsap.to('.projects', {
+        opacity: '1',
+        scrollTrigger: {
+            trigger: '.projects',
+            start: "top top",
+            end: 'top 200px',
+            scrub: 0.5,
+            once: true
+        }
+    })
 
     return (
         <>

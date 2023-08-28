@@ -5,6 +5,8 @@
     justify-content: left;
     flex-direction: column;
     z-index: 1;
+    opacity: 0;
+    transition: 1s ease-in-out forwards;
     .title{
         margin-top: 340px;
         z-index: 5;

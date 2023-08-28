@@ -1,10 +1,11 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import './styles.scss'
 import { gsap } from 'gsap'
 
 export const Collaborators = ({ showScroll, text, collaborators }) => {
     const [modalOpen, setModalOpen] = useState(false)
     const [showText, setShowText] = useState(false)
+    const circleCenter = useRef(null)
 
     const toggleModal = () => {
         showScroll(modalOpen)
@@ -56,6 +57,20 @@ export const Collaborators = ({ showScroll, text, collaborators }) => {
                 end: "bottom 20vh",
                 scrub: 0.5,
             },
+            onStart: ()=>{
+                gsap.to('.falling-circle', {
+                    width: `${circleCenter.current.offsetWidth}`,
+                    height: `${circleCenter.current.offsetWidth}`,
+                    y: '66.3vh',
+                    x: '13.2vw',
+                    scrollTrigger: {
+                        trigger: '.collaborators',
+                        start: "bottom 20vh",
+                        end: "bottom 20vh",
+                        scrub: 1,
+                    },
+                })
+            }
         })
         gsap.to('.circle-collaborators', {
             display: 'flex',
@@ -88,8 +103,9 @@ export const Collaborators = ({ showScroll, text, collaborators }) => {
                 </div>
             }
             <div className='background'>
+                <div className="falling-circle"></div>
                 <div className="collaborators-circle">
-                    <div className="collaborators-circle-center"></div>
+                    <div className="collaborators-circle-center" ref={circleCenter}></div>
                 </div>
             </div>
             <div className="circle-collaborators">
