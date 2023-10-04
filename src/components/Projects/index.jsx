@@ -30,9 +30,14 @@ export const Projects = ({ showScroll, projects }) => {
                 <div className='title'>
                     <h1 className='titles'>projetos</h1>
                 </div>
-                <div className='list-project'>
+                <div className='list-project' >
                     {projects.map((project, index) =>
-                        <div onClick={() => toggleModal(index)} key={index} className='project' style={{ backgroundImage: `url(${project.imageMain.url})` }}>
+                        <div onClick={() => toggleModal(index)} key={index} className='project' 
+                        style={{ 
+                            backgroundImage: `url(${project.imageMain.url})`,
+                            width: project.width,
+                            height: project.height,
+                        }}>
                             <div className='text'>
                                 <h3>{project.name}</h3>
                                 <div className='stream'>

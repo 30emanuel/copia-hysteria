@@ -1,0 +1,33 @@
+.transition-logo {
+    z-index: 5;
+    width: 100%;
+    height: 110vh;
+    position: relative;
+
+    .transition-background {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+
+        .transition-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .logo {
+        z-index: 1;
+        width: 100%;
+        height: 150%;
+        position: absolute;
+        top: 60vh;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}

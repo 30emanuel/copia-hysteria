@@ -1,9 +1,18 @@
 .contact {
     width: 100%;
-    min-height: 140vh;
+    height: 140vh;
     background-color: var(--bg-primary-color);
     color: white;
     display: flex;
+
+    #contact {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        margin-top: 30vh;
+        pointer-events: none;
+    }
+
     .text {
         width: 57%;
         margin-top: 20vh;

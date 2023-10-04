@@ -6,28 +6,16 @@ export const About = ({text}) => {
     const [showText, setShowText] = useState(false)
 
     useEffect(() => {
-        gsap.to('.blur', {
+        gsap.to('.about', {
             scrollTrigger: {
                 trigger: '.about',
-                start: "top 200px",
-                end: 'top 200px',
+                start: "top top",
+                end: 'top top',
                 scrub: 0.5,
-
             },
             onStart: ()=>{
                 setShowText(true)
             },
-            onComplete: () => {
-                gsap.to('.blur', {
-                    y: '100vh',
-                    scrollTrigger: {
-                        trigger: '.about',
-                        start: "bottom 100px",
-                        end: 'bottom 100px',
-                        scrub: 0.5,
-                    }
-                })
-            }
         })
     }, [])
 

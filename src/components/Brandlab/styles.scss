@@ -9,43 +9,16 @@
     align-items: center;
     pointer-events: none;
 
-    .brandlab-background {
-        background-color: var(--bg-color-secondary);
-        overflow-x: hidden;
-        border-top-left-radius: 120%;
-        border-top-right-radius: 120%;
-        width: 2400px;
-        height: 2000px;
-        animation: grow 1s ease-in-out forwards;
-        overflow: hidden;
-        z-index: 1;
-        position: absolute;
-        pointer-events: none;
-    }
     .brandlab-circle {
-        background-color: var(--bg-color-primary);
+        background-color: var(--bg-color-four);
         border-radius: 100%;
         width: 1749px;
         height: 1749px;
         margin-bottom: -110vh;
         display: flex;
         z-index: 2;
-        animation: grow 1s ease-in-out forwards;
         justify-content: center;
         align-items: center;
-    }
-
-    .brandlab-circle-center {
-        width: 1006px;
-        height: 1006px;
-        border-radius: 100%;
-        border: 1px solid white;
-        margin-bottom: -60vh;
-        position: absolute;
-        box-shadow: 0px 4.3435797691345215px 102.07412719726562px 10.858949661254883px rgba(0, 0, 0, 0.50);
-        z-index: 3;
-        animation: grow 1s ease-in-out forwards;
-        margin-top: 40vh;
     }
 
     #brandlab {
@@ -96,7 +69,21 @@
             margin-top: 5vh;
             z-index: 3;
 
+            .video-circle-top {
+                display: none;
+                width: 1242.7px;
+                height: 1242.7px;
+                border-radius: 100%;
+                border: 1px solid var(--bg-color-four);
+                z-index: 1;
+                position: absolute;
+                top: -35vh;
+                box-shadow: 0px 3.2260401248931885px 75.81194305419922px 8.065099716186523px rgba(0, 0, 0, 0.50);
+                animation: decrease 1s ease-in-out forwards;
+            }
+
             .video-circle {
+                display: none;
                 width: 892px;
                 height: 892px;
                 border-radius: 100%;
@@ -105,6 +92,7 @@
                 position: absolute;
                 margin-left: -5%;
                 box-shadow: 0px 3.2260401248931885px 75.81194305419922px 8.065099716186523px rgba(0, 0, 0, 0.50);
+                animation: decrease 1s ease-in-out forwards;
             }
 
             video {
@@ -119,9 +107,9 @@
     }
 }
 
-@keyframes grow {
+@keyframes decrease {
     from {
-        transform: scale(0);
+        transform: scale(3);
     }
 
     to {
@@ -130,9 +118,6 @@
 }
 @media(max-width: 1600px){
     .brandlab{
-        .brandlab-background{
-            height: 1500px;
-        }
         .brandlab-circle{
             width: 1500px;
             height: 1500px;
@@ -144,6 +129,10 @@
             .brandlab-video {
                 width: 786px;
                 height: 786px;
+                .video-circle-top {
+                    width: 1000px;
+                    height: 1000px;
+                }
                 .video-circle {
                     width: 792px;
                     height: 792px;
@@ -163,10 +152,6 @@
 }
 @media (max-width: 1400px) and (max-height: 940px){
     .brandlab{
-        .brandlab-background{
-            width: 2000px;
-            height: 1400px;
-        }
         .brandlab-circle{
             width: 1300px;
             height: 1300px;
@@ -182,6 +167,11 @@
             .brandlab-video {
                 width: 630px;
                 height: 630px;
+                .video-circle-top {
+                    top: -15vh;
+                    width: 700px;
+                    height: 700px;
+                }
                 .video-circle {
                     width: 642px;
                     height: 642px;

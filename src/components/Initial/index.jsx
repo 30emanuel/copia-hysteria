@@ -1,11 +1,11 @@
 import { useState, useRef, useEffect } from 'react'
 import './styles.scss'
-import { useSpring, animated } from 'react-spring'
+import { useSpring, animated, config } from 'react-spring'
 import Logo from '../../assets/logo-black.png'
 import { gsap } from 'gsap'
 
 
-export const Initial = ({showScroll, data, setShowSecondPart}) => {
+export const Initial = ({ showScroll, data, setShowSecondPart }) => {
     const [showFirstAnimation, setShowFirstAnimation] = useState(true)
     const [showSecondAnimation, setShowSecondAnimation] = useState(false)
     const [showRest, setShowRest] = useState(false)
@@ -28,7 +28,10 @@ export const Initial = ({showScroll, data, setShowSecondPart}) => {
         delay: 1000,
         tension: 180,
         friction: 20,
-        config: { duration: 1000 },
+        config: {
+            duration: 1000,
+            easing: config.easeOut,
+        },
         onRest: () => {
             setShowFirstAnimation(false)
             setShowSecondAnimation(true)
@@ -45,28 +48,28 @@ export const Initial = ({showScroll, data, setShowSecondPart}) => {
     const moveUp = useSpring({
         translateY: showSecondAnimation ? '0%' : '100%',
         rotate: showSecondAnimation ? '0deg' : '360deg',
-        config: { duration: 1000 },
+        config: { duration: 1000, easing: config.easeOut },
         onRest: () => {
-            setGrowBall(true);
+            setGrowBall(true)
         },
     })
 
     const ballGrow = useSpring({
         transform: growBall ? 'scale(1)' : 'scale(0.025)',
-        config: { duration: 1000 },
+        config: { duration: 1000, easing: config.easeOut },
         onRest: () => {
-            setShowRest(true);
+            setShowRest(true)
         },
     })
 
     const leftSlide = useSpring({
         translateX: showRest ? '0%' : '50%',
-        config: { duration: 200 },
+        config: { duration: 500, easing: config.easeOut },
     })
 
     const rightSlide = useSpring({
         translateX: showRest ? '0%' : '-50%',
-        config: { duration: 200 },
+        config: { duration: 500, easing: config.easeOut },
         onRest: () => {
             setShowSecondPart(true)
             showScroll(true)
@@ -75,14 +78,16 @@ export const Initial = ({showScroll, data, setShowSecondPart}) => {
             gsap.to('.center-container', {
                 y: '103vh',
                 x: '-38vw',
+                ease: 'power1.easeInOut',
                 scrollTrigger: {
                     trigger: '.center-container',
                     start: "bottom bottom",
-                    scrub: 0.5,
+                    scrub: 1,
                 },
-                onComplete: ()=>{
+                onComplete: () => {
                     gsap.to('.center-container', {
                         y: '93vh',
+                        ease: 'power1.easeInOut',
                         scrollTrigger: {
                             trigger: '.projects',
                             start: "top top",
@@ -95,18 +100,31 @@ export const Initial = ({showScroll, data, setShowSecondPart}) => {
             gsap.to('.circle', {
                 width: `calc(${circleCenter.current.offsetWidth}px + 27px)`,
                 height: `calc(${circleCenter.current.offsetWidth}px + 27px)`,
+                ease: 'power1.easeInOut',
                 scrollTrigger: {
                     trigger: '.center-container',
                     start: "bottom bottom",
-                    scrub: 0.5,
+                    scrub: 1,
                 },
+                onComplete: () => {
+                    gsap.to('.circle', {
+                        y: '-50vh',
+                        scrollTrigger: {
+                            trigger: '#transition-logo-1',
+                            start: "top top",
+                            end: "top top",
+                            scrub: 0.5,
+                        },
+                    })
+                }
             })
             gsap.to('.video-right', {
                 y: '-50vh',
+                ease: 'power1.easeInOut',
                 scrollTrigger: {
                     trigger: '.center-container',
                     start: "bottom bottom",
-                    scrub: 0.5,
+                    scrub: 1,
                 },
             })
             gsap.to('.circle-top', {
@@ -114,76 +132,120 @@ export const Initial = ({showScroll, data, setShowSecondPart}) => {
                 x: '-93vw',
                 width: `calc(${circleTop.current.offsetWidth}px - 235px)`,
                 height: `calc(${circleTop.current.offsetWidth}px - 235px)`,
+                ease: 'power1.easeInOut',
                 scrollTrigger: {
                     trigger: '.center-container',
                     start: "bottom bottom",
-                    scrub: 0.5,
+                    scrub: 1,
                 },
                 onComplete: () => {
                     gsap.to('.circle-top', {
-                        x: '25vw',
-                        y: '275vh',
-                        width: `calc(${circleTop.current.offsetWidth}px + 835px)`,
-                        height: `calc(${circleTop.current.offsetWidth}px + 835px)`,
+                        y: '-50vh',
+                        ease: 'power1.easeInOut',
                         scrollTrigger: {
-                            trigger: '.projects',
+                            trigger: '#transition-logo-1',
                             start: "top top",
-                            end: 'top 200px',
+                            end: "top top",
                             scrub: 0.5,
                         },
+                        onComplete: () => {
+                            gsap.to('.circle-top', {
+                                x: '25vw',
+                                y: '402vh',
+                                ease: 'power1.easeInOut',
+                                width: `calc(${circleTop.current.offsetWidth}px + 835px)`,
+                                height: `calc(${circleTop.current.offsetWidth}px + 835px)`,
+                                scrollTrigger: {
+                                    trigger: '.projects',
+                                    start: "top top",
+                                    end: 'top 200px',
+                                    scrub: 0.5,
+                                },
+                                onComplete: () => {
+                                    gsap.to('.circle-top', {
+                                        ease: 'power1.easeInOut',
+                                        y: '+=80vh',
+                                        scrollTrigger: {
+                                            trigger: '.projects',
+                                            start: "top top",
+                                            end: '+=150%',
+                                            scrub: 0.5,
+                                        },
+                                    })
+                                }
+                            })
+                        }
                     })
                 }
             })
             gsap.to('.circle-bottom', {
                 y: '65vh',
                 x: '11.8vw',
+                ease: 'power1.easeInOut',
                 width: `calc(${circleBottom.current.offsetWidth}px - 80px)`,
                 height: `calc(${circleBottom.current.offsetWidth}px - 80px)`,
                 scrollTrigger: {
                     trigger: '.center-container',
                     start: "bottom bottom",
-                    scrub: 0.5,
+                    scrub: 1,
                 },
                 onComplete: () => {
                     gsap.to('.circle-bottom', {
-                        y: '108vh',
-                        x: '39.5vw',
-                        width: `calc(${circleBottom.current.offsetWidth}px + 1341px)`,
-                        height: `calc(${circleBottom.current.offsetWidth}px + 1341px)`,
-                        border: '3 solid white',
+                        y: '-50vh',
+                        ease: 'power1.easeInOut',
                         scrollTrigger: {
-                            trigger: '.projects',
+                            trigger: '#transition-logo-1',
                             start: "top top",
-                            end: 'top 200px',
+                            end: "top top",
                             scrub: 0.5,
                         },
+                        onComplete: () => {
+                            gsap.to('.circle-bottom', {
+                                y: '240vh',
+                                x: '39.5vw',
+                                ease: 'power1.easeInOut',
+                                width: `calc(${circleBottom.current.offsetWidth}px + 1341px)`,
+                                height: `calc(${circleBottom.current.offsetWidth}px + 1341px)`,
+                                border: '3 solid white',
+                                scrollTrigger: {
+                                    trigger: '.projects',
+                                    start: "top top",
+                                    end: 'top 200px',
+                                    scrub: 0.5,
+                                },
+                                onComplete: () => {
+                                    gsap.to('.circle-bottom', {
+                                        y: '+=80vh',
+                                        ease: 'power1.easeInOut',
+                                        scrollTrigger: {
+                                            trigger: '.projects',
+                                            start: "top top",
+                                            end: '+=150%',
+                                            scrub: 0.5,
+                                        },
+                                    })
+                                }
+                            })
+                        }
                     })
                 }
             })
         },
     })
 
-    const fadeDownOne = useSpring({
-        opacity: showText ? 1 : 0,
-        translateY: showText ? 0 : 50,
-        config: { duration: 500 },
+    const textAnimationOne = useSpring({
+        translateY: showText ? '0' : '70%',
+        config: { duration: 900, easing: config.easeOut },
     })
 
-    const fadeDownTwo = useSpring({
-        opacity: showText ? 1 : 0,
-        translateY: showText ? 0 : 100,
-        config: { duration: 1000 },
+    const textAnimationTwo = useSpring({
+        translateY: showText ? '0' : '100%',
+        config: { duration: 1000, easing: config.easeOut },
     })
 
-    const fadeDownThird = useSpring({
-        opacity: showText ? 1 : 0,
-        translateY: showText ? 0 : 50,
-        config: { duration: 1200 },
-    })
-
-    useEffect(()=>{
+    useEffect(() => {
         showScroll(false)
-    },[])
+    }, [])
 
     return (
         <div className='start' id='home'>
@@ -213,9 +275,15 @@ export const Initial = ({showScroll, data, setShowSecondPart}) => {
                         </animated.div>
                     </div>
                     <div className='text'>
-                        <animated.h2 style={fadeDownOne}>{data.textUp}</animated.h2>
-                        <animated.h1 style={fadeDownTwo}>{data.textMiddle}</animated.h1>
-                        <animated.h2 style={fadeDownThird}>{data.textLow}</animated.h2>
+                        <div className="text-container">
+                            <animated.h2 style={textAnimationTwo}>{data.textUp}</animated.h2>
+                        </div>
+                        <div className="text-container-center">
+                            <animated.h1 style={textAnimationOne}>{data.textMiddle}</animated.h1>
+                        </div>
+                        <div className="text-container">
+                            <animated.h2 style={textAnimationTwo}>{data.textLow}</animated.h2>
+                        </div>
                     </div>
                     <div className="circle-top" ref={circleTop}></div>
                     <div className="circle-bottom" ref={circleBottom}></div>

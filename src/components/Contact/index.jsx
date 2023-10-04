@@ -6,7 +6,7 @@ export const Contact = ({ contact }) => {
     const [showText, setShowText] = useState(false)
 
     useEffect(() => {
-        gsap.to('.text', {
+        gsap.to('.contact', {
             scrollTrigger: {
                 trigger: '.collaborators',
                 start: "bottom 200px",
@@ -20,7 +20,8 @@ export const Contact = ({ contact }) => {
     }, [])
 
     return (
-        <div className='contact' id='contact'>
+        <div className='contact' >
+            <div id='contact' ></div>
             {showText &&
                 <div className="text">
                     <h2 className='titles contact-title'>contato</h2>
