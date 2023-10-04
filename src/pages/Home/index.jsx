@@ -20,7 +20,7 @@ export const Home = () => {
     height: window.innerHeight,
   }
   const [showSecondPart, setShowSecondPart] = useState(false)
-
+  const [showHeader, setShowHeader] = useState(false)
   //const { loading, error, data } = useQuery(HOME_QUERY)
   const error = false
   const loading = false
@@ -291,15 +291,17 @@ export const Home = () => {
       }
       {!loading && !error &&
         <>
-          <Header />
-          <Initial showScroll={showScroll} data={data.initial} setShowSecondPart={setShowSecondPart} />
+          {showHeader &&
+            <Header />
+          }
+          <Initial showScroll={showScroll} data={data.initial} setShowSecondPart={setShowSecondPart} setShowHeader={setShowHeader} />
           <About text={data.about} />
-          <TransitionLogo id={1} />
+          <TransitionLogo id={1} imgUrl={'https://www.datocms-assets.com/103984/1696444944-backgroundteste.png'} effect={'darken'}/>
           <Projects showScroll={showScroll} projects={data.allProjects} />
           {showSecondPart &&
             <>
               <Brandlab showScroll={showScroll} text={data.brandlab} />
-              <TransitionLogo id={2} />
+              <TransitionLogo id={2} imgUrl={'https://www.datocms-assets.com/103984/1696444927-whatsapp-image-2023-09-04-at-19-44-1.png'} effect={'hard-light'}/>
               <Collaborators showScroll={showScroll} text={data.collaboratorsText} collaborators={data.allCollaborators} />
               <Contact contact={data.contact} />
             </>

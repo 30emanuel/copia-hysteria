@@ -15,6 +15,7 @@ export const Projects = ({ showScroll, projects }) => {
 
     gsap.to('.projects', {
         opacity: '1',
+        ease: 'power1.easeInOut',
         scrollTrigger: {
             trigger: '.projects',
             start: "top top",

@@ -14,6 +14,14 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            &.darken{
+                filter: opacity(0.7) drop-shadow(0 0 0 rgb(180, 8, 8));
+            }
+
+            &.hard-light{
+                mix-blend-mode: hard-light;
+                filter: brightness(1.2) contrast(1.2) saturate(1.2) sepia(0.2) opacity(0.7) drop-shadow(0 0 0 rgb(194, 1, 1));
+            }
         }
     }
 
@@ -21,6 +29,7 @@
         z-index: 1;
         width: 100%;
         height: 150%;
+        opacity: 0.5;
         position: absolute;
         top: 60vh;
 

@@ -6,6 +6,7 @@
     z-index: 11;
     width: 100vw;
     pointer-events: none;
+    animation: move-down 1s ease-in-out forwards;
     .mobile{
         display: none;
     }
@@ -92,6 +93,16 @@ svg {
 
 .menu.active {
     transform: translateY(0);
+}
+
+@keyframes move-down {
+    from {
+        transform: translateY(-20vh);
+    }
+
+    to {
+        transform: translateY(0vh);
+    }
 }
 
 @media (max-height: 1050px){

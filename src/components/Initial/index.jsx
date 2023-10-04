@@ -5,7 +5,7 @@ import Logo from '../../assets/logo-black.png'
 import { gsap } from 'gsap'
 
 
-export const Initial = ({ showScroll, data, setShowSecondPart }) => {
+export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) => {
     const [showFirstAnimation, setShowFirstAnimation] = useState(true)
     const [showSecondAnimation, setShowSecondAnimation] = useState(false)
     const [showRest, setShowRest] = useState(false)
@@ -18,7 +18,7 @@ export const Initial = ({ showScroll, data, setShowSecondPart }) => {
     const playAllVideos = () => {
         const videos = document.querySelectorAll('video')
         videos.forEach((video) => {
-            video.play()
+            //video.play()
         })
     }
 
@@ -62,6 +62,16 @@ export const Initial = ({ showScroll, data, setShowSecondPart }) => {
         },
     })
 
+    const background = useSpring({
+        transform: showRest ? 'scale(1)' : 'scale(0)',
+        config: { duration: 1000, easing: config.easeOut },
+    })
+
+    const bk = useSpring({
+        borderRadius: showRest ? '0%' : '100%',
+        config: { duration: 1500, easing: config.easeOut },
+    })
+
     const leftSlide = useSpring({
         translateX: showRest ? '0%' : '50%',
         config: { duration: 500, easing: config.easeOut },
@@ -75,6 +85,7 @@ export const Initial = ({ showScroll, data, setShowSecondPart }) => {
             showScroll(true)
             setShowText(true)
             playAllVideos()
+            setShowHeader(true)
             gsap.to('.center-container', {
                 y: '103vh',
                 x: '-38vw',
@@ -266,14 +277,16 @@ export const Initial = ({ showScroll, data, setShowSecondPart }) => {
             }
             {showRest &&
                 <>
-                    <div className='background'>
-                        <animated.div style={leftSlide} className="video-left">
-                            <video muted loop src='https://uxdir.com/files/videos/hysteria-—home.webm' className='video'></video>
+                    <animated.div className="background-container" style={background}>
+                        <animated.div className='background' style={bk}>
+                            <animated.div  className="video-left" style={leftSlide}>
+                                <video muted loop src='https://uxdir.com/files/videos/hysteria-—home.webm' className='video'></video>
+                            </animated.div>
+                            <animated.div  className="video-right" style={rightSlide}>
+                                <video muted loop src='https://uxdir.com/files/videos/hysteria-—home.webm' className='video'></video>
+                            </animated.div>
                         </animated.div>
-                        <animated.div style={rightSlide} className="video-right">
-                            <video muted loop src='https://uxdir.com/files/videos/hysteria-—home.webm' className='video'></video>
-                        </animated.div>
-                    </div>
+                    </animated.div>
                     <div className='text'>
                         <div className="text-container">
                             <animated.h2 style={textAnimationTwo}>{data.textUp}</animated.h2>
