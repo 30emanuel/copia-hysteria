@@ -20,6 +20,7 @@ export const TransitionLogo = ({ id, imgUrl, effect }) => {
 
         gsap.to(`#transition-img-${id}`, {
             transform: 'scale(1.1)',
+            filter: 'hue-rotate(37deg)',
             ease: 'power1.easeInOut',
             scrollTrigger: {
                 trigger: `#transition-logo-${id}`,
@@ -40,7 +41,7 @@ export const TransitionLogo = ({ id, imgUrl, effect }) => {
     return (
         <div className={`transition-logo`} id={`transition-logo-${id}`}>
             <div className="transition-background">
-                <img className={`transition-img ${filter ? `${effect}` : ''}`} id={`transition-img-${id}`} src={imgUrl} alt="Fundo" />
+                <img className='transition-img' id={`transition-img-${id}`} src={imgUrl} alt="Fundo" />
             </div>
             <div className='logo' id={`logo-${id}`}>
                 <img src={Logo} alt="Logo" />

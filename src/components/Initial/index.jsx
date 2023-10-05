@@ -14,6 +14,7 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
     const circleCenter = useRef(null)
     const circleTop = useRef(null)
     const circleBottom = useRef(null)
+    const [borderRadius, setBorderRadius] = useState('100%')
 
     const playAllVideos = () => {
         const videos = document.querySelectorAll('video')
@@ -63,14 +64,14 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
     })
 
     const background = useSpring({
-        transform: showRest ? 'scale(1)' : 'scale(0)',
+        width: showRest ? '3000px' : '0px',
+        height: showRest ? '3000px' : '0px',
         config: { duration: 1000, easing: config.easeOut },
+        onRest: () =>{
+            setBorderRadius('0%')
+        }
     })
 
-    const bk = useSpring({
-        borderRadius: showRest ? '0%' : '100%',
-        config: { duration: 1500, easing: config.easeOut },
-    })
 
     const leftSlide = useSpring({
         translateX: showRest ? '0%' : '50%',
@@ -277,16 +278,18 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
             }
             {showRest &&
                 <>
-                    <animated.div className="background-container" style={background}>
-                        <animated.div className='background' style={bk}>
-                            <animated.div  className="video-left" style={leftSlide}>
-                                <video muted loop src='https://uxdir.com/files/videos/hysteria-—home.webm' className='video'></video>
-                            </animated.div>
-                            <animated.div  className="video-right" style={rightSlide}>
-                                <video muted loop src='https://uxdir.com/files/videos/hysteria-—home.webm' className='video'></video>
+                    <div className="background">
+                        <animated.div className="background-ball" style={{...background, borderRadius: borderRadius,}}>
+                            <animated.div className='videos-container' >
+                                <animated.div  className="video-left" style={leftSlide}>
+                                    <video muted loop src='https://uxdir.com/files/videos/hysteria-—home.webm' className='video'></video>
+                                </animated.div>
+                                <animated.div  className="video-right" style={rightSlide}>
+                                    <video muted loop src='https://uxdir.com/files/videos/hysteria-—home.webm' className='video'></video>
+                                </animated.div>
                             </animated.div>
                         </animated.div>
-                    </animated.div>
+                    </div>
                     <div className='text'>
                         <div className="text-container">
                             <animated.h2 style={textAnimationTwo}>{data.textUp}</animated.h2>
