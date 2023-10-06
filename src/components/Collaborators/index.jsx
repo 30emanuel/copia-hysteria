@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react'
+import { useEffect} from 'react'
 import './styles.scss'
 import { gsap } from 'gsap'
 
@@ -54,19 +54,27 @@ export const Collaborators = ({ text }) => {
                         trigger: '.contact',
                         start: "top 30vh",
                         end: 'top 30vh',
-                        scrub: 0.5,
+                        scrub: 1,
                     },
                 })
                 gsap.to('.smaller-circle', {
                     x: '9vw',
                     y: '-60vh',
                     ease: 'power1.easeInOut',
-                    backgroundColor: 'var(--bg-color-four)',
                     scrollTrigger: {
                         trigger: '.contact',
                         start: "top 30vh",
                         end: 'top 30vh',
-                        scrub: 0.5,
+                        scrub: 1,
+                    },
+                })
+                gsap.to('.background-blur', {
+                    opacity: '1',
+                    scrollTrigger: {
+                        trigger: '.contact',
+                        start: "top 30vh",
+                        end: 'top 30vh',
+                        scrub: 1,
                     },
                 })
             }
@@ -91,8 +99,11 @@ export const Collaborators = ({ text }) => {
                     </div>
                 </div>
                 <div className="background">
+                    <div className="background-blur"></div>
                     <div className='bigger-circle'>
-                        <div className="smaller-circle"></div>
+                        <div className="smaller-circle">
+                            <div className='circle-background'></div>
+                        </div>
                     </div>
                 </div>
             </div>

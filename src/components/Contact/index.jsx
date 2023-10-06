@@ -15,7 +15,7 @@ export const Contact = ({ contact }) => {
             },
             onStart: () => {
                 setShowText(true)
-            }
+            },
         })
     }, [])
 
@@ -24,6 +24,7 @@ export const Contact = ({ contact }) => {
             <div id='contact' ></div>
             {showText &&
                 <div className="text">
+                    <div className='contact-blur'></div>
                     <h2 className='titles contact-title'>contato</h2>
                     <div>
                         <h3>{contact.email}</h3>

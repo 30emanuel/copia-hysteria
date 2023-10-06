@@ -308,7 +308,7 @@ export const Home = () => {
       const newHeight = window.innerHeight
 
       if (newWidth !== windowSize.width || newHeight !== windowSize.height) {
-        window.location.reload()
+        //window.location.reload()
       }
     }
     window.addEventListener('resize', handleResize)
