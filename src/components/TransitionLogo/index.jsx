@@ -19,7 +19,7 @@ export const TransitionLogo = ({ id, imgUrl }) => {
 
         gsap.to(`#transition-img-${id}`, {
             scale: 1.2,
-            filter: 'hue-rotate(37deg)',
+            filter: 'brightness(0.7) sepia(1) hue-rotate(306deg) saturate(6)',
             ease: 'power1.easeInOut',
             scrollTrigger: {
                 trigger: `#transition-logo-${id}`,
