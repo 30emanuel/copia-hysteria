@@ -7,7 +7,7 @@ export const TransitionLogo = ({ id, imgUrl }) => {
 
     useEffect(() => {
         gsap.to(`#logo-${id}`, {
-            y: '-180vh',
+            y: '-175vh',
             ease: 'power1.easeInOut',
             scrollTrigger: {
                 trigger: `#transition-logo-${id}`,
@@ -18,7 +18,7 @@ export const TransitionLogo = ({ id, imgUrl }) => {
         })
 
         gsap.to(`#transition-img-${id}`, {
-            transform: 'scale(1.1)',
+            scale: 1.2,
             filter: 'hue-rotate(37deg)',
             ease: 'power1.easeInOut',
             scrollTrigger: {
