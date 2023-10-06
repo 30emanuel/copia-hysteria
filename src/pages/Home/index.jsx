@@ -43,6 +43,7 @@ export const Home = () => {
         "typeProject": "Documentário ",
         "width": "592",
         "height": "480",
+        "gridPosition": "1",
         "stream": "Netflix",
         "imageMain": {
           "url": "https://www.datocms-assets.com/103984/1691604201-teste.jpg"
@@ -73,6 +74,7 @@ export const Home = () => {
         "name": "Desnude 2",
         "typeProject": "Documentário ",
         "stream": "Netflix",
+        "gridPosition": "2",
         "width": "1220",
         "height": "480",
         "imageMain": {
@@ -104,6 +106,7 @@ export const Home = () => {
         "name": "Desnude 3",
         "typeProject": "Documentário ",
         "stream": "Netflix",
+        "gridPosition": "3",
         "width": "906",
         "height": "996",
         "imageMain": {
@@ -135,6 +138,7 @@ export const Home = () => {
         "name": "Abre Alas 4",
         "typeProject": "Serie",
         "stream": "Tv",
+        "gridPosition": "4",
         "width": "900",
         "height": "480",
         "imageMain": {
@@ -165,6 +169,7 @@ export const Home = () => {
       {
         "name": "De Você Fiz Meu Samba 5",
         "typeProject": "Serie Documental",
+        "gridPosition": "5",
         "stream": "Youtube Originals",
         "width": "900",
         "height": "480",
@@ -194,9 +199,10 @@ export const Home = () => {
         }
       },
       {
-        "name": "De Você Fiz Meu Samba 5",
+        "name": "De Você Fiz Meu Samba 6",
         "typeProject": "Serie Documental",
         "stream": "Youtube Originals",
+        "gridPosition": "6",
         "width": "900",
         "height": "480",
         "imageMain": {
@@ -302,7 +308,7 @@ export const Home = () => {
       const newHeight = window.innerHeight
 
       if (newWidth !== windowSize.width || newHeight !== windowSize.height) {
-        window.location.reload()
+        //window.location.reload()
       }
     }
     window.addEventListener('resize', handleResize)

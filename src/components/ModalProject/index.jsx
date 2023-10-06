@@ -28,7 +28,7 @@ export const ModalProject = ({ index, showModal, projects }) => {
                     </svg>
                 </div>
             </div>
-            <div className='project'>
+            <div className='project-modal'>
                 <div className="title">
                     <h2>{projects[indexCurrent].name}</h2>
                 </div>

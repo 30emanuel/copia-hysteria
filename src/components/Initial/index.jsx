@@ -256,7 +256,7 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
     })
 
     useEffect(() => {
-        showScroll(false)
+        //showScroll(false)
     }, [])
 
     return (
