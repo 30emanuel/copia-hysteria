@@ -3,8 +3,7 @@ import { gsap } from 'gsap'
 import Logo from '../../assets/logo-red.png'
 import { useEffect, useState } from 'react'
 
-export const TransitionLogo = ({ id, imgUrl, effect }) => {
-    const [filter, setFilter] = useState(false)
+export const TransitionLogo = ({ id, imgUrl }) => {
 
     useEffect(() => {
         gsap.to(`#logo-${id}`, {
@@ -28,12 +27,6 @@ export const TransitionLogo = ({ id, imgUrl, effect }) => {
                 end: "top top+=3",
                 scrub: 0,
             },
-            onStart: () =>{
-                setFilter(true)
-            },
-            onReverseComplete: () =>{
-                setFilter(false)
-            }
         })
 
     }, [id])
@@ -41,7 +34,7 @@ export const TransitionLogo = ({ id, imgUrl, effect }) => {
     return (
         <div className={`transition-logo`} id={`transition-logo-${id}`}>
             <div className="transition-background">
-                <img className='transition-img' id={`transition-img-${id}`} src={imgUrl} alt="Fundo" />
+                <img className='transition-img' id={`transition-img-${id}`} src={imgUrl} alt="Background" />
             </div>
             <div className='logo' id={`logo-${id}`}>
                 <img src={Logo} alt="Logo" />
