@@ -1,7 +1,7 @@
 import './styles.scss'
 import { gsap } from 'gsap'
 import Logo from '../../assets/logo-red.png'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 
 export const TransitionLogo = ({ id, imgUrl }) => {
 
