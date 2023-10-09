@@ -102,7 +102,7 @@ export const Projects = ({ showScroll, projects }) => {
           ))}
         </div>
       </div>
-      {showModal && <ModalProject index={selectedProject} showModal={toggleModal} projects={sortedProjects} />}
+      <ModalProject index={selectedProject} setSelectedProject={setSelectedProject} showModal={showModal} toggleModal={setShowModal} projects={sortedProjects} />
     </>
   )
 }

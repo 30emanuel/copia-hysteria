@@ -1,28 +1,32 @@
 import './styles.scss'
 import LogoWhite from '../../assets/logo-white.png'
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
-export const ModalProject = ({ index, showModal, projects }) => {
+export const ModalProject = ({ index = 0, setSelectedProject, showModal, toggleModal, projects }) => {
     const [indexCurrent, setIndexCurrent] = useState(index)
     const modalRef = useRef(null)
     const videoId = projects[index].videourl.split('v=')[1]
 
     const changeProject = (index) => {
-        setIndexCurrent(index)
+        setSelectedProject(index)
         if (modalRef.current) {
             modalRef.current.scrollTop = 0
         }
     }
 
+    useEffect(() =>{
+        setIndexCurrent(index)
+    },[index])
+
     return (
-        <div className='modalproject' ref={modalRef}>
+        <div className={`modalproject ${showModal ? 'active' : ''}`} ref={modalRef}>
             <div className='modal-header'>
                 <div>
                     <img src={LogoWhite} alt="logo" />
                 </div>
                 <div>
-                    <svg onClick={() => showModal(false)} xmlns="http://www.w3.org/2000/svg" width="23" height="21" viewBox="0 0 23 21" fill="none">
+                    <svg onClick={() => toggleModal(false)} xmlns="http://www.w3.org/2000/svg" width="23" height="21" viewBox="0 0 23 21" fill="none">
                         <path d="M2 2L20 19" stroke="white" stroke-width="3" stroke-linecap="round" />
                         <path d="M2 19L20 2" stroke="white" stroke-width="3" stroke-linecap="round" />
                     </svg>
