@@ -246,7 +246,7 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
     })
 
     const textAnimationOne = useSpring({
-        translateY: showText ? '0' : '70%',
+        translateY: showText ? '0' : '300px',
         config: { duration: 900, easing: config.easeOut },
     })
 

@@ -102,7 +102,6 @@ export const Collaborators = ({ text }) => {
                     <div className="background-blur"></div>
                     <div className='bigger-circle'>
                         <div className="smaller-circle">
-                            <div className='circle-background'></div>
                         </div>
                     </div>
                 </div>
