@@ -10,6 +10,9 @@ export const Project = ({project, toggleModal}) => {
                 height: `${project.height}px`,
             }}
         >
+            <div className='project-img'>
+                <img src={project.imageMain.url} alt={`${project.name} imagem`} />
+            </div>
             <div className='text'>
                 <h3>{project.name}</h3>
                 <div className='stream'>
