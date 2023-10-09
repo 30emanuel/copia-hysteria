@@ -1,8 +1,11 @@
-import { useEffect} from 'react'
+import { useEffect, useState} from 'react'
 import './styles.scss'
 import { gsap } from 'gsap'
 
 export const Collaborators = ({ text }) => {
+    const [showBlur, setShowBlur] = useState(false)
+
+
     useEffect(() => {
         gsap.to('.background', {
             display: 'flex',
@@ -13,41 +16,8 @@ export const Collaborators = ({ text }) => {
                 scrub: 0.5,
             },
             onComplete: () => {
-                gsap.to('.collaborators-container', {
-                    y: '+=100vh',
-                    ease: 'power1.easeInOut',
-                    scrollTrigger: {
-                        trigger: '.contact',
-                        start: "top 30vh",
-                        end: 'top 30vh',
-                        marker: true,
-                        scrub: 0.5,
-                    },
-                })
-                gsap.to('.collaborators-text', {
-                    x: '+=160vw',
-                    ease: 'power1.easeInOut',
-                    scrollTrigger: {
-                        trigger: '.contact',
-                        start: "top 30vh",
-                        end: 'top 30vh',
-                        marker: true,
-                        scrub: 0.5,
-                    },
-                })
-                gsap.to('.collaborators-title', {
-                    x: '+=160vw',
-                    ease: 'power1.easeInOut',
-                    scrollTrigger: {
-                        trigger: '.contact',
-                        start: "top 30vh",
-                        end: 'top 30vh',
-                        marker: true,
-                        scrub: 0.5,
-                    },
-                })
                 gsap.to('.bigger-circle', {
-                    y: '30vh',
+                    y: '130vh',
                     x: '-30vw',
                     ease: 'power1.easeInOut',
                     scrollTrigger: {
@@ -58,7 +28,7 @@ export const Collaborators = ({ text }) => {
                     },
                 })
                 gsap.to('.smaller-circle', {
-                    x: '9vw',
+                    x: '8vw',
                     y: '-60vh',
                     ease: 'power1.easeInOut',
                     scrollTrigger: {
@@ -67,15 +37,12 @@ export const Collaborators = ({ text }) => {
                         end: 'top 30vh',
                         scrub: 1,
                     },
-                })
-                gsap.to('.background-blur', {
-                    opacity: '1',
-                    scrollTrigger: {
-                        trigger: '.contact',
-                        start: "top 30vh",
-                        end: 'top 30vh',
-                        scrub: 1,
+                    onComplete: () =>{
+                        setShowBlur(true)
                     },
+                    onReverseComplete: () =>{
+                        setShowBlur(false)
+                    }
                 })
             }
         })
@@ -99,9 +66,11 @@ export const Collaborators = ({ text }) => {
                     </div>
                 </div>
                 <div className="background">
-                    <div className="background-blur"></div>
                     <div className='bigger-circle'>
                         <div className="smaller-circle">
+                            {showBlur &&
+                                <div className='background-blur'></div>
+                            }
                         </div>
                     </div>
                 </div>

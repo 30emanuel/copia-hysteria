@@ -83,7 +83,7 @@ export const Projects = ({ showScroll, projects }) => {
             <div key={rowIndex} className='row'>
               {row.map((project, index) => {
                 if (index === 0) {
-                  return <Project key={project.id} project={project} toggleModal={toggleModal} />
+                  return <Project key={project.id} className='inside' project={project} toggleModal={toggleModal} />
                 }
                 if (index === 1) {
                   return (

@@ -15,6 +15,7 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
     const circleTop = useRef(null)
     const circleBottom = useRef(null)
     const [borderRadius, setBorderRadius] = useState('100%')
+    const screenWidth = window.innerWidth
 
     const playAllVideos = () => {
         const videos = document.querySelectorAll('video')

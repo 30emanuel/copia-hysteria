@@ -153,24 +153,26 @@
 @media (max-width: 1400px) and (max-height: 940px){
     .brandlab{
         .brandlab-circle{
+            margin-top: 20vh;
             width: 1300px;
             height: 1300px;
         }
         .front{
+            margin-bottom: -5vh;
             .texts{
                 margin-right: 23vw;
             }
             .brandlab-video {
-                width: 630px;
-                height: 630px;
+                width: 600px;
+                height: 600px;
                 .video-circle-top {
                     top: -15vh;
-                    width: 700px;
-                    height: 700px;
+                    width: 670px;
+                    height: 670px;
                 }
                 .video-circle {
-                    width: 642px;
-                    height: 642px;
+                    width: 612px;
+                    height: 612px;
                 }
             }
         }
