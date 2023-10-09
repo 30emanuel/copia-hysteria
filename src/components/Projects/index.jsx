@@ -64,10 +64,10 @@ export const Projects = ({ showScroll, projects }) => {
     opacity: '1',
     ease: 'power1.easeInOut',
     scrollTrigger: {
-      trigger: '.projects',
-      start: "top top",
-      end: 'top 200px',
-      scrub: 0.5,
+      trigger: '#transition-logo-1',
+      start: "center 10vh",
+      end: 'center 10vh',
+      scrub: 0.2,
       once: true
     }
   })
@@ -83,7 +83,7 @@ export const Projects = ({ showScroll, projects }) => {
             <div key={rowIndex} className='row'>
               {row.map((project, index) => {
                 if (index === 0) {
-                  return <Project key={project.id} className='inside' project={project} toggleModal={toggleModal} />
+                  return <Project key={project.id} project={project} toggleModal={toggleModal} />
                 }
                 if (index === 1) {
                   return (

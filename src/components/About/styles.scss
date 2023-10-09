@@ -8,24 +8,10 @@
     flex-direction: column;
     z-index: 2;
 
-    .blur {
-        width: 1000px;
-        height: 1000px;
-        opacity: 0.5;
-        overflow: hidden;
-        display: none;
-        position: absolute;
-        pointer-events: none;
-        border-radius: 100%;
-        background-color: var(--color-blur);
-        filter: blur(100px);
-    }
-
     .about-text {
         display: flex;
         justify-content: end;
         align-items: center;
-        overflow: hidden;
         flex-direction: column;
         z-index: 7;
         width: 100%;
@@ -75,7 +61,7 @@
         font-weight: 300;
         line-height: 39px;
         letter-spacing: 1.1px;
-        animation: move-up 1s ease-in-out forwards;
+        animation: move-up 1.2s ease-in-out forwards;
 
         a {
             text-decoration-line: underline;
@@ -111,13 +97,14 @@
 
 @keyframes move-up {
     from {
-        transform: translateY(20%);
+        transform: translateY(100px);
     }
 
     to {
-        transform: translateY(0vh);
+        transform: translateY(0px);
     }
 }
+
 
 @media(max-width: 1600px) {
     .about {

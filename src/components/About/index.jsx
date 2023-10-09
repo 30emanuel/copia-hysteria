@@ -23,7 +23,6 @@ export const About = ({text}) => {
         <div className='about' id='about'>
             {showText &&
                 <>
-                    <div className="blur"></div>
                     <div className="about-text">
                         <div className="about-title">
                             <h3>{text.titleSecondary}</h3>
