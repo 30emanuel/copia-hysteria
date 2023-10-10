@@ -29,6 +29,16 @@ export const TransitionLogo = ({ id, imgUrl }) => {
             },
         })
 
+        gsap.to(`#transition-img-${id}`, {
+            y: '+=10vh', 
+            scrollTrigger: {
+                trigger: `#transition-logo-${id}`,
+                start: "center 10vh",
+                end: '+=150%',
+                scrub: 2,
+            },
+        })
+
     }, [id])
 
     return (

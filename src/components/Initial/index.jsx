@@ -9,13 +9,14 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
     const [showFirstAnimation, setShowFirstAnimation] = useState(true)
     const [showSecondAnimation, setShowSecondAnimation] = useState(false)
     const [showRest, setShowRest] = useState(false)
-    const [growBall, setGrowBall] = useState(false)
     const [showText, setShowText] = useState(false)
     const circleCenter = useRef(null)
     const circleTop = useRef(null)
     const circleBottom = useRef(null)
     const [borderRadius, setBorderRadius] = useState('100%')
-    const screenWidth = window.innerWidth
+
+    const [showSecondText, setShowSecondText] = useState(false)
+    const [showThreeText, setShowThreeText] = useState(false)
 
     const playAllVideos = () => {
         const videos = document.querySelectorAll('video')
@@ -52,23 +53,29 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
         rotate: showSecondAnimation ? '0deg' : '360deg',
         config: { duration: 1000, easing: config.easeOut },
         onRest: () => {
-            setGrowBall(true)
+            handleAnimation()
         },
     })
 
-    const ballGrow = useSpring({
-        transform: growBall ? 'scale(1)' : 'scale(0.025)',
-        config: { duration: 1000, easing: config.easeOut },
-        onRest: () => {
-            setShowRest(true)
-        },
-    })
+    const [scale, setScale] = useState(0.025)
+    const handleAnimation = () => {
+        if (scale === 0.025) {
+            setScale(0.1)
+            setTimeout(() => {
+                setScale(0.025)
+                setTimeout(() => {
+                    setScale(1)
+                    setShowRest(true)
+                }, 300)
+            }, 300)
+        }
+    }
 
     const background = useSpring({
         width: showRest ? '3000px' : '0px',
         height: showRest ? '3000px' : '0px',
         config: { duration: 1000, easing: config.easeOut },
-        onRest: () =>{
+        onRest: () => {
             setBorderRadius('0%')
         }
     })
@@ -248,16 +255,31 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
 
     const textAnimationOne = useSpring({
         translateY: showText ? '0' : '300px',
-        config: { duration: 900, easing: config.easeOut },
+        config: { duration: 900 },
+        onRest: () => {
+            setShowSecondText(true)
+        }
     })
 
     const textAnimationTwo = useSpring({
-        translateY: showText ? '0' : '100%',
-        config: { duration: 1000, easing: config.easeOut },
+        translateY: showSecondText ? '0' : '300px',
+        config: { duration: 700 },
+        onRest: () => {
+            setShowThreeText(true)
+        }
+    })
+
+    const textAnimationThree = useSpring({
+        translateY: showThreeText ? '0' : '300px',
+        config: { duration: 300 },
     })
 
     useEffect(() => {
         showScroll(false)
+        window.scrollTo(0, 0)
+        setTimeout(() => {
+            window.scrollTo(0, 0)
+        }, 300)
     }, [])
 
     return (
@@ -270,22 +292,24 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
             }
             {showSecondAnimation &&
                 <animated.div style={moveUp} className='center-container'>
-                    <animated.div className='center' style={ballGrow}>
+                    <div className='center' style={{
+                        transform: `scale(${scale})`,
+                    }}>
                         <div className="circle" ref={circleCenter}>
                             <video playsInline muted loop src='https://uxdir.com/files/videos/hysteria-—home.webm' className='video'></video>
                         </div>
-                    </animated.div>
+                    </div>
                 </animated.div>
             }
             {showRest &&
                 <>
                     <div className="background">
-                        <animated.div className="background-ball" style={{...background, borderRadius: borderRadius,}}>
+                        <animated.div className="background-ball" style={{ ...background, borderRadius: borderRadius, }}>
                             <animated.div className='videos-container' >
-                                <animated.div  className="video-left" style={leftSlide}>
+                                <animated.div className="video-left" style={leftSlide}>
                                     <video muted loop src='https://uxdir.com/files/videos/hysteria-—home.webm' className='video'></video>
                                 </animated.div>
-                                <animated.div  className="video-right" style={rightSlide}>
+                                <animated.div className="video-right" style={rightSlide}>
                                     <video muted loop src='https://uxdir.com/files/videos/hysteria-—home.webm' className='video'></video>
                                 </animated.div>
                             </animated.div>
@@ -293,13 +317,17 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
                     </div>
                     <div className='text'>
                         <div className="text-container">
-                            <animated.h2 style={textAnimationTwo}>{data.textUp}</animated.h2>
+                            <animated.h2 className='text-one' style={textAnimationOne}>{data.textUp}</animated.h2>
                         </div>
                         <div className="text-container-center">
-                            <animated.h1 style={textAnimationOne}>{data.textMiddle}</animated.h1>
+                            {showSecondText &&
+                                <animated.h1 style={textAnimationTwo}>{data.textMiddle}</animated.h1>
+                            }
                         </div>
                         <div className="text-container">
-                            <animated.h2 style={textAnimationTwo}>{data.textLow}</animated.h2>
+                            {showThreeText &&
+                                <animated.h2 className='text-three' style={textAnimationThree}>{data.textLow}</animated.h2>
+                            }
                         </div>
                     </div>
                     <div className="circle-top" ref={circleTop}></div>

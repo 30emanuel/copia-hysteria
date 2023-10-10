@@ -1,8 +1,8 @@
 import { Header } from '../../components/Header'
 import { Initial } from '../../components/Initial'
-import { Projects } from '../../components/Projects'
+import { Projects } from '../../components/ListProjects'
 import './styles.scss'
-import { useEffect, useState, } from 'react'
+import { useEffect, useState } from 'react'
 import { Brandlab } from '../../components/Brandlab'
 import { Collaborators } from '../../components/Collaborators'
 import { About } from '../../components/About'
@@ -39,7 +39,7 @@ export const Home = () => {
     },
     "allProjects": [
       {
-        "name": "Desnude 1",
+        "name": "De Voce Fiz Meu Samba",
         "typeProject": "Documentário ",
         "width": "592",
         "height": "480",
@@ -308,6 +308,7 @@ export const Home = () => {
       const newHeight = window.innerHeight
 
       if (newWidth !== windowSize.width || newHeight !== windowSize.height) {
+        window.scrollTo(0, 0)
         window.location.reload()
       }
     }
@@ -319,7 +320,7 @@ export const Home = () => {
   }, [])
 
   return (
-    <div className="home" >
+    <div className="home">
       {loading &&
         <div className='loading'>
           <img src={Logo} alt="Logo" />
@@ -338,7 +339,7 @@ export const Home = () => {
           {showSecondPart &&
             <>
               <Brandlab showScroll={showScroll} text={data.brandlab} />
-              <TransitionLogo id={2} imgUrl={'https://www.datocms-assets.com/103984/1696444927-whatsapp-image-2023-09-04-at-19-44-1.png'}/>
+              <TransitionLogo id={2} imgUrl={'https://www.datocms-assets.com/103984/1696444927-whatsapp-image-2023-09-04-at-19-44-1.png'} />
               <Collaborators showScroll={showScroll} text={data.collaboratorsText} collaborators={data.allCollaborators} />
               <Contact contact={data.contact} />
             </>

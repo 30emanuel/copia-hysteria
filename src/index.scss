@@ -55,7 +55,6 @@ table {
 	--color-text-secondary: #1F1F1F;
 	--color-text-third: #FF37F1;
 	--color-loading: #1F1F1F;
-	--color-blur: #E95858;
 	--bg-color-primary: #E52D43;
 	--bg-color-secondary: #242424;
 	--bg-color-third: #2E2E2E;
@@ -67,9 +66,14 @@ table {
 html{
 	font-family: var(--font-primary);
 	scroll-behavior: smooth;
-	
 }
+
+html ::-webkit-scrollbar {
+	width: 0px;
+}
+
 body{
 	overflow-x: hidden;
 	background-color: var(--bg-color-primary);
+	scrollbar-width: none;
 }
