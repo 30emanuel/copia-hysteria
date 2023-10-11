@@ -4,15 +4,42 @@ import gsap from 'gsap';
 
 export const Project = ({ project, toggleModal }) => {
     const imgDivRef = useRef(null)
+    const videoRef = useRef(null)
+
+    const playVideo = () => {
+        if (videoRef.current) {
+            setTimeout(() => {
+                videoRef.current.play()
+            }, 500)
+        }
+    }
+
+    const pauseVideo = () => {
+        if (videoRef.current) {
+            videoRef.current.pause()
+        }
+    }
+
 
     useEffect(() => {
         const imgDiv = imgDivRef.current
-        
+        const videoDiv = videoRef.current
+
         gsap.to(imgDiv, {
             y: 20, 
             ease: 'power1.easeInOut',
             scrollTrigger: {
                 trigger: imgDiv,
+                start: 'top center',
+                end: 'bottom +=20vh',
+                scrub: 2,
+            },
+        })
+        gsap.to(videoDiv, {
+            y: 20, 
+            ease: 'power1.easeInOut',
+            scrollTrigger: {
+                trigger: videoDiv,
                 start: 'top center',
                 end: 'bottom +=20vh',
                 scrub: 2,
@@ -26,8 +53,10 @@ export const Project = ({ project, toggleModal }) => {
                 width: `${project.width}px`,
                 height: `${project.height}px`,
             }}
+            onMouseEnter={playVideo} onMouseLeave={pauseVideo}
         >
             <div className='project-img'>
+                <video muted loop src={project.prevVideo} ref={videoRef}></video>
                 <img src={project.imageMain.url} alt={`${project.name} imagem`} ref={imgDivRef} />
             </div>
             <div className='text'>

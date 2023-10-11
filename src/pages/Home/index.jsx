@@ -45,6 +45,7 @@ export const Home = () => {
         "height": "480",
         "gridPosition": "1",
         "stream": "Netflix",
+        "prevVideo": "https://uxdir.com/files/videos/hysteria-—home.webm",
         "imageMain": {
           "url": "https://www.datocms-assets.com/103984/1691604201-teste.jpg"
         },
@@ -77,6 +78,7 @@ export const Home = () => {
         "gridPosition": "2",
         "width": "1220",
         "height": "480",
+        "prevVideo": "https://uxdir.com/files/videos/hysteria-—home.webm",
         "imageMain": {
           "url": "https://www.datocms-assets.com/103984/1691604201-teste.jpg"
         },
@@ -109,6 +111,7 @@ export const Home = () => {
         "gridPosition": "3",
         "width": "906",
         "height": "996",
+        "prevVideo": "https://uxdir.com/files/videos/hysteria-—home.webm",
         "imageMain": {
           "url": "https://www.datocms-assets.com/103984/1691604201-teste.jpg"
         },
@@ -141,6 +144,7 @@ export const Home = () => {
         "gridPosition": "4",
         "width": "900",
         "height": "480",
+        "prevVideo": "https://uxdir.com/files/videos/hysteria-—home.webm",
         "imageMain": {
           "url": "https://www.datocms-assets.com/103984/1691604108-dvfms-02.jpg"
         },
@@ -173,6 +177,7 @@ export const Home = () => {
         "stream": "Youtube Originals",
         "width": "900",
         "height": "480",
+        "prevVideo": "https://uxdir.com/files/videos/hysteria-—home.webm",
         "imageMain": {
           "url": "https://www.datocms-assets.com/103984/1691603931-teste.jpg"
         },
@@ -203,6 +208,7 @@ export const Home = () => {
         "typeProject": "Serie Documental",
         "stream": "Youtube Originals",
         "gridPosition": "6",
+        "prevVideo": "https://uxdir.com/files/videos/hysteria-—home.webm",
         "width": "900",
         "height": "480",
         "imageMain": {
