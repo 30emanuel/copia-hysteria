@@ -30,7 +30,6 @@ export const Brandlab = ({ text }) => {
                 start: "top center",
                 end: 'top center',
                 scrub: 0.5,
-                markers: true
             }
         })
         gsap.to('.ball', {
@@ -42,7 +41,6 @@ export const Brandlab = ({ text }) => {
                 start: "top center",
                 end: "center center",
                 scrub: 0.5,
-                markers: true,
             }
         })
         gsap.to('.brandlab', {
@@ -52,7 +50,6 @@ export const Brandlab = ({ text }) => {
                 start: "center center",
                 end: "center center",
                 scrub: 0.5,
-                markers: true,
             }
         })
         gsap.to('.ball-content', {
@@ -62,7 +59,6 @@ export const Brandlab = ({ text }) => {
                 start: "top center",
                 end: "center center",
                 scrub: 0.5,
-                markers: true,
             }
         })
 
@@ -73,7 +69,6 @@ export const Brandlab = ({ text }) => {
                 start: "top top",
                 end: 'top top',
                 scrub: 0.5,
-                markers: true,
             }
         })
 
