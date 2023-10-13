@@ -162,6 +162,7 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
                     gsap.to('.circle-top', {
                         y: '-50vh',
                         ease: 'power1.easeInOut',
+                        transition: 'transform 0.7s ease-out',
                         scrollTrigger: {
                             trigger: '#transition-logo-1',
                             start: "top top",
@@ -213,6 +214,7 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
                     gsap.to('.circle-bottom', {
                         y: '-50vh',
                         ease: 'power1.easeInOut',
+                        transition: 'transform 0.7s ease-out',
                         scrollTrigger: {
                             trigger: '#transition-logo-1',
                             start: "top top",
@@ -226,7 +228,6 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
                                 ease: 'power1.easeInOut',
                                 width: `calc(${circleBottom.current.offsetWidth}px + 1341px)`,
                                 height: `calc(${circleBottom.current.offsetWidth}px + 1341px)`,
-                                border: '3 solid white',
                                 scrollTrigger: {
                                     trigger: '.projects',
                                     start: "top top",

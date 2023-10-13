@@ -45,7 +45,7 @@ export const Home = () => {
         "height": "480",
         "gridPosition": "1",
         "stream": "Netflix",
-        "prevVideo": "https://uxdir.com/files/videos/hysteria-—home.webm",
+        "prevVideo": "",
         "imageMain": {
           "url": "https://www.datocms-assets.com/103984/1691604201-teste.jpg"
         },
