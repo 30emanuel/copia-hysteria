@@ -77,17 +77,6 @@ export const Brandlab = ({ text }) => {
             }
         })
 
-        gsap.to('.brand', {
-            transform: 'translateY(-50px)',
-            scrollTrigger: {
-                trigger: '.brandlab',
-                start: "center center",
-                end: "center center",
-                scrub: 0.5,
-                markers: true,
-            }
-        })
-
     }, [])
 
     const brand = [
