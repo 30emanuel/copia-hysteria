@@ -60,7 +60,6 @@ export const ModalProject = ({ index = 0, setSelectedProject, showModal, toggleM
                             <div className="text">
                                 <div className='stream'>
                                     <h3 className='type'>{projects[indexCurrent].typeProject}</h3>
-                                    <div className='line'></div>
                                     <h3 className='streamname'>{projects[indexCurrent].stream}</h3>
                                 </div>
                                 <div className="paragraph">
@@ -100,15 +99,15 @@ export const ModalProject = ({ index = 0, setSelectedProject, showModal, toggleM
                             ></iframe>
                         </div>
                         <div className="images">
-                            <img src={projects[indexCurrent].image1.url} alt="" />
-                            <img src={projects[indexCurrent].image2.url} alt="" />
+                            <img src={projects[indexCurrent].image1.url} alt={`${projects[indexCurrent].name}`} />
+                            <img src={projects[indexCurrent].image2.url} alt={`${projects[indexCurrent].name}`} />
                         </div>
                         <div className="middle">
-                            <img src={projects[indexCurrent].imageMiddle.url} alt="" />
+                            <img src={projects[indexCurrent].imageMiddle.url} alt={`${projects[indexCurrent].name}`} />
                         </div>
                         <div className="images">
-                            <img src={projects[indexCurrent].image3.url} alt="" />
-                            <img src={projects[indexCurrent].image4.url} alt="" />
+                            <img src={projects[indexCurrent].image3.url} alt={`${projects[indexCurrent].name}`} />
+                            <img src={projects[indexCurrent].image4.url} alt={`${projects[indexCurrent].name}`} />
                         </div>
                     </div>
                     <div className='footer'>
@@ -167,7 +166,18 @@ export const ModalProject = ({ index = 0, setSelectedProject, showModal, toggleM
                                 if (indexProject !== indexCurrent) {
                                     return (
                                         <SwiperSlide className='outher-project' key={indexProject} onClick={() => changeProject(indexProject)}>
-                                            <img src={project.imageMain.url} alt={project.name} />
+                                            <div className='project-img'>
+                                                {project.prevVideo &&
+                                                    <video muted loop src={project?.prevVideo}
+                                                        onMouseEnter={(e) => {
+                                                            setTimeout(() => {
+                                                                e.target.play()
+                                                            }, 500)
+                                                        }}
+                                                        onMouseLeave={(e) => e.target.pause()}></video>
+                                                }
+                                                <img src={project.imageMain.url} alt={`${project.name} img`} />
+                                            </div>
                                             <div className="info">
                                                 <h3>{project.name}</h3>
                                                 <div className='text'>

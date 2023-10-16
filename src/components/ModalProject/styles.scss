@@ -38,7 +38,6 @@
 
     .project-modal {
         width: 100%;
-        height: 100vh;
         justify-content: left;
         align-items: left;
         flex-direction: column;
@@ -65,33 +64,32 @@
             justify-content: left;
 
             .text {
-                width: 530px;
+                height: 100%;
                 display: flex;
                 flex-direction: column;
                 margin-right: 49px;
                 margin-top: 70px;
+                padding-bottom: 50px;
 
                 .stream {
                     display: flex;
+                    justify-content: left;
+                    align-items: center;
+                    width: 100%;
+                    height: 100%;
                     animation: move-up 0.5s ease-out;
-
-                    .line {
-                        width: 5px;
-                        height: 100%;
-                        background-color: white;
-                    }
+                    font-size: 30px;
+                    gap: 24px;
 
                     .type {
-                        font-size: 30px;
                         font-style: normal;
                         font-weight: 300;
                         line-height: normal;
-                        margin-right: 24px;
                     }
 
                     .streamname {
-                        margin-left: 24px;
-                        font-size: 30px;
+                        border-left: 3px solid white;
+                        padding-left: 24px;
                         font-style: normal;
                         font-weight: 700;
                         line-height: normal;
@@ -99,6 +97,7 @@
                 }
 
                 .paragraph {
+                    max-width: 640px;
                     margin-top: 32px;
                     font-size: 24px;
                     font-style: normal;
@@ -108,16 +107,19 @@
                 }
 
                 .credits {
-                    width: 100%;
+                    max-width: 640px;
                     display: flex;
-                    justify-content: space-between;
+                    justify-content: left;
                     align-items: left;
                     flex-wrap: wrap;
+                    gap: 16px;
+
 
                     .credit {
-                        display: flex;
                         margin-top: 32px;
-
+                        max-height: 50px;
+                        display: flex;
+                        gap: 16px;
                         p {
                             font-size: 22px;
                             font-style: normal;
@@ -127,7 +129,6 @@
 
                         .name {
                             font-weight: 600;
-                            margin-left: 16px;
                         }
                     }
 
@@ -152,7 +153,6 @@
             .image {
                 width: 1253px;
                 height: 100%;
-                margin-top: 10px;
                 animation: move-up-3 1s ease-out;
 
                 img {
@@ -290,7 +290,6 @@
             }
 
             .arrow-container:hover {
-
                 .left-primary,
                 .right-primary {
                     transform: scaleX(0);
@@ -320,26 +319,54 @@
             .outher-project {
                 width: 100%;
                 height: 100%;
+                overflow: hidden;
+                position: relative;
                 cursor: pointer;
 
-                img {
+                &:hover {
+                    .project-img{
+                        scale: 1.2;
+                        video{
+                            z-index: 2;
+                        }
+                    }
+                }
+
+                .project-img{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
                     width: 100%;
                     height: 100%;
-                    object-fit: cover;
-                    object-position: center;
+                    transition: 1s ease-in;
+                    video, img{
+                        position: absolute;
+                        width: 100%;
+                        height: 120%;
+                        object-fit: cover;
+                        object-position: center;
+                        transition: transform 0s ease-in-out;
+                    }
+                    img{
+                        z-index: 1;
+                    }
+                    video{
+                        z-index: 0;
+                    }
                 }
 
                 .info {
-                    display: none;
+                    display: flex;
+                    z-index: 1;
                     flex-direction: column;
+                    position: absolute;
                     margin-top: -120px;
                     padding-left: 50px;
                     padding-right: 50px;
                     font-family: var(--font-secondary);
 
                     h3 {
-                        font-size: 44.42px;
-                        animation: fade-in 1s ease-in-out forwards;
+                        font-size: 44px;
                     }
 
                     .text {
@@ -350,7 +377,6 @@
 
                         p {
                             font-size: 21px;
-                            animation: fade-in 1s ease-in-out forwards;
                         }
 
                         .line {
@@ -359,18 +385,11 @@
                             width: 1px;
                             height: 23px;
                             background-color: white;
-                            animation: fade-in 1s ease-in-out forwards;
                         }
 
                         p.stream {
                             font-weight: 700;
                         }
-                    }
-                }
-
-                &:hover {
-                    .info {
-                        display: flex;
                     }
                 }
             }
@@ -430,56 +449,14 @@
         h2 {
             font-size: 112px;
         }
-
-        .project {
-            padding-top: 100px;
-        }
-
-        .gallery {
-            .video {
-                margin-top: 0vh;
-                width: 95%;
-                height: 80%;
-
-                .video-gallery {
-                    width: 95%;
-                    height: 80%;
-                }
-            }
-
-            .middle {
-                width: 90%;
-            }
-        }
     }
 }
 
-@media(max-width: 1399px) {
-    .modalproject {
-        .project {
-            padding-top: 100px;
-
-            .project-about {
-                margin-top: -20px;
-
-                .image {
-                    width: 60%;
-                }
-            }
-        }
-
-        .gallery {
-            .middle {
-                width: 90%;
-            }
-        }
-    }
-}
-
-@media(max-width: 1199px) {
+@media(max-width: 1400px) {
     .modalproject {
         h2 {
-            font-size: 72px;
+            font-size: 80px;
         }
+
     }
 }
