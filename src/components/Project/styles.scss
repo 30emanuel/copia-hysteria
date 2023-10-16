@@ -15,9 +15,6 @@
                 z-index: 2;
             }
         }
-        .text {
-            display: flex;
-        }
     }
     
     .project-img{
@@ -45,19 +42,19 @@
     }
 
     .text {
-        display: none;
+        display: flex;
         pointer-events: none;
-        animation: fade-in 1s ease-in-out forwards;
         flex-direction: column;
         margin-left: 40px;
         margin-bottom: 50px;
+        z-index: 3;
+        transition: transform 0.1s ease-in-out;
 
         h3 {
             font-size: 44.42px;
             font-style: normal;
             font-weight: 400;
             line-height: normal;
-            animation: move-project-text 0.5s ease-in-out;
         }
 
         .stream {
@@ -71,12 +68,10 @@
                 font-size: 21px;
                 font-style: normal;
                 line-height: normal;
-                animation: move-project-text 0.7s ease-in-out;
             }
 
             .bold {
                 font-weight: 700;
-                animation: move-project-text 0.9s ease-in-out;
             }
 
             .line {
@@ -85,27 +80,7 @@
                 width: 1px;
                 height: 20px;
                 background-color: white;
-                animation: move-project-text 0.8s ease-in-out;
             }
         }
-    }
-}
-@keyframes fade-in {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes move-project-text {
-    from {
-        transform: translateY(20px);
-    }
-
-    to {
-        transform: translateY(0px);
     }
 }

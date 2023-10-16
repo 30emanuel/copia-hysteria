@@ -95,6 +95,42 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
             setShowText(true)
             playAllVideos()
             setShowHeader(true)
+        },
+    })
+
+    const textAnimationOne = useSpring({
+        translateY: showText ? '0' : '300px',
+        config: { duration: 900 },
+        onRest: () => {
+            setShowSecondText(true)
+        }
+    })
+
+    const textAnimationTwo = useSpring({
+        translateY: showSecondText ? '0' : '300px',
+        config: { duration: 700 },
+        onRest: () => {
+            setShowThreeText(true)
+        }
+    })
+
+    const textAnimationThree = useSpring({
+        translateY: showThreeText ? '0' : '300px',
+        config: { duration: 300 },
+    })
+
+    gsap.to('.video-right', {
+        y: '-50vh',
+        ease: 'power1.easeInOut',
+        scrollTrigger: {
+            trigger: '.center-container',
+            start: "bottom bottom",
+            scrub: 1,
+        },
+    })
+
+    useEffect(() => {
+        if(showRest){
             gsap.to('.center-container', {
                 y: '103vh',
                 x: '-38vw',
@@ -137,15 +173,6 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
                         },
                     })
                 }
-            })
-            gsap.to('.video-right', {
-                y: '-50vh',
-                ease: 'power1.easeInOut',
-                scrollTrigger: {
-                    trigger: '.center-container',
-                    start: "bottom bottom",
-                    scrub: 1,
-                },
             })
             gsap.to('.circle-top', {
                 y: '180vh',
@@ -251,37 +278,8 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
                     })
                 }
             })
-        },
-    })
-
-    const textAnimationOne = useSpring({
-        translateY: showText ? '0' : '300px',
-        config: { duration: 900 },
-        onRest: () => {
-            setShowSecondText(true)
         }
-    })
-
-    const textAnimationTwo = useSpring({
-        translateY: showSecondText ? '0' : '300px',
-        config: { duration: 700 },
-        onRest: () => {
-            setShowThreeText(true)
-        }
-    })
-
-    const textAnimationThree = useSpring({
-        translateY: showThreeText ? '0' : '300px',
-        config: { duration: 300 },
-    })
-
-    useEffect(() => {
-        showScroll(false)
-        window.scrollTo(0, 0)
-        setTimeout(() => {
-            window.scrollTo(0, 0)
-        }, 300)
-    }, [])
+    }, [showRest])
 
     return (
         <div className='start' id='home'>
@@ -297,7 +295,7 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
                         transform: `scale(${scale})`,
                     }}>
                         <div className="circle" ref={circleCenter}>
-                            <video playsInline muted loop src='https://uxdir.com/files/videos/hysteria-—home.webm' className='video'></video>
+                            <video playsInline muted loop src={data.videoUrl} className='video'></video>
                         </div>
                     </div>
                 </animated.div>
@@ -308,10 +306,10 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
                         <animated.div className="background-ball" style={{ ...background, borderRadius: borderRadius, }}>
                             <animated.div className='videos-container' >
                                 <animated.div className="video-left" style={leftSlide}>
-                                    <video muted loop src='https://uxdir.com/files/videos/hysteria-—home.webm' className='video'></video>
+                                    <video muted loop src={data.videoUrl} className='video'></video>
                                 </animated.div>
                                 <animated.div className="video-right" style={rightSlide}>
-                                    <video muted loop src='https://uxdir.com/files/videos/hysteria-—home.webm' className='video'></video>
+                                    <video muted loop src={data.videoUrl} className='video'></video>
                                 </animated.div>
                             </animated.div>
                         </animated.div>

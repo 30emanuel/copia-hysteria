@@ -330,14 +330,14 @@
 
 @media (max-width: 768px) {
     .start {
-        .background {
+        .videos-container {
             flex-direction: column;
         }
 
         .center {
             .circle {
-                width: 668px;
-                height: 668px;
+                width: 768px;
+                height: 768px;
             }
         }
 

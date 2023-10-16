@@ -5,6 +5,7 @@ import gsap from 'gsap';
 export const Project = ({ project, toggleModal }) => {
     const imgDivRef = useRef(null)
     const videoRef = useRef(null)
+    const textRef = useRef(null)
 
     const playVideo = () => {
         if (videoRef.current) {
@@ -24,6 +25,7 @@ export const Project = ({ project, toggleModal }) => {
     useEffect(() => {
         const imgDiv = imgDivRef.current
         const videoDiv = videoRef.current
+        const textDiv = textRef.current
 
         gsap.to(imgDiv, {
             y: 40, 
@@ -37,6 +39,17 @@ export const Project = ({ project, toggleModal }) => {
         })
         gsap.to(videoDiv, {
             y: 40, 
+            ease: 'power1.easeInOut',
+            scrollTrigger: {
+                trigger: '.projects',
+                start: 'top top',
+                end: 'bottom +=20vh',
+                scrub: 2,
+            },
+        })
+
+        gsap.to(textDiv, {
+            y: 20, 
             ease: 'power1.easeInOut',
             scrollTrigger: {
                 trigger: '.projects',
@@ -61,7 +74,7 @@ export const Project = ({ project, toggleModal }) => {
                 }
                 <img src={project.imageMain.url} alt={`${project.name} imagem`} ref={imgDivRef} />
             </div>
-            <div className='text'>
+            <div className='text' ref={textRef}>
                 <h3>{project.name}</h3>
                 <div className='stream'>
                     <p>{project.typeProject}</p>

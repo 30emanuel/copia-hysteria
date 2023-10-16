@@ -1,9 +1,8 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import './styles.scss'
 import { gsap } from 'gsap'
 
 export const Collaborators = ({ text }) => {
-    const [showText, setShowText] = useState(false)
 
     useEffect(() => {
         gsap.to('.background', {
@@ -16,7 +15,6 @@ export const Collaborators = ({ text }) => {
                 once: true
             },
             onComplete: () => {
-                setShowText(true)
                 gsap.to('.bigger-circle', {
                     y: '130vh',
                     x: '-30vw',
@@ -51,35 +49,40 @@ export const Collaborators = ({ text }) => {
                 })
             }
         })
+
+        gsap.to('.collaborators-container', {
+            display: 'flex',
+            ease: 'power1.easeInOut',
+            scrollTrigger: {
+                trigger: '.collaborators',
+                start: "top top",
+                end: 'top top',
+                scrub: 1,
+                once: true
+            },
+        })
     }, [])
 
     return (
         <div className='collaborators' id='collaborators'>
             <div className="collaborators-container">
                 <div className="title-container">
-                    {showText &&
-                        <h2 className='titles collaborators-title'>colaboradoras</h2>
-                    }
+                    <h2 className='titles collaborators-title'>colaboradoras</h2>
                 </div>
                 <div className="collaborators-text">
                     <div className="sub-title">
                         <div className='circles-images'>
-                            {showText &&
-                                <>
-                                    <div className="up" style={{ backgroundImage: `url(${text.imageTop.url})`, backgroundColor: 'lightgray', backgroundPosition: '50%', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
-                                    </div>
-                                    <div className="left" style={{ backgroundImage: `url(${text.imageLeft.url})`, backgroundColor: 'lightgray', backgroundPosition: '50%', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}></div>
-                                    <div className="low" style={{ backgroundImage: `url(${text.imageLow.url})`, backgroundColor: 'lightgray', backgroundPosition: '50%', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}></div>
-                                </>
-                            }
+                            <div className="up" style={{ backgroundImage: `url(${text.imageTop.url})`, backgroundColor: 'lightgray', backgroundPosition: '50%', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
+                            </div>
+                            <div className="left" style={{ backgroundImage: `url(${text.imageLeft.url})`, backgroundColor: 'lightgray', backgroundPosition: '50%', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}></div>
+                            <div className="low" style={{ backgroundImage: `url(${text.imageLow.url})`, backgroundColor: 'lightgray', backgroundPosition: '50%', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}></div>
                         </div>
                         <div className="paragraph">
-                            {showText &&
-                                <p>{text.text}</p>
-                            }
+                            <p>{text.text}</p>
                         </div>
                     </div>
                 </div>
+
                 <div className="background">
                     <div className='bigger-circle'>
                         <div className="smaller-circle">

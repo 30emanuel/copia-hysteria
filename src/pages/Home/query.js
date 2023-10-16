@@ -11,10 +11,36 @@ export const HOME_QUERY = `
     titleSecondary,
     title
   },
+  allBrands {
+    name,
+    logo{
+      url
+    }
+  },
+  transitionOne {
+    img{
+      url
+    },
+    logo{
+      url
+    }
+  },
+  transitionTwo {
+    img{
+      url
+    },
+    logo{
+      url
+    }
+  },
   allProjects {
     name,
     typeProject,
     stream,
+    width,
+    height,
+    gridPosition,
+    prevVideo,
     imageMain {
       url
     },
@@ -44,12 +70,8 @@ export const HOME_QUERY = `
     text,
     textSecondary,
     videoUrl
-  }
-  allCollaborators{
-    name,
-    function
-  }
-  collaboratorsText{
+  },
+  collaborator{
     text,
     imageTop{
       url

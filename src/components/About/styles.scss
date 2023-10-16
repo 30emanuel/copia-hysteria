@@ -17,6 +17,7 @@
         width: 100%;
         height: 100%;
         margin-left: 500px;
+        animation: fade-about 1s ease-in-out forwards;
 
         .about-title {
             flex-direction: column;
@@ -72,6 +73,16 @@
         a:visited {
             color: white;
         }
+    }
+}
+
+@keyframes fade-about {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
     }
 }
 

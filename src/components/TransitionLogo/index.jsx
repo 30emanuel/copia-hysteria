@@ -1,9 +1,8 @@
 import './styles.scss'
 import { gsap } from 'gsap'
-import Logo from '../../assets/logo-red.png'
 import { useEffect } from 'react'
 
-export const TransitionLogo = ({ id, imgUrl }) => {
+export const TransitionLogo = ({ id, data }) => {
 
     useEffect(() => {
         gsap.to(`#logo-${id}`, {
@@ -18,6 +17,7 @@ export const TransitionLogo = ({ id, imgUrl }) => {
         })
 
         gsap.to(`#transition-img-${id}`, {
+            className: 'transition-img scaling-img',
             scale: 1.2,
             filter: 'brightness(0.7) sepia(1) hue-rotate(306deg) saturate(6)',
             ease: 'power1.easeInOut',
@@ -44,10 +44,10 @@ export const TransitionLogo = ({ id, imgUrl }) => {
     return (
         <div className={`transition-logo`} id={`transition-logo-${id}`}>
             <div className="transition-background">
-                <img className='transition-img' id={`transition-img-${id}`} src={imgUrl} alt="Background" />
+                <img className='transition-img' id={`transition-img-${id}`} src={data.img.url} alt="Background" />
             </div>
             <div className='logo' id={`logo-${id}`}>
-                <img src={Logo} alt="Logo" />
+                <img src={data.logo.url} alt="Logo" />
             </div>
         </div>
     )
