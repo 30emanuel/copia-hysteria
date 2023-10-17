@@ -76,6 +76,7 @@
                 .stream {
                     display: flex;
                     justify-content: left;
+                    align-items: center;
                     animation: move-up 0.5s ease-out;
                     font-size: 30px;
 
@@ -91,7 +92,7 @@
                         margin-left: 24px;
                         margin-right: 24px;
                         width: 3px;
-                        height: 100%;
+                        height: 70%;
                         background-color: white;
                     }
 
