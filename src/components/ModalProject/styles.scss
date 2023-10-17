@@ -70,26 +70,41 @@
                 margin-right: 49px;
                 margin-top: 70px;
                 padding-bottom: 50px;
+                gap: 32px;
 
                 .stream {
                     display: flex;
                     justify-content: left;
                     align-items: center;
-                    width: 100%;
                     height: 100%;
                     animation: move-up 0.5s ease-out;
                     font-size: 30px;
-                    gap: 24px;
 
                     .type {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
                         font-style: normal;
                         font-weight: 300;
                         line-height: normal;
                     }
 
+                    
+                    .line {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        margin-left: 24px;
+                        margin-right: 24px;
+                        width: 3px;
+                        height: 23px;
+                        background-color: white;
+                    }
+
                     .streamname {
-                        border-left: 3px solid white;
-                        padding-left: 24px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
                         font-style: normal;
                         font-weight: 700;
                         line-height: normal;
@@ -98,7 +113,6 @@
 
                 .paragraph {
                     max-width: 640px;
-                    margin-top: 32px;
                     font-size: 24px;
                     font-style: normal;
                     font-weight: 200;
@@ -107,12 +121,12 @@
                 }
 
                 .credits {
-                    max-width: 640px;
+                    max-width: 540px;
                     display: flex;
                     justify-content: left;
                     align-items: left;
                     flex-wrap: wrap;
-                    gap: 16px;
+                    gap: 36px;
 
 
                     .credit {
@@ -166,7 +180,7 @@
     }
 
     .gallery {
-        width: 100%;
+        width: 100vw;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -180,6 +194,7 @@
             width: 100%;
             animation: moveUp 1.5s;
             height: 886px;
+            margin-top: -3px;
             z-index: 2;
 
             &:hover {
@@ -321,6 +336,7 @@
                 height: 100%;
                 overflow: hidden;
                 position: relative;
+                transition: 1s ease-in;
                 cursor: pointer;
 
                 &:hover {
@@ -345,7 +361,6 @@
                         height: 120%;
                         object-fit: cover;
                         object-position: center;
-                        transition: transform 0s ease-in-out;
                     }
                     img{
                         z-index: 1;
