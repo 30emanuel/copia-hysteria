@@ -112,7 +112,7 @@
                 }
 
                 .paragraph {
-                    max-width: 640px;
+                    max-width: 530px;
                     font-size: 24px;
                     font-style: normal;
                     font-weight: 200;
@@ -121,7 +121,7 @@
                 }
 
                 .credits {
-                    max-width: 540px;
+                    max-width: 530px;
                     display: flex;
                     justify-content: left;
                     align-items: left;
@@ -130,7 +130,6 @@
 
 
                     .credit {
-                        margin-top: 32px;
                         max-height: 50px;
                         display: flex;
                         gap: 16px;
@@ -384,7 +383,7 @@
                         font-size: 44px;
                     }
 
-                    .text {
+                    .text-project {
                         margin-top: 10px;
                         display: flex;
                         justify-content: left;

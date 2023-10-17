@@ -37,7 +37,37 @@ export const ModalProject = ({ index = 0, setSelectedProject, showModal, toggleM
 
     useEffect(() => {
         setIndexCurrent(index)
+        /*gsap.to('.outherproject-img', {
+            y: 40, 
+            ease: 'power1.easeInOut',
+            scrollTrigger: {
+                trigger: '.project-modal',
+                start: 'top top',
+                end: 'bottom bottom',
+                scrub: 2,
+            },
+        })
+        gsap.to('.outherproject-video', {
+            y: 40, 
+            ease: 'power1.easeInOut',
+            scrollTrigger: {
+                trigger: '.project-modal',
+                start: 'top top',
+                end: 'bottom bottom',
+                scrub: 2,
+            },
+        })
 
+        gsap.to('.text-project', {
+            y: 20, 
+            ease: 'power1.easeInOut',
+            scrollTrigger: {
+                trigger: '.project-modal',
+                start: 'top top',
+                end: 'bottom bottom',
+                scrub: 2,
+            },
+        })*/
     }, [index])
 
     return (
@@ -172,7 +202,7 @@ export const ModalProject = ({ index = 0, setSelectedProject, showModal, toggleM
                                         <SwiperSlide className='outher-project' key={indexProject} onClick={() => changeProject(indexProject)}>
                                             <div className='project-img'>
                                                 {project.prevVideo &&
-                                                    <video className='project-video' muted loop src={project?.prevVideo}
+                                                    <video className='outherproject-video' muted loop src={project?.prevVideo}
                                                         onMouseEnter={(e) => {
                                                             setTimeout(() => {
                                                                 e.target.play()
@@ -180,11 +210,11 @@ export const ModalProject = ({ index = 0, setSelectedProject, showModal, toggleM
                                                         }}
                                                         onMouseLeave={(e) => e.target.pause()}></video>
                                                 }
-                                                <img className='project-img' src={project.imageMain.url} alt={`${project.name} img`} />
+                                                <img className='outherproject-img' src={project.imageMain.url} alt={`${project.name} img`} />
                                             </div>
                                             <div className="info">
                                                 <h3>{project.name}</h3>
-                                                <div className='text'>
+                                                <div className='text-project'>
                                                     <p>{project.typeProject}</p>
                                                     <p className='line'></p>
                                                     <p className='stream'>{project.stream}</p>
