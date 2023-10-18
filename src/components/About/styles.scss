@@ -8,6 +8,17 @@
     flex-direction: column;
     z-index: 2;
 
+    .about-container{
+        width: 100%;
+        min-height: 110vh;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        z-index: 6;
+        animation: fade-about 1s ease-in-out forwards;  
+    }
+
     .about-text {
         display: flex;
         justify-content: end;
@@ -39,20 +50,28 @@
         }
 
         .paragraph {
+            display: flex;
+            opacity: 0;
             width: 653px;
             height: 110%;
+            min-height: 280px;
             margin-top: -20px;
             margin-left: 300px;
-            animation: move-up 1s ease-in-out forwards;
+            transition: opacity 1s ease-in-out;
+            p{
+                animation: move-up 1s ease-in-out forwards;
+            }
         }
     }
 
     .footer {
+        display: flex;
+        opacity: 0;
         width: 100%;
+        min-height: 39px;
         z-index: 6;
         margin-top: 100px;
         margin-left: 485px;
-        display: flex;
         justify-content: center;
         align-items: center;
         color: white;
@@ -62,9 +81,14 @@
         font-weight: 300;
         line-height: 39px;
         letter-spacing: 1.1px;
-        animation: move-up 1.2s ease-in-out forwards;
+        transition: opacity 1s ease-in-out;
+
+        p{
+            animation: move-up 1.2s ease-in-out forwards;
+        }
 
         a {
+            animation: move-up 1.2s ease-in-out forwards;
             text-decoration-line: underline;
             margin-left: 5px;
             color: white;

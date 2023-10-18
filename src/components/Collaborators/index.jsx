@@ -7,12 +7,14 @@ export const Collaborators = ({ text }) => {
     useEffect(() => {
         gsap.to('.background', {
             display: 'flex',
+            y: '+=100vh',
+            x: '+=20vw',
             scrollTrigger: {
                 trigger: '.collaborators',
                 start: "top top",
                 end: 'top top',
                 scrub: 0.5,
-                once: true
+                markers: true
             },
             onComplete: () => {
                 gsap.to('.bigger-circle', {
@@ -82,12 +84,11 @@ export const Collaborators = ({ text }) => {
                         </div>
                     </div>
                 </div>
-
-                <div className="background">
-                    <div className='bigger-circle'>
-                        <div className="smaller-circle">
-                            <div className='background-blur'></div>
-                        </div>
+            </div>
+            <div className="background">
+                <div className='bigger-circle'>
+                    <div className="smaller-circle">
+                        <div className='background-blur'></div>
                     </div>
                 </div>
             </div>

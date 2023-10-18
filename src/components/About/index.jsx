@@ -2,42 +2,72 @@ import { useEffect, useState } from 'react'
 import './styles.scss'
 import { gsap } from 'gsap'
 
-export const About = ({text}) => {
+export const About = ({ text }) => {
     const [showText, setShowText] = useState(false)
+    const [showFooter, setShowFooter] = useState(false)
 
     useEffect(() => {
-        gsap.to('.about', {
+        gsap.to('.about-container', {
+            display: 'flex',
             scrollTrigger: {
                 trigger: '.about',
-                start: "top top",
-                end: 'top top',
+                start: "top center 10vh",
+                end: 'top center 10vh',
                 scrub: 0.5,
+                once: true
             },
-            onStart: ()=>{
+        })
+        gsap.to('.paragraph', {
+            opacity: '1',
+            scrollTrigger: {
+                trigger: '.about-container',
+                start: "top +=100vh",
+                end: 'top +=100vh',
+                scrub: 0.5,
+                once: true
+            },
+            onStart: () => {
                 setShowText(true)
+            }
+        })
+        gsap.to('.footer', {
+            opacity: '1',
+            scrollTrigger: {
+                trigger: '.about-container',
+                start: "top +=100vh",
+                end: 'top +=100vh',
+                scrub: 0.5,
+                once: true
             },
+            onStart: () => {
+                setShowFooter(true)
+            }
         })
     }, [])
 
     return (
         <div className='about' id='about'>
-            {showText &&
-                <>
-                    <div className="about-text">
-                        <div className="about-title">
-                            <h3>{text.titleSecondary}</h3>
-                            <h2 className='titles'>{text.title}</h2>
-                        </div>
-                        <div className="paragraph">
+            <div className='about-container'>
+                <div className="about-text">
+                    <div className="about-title">
+                        <h3 >{text.titleSecondary}</h3>
+                        <h2 className='titles title'>{text.title}</h2>
+                    </div>
+                    <div className="paragraph">
+                        {showText &&
                             <p className='paragraphs'>{text.text}</p>
-                        </div>
+                        }
                     </div>
-                    <div className="footer">
-                        <p>Hysteria: powered by </p>
-                        <a href="https://conspiracao.com.br" target='_blank'>Conspiração.</a>
-                    </div>
-                </>
-            }
+                </div>
+                <div className="footer">
+                    {showFooter &&
+                        <>
+                            <p>Hysteria: powered by </p>
+                            <a href="https://conspiracao.com.br" target='_blank'>Conspiração.</a>
+                        </>
+                    }
+                </div>
+            </div>
         </div>
     )
 }

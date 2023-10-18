@@ -13,7 +13,7 @@
     .brandlab-circle {
         display: none;
         background-color: var(--bg-color-four);
-        scale: 0.25;
+        scale: 0.05;
         border-radius: 100%;
         width: 1749px;
         height: 1749px;
@@ -21,8 +21,7 @@
         align-items: center;
         position: absolute;
         z-index: 4;
-        margin-bottom: 50vh;
-        animation: fade-in 0.5s ease-in;
+        margin-bottom: 70vh;
         transition: transform ease-in-out;
     }
 
@@ -41,7 +40,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-top: 20vh;
+        margin-top: 10vh;
         z-index: 7;
         animation: fade-in 1s ease-in;
 

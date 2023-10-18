@@ -18,11 +18,12 @@ export const Brandlab = ({ text, brands }) => {
         })
 
         gsap.to('.brandlab-circle', {
-            y: '92vh',
+            y: '+=100vh',
+            scale: 1,
             scrollTrigger: {
                 trigger: '.brandlab',
-                start: "top -5vh",
-                end: 'center center',
+                start: "top center",
+                end: '+=60%',
                 scrub: 0.5,
                 once: true,
             },
@@ -31,7 +32,7 @@ export const Brandlab = ({ text, brands }) => {
             }
         })
 
-        gsap.to('.brandlab-circle', {
+        /*gsap.to('.brandlab-circle', {
             scale: 1,
             scrollTrigger: {
                 trigger: '.brandlab',
@@ -40,7 +41,7 @@ export const Brandlab = ({ text, brands }) => {
                 scrub: 0.5,
                 once: true,
             },
-        })
+        })*/
     }, [])
 
 

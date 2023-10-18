@@ -98,27 +98,6 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
         },
     })
 
-    const textAnimationOne = useSpring({
-        translateY: showText ? '0' : '300px',
-        config: { duration: 900 },
-        onRest: () => {
-            setShowSecondText(true)
-        }
-    })
-
-    const textAnimationTwo = useSpring({
-        translateY: showSecondText ? '0' : '300px',
-        config: { duration: 700 },
-        onRest: () => {
-            setShowThreeText(true)
-        }
-    })
-
-    const textAnimationThree = useSpring({
-        translateY: showThreeText ? '0' : '300px',
-        config: { duration: 300 },
-    })
-
     gsap.to('.video-right', {
         y: '-50vh',
         ease: 'power1.easeInOut',
@@ -187,9 +166,11 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
                 },
                 onComplete: () => {
                     gsap.to('.circle-top', {
-                        y: '-50vh',
-                        ease: 'power1.easeInOut',
-                        transition: 'transform 0.7s ease-out',
+                        x: '32vw',
+                        y: '272vh',
+                        transition: 'transform 0.1s ease-in-out',
+                        width: `calc(${circleTop.current.offsetWidth}px + 835px)`,
+                        height: `calc(${circleTop.current.offsetWidth}px + 835px)`,
                         scrollTrigger: {
                             trigger: '#transition-logo-1',
                             start: "top top",
@@ -198,29 +179,13 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
                         },
                         onComplete: () => {
                             gsap.to('.circle-top', {
-                                x: '25vw',
-                                y: '402vh',
-                                ease: 'power1.easeInOut',
-                                width: `calc(${circleTop.current.offsetWidth}px + 835px)`,
-                                height: `calc(${circleTop.current.offsetWidth}px + 835px)`,
+                                y: '+=150vh',
                                 scrollTrigger: {
-                                    trigger: '.projects',
-                                    start: "top top",
-                                    end: 'top 200px',
+                                    trigger: '#transition-logo-1',
+                                    start: "center center",
+                                    end: '+=250%',
                                     scrub: 0.5,
                                 },
-                                onComplete: () => {
-                                    gsap.to('.circle-top', {
-                                        ease: 'power1.easeInOut',
-                                        y: '+=80vh',
-                                        scrollTrigger: {
-                                            trigger: '.projects',
-                                            start: "top top",
-                                            end: '+=150%',
-                                            scrub: 0.5,
-                                        },
-                                    })
-                                }
                             })
                         }
                     })
@@ -239,9 +204,11 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
                 },
                 onComplete: () => {
                     gsap.to('.circle-bottom', {
-                        y: '-50vh',
-                        ease: 'power1.easeInOut',
-                        transition: 'transform 0.7s ease-out',
+                        y: '100vh',
+                        x: '39.5vw',
+                        width: `calc(${circleBottom.current.offsetWidth}px + 1341px)`,
+                        height: `calc(${circleBottom.current.offsetWidth}px + 1341px)`,
+                        transition: 'transform 0.1s ease-in-out',
                         scrollTrigger: {
                             trigger: '#transition-logo-1',
                             start: "top top",
@@ -250,29 +217,13 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
                         },
                         onComplete: () => {
                             gsap.to('.circle-bottom', {
-                                y: '240vh',
-                                x: '39.5vw',
-                                ease: 'power1.easeInOut',
-                                width: `calc(${circleBottom.current.offsetWidth}px + 1341px)`,
-                                height: `calc(${circleBottom.current.offsetWidth}px + 1341px)`,
+                                y: '+=200vh',
                                 scrollTrigger: {
-                                    trigger: '.projects',
-                                    start: "top top",
-                                    end: 'top 200px',
+                                    trigger: '#transition-logo-1',
+                                    start: "center center",
+                                    end: '+=200%',
                                     scrub: 0.5,
                                 },
-                                onComplete: () => {
-                                    gsap.to('.circle-bottom', {
-                                        y: '+=80vh',
-                                        ease: 'power1.easeInOut',
-                                        scrollTrigger: {
-                                            trigger: '.projects',
-                                            start: "top top",
-                                            end: '+=150%',
-                                            scrub: 0.5,
-                                        },
-                                    })
-                                }
                             })
                         }
                     })
@@ -280,6 +231,27 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
             })
         }
     }, [showRest])
+
+    const textAnimationOne = useSpring({
+        translateY: showText ? '0' : '300px',
+        config: { duration: 900 },
+        onRest: () => {
+            setShowSecondText(true)
+        }
+    })
+
+    const textAnimationTwo = useSpring({
+        translateY: showSecondText ? '0' : '300px',
+        config: { duration: 700 },
+        onRest: () => {
+            setShowThreeText(true)
+        }
+    })
+
+    const textAnimationThree = useSpring({
+        translateY: showThreeText ? '0' : '300px',
+        config: { duration: 300 },
+    })
 
     return (
         <div className='start' id='home'>

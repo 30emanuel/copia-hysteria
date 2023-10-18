@@ -193,6 +193,16 @@
     }
 }
 
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
 @media (max-height: 1079px) and (max-width: 1400px) {
     .start {
         .center {
