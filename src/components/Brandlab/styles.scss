@@ -53,7 +53,7 @@
             color: white;
 
             h2{
-                animation: move-title 1.2s ease-out;
+                animation: move-title-brand 1.5s ease-in-out forwards;
             }
 
             h3 {
@@ -159,7 +159,7 @@
     }
 }
 
-@keyframes move-title {
+@keyframes move-title-brand {
     from {
         transform: translateY(300px);
     }

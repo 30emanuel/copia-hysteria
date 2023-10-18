@@ -3,7 +3,6 @@ import LogoWhite from '../../assets/logo-white.png'
 import { useState, useRef, useEffect } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { useSpring, animated } from 'react-spring'
-import gsap from 'gsap'
 
 export const ModalProject = ({ index = 0, setSelectedProject, showModal, toggleModal, showScroll, projects }) => {
     const [indexCurrent, setIndexCurrent] = useState(index)
@@ -37,42 +36,11 @@ export const ModalProject = ({ index = 0, setSelectedProject, showModal, toggleM
 
     useEffect(() => {
         setIndexCurrent(index)
-        /*gsap.to('.outherproject-img', {
-            y: 40, 
-            ease: 'power1.easeInOut',
-            scrollTrigger: {
-                trigger: '.project-modal',
-                start: 'top top',
-                end: 'bottom bottom',
-                scrub: 2,
-            },
-        })
-        gsap.to('.outherproject-video', {
-            y: 40, 
-            ease: 'power1.easeInOut',
-            scrollTrigger: {
-                trigger: '.project-modal',
-                start: 'top top',
-                end: 'bottom bottom',
-                scrub: 2,
-            },
-        })
-
-        gsap.to('.text-project', {
-            y: 20, 
-            ease: 'power1.easeInOut',
-            scrollTrigger: {
-                trigger: '.project-modal',
-                start: 'top top',
-                end: 'bottom bottom',
-                scrub: 2,
-            },
-        })*/
     }, [index])
 
     return (
         <animated.div style={moveUp} className={`modalproject ${showModal ? 'background' : ''}`} ref={modalRef}>
-            <div className='modal-header'>
+            <div className={`modal-header ${showModal ? 'background' : ''}`}>
                 <div>
                     <img src={LogoWhite} alt="logo" />
                 </div>

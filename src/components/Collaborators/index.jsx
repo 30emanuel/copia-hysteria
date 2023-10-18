@@ -1,31 +1,45 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import './styles.scss'
 import { gsap } from 'gsap'
 
 export const Collaborators = ({ text }) => {
+    const [showTitle, setShowTitle] = useState(false)
+    const [showText, setShowText] = useState(false)
 
     useEffect(() => {
-        gsap.to('.background', {
-            display: 'flex',
-            y: '+=100vh',
+        gsap.to('.bigger-circle', {
+            y: '+=80vh',
             x: '+=20vw',
             scrollTrigger: {
-                trigger: '.collaborators',
-                start: "top top",
-                end: 'top top',
+                trigger: '#transition-img-2',
+                start: "center center",
+                end: '+=110%',
                 scrub: 0.5,
-                markers: true
             },
             onComplete: () => {
+                gsap.to('.background', {
+                    y: '100vh',
+                    height: '145vh',
+                    overflow: 'hidden',
+                    ease: 'power1.easeInOut',
+                    scrollTrigger: {
+                        trigger: '.collaborators-text',
+                        start: "bottom bottom",
+                        end: '+=100%',
+                        scrub: 1,
+                        markers: true
+                    },
+                })
                 gsap.to('.bigger-circle', {
-                    y: '130vh',
+                    y: '0vh',
                     x: '-30vw',
                     ease: 'power1.easeInOut',
                     scrollTrigger: {
-                        trigger: '.contact',
-                        start: "top 30vh",
-                        end: 'top 30vh',
+                        trigger: '.collaborators-text',
+                        start: "bottom bottom",
+                        end: '+=100%',
                         scrub: 1,
+                        markers: true
                     },
                 })
                 gsap.to('.smaller-circle', {
@@ -33,9 +47,9 @@ export const Collaborators = ({ text }) => {
                     y: '-60vh',
                     ease: 'power1.easeInOut',
                     scrollTrigger: {
-                        trigger: '.contact',
-                        start: "top 30vh",
-                        end: 'top 30vh',
+                        trigger: '.collaborators-text',
+                        start: "bottom bottom",
+                        end: '+=100%',
                         scrub: 1,
                     },
                 })
@@ -43,47 +57,72 @@ export const Collaborators = ({ text }) => {
                     display: 'flex',
                     ease: 'power1.easeInOut',
                     scrollTrigger: {
-                        trigger: '.contact',
-                        start: "top 30vh",
-                        end: 'top 30vh',
+                        trigger: '.collaborators-text',
+                        start: "bottom bottom",
+                        end: '+=100%',
                         scrub: 0,
                     },
                 })
             }
         })
-
-        gsap.to('.collaborators-container', {
-            display: 'flex',
-            ease: 'power1.easeInOut',
+        gsap.to('.smaller-circle', {
+            y: '+=40vh',
+            x: '+=20vw',
             scrollTrigger: {
-                trigger: '.collaborators',
-                start: "top top",
-                end: 'top top',
-                scrub: 1,
-                once: true
+                trigger: '#transition-img-2',
+                start: "center center",
+                end: '+=110%',
+                scrub: 0.5,
             },
+        })
+
+        gsap.to('.collaborators', {
+            scrollTrigger: {
+                trigger: '#transition-img-2',
+                start: "center center",
+                end: '+=40%',
+                scrub: 1,
+            },
+            onComplete: () => {
+                setShowTitle(true)
+            }
+        })
+        gsap.to('.collaborators-text', {
+            scrollTrigger: {
+                trigger: '#transition-img-2',
+                start: "center center",
+                end: '+=60%',
+                scrub: 1,
+            },
+            onComplete: () =>{
+                setShowText(true)
+            }
         })
     }, [])
 
     return (
         <div className='collaborators' id='collaborators'>
             <div className="collaborators-container">
-                <div className="title-container">
-                    <h2 className='titles collaborators-title'>colaboradoras</h2>
-                </div>
-                <div className="collaborators-text">
-                    <div className="sub-title">
-                        <div className='circles-images'>
-                            <div className="up" style={{ backgroundImage: `url(${text.imageTop.url})`, backgroundColor: 'lightgray', backgroundPosition: '50%', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
+                {showTitle &&
+                    <div className="collaborators-title">
+                        <h2 className='titles'>colaboradoras</h2>
+                    </div>
+                }
+                {showText &&
+                    <div className="collaborators-text">
+                        <div className="sub-title">
+                            <div className='circles-images'>
+                                <div className="up" style={{ backgroundImage: `url(${text.imageTop.url})`, backgroundColor: 'lightgray', backgroundPosition: '50%', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
+                                </div>
+                                <div className="left" style={{ backgroundImage: `url(${text.imageLeft.url})`, backgroundColor: 'lightgray', backgroundPosition: '50%', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}></div>
+                                <div className="low" style={{ backgroundImage: `url(${text.imageLow.url})`, backgroundColor: 'lightgray', backgroundPosition: '50%', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}></div>
                             </div>
-                            <div className="left" style={{ backgroundImage: `url(${text.imageLeft.url})`, backgroundColor: 'lightgray', backgroundPosition: '50%', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}></div>
-                            <div className="low" style={{ backgroundImage: `url(${text.imageLow.url})`, backgroundColor: 'lightgray', backgroundPosition: '50%', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}></div>
-                        </div>
-                        <div className="paragraph">
-                            <p>{text.text}</p>
+                            <div className="paragraph">
+                                <p>{text.text}</p>
+                            </div>
                         </div>
                     </div>
-                </div>
+                }
             </div>
             <div className="background">
                 <div className='bigger-circle'>

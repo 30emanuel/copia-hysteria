@@ -18,9 +18,12 @@
         justify-content: space-between;
         width: 100%;
         position: fixed;
+        transition: background-color 1150ms ease-in-out;
+        transition-delay: 1000ms;
+        background-color: var(--bg-color-primary);
 
         div {
-            padding: 40px 62px;
+            padding: 20px 62px 20px 62px;
         }
 
         svg {
@@ -412,6 +415,9 @@
     background-color: var(--bg-color-secondary);
 }
 
+.modal-header.background{
+    background-color: var(--bg-color-secondary);
+}
 
 @keyframes fade-in {
     from {
