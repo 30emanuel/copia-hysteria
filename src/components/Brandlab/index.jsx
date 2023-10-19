@@ -55,9 +55,6 @@ export const Brandlab = ({ text, brands }) => {
     })
   }, [brands])
 
-
-
-
   return (
     <div className='brandlab'>
       <div className="front">

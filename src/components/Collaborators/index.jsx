@@ -17,21 +17,8 @@ export const Collaborators = ({ text }) => {
                 scrub: 0.5,
             },
             onComplete: () => {
-                gsap.to('.background', {
-                    y: '100vh',
-                    height: '145vh',
-                    overflow: 'hidden',
-                    ease: 'power1.easeInOut',
-                    scrollTrigger: {
-                        trigger: '.collaborators-text',
-                        start: "bottom bottom",
-                        end: '+=100%',
-                        scrub: 1,
-                        markers: true
-                    },
-                })
                 gsap.to('.bigger-circle', {
-                    y: '0vh',
+                    y: '130vh',
                     x: '-30vw',
                     ease: 'power1.easeInOut',
                     scrollTrigger: {
@@ -39,7 +26,6 @@ export const Collaborators = ({ text }) => {
                         start: "bottom bottom",
                         end: '+=100%',
                         scrub: 1,
-                        markers: true
                     },
                 })
                 gsap.to('.smaller-circle', {
@@ -54,13 +40,13 @@ export const Collaborators = ({ text }) => {
                     },
                 })
                 gsap.to('.background-blur', {
-                    display: 'flex',
+                    opacity: '1',
                     ease: 'power1.easeInOut',
                     scrollTrigger: {
                         trigger: '.collaborators-text',
                         start: "bottom bottom",
-                        end: '+=100%',
-                        scrub: 0,
+                        end: '+=20%',
+                        scrub: 1,
                     },
                 })
             }
@@ -124,7 +110,7 @@ export const Collaborators = ({ text }) => {
                     </div>
                 }
             </div>
-            <div className="background">
+            <div className="brand-background">
                 <div className='bigger-circle'>
                     <div className="smaller-circle">
                         <div className='background-blur'></div>
