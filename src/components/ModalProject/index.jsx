@@ -3,12 +3,14 @@ import LogoWhite from '../../assets/logo-white.png'
 import { useState, useRef, useEffect } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { useSpring, animated } from 'react-spring'
+import { ModalVideo } from '../ModalVideo'
 
 export const ModalProject = ({ index = 0, setSelectedProject, showModal, toggleModal, showScroll, projects }) => {
     const [indexCurrent, setIndexCurrent] = useState(index)
     const modalRef = useRef(null)
-    const videoId = projects[index].videourl.split('v=')[1]
     const [showContent, setShowContent] = useState(false)
+    const [showVideo, setShowVideo] = useState(false)
+    const [disabledButton, setDisabledButton] = useState(false)
 
     const changeProject = (index) => {
         setSelectedProject(index)
@@ -18,9 +20,21 @@ export const ModalProject = ({ index = 0, setSelectedProject, showModal, toggleM
     }
 
     const closeModal = () => {
-        toggleModal(false)
-        showScroll(true)
-        setShowContent(showModal)
+        if (!disabledButton) {
+            if (!showVideo) {
+                toggleModal(false)
+                showScroll(true)
+                setShowContent(showModal)
+            } else {
+                setDisabledButton(true)
+                setTimeout(() => {
+                    setShowVideo(false)
+                }, 50)
+                setTimeout(() => {
+                    setDisabledButton(false)
+                }, 1000)
+            }
+        }
     }
 
     const moveUp = useSpring({
@@ -40,7 +54,7 @@ export const ModalProject = ({ index = 0, setSelectedProject, showModal, toggleM
 
     return (
         <animated.div style={moveUp} className={`modalproject ${showModal ? 'background' : ''}`} ref={modalRef}>
-            <div className={`modal-header ${showModal ? 'background' : ''}`}>
+            <div className='modal-header'>
                 <div>
                     <img src={LogoWhite} alt="logo" />
                 </div>
@@ -53,6 +67,7 @@ export const ModalProject = ({ index = 0, setSelectedProject, showModal, toggleM
             </div>
             {showContent &&
                 <>
+                    <ModalVideo showVideo={showVideo} videoUrl={projects[index].videourl} showModal={setShowVideo} />
                     <div className='project-modal'>
                         <div className="title">
                             <h2>{projects[indexCurrent].name}</h2>
@@ -92,13 +107,11 @@ export const ModalProject = ({ index = 0, setSelectedProject, showModal, toggleM
                         </div>
                     </div>
                     <div className="gallery">
-                        <div className="video">
-                            <iframe
-                                className='video-gallery'
-                                src={`https://www.youtube.com/embed/${videoId}`}
-                                frameBorder="0"
-                                allowFullScreen
-                            ></iframe>
+                        <div className="video" onClick={() => setShowVideo(true)}>
+                            <img src={projects[index].videoThumb} alt="" />
+                            <div className='play'>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16"> <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z" /> </svg>
+                            </div>
                         </div>
                         <div className="images">
                             <div className="image">
