@@ -153,12 +153,14 @@
             font-style: normal;
             line-height: 412px;
             transition: transform 0.7s ease-out;
+            animation: fade-in 1.5s ease-in;
         }
 
         h2 {
             font-size: 96px;
             font-weight: 300;
             line-height: 96px;
+            animation: fade-in 1.5s ease-in;
         }
         .text-one{
             transition: transform 0.5s ease-out;

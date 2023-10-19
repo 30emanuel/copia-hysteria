@@ -235,22 +235,26 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
     const textAnimationOne = useSpring({
         translateY: showText ? '0' : '300px',
         config: { duration: 900 },
-        onRest: () => {
-            setShowSecondText(true)
+        onStart: () => {
+            setTimeout(function () {
+                setShowSecondText(true)
+            }, 600)
         }
     })
 
     const textAnimationTwo = useSpring({
-        translateY: showSecondText ? '0' : '300px',
+        translateY: showSecondText ? '0' : '400px',
         config: { duration: 700 },
-        onRest: () => {
-            setShowThreeText(true)
+        onStart: () => {
+            setTimeout(function () {
+                setShowThreeText(true)
+            }, 300)
         }
     })
 
     const textAnimationThree = useSpring({
         translateY: showThreeText ? '0' : '300px',
-        config: { duration: 300 },
+        config: { duration: 600 },
     })
 
     return (
