@@ -37,6 +37,24 @@ export const Home = () => {
         "logo": {
           "url": "https://www.datocms-assets.com/103984/1697218897-2560px-tiktok_logo-svg.png"
         }
+      },
+      {
+        "name": "TikTok",
+        "logo": {
+          "url": "https://www.datocms-assets.com/103984/1697218897-2560px-tiktok_logo-svg.png"
+        }
+      },
+      {
+        "name": "TikTok",
+        "logo": {
+          "url": "https://www.datocms-assets.com/103984/1697218897-2560px-tiktok_logo-svg.png"
+        }
+      },
+      {
+        "name": "TikTok",
+        "logo": {
+          "url": "https://www.datocms-assets.com/103984/1697218897-2560px-tiktok_logo-svg.png"
+        }
       }
     ],
     "transitionOne": {

@@ -101,15 +101,19 @@ export const ModalProject = ({ index = 0, setSelectedProject, showModal, toggleM
                             ></iframe>
                         </div>
                         <div className="images">
-                            <img src={projects[indexCurrent].image1.url} alt={`${projects[indexCurrent].name}`} />
-                            <img src={projects[indexCurrent].image2.url} alt={`${projects[indexCurrent].name}`} />
+                            <div className="image">
+                                <img src={projects[indexCurrent].image1.url} alt={`${projects[indexCurrent].name}`} />
+                            </div>
+                            <div className="image">
+                                <img src={projects[indexCurrent].image2.url} alt={`${projects[indexCurrent].name}`} />
+                            </div>
                         </div>
                         <div className="middle">
                             <img src={projects[indexCurrent].imageMiddle.url} alt={`${projects[indexCurrent].name}`} />
                         </div>
                         <div className="images">
-                            <img src={projects[indexCurrent].image3.url} alt={`${projects[indexCurrent].name}`} />
-                            <img src={projects[indexCurrent].image4.url} alt={`${projects[indexCurrent].name}`} />
+                            <div className="image"><img src={projects[indexCurrent].image3.url} alt={`${projects[indexCurrent].name}`} /></div>
+                            <div className="image"><img src={projects[indexCurrent].image4.url} alt={`${projects[indexCurrent].name}`} /></div>
                         </div>
                     </div>
                     <div className='footer'>
