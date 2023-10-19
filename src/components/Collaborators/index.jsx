@@ -45,8 +45,8 @@ export const Collaborators = ({ text }) => {
                     scrollTrigger: {
                         trigger: '.collaborators-text',
                         start: "bottom bottom",
-                        end: '+=20%',
-                        scrub: 1,
+                        end: '+=100%',
+                        scrub: 0,
                     },
                 })
             }
