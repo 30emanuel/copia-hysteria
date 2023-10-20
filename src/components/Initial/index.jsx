@@ -180,29 +180,12 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
                         onComplete: () => {
                             gsap.to('.circle-top', {
                                 y: '+=150vh',
-                                transition: 'transform 0.1s ease-in-out',
                                 scrollTrigger: {
                                     trigger: '#transition-logo-1',
                                     start: "center center",
                                     end: '+=250%',
                                     scrub: 0.5,
                                 },
-                                onComplete: () =>{
-                                    gsap.to('.circle-top', {
-                                        y: '+=236vh',
-                                        x: '-=67vw',
-                                        height: `calc(${circleTop.current.offsetWidth}px - 868px)`,
-                                        width: `calc(${circleTop.current.offsetWidth}px - 868px)`,
-                                        border: '0.761px solid var(--bg-color-four)',
-                                        transition: 'transform 0.1s ease-in-out',
-                                        scrollTrigger: {
-                                            trigger: '.brandlab',
-                                            start: "top center",
-                                            end: "center center",
-                                            scrub: 1,
-                                        },
-                                    })
-                                }
                             })
                         }
                     })
@@ -235,44 +218,12 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
                         onComplete: () => {
                             gsap.to('.circle-bottom', {
                                 y: '+=200vh',
-                                transition: 'width 1s ease-out, height 1s ease-out, left 1s ease-out top 1s ease-out',
                                 scrollTrigger: {
                                     trigger: '#transition-logo-1',
                                     start: "center center",
                                     end: '+=200%',
                                     scrub: 0.5,
                                 },
-                                onComplete: () =>{
-                                    gsap.to('.circle-bottom', {
-                                        y: '+=236vh',
-                                        x: '+=53vw',
-                                        width: `calc(${circleBottom.current.offsetWidth}px - 1181px)`,
-                                        height: `calc(${circleBottom.current.offsetWidth}px - 1181px)`,
-                                        border: '1px solid var(--bg-color-four)',
-                                        transition: 'transform 0.1s ease-in-out',
-                                        scrollTrigger: {
-                                            trigger: '.brandlab',
-                                            start: "top center",
-                                            end: "center center",
-                                            scrub: 1,
-                                        },
-                                        onComplete: () =>{
-                                            gsap.to('.circle-bottom', {
-                                                y: '+=200vh',
-                                                width: `calc(${circleBottom.current.offsetWidth}px + 231px)`,
-                                                height: `calc(${circleBottom.current.offsetWidth}px + 231px)`,
-                                                border: '1px solid white',
-                                                transition: 'transform 0.1s ease-in-out',
-                                                scrollTrigger: {
-                                                    trigger: '#transition-logo-2',
-                                                    start: "top center",
-                                                    end: "center center",
-                                                    scrub: 1,
-                                                },
-                                            })
-                                        }
-                                    })
-                                }
                             })
                         }
                     })
