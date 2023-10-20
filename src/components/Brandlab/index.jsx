@@ -45,7 +45,7 @@ export const Brandlab = ({ text, brands }) => {
 
         setTimeout(function () {
           setShowBrands(true)
-          brands.map((_brand, index) =>{
+          brands.map((_brand, index) => {
             setTimeout(function () {
               setIndexCurrent(index)
             }, 200 * index)
@@ -59,15 +59,9 @@ export const Brandlab = ({ text, brands }) => {
     <div className='brandlab'>
       <div className="front">
         <div className="texts">
-          {showTitle &&
-            <h2 className='titles'>brandlab</h2>
-          }
-          {showParagraph &&
-            <p className='paragraphs'>{text.text}</p>
-          }
-          {showTextSecondary &&
-            <h3>{text.textSecondary}</h3>
-          }
+          <h2 className={`titles ${showTitle ? 'show' : ''}`}>brandlab</h2>
+          <p className={`paragraphs ${showParagraph ? 'show' : ''}`}>{text.text}</p>
+          <h3 className={`${showTextSecondary ? 'show' : ''}`}>{text.textSecondary}</h3>
           {showBrands &&
             <div className='brands'>
               {brands.map((brand, index) => (
@@ -81,8 +75,6 @@ export const Brandlab = ({ text, brands }) => {
 
         {showVideo &&
           <div className="brandlab-video">
-            <div className="video-circle-top"></div>
-            <div className="video-circle"></div>
             <video className='video-brandlab' muted loop src={text.videoUrl}></video>
           </div>
         }

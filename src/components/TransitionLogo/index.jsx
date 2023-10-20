@@ -10,27 +10,27 @@ export const TransitionLogo = ({ id, data }) => {
             ease: 'power1.easeInOut',
             scrollTrigger: {
                 trigger: `#transition-logo-${id}`,
-                start: "top top+=3",
-                end: "top top+=3",
+                start: "top -=40vh",
+                end: "top -=40vh",
                 scrub: 1,
             },
         })
 
         gsap.to(`#transition-img-${id}`, {
             className: 'transition-img scaling-img',
-            scale: 1.2,
+            scale: 1.15,
             filter: 'brightness(0.7) sepia(1) hue-rotate(306deg) saturate(6)',
             ease: 'power1.easeInOut',
             scrollTrigger: {
                 trigger: `#transition-logo-${id}`,
-                start: "top top+=3",
-                end: "top top+=3",
+                start: "top -=40vh",
+                end: "top -=40vh",
                 scrub: 0,
             },
         })
 
-        gsap.to(`#transition-img-${id}`, {
-            y: '+=15vh', 
+        gsap.to(`#transition-logo-${id}`, {
+            y: '-=20vh', 
             scrollTrigger: {
                 trigger: `#transition-logo-${id}`,
                 start: "top center -=50vh",

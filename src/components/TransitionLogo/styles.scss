@@ -1,8 +1,9 @@
 .transition-logo {
     z-index: 7;
     width: 100%;
-    height: 110vh;
+    height: 119vh;
     position: relative;
+    transition: transform ease-in;
 
     .scaling-img {
         transform-origin: center center;
@@ -11,14 +12,13 @@
 
     .transition-background {
         width: 100%;
-        height: 100%;
+        height: 105%;
         position: relative;
         overflow: hidden;
 
         .transition-img {
             width: 100%;
             height: 100%;
-            margin-top: -10vh;
             object-fit: cover;
             transition: transform 0.2s ease-out;
         }

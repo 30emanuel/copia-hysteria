@@ -3,7 +3,6 @@ import './styles.scss'
 import { gsap } from 'gsap'
 
 export const About = ({ text }) => {
-    const [showText, setShowText] = useState(false)
     const [showFooter, setShowFooter] = useState(false)
 
     useEffect(() => {
@@ -17,8 +16,8 @@ export const About = ({ text }) => {
                 once: true
             },
         })
-        gsap.to('.paragraph', {
-            opacity: '1',
+        gsap.to('.paragraphs', {
+            className: 'paragraphs animation',
             scrollTrigger: {
                 trigger: '.about-container',
                 start: "top +=100vh",
@@ -26,9 +25,6 @@ export const About = ({ text }) => {
                 scrub: 0.5,
                 once: true
             },
-            onStart: () => {
-                setShowText(true)
-            }
         })
         gsap.to('.footer', {
             opacity: '1',
@@ -39,7 +35,7 @@ export const About = ({ text }) => {
                 scrub: 0.5,
                 once: true
             },
-            onStart: () => {
+            onComplete: () => {
                 setShowFooter(true)
             }
         })
@@ -54,9 +50,7 @@ export const About = ({ text }) => {
                         <h2 className='titles title'>{text.title}</h2>
                     </div>
                     <div className="paragraph">
-                        {showText &&
-                            <p className='paragraphs'>{text.text}</p>
-                        }
+                        <p className='paragraphs'>{text.text}</p>
                     </div>
                 </div>
                 <div className="footer">
