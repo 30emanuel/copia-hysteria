@@ -6,9 +6,11 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    z-index: 2;
+    position: sticky;
+    top: 0;
+    z-index: 20;
 
-    .about-container{
+    .about-container {
         width: 100%;
         min-height: 110vh;
         display: none;
@@ -16,7 +18,7 @@
         align-items: center;
         flex-direction: column;
         z-index: 6;
-        animation: fade-about 1s ease-in-out forwards;  
+        animation: fade-about 1s ease-in-out forwards;
     }
 
     .about-text {
@@ -57,9 +59,11 @@
             margin-top: -20px;
             margin-left: 300px;
             transition: opacity 1s ease-in-out;
-            .paragraphs{
+
+            .paragraphs {
                 opacity: 0;
-                &.animation{
+
+                &.animation {
                     animation: move-up 1s ease-in-out forwards;
                 }
             }
@@ -85,7 +89,7 @@
         letter-spacing: 1.1px;
         transition: opacity 1s ease-in-out;
 
-        p{
+        p {
             animation: move-up 1.2s ease-in-out forwards;
         }
 

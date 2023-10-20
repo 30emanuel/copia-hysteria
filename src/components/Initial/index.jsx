@@ -108,6 +108,17 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
         },
     })
 
+    gsap.to('.start', {
+        zIndex: '40',
+        ease: 'power1.easeInOut',
+        scrollTrigger: {
+            trigger: '#transition-img-1',
+            start: "center center",
+            end: "center center",
+            scrub: 1,
+        },
+    })
+
     useEffect(() => {
         if(showRest){
             gsap.to('.center-container', {

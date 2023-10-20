@@ -23,7 +23,7 @@ export const Brandlab = ({ text, brands }) => {
     })
 
     gsap.to('.brandlab-circle', {
-      y: '+=100vh',
+      y: '66vh',
       scale: 1,
       scrollTrigger: {
         trigger: '.brandlab',
