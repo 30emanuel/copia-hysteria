@@ -27,6 +27,18 @@ export const Collaborators = ({ text }) => {
                         scrub: 0.5,
                     },
                 })
+            }
+        })
+        gsap.to('.smaller-circle', {
+            y: '+=40vh',
+            x: '+=20vw',
+            scrollTrigger: {
+                trigger: '#transition-img-2',
+                start: "center center",
+                end: '+=110%',
+                scrub: 0.5,
+            },
+            onComplete: () =>{
                 gsap.to('.smaller-circle', {
                     x: '8vw',
                     y: '-60vh',
@@ -48,16 +60,6 @@ export const Collaborators = ({ text }) => {
                     },
                 })
             }
-        })
-        gsap.to('.smaller-circle', {
-            y: '+=40vh',
-            x: '+=20vw',
-            scrollTrigger: {
-                trigger: '#transition-img-2',
-                start: "center center",
-                end: '+=110%',
-                scrub: 0.5,
-            },
         })
 
         gsap.to('.collaborators', {

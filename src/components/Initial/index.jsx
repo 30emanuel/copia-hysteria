@@ -205,8 +205,8 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
                                         y: '-200vh',
                                         x: '-36.2vw',
                                         position: 'fixed',
-                                        width: `calc(${circleTop.current.offsetWidth}px - 881px)`,
-                                        height: `calc(${circleTop.current.offsetWidth}px - 881px)`,
+                                        width: '879.669px',
+                                        height: '879.669px',
                                         border: '0.761px solid var(--bg-color-four)',
                                         transition: 'transform 1s ease-out',
                                         scrollTrigger: {
@@ -230,7 +230,9 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
                                                 },
                                                 onComplete: () =>{
                                                     gsap.to('.circle-top', {
-                                                        display: 'none',
+                                                        y: '100vh',
+                                                        x: '-107.2vw',
+                                                        visibility: 'hidden',
                                                         scrollTrigger: {
                                                             trigger: '#transition-logo-2',
                                                             start: "top top",
@@ -314,7 +316,9 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
                                                 },
                                                 onComplete: () =>{
                                                     gsap.to('.circle-bottom', {
-                                                        display: 'none',
+                                                        y: '-77vh',
+                                                        x: '13.69vw',
+                                                        visibility: 'hidden',
                                                         scrollTrigger: {
                                                             trigger: '#transition-logo-2',
                                                             start: "top top",
