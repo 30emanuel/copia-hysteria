@@ -346,6 +346,10 @@
             }
         }
 
+        .swiper-no-swiping {
+            touch-action: none;
+        }
+
         .outher-projects {
             width: 95%;
             height: 500px;

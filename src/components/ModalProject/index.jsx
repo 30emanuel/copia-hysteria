@@ -11,8 +11,12 @@ export const ModalProject = ({ index = 0, setSelectedProject, showModal, toggleM
     const [showContent, setShowContent] = useState(false)
     const [showVideo, setShowVideo] = useState(false)
     const [disabledButton, setDisabledButton] = useState(false)
-    const prevRef = useRef(null)
-    const nextRef = useRef(null)
+
+    const [currentIndex, setCurrentIndex] = useState(0)
+    const maxSlide = (projects.length / 2) - 1
+
+    const swiperRef = useRef(null)
+
 
     const changeProject = (index) => {
         setSelectedProject(index)
@@ -47,6 +51,28 @@ export const ModalProject = ({ index = 0, setSelectedProject, showModal, toggleM
             }, 500)
         },
     })
+
+    useEffect(() => {
+        const transitionStyles = {
+            transform: `translateX(-${currentIndex * 100}%)`,
+            transition: 'transform 0.5s ease-out',
+        }
+        if (swiperRef.current) {
+            Object.assign(swiperRef.current.style, transitionStyles)
+        }
+    }, [currentIndex])
+
+    const prevProjects = () => {
+        if (currentIndex > 0) {
+            setCurrentIndex((prevIndex) => (prevIndex - 1 + projects.length) % projects.length)
+        }
+    }
+
+    const nextProjects = () => {
+        if (currentIndex < maxSlide) {
+            setCurrentIndex((prevIndex) => (prevIndex + 1) % projects.length)
+        }
+    }
 
 
     useEffect(() => {
@@ -132,7 +158,7 @@ export const ModalProject = ({ index = 0, setSelectedProject, showModal, toggleM
                     </div>
                     <div className='footer'>
                         <div className='title'>
-                            <div className='arrow-container arrow-left' ref={prevRef}>
+                            <div className='arrow-container arrow-left' onClick={prevProjects}>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="164" height="68" viewBox="0 0 164 68" fill="none" className='left-primary'>
                                     <g clip-path="url(#clip0_493_446)" transform="rotate(180 82 34)">
                                         <path d="M131.061 35.0607C131.646 34.4749 131.646 33.5251 131.061 32.9393L121.515 23.3934C120.929 22.8076 119.979 22.8076 119.393 23.3934C118.808 23.9792 118.808 24.9289 119.393 25.5147L127.879 34L119.393 42.4853C118.808 43.0711 118.808 44.0208 119.393 44.6066C119.979 45.1924 120.929 45.1924 121.515 44.6066L131.061 35.0607ZM0 35.5H130V32.5H0V35.5Z" fill="white" />
@@ -155,7 +181,7 @@ export const ModalProject = ({ index = 0, setSelectedProject, showModal, toggleM
                                 </svg>
                             </div>
                             <h3>projetos</h3>
-                            <div className='arrow-container right-arrow' ref={nextRef}>
+                            <div className='arrow-container right-arrow' onClick={nextProjects}>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="164" height="68" viewBox="0 0 164 68" fill="none" className='right-primary'>
                                     <g clip-path="url(#clip0_493_446)">
                                         <path d="M131.061 35.0607C131.646 34.4749 131.646 33.5251 131.061 32.9393L121.515 23.3934C120.929 22.8076 119.979 22.8076 119.393 23.3934C118.808 23.9792 118.808 24.9289 119.393 25.5147L127.879 34L119.393 42.4853C118.808 43.0711 118.808 44.0208 119.393 44.6066C119.979 45.1924 120.929 45.1924 121.515 44.6066L131.061 35.0607ZM0 35.5H130V32.5H0V35.5Z" fill="white" />
@@ -180,11 +206,9 @@ export const ModalProject = ({ index = 0, setSelectedProject, showModal, toggleM
                         </div>
                         <Swiper
                             slidesPerView={2}
-                            className="outher-projects"
-                            navigation={{
-                                prevEl: prevRef?.current,
-                                nextEl: nextRef?.current
-                            }}
+                            className="outher-projects swiper-no-swiping"
+                            ref={swiperRef}
+                            onlyExternal={true} 
                         >
                             {projects.map((project, indexProject) => {
                                 if (indexProject !== indexCurrent) {
