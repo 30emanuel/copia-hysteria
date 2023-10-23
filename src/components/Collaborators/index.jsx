@@ -66,7 +66,7 @@ export const Collaborators = ({ text }) => {
             scrollTrigger: {
                 trigger: '#transition-img-2',
                 start: "center center",
-                end: '+=40%',
+                end: '+=30%',
                 scrub: 1,
             },
             onComplete: () => {
