@@ -226,7 +226,6 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
                                                     start: "center center",
                                                     end: 'center center',
                                                     scrub: 0.5,
-                                                    markers: true
                                                 },
                                                 onComplete: () =>{
                                                     gsap.to('.circle-top', {
@@ -238,7 +237,6 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
                                                             start: "top top",
                                                             end: 'top top',
                                                             scrub: 0.5,
-                                                            markers: true
                                                         },
                                                     })
                                                 }
@@ -312,7 +310,6 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
                                                     start: "center center",
                                                     end: 'center center',
                                                     scrub: 0.5,
-                                                    markers: true
                                                 },
                                                 onComplete: () =>{
                                                     gsap.to('.circle-bottom', {
@@ -324,7 +321,6 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
                                                             start: "top top",
                                                             end: 'top top',
                                                             scrub: 0.5,
-                                                            markers: true
                                                         },
                                                     })
                                                 }
