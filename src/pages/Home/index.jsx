@@ -18,7 +18,6 @@ export const Home = () => {
   const [showSecondPart, setShowSecondPart] = useState(false)
   const [showHeader, setShowHeader] = useState(false)
   //const { loading, error, data } = useQuery(HOME_QUERY)
-
   const data = {
     "initial": {
       "videoUrl": "https://uxdir.com/files/videos/hysteria-—home.webm",

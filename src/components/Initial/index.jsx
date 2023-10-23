@@ -122,7 +122,8 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
     useEffect(() => {
         if(showRest){
             gsap.to('.center-container', {
-                y: '103vh',
+                position: 'fixed',
+                y: '3vh',
                 x: '-38vw',
                 ease: 'power1.easeInOut',
                 scrollTrigger: {
@@ -132,13 +133,13 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
                 },
                 onComplete: () => {
                     gsap.to('.center-container', {
-                        y: '93vh',
+                        opacity: '0',
                         ease: 'power1.easeInOut',
                         scrollTrigger: {
-                            trigger: '.projects',
+                            trigger: '#transition-logo-1',
                             start: "top top",
-                            end: 'top top',
-                            scrub: 0.5,
+                            end: "top top",
+                            scrub: 1,
                         },
                     })
                 }
@@ -169,6 +170,7 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
                 x: '-93vw',
                 width: `calc(${circleTop.current.offsetWidth}px - 235px)`,
                 height: `calc(${circleTop.current.offsetWidth}px - 235px)`,
+                transition: 'transform 0.1s ease-in-out',
                 ease: 'power1.easeInOut',
                 scrollTrigger: {
                     trigger: '.center-container',
@@ -178,25 +180,70 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
                 onComplete: () => {
                     gsap.to('.circle-top', {
                         x: '32vw',
-                        y: '272vh',
+                        y: '322vh',
                         transition: 'transform 0.1s ease-in-out',
                         width: `calc(${circleTop.current.offsetWidth}px + 835px)`,
                         height: `calc(${circleTop.current.offsetWidth}px + 835px)`,
                         scrollTrigger: {
-                            trigger: '#transition-logo-1',
-                            start: "top top",
-                            end: "top top",
+                            trigger: '.about',
+                            start: "center center",
+                            end: "+=100%",
                             scrub: 0.5,
                         },
                         onComplete: () => {
                             gsap.to('.circle-top', {
-                                y: '+=150vh',
+                                y: '+=100vh',
                                 scrollTrigger: {
                                     trigger: '#transition-logo-1',
                                     start: "center center",
                                     end: '+=250%',
                                     scrub: 0.5,
                                 },
+                                onComplete: () =>{
+                                    gsap.to('.circle-top', {
+                                        visibility: 'hidden',
+                                        y: '-200vh',
+                                        x: '-36.2vw',
+                                        position: 'fixed',
+                                        width: `calc(${circleTop.current.offsetWidth}px - 881px)`,
+                                        height: `calc(${circleTop.current.offsetWidth}px - 881px)`,
+                                        border: '0.761px solid var(--bg-color-four)',
+                                        transition: 'transform 1s ease-out',
+                                        scrollTrigger: {
+                                            trigger: '.brandlab',
+                                            start: "top center",
+                                            end: 'top center',
+                                            scrub: 0.5,
+                                            markers: true,
+                                        },
+                                        onComplete: () =>{
+                                            gsap.to('.circle-top', {
+                                                visibility: 'visible',
+                                                y: '50vh',
+                                                x: '-36.2vw',
+                                                scrollTrigger: {
+                                                    trigger: '.brandlab',
+                                                    start: "center center",
+                                                    end: 'center center',
+                                                    scrub: 0.5,
+                                                    markers: true
+                                                },
+                                                onComplete: () =>{
+                                                    gsap.to('.circle-top', {
+                                                        display: 'none',
+                                                        scrollTrigger: {
+                                                            trigger: '#transition-logo-2',
+                                                            start: "top top",
+                                                            end: 'top top',
+                                                            scrub: 0.5,
+                                                            markers: true
+                                                        },
+                                                    })
+                                                }
+                                            })
+                                        }
+                                    })
+                                }
                             })
                         }
                     })
@@ -208,6 +255,7 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
                 ease: 'power1.easeInOut',
                 width: `calc(${circleBottom.current.offsetWidth}px - 80px)`,
                 height: `calc(${circleBottom.current.offsetWidth}px - 80px)`,
+                transition: 'transform 0.1s ease-in-out',
                 scrollTrigger: {
                     trigger: '.center-container',
                     start: "bottom bottom",
@@ -215,26 +263,71 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
                 },
                 onComplete: () => {
                     gsap.to('.circle-bottom', {
-                        y: '100vh',
+                        y: '230vh',
                         x: '39.5vw',
                         width: `calc(${circleBottom.current.offsetWidth}px + 1341px)`,
                         height: `calc(${circleBottom.current.offsetWidth}px + 1341px)`,
                         transition: 'transform 0.1s ease-in-out',
                         scrollTrigger: {
-                            trigger: '#transition-logo-1',
-                            start: "top top",
-                            end: "top top",
+                            trigger: '.about',
+                            start: "center center",
+                            end: "+=100%",
                             scrub: 0.5,
                         },
                         onComplete: () => {
                             gsap.to('.circle-bottom', {
-                                y: '+=200vh',
+                                y: '+=50vh',
                                 scrollTrigger: {
                                     trigger: '#transition-logo-1',
                                     start: "center center",
                                     end: '+=200%',
                                     scrub: 0.5,
                                 },
+                                onComplete: () =>{
+                                    gsap.to('.circle-bottom', {
+                                        visibility: 'hidden',
+                                        y: '-200vh',
+                                        x: '92.7vw',
+                                        position: 'fixed',
+                                        width: `calc(${circleBottom.current.offsetWidth}px - 1181px)`,
+                                        height: `calc(${circleBottom.current.offsetWidth}px - 1181px)`,
+                                        border: '1px solid var(--bg-color-four)',
+                                        transition: 'transform 1s ease-out',
+                                        scrollTrigger: {
+                                            trigger: '.brandlab',
+                                            start: "top center",
+                                            end: 'top center',
+                                            scrub: 0.5,
+                                            markers: true,
+                                        },
+                                        onComplete: () =>{
+                                            gsap.to('.circle-bottom', {
+                                                visibility: 'visible',
+                                                y: '-72vh',
+                                                x: '92.7vw',
+                                                scrollTrigger: {
+                                                    trigger: '.brandlab',
+                                                    start: "center center",
+                                                    end: 'center center',
+                                                    scrub: 0.5,
+                                                    markers: true
+                                                },
+                                                onComplete: () =>{
+                                                    gsap.to('.circle-bottom', {
+                                                        display: 'none',
+                                                        scrollTrigger: {
+                                                            trigger: '#transition-logo-2',
+                                                            start: "top top",
+                                                            end: 'top top',
+                                                            scrub: 0.5,
+                                                            markers: true
+                                                        },
+                                                    })
+                                                }
+                                            })
+                                        }
+                                    })
+                                }
                             })
                         }
                     })
