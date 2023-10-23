@@ -214,7 +214,6 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
                                             start: "top center",
                                             end: 'top center',
                                             scrub: 0.5,
-                                            markers: true,
                                         },
                                         onComplete: () =>{
                                             gsap.to('.circle-top', {
@@ -298,7 +297,6 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
                                             start: "top center",
                                             end: 'top center',
                                             scrub: 0.5,
-                                            markers: true,
                                         },
                                         onComplete: () =>{
                                             gsap.to('.circle-bottom', {
