@@ -92,6 +92,11 @@
                 margin-top: 37px;
                 display: flex;
                 gap: 20px;
+                opacity: 0;
+
+                &.show{
+                    opacity: 1;
+                }
 
                 .brand{
                     display: none;

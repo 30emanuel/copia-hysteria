@@ -62,15 +62,13 @@ export const Brandlab = ({ text, brands }) => {
           <h2 className={`titles ${showTitle ? 'show' : ''}`}>brandlab</h2>
           <p className={`paragraphs ${showParagraph ? 'show' : ''}`}>{text.text}</p>
           <h3 className={`${showTextSecondary ? 'show' : ''}`}>{text.textSecondary}</h3>
-          {showBrands &&
-            <div className='brands'>
-              {brands.map((brand, index) => (
-                <div className={`brand ${indexCurrent >= index ? 'show' : ''}`} key={index}>
-                  <img src={brand.logo.url} alt={`${brand.name} logo`} />
-                </div>
-              ))}
-            </div>
-          }
+          <div className={`brands ${showBrands ? 'show' : ''}`}>
+            {brands.map((brand, index) => (
+              <div className={`brand ${indexCurrent >= index ? 'show' : ''}`} key={index}>
+                <img src={brand.logo.url} alt={`${brand.name} logo`} />
+              </div>
+            ))}
+          </div>
         </div>
 
         {showVideo &&

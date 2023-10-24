@@ -184,7 +184,6 @@
         box-shadow: 0px 4px 94px 0px rgba(0, 0, 0, 0.568);
         pointer-events: none;
         opacity: 0;
-        transition: opacity 0.7s ease-out;
 
         &.show{
             opacity: 1;

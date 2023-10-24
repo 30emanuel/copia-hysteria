@@ -178,7 +178,7 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
                 position: 'fixed',
                 width: `calc(${circleTop.current.offsetWidth}px - 235px)`,
                 height: `calc(${circleTop.current.offsetWidth}px - 235px)`,
-                transition: 'transform 0.1s ease-in-out',
+                transition: 'transform 0.5s ease-out',
                 ease: 'power1.easeInOut',
                 scrollTrigger: {
                     trigger: '.center-container',
@@ -192,7 +192,6 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
                         x: '32vw',
                         width: `calc(${circleTop.current.offsetWidth}px + 835px)`,
                         height: `calc(${circleTop.current.offsetWidth}px + 835px)`,
-                        transition: 'transform 1s ease-out',
                         scrollTrigger: {
                             trigger: '#transition-logo-1',
                             start: "center center",
@@ -201,7 +200,7 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
                         },
                         onComplete: () => {
                             gsap.to('.circle-top', {
-                                y: '+=50vh',
+                                y: '+=70vh',
                                 scrollTrigger: {
                                     trigger: '#transition-logo-1',
                                     start: "center center",
@@ -250,7 +249,7 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
                 ease: 'power1.easeInOut',
                 width: `calc(${circleBottom.current.offsetWidth}px - 80px)`,
                 height: `calc(${circleBottom.current.offsetWidth}px - 80px)`,
-                transition: 'transform 0.1s ease-in-out',
+                transition: 'transform 0.5s ease-out',
                 scrollTrigger: {
                     trigger: '.center-container',
                     start: "bottom bottom",
@@ -263,7 +262,6 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
                         position: 'absolute',
                         width: `calc(${circleBottom.current.offsetWidth}px + 1341px)`,
                         height: `calc(${circleBottom.current.offsetWidth}px + 1341px)`,
-                        transition: 'transform 1s ease-out',
                         scrollTrigger: {
                             trigger: '#transition-logo-1',
                             start: "center center",
@@ -276,7 +274,7 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
                                 scrollTrigger: {
                                     trigger: '#transition-logo-1',
                                     start: "center center",
-                                    end: '+=200%',
+                                    end: '+=150%',
                                     scrub: 0.5,
                                 },
                                 onComplete: () => {
