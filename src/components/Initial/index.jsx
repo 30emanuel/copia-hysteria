@@ -246,10 +246,10 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
                 y: '-30vh',
                 x: '11.8vw',
                 position: 'fixed',
-                ease: 'power1.easeInOut',
                 width: `calc(${circleBottom.current.offsetWidth}px - 80px)`,
                 height: `calc(${circleBottom.current.offsetWidth}px - 80px)`,
                 transition: 'transform 0.5s ease-out',
+                ease: 'power1.easeInOut',
                 scrollTrigger: {
                     trigger: '.center-container',
                     start: "bottom bottom",
@@ -331,7 +331,7 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
                 position: 'fixed',
                 width: `calc(${circleTopTwo.current.offsetWidth}px - 235px)`,
                 height: `calc(${circleTopTwo.current.offsetWidth}px - 235px)`,
-                transition: 'transform 0.5s ease-in-out',
+                transition: 'transform 0.5s ease-out',
                 ease: 'power1.easeInOut',
                 scrollTrigger: {
                     trigger: '.center-container',
@@ -386,10 +386,10 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
                 y: '-30vh',
                 x: '11.8vw',
                 position: 'fixed',
-                ease: 'power1.easeInOut',
                 width: `calc(${circleBottomTwo.current.offsetWidth}px - 80px)`,
                 height: `calc(${circleBottomTwo.current.offsetWidth}px - 80px)`,
-                transition: 'transform 0.5s ease-in-out',
+                transition: 'transform 0.5s ease-out',
+                ease: 'power1.easeInOut',
                 scrollTrigger: {
                     trigger: '.center-container',
                     start: "bottom bottom",
