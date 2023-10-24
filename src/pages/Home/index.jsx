@@ -83,7 +83,7 @@ export const Home = () => {
         "width": "592",
         "height": "480",
         "gridPosition": "1",
-        "prevVideo": "",
+        "prevVideo": "https://uxdir.com/files/videos/hysteria-—home.webm",
         "imageMain": {
           "url": "https://www.datocms-assets.com/103984/1691604201-teste.jpg"
         },
@@ -117,7 +117,7 @@ export const Home = () => {
         "width": "1220",
         "height": "480",
         "gridPosition": "7",
-        "prevVideo": "",
+        "prevVideo": "https://uxdir.com/files/videos/hysteria-—home.webm",
         "imageMain": {
           "url": "https://www.datocms-assets.com/103984/1696444927-whatsapp-image-2023-09-04-at-19-44-1.png"
         },
@@ -185,7 +185,7 @@ export const Home = () => {
         "width": "900",
         "height": "480",
         "gridPosition": "4",
-        "prevVideo": "",
+        "prevVideo": "https://uxdir.com/files/videos/hysteria-—home.webm",
         "imageMain": {
           "url": "https://www.datocms-assets.com/103984/1696444944-backgroundteste.png"
         },
