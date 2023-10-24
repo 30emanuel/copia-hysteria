@@ -331,7 +331,7 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
                 position: 'fixed',
                 width: `calc(${circleTopTwo.current.offsetWidth}px - 235px)`,
                 height: `calc(${circleTopTwo.current.offsetWidth}px - 235px)`,
-                transition: 'transform 0.1s ease-in-out',
+                transition: 'transform 0.5s ease-in-out',
                 ease: 'power1.easeInOut',
                 scrollTrigger: {
                     trigger: '.center-container',
@@ -389,7 +389,7 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
                 ease: 'power1.easeInOut',
                 width: `calc(${circleBottomTwo.current.offsetWidth}px - 80px)`,
                 height: `calc(${circleBottomTwo.current.offsetWidth}px - 80px)`,
-                transition: 'transform 0.1s ease-in-out',
+                transition: 'transform 0.5s ease-in-out',
                 scrollTrigger: {
                     trigger: '.center-container',
                     start: "bottom bottom",
