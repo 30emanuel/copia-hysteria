@@ -178,8 +178,6 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
                 position: 'fixed',
                 width: `calc(${circleTop.current.offsetWidth}px - 235px)`,
                 height: `calc(${circleTop.current.offsetWidth}px - 235px)`,
-                transition: 'transform 0.5s ease-out',
-                ease: 'power1.easeInOut',
                 scrollTrigger: {
                     trigger: '.center-container',
                     start: "bottom bottom",
@@ -204,35 +202,41 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
                                 scrollTrigger: {
                                     trigger: '#transition-logo-1',
                                     start: "center center",
-                                    end: '+=200%',
+                                    end: '+=150%',
                                     scrub: 0.5,
                                 },
                                 onComplete: () => {
                                     gsap.to('.circle-top', {
-                                        visibility: 'hidden',
-                                        y: '-200vh',
-                                        x: '-36.2vw',
-                                        position: 'fixed',
+                                        //visibility: 'hidden',
+                                        y: '520vh',
+                                        x: '-50.2vw',
+                                        width: '879.669px',
+                                        height: '879.669px',
                                         scrollTrigger: {
-                                            trigger: '.brandlab',
-                                            start: "top center",
-                                            end: 'top center',
+                                            trigger: '.projects',
+                                            start: "top top",
+                                            end: 'bottom bottom',
                                             scrub: 0.5,
+                                            markers: true
                                         },
                                         onComplete: () => {
                                             gsap.to('.circle-top', {
-                                                visibility: 'visible',
-                                                width: '879.669px',
-                                                height: '879.669px',
-                                                y: '50vh',
+                                                //visibility: 'visible',
+                                                y: '620vh',
                                                 x: '-36.2vw',
                                                 border: '0.761px solid var(--bg-color-four)',
+                                                
                                                 scrollTrigger: {
                                                     trigger: '.brandlab',
-                                                    start: "center center",
-                                                    end: 'center center',
+                                                    start: "top top",
+                                                    end: 'top top',
                                                     scrub: 0.5,
+                                                    markers: true
                                                 },
+                                                onComplete: () =>{
+                                                    gsap.to('.circle-top', {
+                                                    })
+                                                }
                                             })
                                         }
                                     })
@@ -278,7 +282,7 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
                                     scrub: 0.5,
                                 },
                                 onComplete: () => {
-                                    gsap.to('.circle-bottom', {
+                                    /*gsap.to('.circle-bottom', {
                                         visibility: 'hidden',
                                         y: '-200vh',
                                         x: '92.7vw',
@@ -305,12 +309,12 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
                                                 },
                                                 onComplete: () => {
                                                     setTimeout(function () {
-                                                        setAnimationTwo(true)
+                                                        //setAnimationTwo(true)
                                                     }, 900)
                                                 }
                                             })
                                         }
-                                    })
+                                    })*/
                                 }
                             })
 
@@ -344,7 +348,7 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
                         y: '50vh',
                         width: `calc(${circleTopTwo.current.offsetWidth}px + 835px)`,
                         height: `calc(${circleTopTwo.current.offsetWidth}px + 835px)`,
-                        transition: 'transform 0s ease-out, border 0.5s ease-out',
+                        transition: 'transform 0s ease-out',
                         scrollTrigger: {
                             trigger: '#transition-logo-1',
                             start: "center center",
@@ -401,7 +405,7 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
                         x: '39.5vw',
                         width: `calc(${circleBottomTwo.current.offsetWidth}px + 1341px)`,
                         height: `calc(${circleBottomTwo.current.offsetWidth}px + 1341px)`,
-                        transition: 'transform 0s ease-out, border 0.5s ease-out',
+                        transition: 'transform 0.5s ease-out',
                         scrollTrigger: {
                             trigger: '#transition-logo-1',
                             start: "center center",
