@@ -183,17 +183,17 @@
         border: 1px solid #FFF;
         box-shadow: 0px 4px 94px 0px rgba(0, 0, 0, 0.568);
         pointer-events: none;
-        opacity: 0;
-
-        &.show{
-            opacity: 1;
-        }
     }
 
     .circle-top, .circle-top-2 {
         top: 0%;
         left: 108%;
         transform: translate(-50%, -50%);
+
+        &.fixed{
+            transform: translate(-50%, -50%) translate(-36.2vw, 50vh) !important;
+            position: fixed !important;
+        }
     }
 
     .circle-bottom, .circle-bottom-2 {

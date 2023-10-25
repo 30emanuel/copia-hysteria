@@ -178,6 +178,8 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
                 position: 'fixed',
                 width: `calc(${circleTop.current.offsetWidth}px - 235px)`,
                 height: `calc(${circleTop.current.offsetWidth}px - 235px)`,
+                transition: 'transform 0.5s ease-out',
+                ease: 'power1.easeInOut',
                 scrollTrigger: {
                     trigger: '.center-container',
                     start: "bottom bottom",
@@ -198,45 +200,34 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
                         },
                         onComplete: () => {
                             gsap.to('.circle-top', {
-                                y: '+=70vh',
+                                y: '+=80vh',
                                 scrollTrigger: {
                                     trigger: '#transition-logo-1',
                                     start: "center center",
-                                    end: '+=150%',
+                                    endTrigger: ".projects",
+                                    end: "center center",
                                     scrub: 0.5,
                                 },
                                 onComplete: () => {
                                     gsap.to('.circle-top', {
-                                        //visibility: 'hidden',
-                                        y: '520vh',
-                                        x: '-50.2vw',
+                                        className: `circle-top`,
+                                        y: '627vh',
+                                        x: '-36.2vw',
                                         width: '879.669px',
                                         height: '879.669px',
+                                        border: '0.761px solid var(--bg-color-four)',
+                                        transition: 'none',
                                         scrollTrigger: {
                                             trigger: '.projects',
-                                            start: "top top",
-                                            end: 'bottom bottom',
+                                            start: "center center",
+                                            endTrigger: ".brandlab",
+                                            end: "top top",
                                             scrub: 0.5,
                                             markers: true
                                         },
                                         onComplete: () => {
                                             gsap.to('.circle-top', {
-                                                //visibility: 'visible',
-                                                y: '620vh',
-                                                x: '-36.2vw',
-                                                border: '0.761px solid var(--bg-color-four)',
-                                                
-                                                scrollTrigger: {
-                                                    trigger: '.brandlab',
-                                                    start: "top top",
-                                                    end: 'top top',
-                                                    scrub: 0.5,
-                                                    markers: true
-                                                },
-                                                onComplete: () =>{
-                                                    gsap.to('.circle-top', {
-                                                    })
-                                                }
+                                                className: `circle-top fixed`,
                                             })
                                         }
                                     })
@@ -325,131 +316,6 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
         }
     }, [showRest])
 
-
-
-    useEffect(() => {
-        if (showRest) {
-            gsap.to('.circle-top-2', {
-                y: '80vh',
-                x: '-93vw',
-                position: 'fixed',
-                width: `calc(${circleTopTwo.current.offsetWidth}px - 235px)`,
-                height: `calc(${circleTopTwo.current.offsetWidth}px - 235px)`,
-                transition: 'transform 0.5s ease-out',
-                ease: 'power1.easeInOut',
-                scrollTrigger: {
-                    trigger: '.center-container',
-                    start: "bottom bottom",
-                    scrub: 1,
-                },
-                onComplete: () => {
-                    gsap.to('.circle-top-2', {
-                        x: '32vw',
-                        y: '50vh',
-                        width: `calc(${circleTopTwo.current.offsetWidth}px + 835px)`,
-                        height: `calc(${circleTopTwo.current.offsetWidth}px + 835px)`,
-                        transition: 'transform 0s ease-out',
-                        scrollTrigger: {
-                            trigger: '#transition-logo-1',
-                            start: "center center",
-                            end: "center center",
-                            scrub: 0.5,
-                        },
-                        onComplete: () => {
-                            gsap.to('.circle-top-2', {
-                                width: '879.669px',
-                                height: '879.669px',
-                                y: '50vh',
-                                x: '-36.2vw',
-                                border: '0.761px solid var(--bg-color-four)',
-                                scrollTrigger: {
-                                    trigger: '.brandlab',
-                                    start: "top center",
-                                    end: '+=50%',
-                                    scrub: 0.5,
-                                },
-                                onComplete: () => {
-                                    gsap.to('.circle-top-2', {
-                                        y: '100vh',
-                                        x: '-107.2vw',
-                                        visibility: 'hidden',
-                                        scrollTrigger: {
-                                            trigger: '#transition-logo-2',
-                                            start: "top top",
-                                            end: 'top top',
-                                            scrub: 0.5,
-                                        },
-                                    })
-                                }
-                            })
-                        }
-                    })
-                }
-            })
-            gsap.to('.circle-bottom-2', {
-                y: '-30vh',
-                x: '11.8vw',
-                position: 'fixed',
-                width: `calc(${circleBottomTwo.current.offsetWidth}px - 80px)`,
-                height: `calc(${circleBottomTwo.current.offsetWidth}px - 80px)`,
-                transition: 'transform 0.5s ease-out',
-                ease: 'power1.easeInOut',
-                scrollTrigger: {
-                    trigger: '.center-container',
-                    start: "bottom bottom",
-                    scrub: 1,
-                },
-                onComplete: () => {
-                    gsap.to('.circle-bottom-2', {
-                        y: '-60vh',
-                        x: '39.5vw',
-                        width: `calc(${circleBottomTwo.current.offsetWidth}px + 1341px)`,
-                        height: `calc(${circleBottomTwo.current.offsetWidth}px + 1341px)`,
-                        transition: 'transform 0.5s ease-out',
-                        scrollTrigger: {
-                            trigger: '#transition-logo-1',
-                            start: "center center",
-                            end: "center center",
-                            scrub: 0.5,
-                        },
-                        onComplete: () => {
-                            gsap.to('.circle-bottom-2', {
-                                width: `calc(${circleBottomTwo.current.offsetWidth}px - 1181px)`,
-                                height: `calc(${circleBottomTwo.current.offsetWidth}px - 1181px)`,
-                                border: '1px solid var(--bg-color-four)',
-                                y: '-72vh',
-                                x: '92.7vw',
-                                scrollTrigger: {
-                                    trigger: '.brandlab',
-                                    start: "top center",
-                                    end: '+=50%',
-                                    scrub: 0.5,
-                                },
-                                onComplete: () => {
-                                    gsap.to('.circle-bottom-2', {
-                                        y: '-77vh',
-                                        x: '13.69vw',
-                                        visibility: 'hidden',
-                                        scrollTrigger: {
-                                            trigger: '#transition-logo-2',
-                                            start: "top top",
-                                            end: 'top top',
-                                            scrub: 0.5,
-                                        },
-                                        onComplete: () => {
-
-                                        }
-                                    })
-                                }
-                            })
-
-                        }
-                    })
-                }
-            })
-        }
-    }, [showRest])
-
     const textAnimationOne = useSpring({
         translateY: showText ? '0' : '300px',
         config: { duration: 900 },
@@ -525,10 +391,8 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
                             }
                         </div>
                     </div>
-                    <div className={`circle-top ${!animationsTwo ? 'show' : ''}`} ref={circleTop}></div>
-                    <div className={`circle-bottom ${!animationsTwo ? 'show' : ''}`} ref={circleBottom}></div>
-                    <div className={`circle-top-2 ${animationsTwo ? 'show' : ''}`} ref={circleTopTwo}></div>
-                    <div className={`circle-bottom-2 ${animationsTwo ? 'show' : ''}`} ref={circleBottomTwo}></div>
+                    <div className="circle-top" ref={circleTop}></div>
+                    <div className="circle-bottom" ref={circleBottom}></div>
                 </>
             }
         </div >
