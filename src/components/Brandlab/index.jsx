@@ -28,7 +28,7 @@ export const Brandlab = ({ text, brands }) => {
       scrollTrigger: {
         trigger: '.brandlab',
         start: "top center",
-        end: '+=60%',
+        end: '+=50%',
         scrub: 0.5,
         once: true,
       },
