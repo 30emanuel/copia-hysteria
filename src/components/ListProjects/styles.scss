@@ -9,11 +9,11 @@
     z-index: 22;
     position: relative;
     background-color: var(--bg-color-primary);
+    padding-bottom: 200px;
     
     .title{
         margin-top: 150px;
         z-index: 5;
-        opacity: 0;
         transition: opacity 1s ease-in-out;
         h1{
             color: white;
@@ -43,7 +43,6 @@
         gap: 36px;
         width: 100%;
         z-index: 4;
-        opacity: 0;
         height: 100%;
         margin-top: -80px;
         transition: opacity 1s ease-in-out;

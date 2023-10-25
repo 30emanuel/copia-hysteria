@@ -30,6 +30,7 @@
         opacity: 0.5;
         position: absolute;
         top: 60vh;
+        transition: transform 0.2s ease-out;
 
         img {
             width: 100%;

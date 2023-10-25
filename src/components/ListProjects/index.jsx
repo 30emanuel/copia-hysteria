@@ -59,30 +59,6 @@ export const Projects = ({ showScroll, projects }) => {
     setSelectedProject(index)
   }
 
-  gsap.to('.title', {
-    opacity: '1',
-    ease: 'power1.easeInOut',
-    scrollTrigger: {
-      trigger: '#transition-logo-1',
-      start: "center 10vh",
-      end: 'center 10vh',
-      scrub: 0.2,
-      once: true
-    }
-  })
-
-  gsap.to('.list-project', {
-    opacity: '1',
-    ease: 'power1.easeInOut',
-    scrollTrigger: {
-      trigger: '#transition-logo-1',
-      start: "center 10vh",
-      end: 'center 10vh',
-      scrub: 0.2,
-      once: true
-    }
-  })
-
   return (
     <>
       <div className='projects' id='projects'>
