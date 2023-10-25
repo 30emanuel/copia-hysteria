@@ -191,7 +191,7 @@
         transform: translate(-50%, -50%);
 
         &.fixed{
-            transform: translate(-50%, -50%) translate(-36.2vw, 50vh) !important;
+            transform: translate(-50%, -50%) translate(-35vw, 50vh) !important;
             position: fixed !important;
         }
     }

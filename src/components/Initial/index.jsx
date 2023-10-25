@@ -212,13 +212,13 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
                                     gsap.to('.circle-top', {
                                         className: `circle-top`,
                                         y: '627vh',
-                                        x: '-36.2vw',
+                                        x: '-35vw',
                                         width: '879.669px',
                                         height: '879.669px',
                                         border: '0.761px solid var(--bg-color-four)',
                                         transition: 'none',
                                         scrollTrigger: {
-                                            trigger: '.list-projects',
+                                            trigger: '.projects',
                                             start: "center center",
                                             endTrigger: ".brandlab",
                                             end: "top top",
