@@ -9,24 +9,21 @@ export const ModalVideo = ({ showVideo, videoUrl }) => {
     const moveUp = useSpring({
         translateY: !showVideo ? '100vh' : '0vh',
         config: { duration: 1150, easing: t => (0.5 - Math.cos(t * Math.PI) / 2) },
-    })
-
-    const fade = useSpring({
-        opacity: !showVideo ? '0' : '1',
-        config: { duration: 1150, easing: t => (0.5 - Math.cos(t * Math.PI) / 2) },
-        onRest: () =>{
-
+        onRest: () => {
+            setShowIFrame((prev) => !prev)
         }
     })
 
     return (
         <animated.div style={moveUp} className='modal-video'>
-            <animated.div style={fade} className="video-frame">
-                <iframe
-                    src={`https://www.youtube.com/embed/${videoId}`}
-                    allowFullScreen
-                ></iframe>
-            </animated.div>
+            <div className="video-frame">
+                {showIFrame &&
+                    <iframe
+                        src={`https://www.youtube.com/embed/${videoId}`}
+                        allowFullScreen
+                    ></iframe>
+                }
+            </div>
         </animated.div>
     )
 }
