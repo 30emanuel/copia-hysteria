@@ -200,34 +200,45 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
                         },
                         onComplete: () => {
                             gsap.to('.circle-top', {
-                                y: '+=80vh',
+                                y: '+=70vh',
                                 scrollTrigger: {
                                     trigger: '#transition-logo-1',
                                     start: "center center",
-                                    endTrigger: ".projects",
-                                    end: "center center",
+                                    end: '+=150%',
                                     scrub: 0.5,
                                 },
                                 onComplete: () => {
                                     gsap.to('.circle-top', {
-                                        className: `circle-top`,
-                                        y: '627vh',
-                                        x: '-35vw',
+                                        y: '520vh',
+                                        x: '-50.2vw',
                                         width: '879.669px',
                                         height: '879.669px',
-                                        border: '0.761px solid var(--bg-color-four)',
                                         transition: 'none',
                                         scrollTrigger: {
                                             trigger: '.projects',
                                             start: "center center",
-                                            endTrigger: ".brandlab",
-                                            end: "top top",
+                                            end: 'bottom bottom',
                                             scrub: 0.5,
                                             markers: true
                                         },
                                         onComplete: () => {
                                             gsap.to('.circle-top', {
-                                                className: `circle-top fixed`,
+                                                className: `circle-top`,
+                                                y: '627vh',
+                                                x: '-35vw',
+                                                border: '0.761px solid var(--bg-color-four)',
+                                                scrollTrigger: {
+                                                    trigger: '.brandlab',
+                                                    start: "top top",
+                                                    end: 'top top',
+                                                    scrub: 0.5,
+                                                    markers: true
+                                                },
+                                                onComplete: () =>{
+                                                    gsap.to('.circle-top', {
+                                                        className: `circle-top fixed`,
+                                                    })
+                                                }
                                             })
                                         }
                                     })

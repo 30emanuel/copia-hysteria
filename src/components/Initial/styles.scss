@@ -193,6 +193,7 @@
         &.fixed{
             transform: translate(-50%, -50%) translate(-35vw, 50vh) !important;
             position: fixed !important;
+            animation: circle-move 0.5s ease-out,
         }
     }
 
@@ -210,6 +211,16 @@
 
     to {
         opacity: 1;
+    }
+}
+
+@keyframes circle-move {
+    from {
+        transform: translateY(200vh);
+    }
+
+    to {
+        transform: translateY(0vh);
     }
 }
 
