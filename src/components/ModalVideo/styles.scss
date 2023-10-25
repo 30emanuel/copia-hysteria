@@ -17,7 +17,17 @@
         iframe{
             width: 90%;
             height: 80%;
+            animation: fade 0.6s ease-in;
         }
     }
 }
 
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

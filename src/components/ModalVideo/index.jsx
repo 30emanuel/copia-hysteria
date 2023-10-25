@@ -1,23 +1,32 @@
+import { useState } from 'react'
 import './styles.scss'
 import { useSpring, animated } from 'react-spring'
 
-export const ModalVideo = ({ showVideo, videoUrl, showModal }) => {
+export const ModalVideo = ({ showVideo, videoUrl }) => {
     const videoId = videoUrl.split('v=')[1]
+    const [showIFrame, setShowIFrame] = useState(false)
 
     const moveUp = useSpring({
         translateY: !showVideo ? '100vh' : '0vh',
         config: { duration: 1150, easing: t => (0.5 - Math.cos(t * Math.PI) / 2) },
     })
 
+    const fade = useSpring({
+        opacity: !showVideo ? '0' : '1',
+        config: { duration: 1150, easing: t => (0.5 - Math.cos(t * Math.PI) / 2) },
+        onRest: () =>{
+
+        }
+    })
+
     return (
         <animated.div style={moveUp} className='modal-video'>
-            <div className="video-frame">
+            <animated.div style={fade} className="video-frame">
                 <iframe
                     src={`https://www.youtube.com/embed/${videoId}`}
-                    frameBorder="0"
                     allowFullScreen
                 ></iframe>
-            </div>
+            </animated.div>
         </animated.div>
     )
 }

@@ -1,5 +1,5 @@
 import { Header } from '../../components/Header'
-import { Initial } from '../../components/InitialBackup'
+import { Initial } from '../../components/Initial'
 import { Projects } from '../../components/ListProjects'
 import './styles.scss'
 import { useState } from 'react'

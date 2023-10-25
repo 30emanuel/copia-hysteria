@@ -9,7 +9,6 @@
     z-index: 22;
     position: relative;
     background-color: var(--bg-color-primary);
-    padding-bottom: 200px;
     
     .title{
         margin-top: 150px;
@@ -28,6 +27,10 @@
         height: 100%;
         display: flex;
         gap: 36px;
+
+        .show{
+            opacity: 1;
+        }
     }
 
     .group-projects{

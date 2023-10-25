@@ -1,5 +1,5 @@
 import './styles.scss'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { ModalProject } from '../ModalProject'
 import { gsap } from 'gsap'
 import { Project } from '../Project'
@@ -59,6 +59,20 @@ export const Projects = ({ showScroll, projects }) => {
     setSelectedProject(index)
   }
 
+  useEffect(() =>{
+    /*gsap.to('.row', {
+      className: `row show`,
+      scrollTrigger: {
+        trigger: '.row',
+        start: "top center",
+        end: 'top center',
+        scrub: 0.5,
+        once: true,
+        markers: true
+      },
+    })*/
+  }, [])
+
   return (
     <>
       <div className='projects' id='projects'>
@@ -70,14 +84,14 @@ export const Projects = ({ showScroll, projects }) => {
             <div key={rowIndex} className='row'>
               {row.map((project, index) => {
                 if (index === 0) {
-                  return <Project key={project.id} project={project} toggleModal={toggleModal} />
+                  return <Project key={project.id} project={project} toggleModal={toggleModal}/>
                 }
                 if (index === 1) {
                   return (
                     <div key={index} className='group-projects'>
                       {colums[rowIndex].map((columProject) =>
                         columProject ? (
-                          <Project key={columProject.id} project={columProject} toggleModal={toggleModal} />
+                          <Project key={columProject.id} project={columProject} toggleModal={toggleModal}/>
                         ) : null
                       )}
                     </div>

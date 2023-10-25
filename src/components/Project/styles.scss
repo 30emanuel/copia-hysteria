@@ -1,12 +1,17 @@
 .project {
     cursor: pointer;
     color: white;
-    display: flex;
     align-items: end;
     border-radius: 50px;
-    transition: 1s ease-in;
     overflow: hidden;
     position: relative;
+    opacity: 0;
+    display: flex;
+    
+    &.show{
+        opacity: 1;
+        animation: move-project 1.2s ease-out;
+    }
 
     &:hover {
         .project-img{
@@ -25,6 +30,7 @@
         height: 100%;
         position: absolute;
         transition: 1s ease-in;
+
         video, img{
             position: absolute;
             width: 100%;
@@ -82,5 +88,17 @@
                 background-color: white;
             }
         }
+    }
+}
+
+@keyframes move-project {
+    from {
+        opacity: 0;
+        transform: translateY(300px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0px);
     }
 }
