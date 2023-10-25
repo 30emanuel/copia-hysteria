@@ -219,7 +219,6 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
                                             start: "center center",
                                             end: 'bottom bottom',
                                             scrub: 0.5,
-                                            markers: true
                                         },
                                         onComplete: () => {
                                             gsap.to('.circle-top', {
@@ -228,15 +227,26 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
                                                 x: '-35vw',
                                                 border: '0.761px solid var(--bg-color-four)',
                                                 scrollTrigger: {
-                                                    trigger: '.brandlab',
-                                                    start: "top top",
+                                                    trigger: '.projects',
+                                                    start: "bottom bottom",
+                                                    endTrigger: '.brandlab',
                                                     end: 'top top',
                                                     scrub: 0.5,
-                                                    markers: true
                                                 },
                                                 onComplete: () =>{
                                                     gsap.to('.circle-top', {
                                                         className: `circle-top fixed`,
+                                                        onComplete: () =>{
+                                                            gsap.to('.circle-top', {
+                                                                visibility: 'hidden',
+                                                                scrollTrigger: {
+                                                                    trigger: '#transition-logo-2',
+                                                                    start: "top top",
+                                                                    end: 'top top',
+                                                                    scrub: 0.5,
+                                                                },
+                                                            })
+                                                        }
                                                     })
                                                 }
                                             })
