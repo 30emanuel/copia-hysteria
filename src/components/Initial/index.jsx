@@ -218,7 +218,7 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
                                         border: '0.761px solid var(--bg-color-four)',
                                         transition: 'none',
                                         scrollTrigger: {
-                                            trigger: '.projects',
+                                            trigger: '.list-projects',
                                             start: "center center",
                                             endTrigger: ".brandlab",
                                             end: "top top",
