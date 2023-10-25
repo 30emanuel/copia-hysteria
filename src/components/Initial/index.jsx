@@ -344,7 +344,7 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
                         y: '50vh',
                         width: `calc(${circleTopTwo.current.offsetWidth}px + 835px)`,
                         height: `calc(${circleTopTwo.current.offsetWidth}px + 835px)`,
-                        transition: 'transform 1s ease-out',
+                        transition: 'transform 0s ease-out, border 0.5s ease-out',
                         scrollTrigger: {
                             trigger: '#transition-logo-1',
                             start: "center center",
@@ -360,8 +360,8 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
                                 border: '0.761px solid var(--bg-color-four)',
                                 scrollTrigger: {
                                     trigger: '.brandlab',
-                                    start: "top top",
-                                    end: 'top top',
+                                    start: "top center",
+                                    end: '+=50%',
                                     scrub: 0.5,
                                 },
                                 onComplete: () => {
@@ -401,7 +401,7 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
                         x: '39.5vw',
                         width: `calc(${circleBottomTwo.current.offsetWidth}px + 1341px)`,
                         height: `calc(${circleBottomTwo.current.offsetWidth}px + 1341px)`,
-                        transition: 'transform 1s ease-out',
+                        transition: 'transform 0s ease-out, border 0.5s ease-out',
                         scrollTrigger: {
                             trigger: '#transition-logo-1',
                             start: "center center",
@@ -417,8 +417,8 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
                                 x: '92.7vw',
                                 scrollTrigger: {
                                     trigger: '.brandlab',
-                                    start: "top top",
-                                    end: 'top top',
+                                    start: "top center",
+                                    end: '+=50%',
                                     scrub: 0.5,
                                 },
                                 onComplete: () => {
