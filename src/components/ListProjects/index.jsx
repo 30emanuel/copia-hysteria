@@ -1,7 +1,6 @@
 import './styles.scss'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { ModalProject } from '../ModalProject'
-import { gsap } from 'gsap'
 import { Project } from '../Project'
 
 export const Projects = ({ showScroll, projects }) => {
@@ -59,19 +58,6 @@ export const Projects = ({ showScroll, projects }) => {
     setSelectedProject(index)
   }
 
-  useEffect(() =>{
-    /*gsap.to('.row', {
-      className: `row show`,
-      scrollTrigger: {
-        trigger: '.row',
-        start: "top center",
-        end: 'top center',
-        scrub: 0.5,
-        once: true,
-        markers: true
-      },
-    })*/
-  }, [])
 
   return (
     <>

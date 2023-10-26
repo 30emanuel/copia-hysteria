@@ -29,6 +29,7 @@ export const ModalProject = ({ index = 0, setSelectedProject, showModal, toggleM
         if (!disabledButton) {
             if (!showVideo) {
                 toggleModal(false)
+                showScroll((prev) => !prev)
                 setShowContent(showModal)
             } else {
                 setDisabledButton(true)

@@ -1,5 +1,6 @@
 import { Header } from '../../components/Header'
 import { Initial } from '../../components/Initial'
+import { Initial1366 } from '../../components/Initial/1366'
 import { Projects } from '../../components/ListProjects'
 import './styles.scss'
 import { useState } from 'react'
@@ -19,12 +20,6 @@ export const Home = () => {
   const [showHeader, setShowHeader] = useState(false)
 
   //const { loading, error, data } = useQuery(HOME_QUERY)
-
-  const { width } = useWindowSize();
-
-  const isMobile = width <= 768;
-
-
 
   const data = {
     "initial": {
@@ -338,24 +333,26 @@ export const Home = () => {
   }
 
   const accptedWidths = [1200, 1366, 1600, 1920]
+  
+  const { width } = useWindowSize();
 
+  const isMobile = width <= 768;
 
-
-  // create new width rounding to the nearest upper accepted width
   const newWidth = isMobile ? 'mobile' : accptedWidths.reduce((prev, curr) => {
-    return (curr > width && curr < prev) ? curr : prev
+    return (curr > width && curr < prev || curr === width ) ? curr : prev
   }, 1920)
-
 
 
   const SIZES_RES = {
     'mobile': <Initial showScroll={showScroll} data={data.initial} setShowHeader={setShowHeader} />,
-    1366: <Initial showScroll={showScroll} data={data.initial} setShowHeader={setShowHeader} />,
+    1366: <Initial1366 showScroll={showScroll} data={data.initial} setShowHeader={setShowHeader} />,
     1200: <Initial showScroll={showScroll} data={data.initial} setShowHeader={setShowHeader} />,
     1600: <Initial showScroll={showScroll} data={data.initial} setShowHeader={setShowHeader} />,
     // DONE
     1920: <Initial showScroll={showScroll} data={data.initial} setShowHeader={setShowHeader} />
   }
+
+  console.log(newWidth)
   
 
   return (

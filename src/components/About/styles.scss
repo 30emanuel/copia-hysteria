@@ -187,7 +187,7 @@
 
             .about-title {
                 h3 {
-                    font-size: 146px;
+                    font-size: 128px;
                     margin-left: -140px;
                 }
 
@@ -195,10 +195,18 @@
                     margin-top: -30px;
                 }
             }
+            .paragraph {
+                margin-top: 20px;
+                .paragraphs {
+                    font-size: 18px;
+                }
+            }
         }
 
         .footer {
             margin-top: 50px;
+            font-size: 16px;
+            margin-left: 14.35%;
         }
     }
 }
