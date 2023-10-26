@@ -38,7 +38,7 @@ export const Collaborators = ({ text }) => {
                 end: '+=110%',
                 scrub: 0.5,
             },
-            onComplete: () =>{
+            onComplete: () => {
                 gsap.to('.smaller-circle', {
                     x: '8vw',
                     y: '-60vh',
@@ -87,21 +87,19 @@ export const Collaborators = ({ text }) => {
                         <h2 className='titles'>colaboradoras</h2>
                     </div>
                 }
-                {showText &&
-                    <div className="collaborators-text">
-                        <div className="sub-title">
-                            <div className='circles-images'>
-                                <div className="up" style={{ backgroundImage: `url(${text.imageTop.url})`, backgroundColor: 'lightgray', backgroundPosition: '50%', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
-                                </div>
-                                <div className="left" style={{ backgroundImage: `url(${text.imageLeft.url})`, backgroundColor: 'lightgray', backgroundPosition: '50%', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}></div>
-                                <div className="low" style={{ backgroundImage: `url(${text.imageLow.url})`, backgroundColor: 'lightgray', backgroundPosition: '50%', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}></div>
+                <div className="collaborators-text">
+                    <div className="sub-title">
+                        <div className='circles-images'>
+                            <div className={`up ${showText ? 'show' : ''}`} style={{ backgroundImage: `url(${text.imageTop.url})`, backgroundColor: 'lightgray', backgroundPosition: '50%', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
                             </div>
-                            <div className="paragraph">
-                                <p>{text.text}</p>
-                            </div>
+                            <div className={`left ${showText ? 'show' : ''}`} style={{ backgroundImage: `url(${text.imageLeft.url})`, backgroundColor: 'lightgray', backgroundPosition: '50%', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}></div>
+                            <div className={`low ${showText ? 'show' : ''}`} style={{ backgroundImage: `url(${text.imageLow.url})`, backgroundColor: 'lightgray', backgroundPosition: '50%', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}></div>
+                        </div>
+                        <div className='paragraph'>
+                            <p className={`${showText ? 'show' : ''}`}>{text.text}</p>
                         </div>
                     </div>
-                }
+                </div>
             </div>
             <div className="brand-background">
                 <div className='bigger-circle'>

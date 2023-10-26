@@ -56,7 +56,7 @@ export const Brandlab = ({ text, brands }) => {
   }, [brands])
 
   return (
-    <div className='brandlab'>
+    <><div id='brandlab'></div><div className='brandlab'>
       <div className="front">
         <div className="texts">
           <h2 className={`titles ${showTitle ? 'show' : ''}`}>brandlab</h2>
@@ -74,11 +74,9 @@ export const Brandlab = ({ text, brands }) => {
         {showVideo &&
           <div className="brandlab-video">
             <video className='video-brandlab' muted loop src={text.videoUrl}></video>
-          </div>
-        }
+          </div>}
       </div>
       <div className="brandlab-circle"></div>
-      <div id='brandlab' ></div>
-    </div>
+    </div></>
   )
 }

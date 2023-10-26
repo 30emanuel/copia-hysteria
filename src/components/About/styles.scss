@@ -107,6 +107,13 @@
     }
 }
 
+#about {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    pointer-events: none;
+}
+
 @keyframes fade-about {
     from {
         opacity: 0;

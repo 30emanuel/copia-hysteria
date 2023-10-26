@@ -4,11 +4,19 @@ import LogoMobile from '../../assets/logo-mobile.png'
 import { useState } from 'react'
 
 
-export const Header = ({ }) => {
+export const Header = () => {
     const [showMenu, setShowMenu] = useState(false)
 
     const toggleMenu = () => {
         setShowMenu((prev) => !prev)
+    }
+
+    const scrollToSection = (sectionId) => {
+        const section = document.getElementById(sectionId)
+        if (section) {
+            section.scrollIntoView({ behavior: 'smooth' })
+            toggleMenu()
+        }
     }
 
     return (
@@ -21,11 +29,11 @@ export const Header = ({ }) => {
                     </div>
                 </div>
                 <nav className="menu-items">
-                    <a href='#home' onClick={toggleMenu}>home</a>
-                    <a href='#about' onClick={toggleMenu}>quem é hysteria</a>
-                    <a href='#projects' onClick={toggleMenu}>projetos</a>
-                    <a href='#brandlab' onClick={toggleMenu}>brand lab</a>
-                    <a href='#contact' onClick={toggleMenu}>contato</a>
+                    <a onClick={() => scrollToSection('home')}>home</a>
+                    <a onClick={() => scrollToSection('about')}>quem é hysteria</a>
+                    <a onClick={() => scrollToSection('projects')}>projetos</a>
+                    <a onClick={() => scrollToSection('brandlab')}>brand lab</a>
+                    <a onClick={() => scrollToSection('contact')}>contato</a>
                 </nav>
                 <div className="menu-footer">
                     <p>política de privacidade</p>

@@ -135,23 +135,21 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
                 y: '3vh',
                 x: '-38vw',
                 ease: 'power1.easeInOut',
+                transition: 'none',
                 scrollTrigger: {
                     trigger: '.center-container',
                     start: "bottom bottom",
                     scrub: 1,
                 },
-                onComplete: () => {
-                    gsap.to('.center-container', {
-                        opacity: '0',
-                        transition: 'transform 0.3s ease-out',
-                        scrollTrigger: {
-                            trigger: '#transition-logo-1',
-                            start: "top top",
-                            end: "top top",
-                            scrub: 1,
-                        },
-                    })
-                }
+            })
+            gsap.to('.center-container', {
+                opacity: '0',
+                scrollTrigger: {
+                    trigger: '#transition-logo-1',
+                    start: "top top",
+                    end: "top top",
+                    scrub: 1,
+                },
             })
             gsap.to('.circle', {
                 width: `calc(${circleCenter.current.offsetWidth}px + 27px)`,
