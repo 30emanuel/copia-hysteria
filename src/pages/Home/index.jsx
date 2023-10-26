@@ -13,11 +13,17 @@ import Logo from '../../assets/logo-black.png'
 import SyncLoader from "react-spinners/SyncLoader"
 import Swal from 'sweetalert2'
 import { TransitionLogo } from '../../components/TransitionLogo'
+import { useWindowSize } from "@uidotdev/usehooks";
 
 export const Home = () => {
   const [showHeader, setShowHeader] = useState(false)
 
   //const { loading, error, data } = useQuery(HOME_QUERY)
+
+  const { width } = useWindowSize();
+
+  const isMobile = width <= 768;
+
 
 
   const data = {
@@ -331,6 +337,26 @@ export const Home = () => {
     }
   }
 
+  const accptedWidths = [1200, 1366, 1600, 1920]
+
+
+
+  // create new width rounding to the nearest upper accepted width
+  const newWidth = isMobile ? 'mobile' : accptedWidths.reduce((prev, curr) => {
+    return (curr > width && curr < prev) ? curr : prev
+  }, 1920)
+
+
+
+  const SIZES_RES = {
+    'mobile': <Initial showScroll={showScroll} data={data.initial} setShowHeader={setShowHeader} />,
+    1366: <Initial showScroll={showScroll} data={data.initial} setShowHeader={setShowHeader} />,
+    1200: <Initial showScroll={showScroll} data={data.initial} setShowHeader={setShowHeader} />,
+    1600: <Initial showScroll={showScroll} data={data.initial} setShowHeader={setShowHeader} />,
+    // DONE
+    1920: <Initial showScroll={showScroll} data={data.initial} setShowHeader={setShowHeader} />
+  }
+  
 
   return (
     <div className="home">
@@ -345,7 +371,7 @@ export const Home = () => {
           {showHeader &&
             <Header />
           }
-          <Initial showScroll={showScroll} data={data.initial} setShowHeader={setShowHeader} />
+          {SIZES_RES[newWidth]}
           <About text={data.about} />
           <TransitionLogo id={1} data={data.transitionOne} />
           <Projects showScroll={showScroll} projects={data.allProjects} />
