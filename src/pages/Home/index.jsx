@@ -15,9 +15,8 @@ import Swal from 'sweetalert2'
 import { TransitionLogo } from '../../components/TransitionLogo'
 
 export const Home = () => {
-  const [showSecondPart, setShowSecondPart] = useState(false)
   const [showHeader, setShowHeader] = useState(false)
-  
+
   //const { loading, error, data } = useQuery(HOME_QUERY)
 
 
@@ -92,7 +91,7 @@ export const Home = () => {
         "realization": "Lorem ipsum",
         "support": "Lorem ipsum",
         "direction": "Lorem ipsum",
-        "videoThumb" : "https://www.datocms-assets.com/103984/1691604201-teste.jpg",
+        "videoThumb": "https://www.datocms-assets.com/103984/1691604201-teste.jpg",
         "videourl": "https://www.youtube.com/watch?v=KvzXanmVeqo",
         "image1": {
           "url": "https://www.datocms-assets.com/103984/1691604224-abre-alas-01.jpg"
@@ -126,7 +125,7 @@ export const Home = () => {
         "realization": "Lorem",
         "support": "Lorem",
         "direction": "Lorem",
-        "videoThumb" : "https://www.datocms-assets.com/103984/1691604201-teste.jpg",
+        "videoThumb": "https://www.datocms-assets.com/103984/1691604201-teste.jpg",
         "videourl": "https://www.youtube.com/watch?v=ANaXPCXNO-c\"",
         "image1": {
           "url": "https://www.datocms-assets.com/103984/1691604056-dvfms-02.jpg"
@@ -160,7 +159,7 @@ export const Home = () => {
         "realization": "Lorem",
         "support": "Lorem",
         "direction": "Lorem",
-        "videoThumb" : "https://www.datocms-assets.com/103984/1691604201-teste.jpg",
+        "videoThumb": "https://www.datocms-assets.com/103984/1691604201-teste.jpg",
         "videourl": "https://www.youtube.com/watch?v=KvzXanmVeqo",
         "image1": {
           "url": "https://www.datocms-assets.com/103984/1691609829-teste.jpg"
@@ -194,7 +193,7 @@ export const Home = () => {
         "realization": "Lorem",
         "support": "Loren",
         "direction": "Lorem",
-        "videoThumb" : "https://www.datocms-assets.com/103984/1691604201-teste.jpg",
+        "videoThumb": "https://www.datocms-assets.com/103984/1691604201-teste.jpg",
         "videourl": "https://www.youtube.com/watch?v=ANaXPCXNO-c",
         "image1": {
           "url": "https://www.datocms-assets.com/103984/1696444927-whatsapp-image-2023-09-04-at-19-44-1.png"
@@ -228,7 +227,7 @@ export const Home = () => {
         "realization": "Lorem ipsum",
         "support": "Lorem ipsum",
         "direction": "Lorem ipsum",
-        "videoThumb" : "https://www.datocms-assets.com/103984/1691604201-teste.jpg",
+        "videoThumb": "https://www.datocms-assets.com/103984/1691604201-teste.jpg",
         "videourl": "https://www.youtube.com/watch?v=KvzXanmVeqo",
         "image1": {
           "url": "https://www.datocms-assets.com/103984/1691604157-dvfms-02.jpg"
@@ -262,7 +261,7 @@ export const Home = () => {
         "realization": "Lorem ipsum",
         "support": "Lorem ipsum",
         "direction": "Lorem ipsum",
-        "videoThumb" : "https://www.datocms-assets.com/103984/1691604201-teste.jpg",
+        "videoThumb": "https://www.datocms-assets.com/103984/1691604201-teste.jpg",
         "videourl": "https://www.youtube.com/watch?v=ANaXPCXNO-c",
         "image1": {
           "url": "https://www.datocms-assets.com/103984/1691604021-teste.jpg"
@@ -346,18 +345,14 @@ export const Home = () => {
           {showHeader &&
             <Header />
           }
-          <Initial showScroll={showScroll} data={data.initial} setShowSecondPart={setShowSecondPart} setShowHeader={setShowHeader} />
+          <Initial showScroll={showScroll} data={data.initial} setShowHeader={setShowHeader} />
           <About text={data.about} />
           <TransitionLogo id={1} data={data.transitionOne} />
           <Projects showScroll={showScroll} projects={data.allProjects} />
-          {showSecondPart &&
-            <>
-              <Brandlab showScroll={showScroll} text={data.brandlab} brands={data.allBrands} />
-              <TransitionLogo id={2} data={data.transitionTwo} />
-              <Collaborators showScroll={showScroll} text={data.collaborator} />
-              <Contact contact={data.contact} />
-            </>
-          }
+          <Brandlab showScroll={showScroll} text={data.brandlab} brands={data.allBrands} />
+          <TransitionLogo id={2} data={data.transitionTwo} />
+          <Collaborators showScroll={showScroll} text={data.collaborator} />
+          <Contact contact={data.contact} />
         </>
       }
     </div>

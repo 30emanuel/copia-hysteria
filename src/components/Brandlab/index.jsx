@@ -28,7 +28,7 @@ export const Brandlab = ({ text, brands }) => {
       scrollTrigger: {
         trigger: '.brandlab',
         start: "top center",
-        end: '+=50%',
+        end: '+=35%',
         scrub: 0.5,
         once: true,
       },
@@ -56,27 +56,30 @@ export const Brandlab = ({ text, brands }) => {
   }, [brands])
 
   return (
-    <><div id='brandlab'></div><div className='brandlab'>
-      <div className="front">
-        <div className="texts">
-          <h2 className={`titles ${showTitle ? 'show' : ''}`}>brandlab</h2>
-          <p className={`paragraphs ${showParagraph ? 'show' : ''}`}>{text.text}</p>
-          <h3 className={`${showTextSecondary ? 'show' : ''}`}>{text.textSecondary}</h3>
-          <div className={`brands ${showBrands ? 'show' : ''}`}>
-            {brands.map((brand, index) => (
-              <div className={`brand ${indexCurrent >= index ? 'show' : ''}`} key={index}>
-                <img src={brand.logo.url} alt={`${brand.name} logo`} />
-              </div>
-            ))}
+    <>
+      <div id='brandlab'></div>
+      <div className='brandlab'>
+        <div className="front">
+          <div className="texts">
+            <h2 className={`titles ${showTitle ? 'show' : ''}`}>brandlab</h2>
+            <p className={`paragraphs ${showParagraph ? 'show' : ''}`}>{text.text}</p>
+            <h3 className={`${showTextSecondary ? 'show' : ''}`}>{text.textSecondary}</h3>
+            <div className={`brands ${showBrands ? 'show' : ''}`}>
+              {brands.map((brand, index) => (
+                <div className={`brand ${indexCurrent >= index ? 'show' : ''}`} key={index}>
+                  <img src={brand.logo.url} alt={`${brand.name} logo`} />
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
 
-        {showVideo &&
-          <div className="brandlab-video">
-            <video className='video-brandlab' muted loop src={text.videoUrl}></video>
-          </div>}
+          {showVideo &&
+            <div className="brandlab-video">
+              <video className='video-brandlab' muted loop src={text.videoUrl}></video>
+            </div>}
+        </div>
+        <div className="brandlab-circle"></div>
       </div>
-      <div className="brandlab-circle"></div>
-    </div></>
+    </>
   )
 }

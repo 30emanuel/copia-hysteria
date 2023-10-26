@@ -5,7 +5,7 @@ import Logo from '../../assets/logo-black.png'
 import { gsap } from 'gsap'
 
 
-export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) => {
+export const Initial = ({ showScroll, data, setShowHeader }) => {
     const [showFirstAnimation, setShowFirstAnimation] = useState(true)
     const [showSecondAnimation, setShowSecondAnimation] = useState(false)
     const [showRest, setShowRest] = useState(false)
@@ -21,8 +21,6 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
 
     const [showSecondText, setShowSecondText] = useState(false)
     const [showThreeText, setShowThreeText] = useState(false)
-
-    const [animationsTwo, setAnimationTwo] = useState(true)
 
     const [showCircles, setShowCircles] = useState(false)
 
@@ -99,7 +97,6 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
         translateX: showRest ? '0%' : '-50%',
         config: { duration: 500, easing: config.easeOut },
         onRest: () => {
-            setShowSecondPart(true)
             showScroll(true)
             setShowText(true)
             playAllVideos()
@@ -172,12 +169,12 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
                     })
                 }
             })
-            gsap.to('.circle-top-2', {
+            gsap.to('.circle-top', {
                 y: '80vh',
                 x: '-93vw',
                 position: 'fixed',
-                width: `calc(${circleTopTwo.current.offsetWidth}px - 235px)`,
-                height: `calc(${circleTopTwo.current.offsetWidth}px - 235px)`,
+                width: '925px',
+                height: '925px',
                 transition: 'transform 0.5s ease-out',
                 ease: 'power1.easeInOut',
                 scrollTrigger: {
@@ -186,11 +183,11 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
                     scrub: 1,
                 },
                 onComplete: () => {
-                    gsap.to('.circle-top-2', {
+                    gsap.to('.circle-top', {
                         x: '32vw',
                         y: '45vh',
-                        width: `calc(${circleTopTwo.current.offsetWidth}px + 835px)`,
-                        height: `calc(${circleTopTwo.current.offsetWidth}px + 835px)`,
+                        width: '1763px',
+                        height: '1763px',
                         transition: 'none',
                         scrollTrigger: {
                             trigger: '#transition-logo-1',
@@ -199,7 +196,7 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
                             scrub: 0.5,
                         },
                         onComplete: () => {
-                            gsap.to('.circle-top-2', {
+                            gsap.to('.circle-top', {
                                 width: '879.669px',
                                 height: '879.669px',
                                 y: '50vh',
@@ -207,22 +204,22 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
                                 scrollTrigger: {
                                     trigger: '.list-projects',
                                     start: "center center",
-                                    endTrigger: '.brandlab',
+                                    endTrigger: '#brandlab',
                                     end: 'top top',
                                     scrub: 0.5,
                                 },
                                 onComplete: () => {
-                                    gsap.to('.circle-top-2', {
+                                    gsap.to('.circle-top', {
                                         border: '0.761px solid var(--bg-color-four)',
                                         transition: 'transform 0.5s ease-out',
                                         scrollTrigger: {
-                                            trigger: '.brandlab',
+                                            trigger: '#brandlab',
                                             start: "top top",
                                             end: 'top top',
                                             scrub: 0.5,
                                         },
                                         onComplete: () => {
-                                            gsap.to('.circle-top-2', {
+                                            gsap.to('.circle-top', {
                                                 y: '100vh',
                                                 x: '-107.2vw',
                                                 visibility: 'hidden',
@@ -241,12 +238,12 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
                     })
                 }
             })
-            gsap.to('.circle-bottom-2', {
+            gsap.to('.circle-bottom', {
                 y: '-30vh',
                 x: '11.8vw',
                 position: 'fixed',
-                width: `calc(${circleBottomTwo.current.offsetWidth}px - 80px)`,
-                height: `calc(${circleBottomTwo.current.offsetWidth}px - 80px)`,
+                width: '1080px',
+                height: '1080px',
                 transition: 'transform 0.5s ease-out',
                 ease: 'power1.easeInOut',
                 scrollTrigger: {
@@ -255,11 +252,11 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
                     scrub: 1,
                 },
                 onComplete: () => {
-                    gsap.to('.circle-bottom-2', {
+                    gsap.to('.circle-bottom', {
                         y: '-60vh',
                         x: '39.5vw',
-                        width: `calc(${circleBottomTwo.current.offsetWidth}px + 1341px)`,
-                        height: `calc(${circleBottomTwo.current.offsetWidth}px + 1341px)`,
+                        height: '2423px',
+                        width: '2423px',
                         transition: 'none',
                         scrollTrigger: {
                             trigger: '#transition-logo-1',
@@ -268,30 +265,31 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
                             scrub: 0.5,
                         },
                         onComplete: () => {
-                            gsap.to('.circle-bottom-2', {
-                                width: `calc(${circleBottomTwo.current.offsetWidth}px - 1181px)`,
-                                height: `calc(${circleBottomTwo.current.offsetWidth}px - 1181px)`,
+                            gsap.to('.circle-bottom', {
+                                width: '1244px',
+                                height: '1244px',
                                 y: '-72vh',
                                 x: '94vw',
+                                transition: 'transform 0.5s ease-out',
                                 scrollTrigger: {
                                     trigger: '.list-projects',
                                     start: "center center",
-                                    endTrigger: '.brandlab',
+                                    endTrigger: '#brandlab',
                                     end: 'top top',
                                     scrub: 0.5,
                                 },
                                 onComplete: () => {
-                                    gsap.to('.circle-bottom-2', {
+                                    gsap.to('.circle-bottom', {
                                         border: '1px solid var(--bg-color-four)',
                                         transition: 'transform 0.5s ease-out',
                                         scrollTrigger: {
-                                            trigger: '.brandlab',
+                                            trigger: '#brandlab',
                                             start: "top top",
                                             end: 'top top',
                                             scrub: 0.5,
                                         },
                                         onComplete: () => {
-                                            gsap.to('.circle-bottom-2', {
+                                            gsap.to('.circle-bottom', {
                                                 y: '-77vh',
                                                 x: '13.69vw',
                                                 visibility: 'hidden',
@@ -393,8 +391,8 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
             }
             {showCircles &&
                 <>
-                    <div className={`circle-top-2 ${animationsTwo ? 'show' : ''}`} ref={circleTopTwo}></div>
-                    <div className={`circle-bottom-2 ${animationsTwo ? 'show' : ''}`} ref={circleBottomTwo}></div>
+                    <div className='circle-top' ref={circleTopTwo}></div>
+                    <div className='circle-bottom' ref={circleBottomTwo}></div>
                 </>
             }
         </div >

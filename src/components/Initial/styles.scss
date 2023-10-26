@@ -172,9 +172,7 @@
     }
 
     .circle-top,
-    .circle-bottom, 
-    .circle-top-2, 
-    .circle-bottom-2 {
+    .circle-bottom{
         position: absolute;
         z-index: 7;
         width: 1156px;
@@ -183,16 +181,11 @@
         border: 1px solid #FFF;
         box-shadow: 0px 4px 94px 0px rgba(0, 0, 0, 0.568);
         pointer-events: none;
-        opacity: 0;
+        opacity: 1;
         animation: fade 0.6s ease-in;
-
-    
-        &.show{
-            opacity: 1;
-        }
     }
 
-    .circle-top, .circle-top-2 {
+    .circle-top {
         top: 0%;
         left: 108%;
         transform: translate(-50%, -50%);
@@ -204,7 +197,7 @@
         }
     }
 
-    .circle-bottom, .circle-bottom-2 {
+    .circle-bottom{
         top: 107%;
         left: -6%;
         transform: translate(-50%, -50%);
