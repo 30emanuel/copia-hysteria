@@ -173,8 +173,8 @@ export const Initial1366 = ({ showScroll, data, setShowHeader }) => {
                 y: '80vh',
                 x: '-93vw',
                 position: 'fixed',
-                width: '725px',
-                height: '725px',
+                width: '600px',
+                height: '600px',
                 transition: 'transform 0.5s ease-out',
                 ease: 'power1.easeInOut',
                 scrollTrigger: {
@@ -200,7 +200,7 @@ export const Initial1366 = ({ showScroll, data, setShowHeader }) => {
                                 width: '580px',
                                 height: '580px',
                                 y: '50vh',
-                                x: '-36.2vw',
+                                x: '-35.2vw',
                                 scrollTrigger: {
                                     trigger: '#brandlab',
                                     start: "top center",
@@ -239,10 +239,10 @@ export const Initial1366 = ({ showScroll, data, setShowHeader }) => {
             })
             gsap.to('.circle-bottom', {
                 y: '-30vh',
-                x: '11.8vw',
+                x: '9.79vw',
                 position: 'fixed',
-                width: '880px',
-                height: '880px',
+                width: '780px',
+                height: '780px',
                 transition: 'transform 0.5s ease-out',
                 ease: 'power1.easeInOut',
                 scrollTrigger: {
@@ -275,7 +275,6 @@ export const Initial1366 = ({ showScroll, data, setShowHeader }) => {
                                     start: "top center",
                                     end: 'top top',
                                     scrub: 0.5,
-                                    markers: true
                                 },
                                 onComplete: () => {
                                     gsap.to('.circle-bottom', {

@@ -281,7 +281,6 @@
         .text {
             h1 {
                 font-size: 256px;
-                line-height: normal;
             }
         }
     }
@@ -305,11 +304,13 @@
         .text {
             h1 {
                 font-size: 200px;
-                line-height: normal;
             }
 
             h2 {
                 font-size: 72px;
+            }
+            .text-container-center {
+                height: 208px;
             }
         }
     }

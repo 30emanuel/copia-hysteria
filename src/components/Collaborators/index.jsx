@@ -8,8 +8,8 @@ export const Collaborators = ({ text }) => {
 
     useEffect(() => {
         gsap.to('.bigger-circle', {
-            y: '+=50vh',
-            x: '+=20vw',
+            y: '0vh',
+            x: '0vw',
             scrollTrigger: {
                 trigger: '#transition-img-2',
                 start: "center center",
@@ -18,7 +18,7 @@ export const Collaborators = ({ text }) => {
             },
             onComplete: () => {
                 gsap.to('.bigger-circle', {
-                    y: '110vh',
+                    y: '112vh',
                     x: '-30vw',
                     scrollTrigger: {
                         trigger: '.collaborators-text',
@@ -30,8 +30,8 @@ export const Collaborators = ({ text }) => {
             }
         })
         gsap.to('.smaller-circle', {
-            y: '+=40vh',
-            x: '+=20vw',
+            y: '0vh',
+            x: '0vw',
             scrollTrigger: {
                 trigger: '#transition-img-2',
                 start: "center center",
@@ -41,7 +41,7 @@ export const Collaborators = ({ text }) => {
             onComplete: () => {
                 gsap.to('.smaller-circle', {
                     x: '8vw',
-                    y: '-60vh',
+                    y: '-58vh',
                     scrollTrigger: {
                         trigger: '.collaborators-text',
                         start: "bottom bottom",
