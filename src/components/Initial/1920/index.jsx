@@ -1,34 +1,27 @@
-import { useState, useRef, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import './styles.scss'
 import { useSpring, animated, config } from 'react-spring'
-import Logo from '../../assets/logo-black.png'
+import Logo from '../../../assets/logo-black.png'
 import { gsap } from 'gsap'
 
 
-export const Initial = ({ showScroll, data, setShowHeader }) => {
-    const [showFirstAnimation, setShowFirstAnimation] = useState(true)
-    const [showSecondAnimation, setShowSecondAnimation] = useState(false)
-    const [showRest, setShowRest] = useState(false)
-    const [showText, setShowText] = useState(false)
-    const circleCenter = useRef(null)
-    const circleTop = useRef(null)
-    const circleBottom = useRef(null)
-
-    const circleTopTwo = useRef(null)
-    const circleBottomTwo = useRef(null)
-
+export const Initial1920 = ({ showAnimationStart, setShowAnimationStart, showScroll, data, setShowHeader }) => {
+    const [showFirstAnimation, setShowFirstAnimation] = useState(showAnimationStart)
+    const [showSecondAnimation, setShowSecondAnimation] = useState(!showAnimationStart)
+    const [showRest, setShowRest] = useState(!showAnimationStart)
+    const [showText, setShowText] = useState(!showAnimationStart)
     const [borderRadius, setBorderRadius] = useState('100%')
 
-    const [showSecondText, setShowSecondText] = useState(false)
-    const [showThreeText, setShowThreeText] = useState(false)
+    const [showSecondText, setShowSecondText] = useState(!showAnimationStart)
+    const [showThreeText, setShowThreeText] = useState(!showAnimationStart)
 
-    const [showCircles, setShowCircles] = useState(false)
+    const [showCircles, setShowCircles] = useState(!showAnimationStart)
 
 
     const playAllVideos = () => {
-        const videos = document.querySelectorAll('video')
+        const videos = document.querySelectorAll('.video-initial')
         videos.forEach((video) => {
-            //video.play()
+            video.play()
         })
     }
 
@@ -104,29 +97,32 @@ export const Initial = ({ showScroll, data, setShowHeader }) => {
         },
     })
 
-    gsap.to('.video-right', {
-        y: '-50vh',
-        ease: 'power1.easeInOut',
-        scrollTrigger: {
-            trigger: '.center-container',
-            start: "bottom bottom",
-            scrub: 1,
-        },
-    })
-
-    gsap.to('.start', {
-        zIndex: '40',
-        ease: 'power1.easeInOut',
-        scrollTrigger: {
-            trigger: '#transition-img-1',
-            start: "center center",
-            end: "center center",
-            scrub: 1,
-        },
+    useEffect(() =>{
+        gsap.to('.start', {
+            zIndex: '40',
+            ease: 'power1.easeInOut',
+            scrollTrigger: {
+                trigger: '#transition-img-1',
+                start: "center center",
+                end: "center center",
+                scrub: 1,
+            },
+        })
     })
 
     useEffect(() => {
         if (showCircles) {
+            playAllVideos()
+            gsap.to('.video-right', {
+                y: '-50vh',
+                ease: 'power1.easeInOut',
+                scrollTrigger: {
+                    trigger: '.center-container',
+                    start: "bottom bottom",
+                    scrub: 1,
+                },
+            })
+
             gsap.to('.center-container', {
                 position: 'fixed',
                 y: '3vh',
@@ -149,8 +145,6 @@ export const Initial = ({ showScroll, data, setShowHeader }) => {
                 },
             })
             gsap.to('.circle', {
-                width: '1187px',
-                height: '1187px',
                 ease: 'power1.easeInOut',
                 scrollTrigger: {
                     trigger: '.center-container',
@@ -319,6 +313,7 @@ export const Initial = ({ showScroll, data, setShowHeader }) => {
                 setShowSecondText(true)
             }, 600)
             setShowCircles(true)
+            setShowAnimationStart(false)
         }
     })
 
@@ -348,10 +343,10 @@ export const Initial = ({ showScroll, data, setShowHeader }) => {
             {showSecondAnimation &&
                 <animated.div style={moveUp} className='center-container'>
                     <div className='center' style={{
-                        transform: `scale(${scale})`,
+                        transform: showAnimationStart ? `scale(${scale})` : 'scale(1)',
                     }}>
-                        <div className="circle" ref={circleCenter}>
-                            <video playsInline muted loop src={data.videoUrl} className='video'></video>
+                        <div className="circle" >
+                            <video playsInline muted loop src={data.videoUrl} className='video video-initial'></video>
                         </div>
                     </div>
                 </animated.div>
@@ -359,13 +354,13 @@ export const Initial = ({ showScroll, data, setShowHeader }) => {
             {showRest &&
                 <>
                     <div className="background">
-                        <animated.div className="background-ball" style={{ ...background, borderRadius: borderRadius, }}>
+                    <animated.div className="background-ball" style={{ ...background, borderRadius: showAnimationStart ? borderRadius : '0%', }}>
                             <animated.div className='videos-container' >
                                 <animated.div className="video-left" style={leftSlide}>
-                                    <video muted loop src={data.videoUrl} className='video'></video>
+                                    <video muted loop src={data.videoUrl} className='video video-initial'></video>
                                 </animated.div>
                                 <animated.div className="video-right" style={rightSlide}>
-                                    <video muted loop src={data.videoUrl} className='video'></video>
+                                    <video muted loop src={data.videoUrl} className='video video-initial'></video>
                                 </animated.div>
                             </animated.div>
                         </animated.div>
@@ -391,8 +386,8 @@ export const Initial = ({ showScroll, data, setShowHeader }) => {
             }
             {showCircles &&
                 <>
-                    <div className='circle-top' ref={circleTopTwo}></div>
-                    <div className='circle-bottom' ref={circleBottomTwo}></div>
+                    <div className='circle-top'></div>
+                    <div className='circle-bottom'></div>
                 </>
             }
         </div >

@@ -1,5 +1,4 @@
 import { Header } from '../../components/Header'
-import { Initial } from '../../components/Initial'
 import { Initial1366 } from '../../components/Initial/1366'
 import { Projects } from '../../components/ListProjects'
 import './styles.scss'
@@ -15,9 +14,14 @@ import SyncLoader from "react-spinners/SyncLoader"
 import Swal from 'sweetalert2'
 import { TransitionLogo } from '../../components/TransitionLogo'
 import { useWindowSize } from "@uidotdev/usehooks";
+import { Initial1920 } from '../../components/Initial/1920'
+import { Initial1600 } from '../../components/Initial/1600'
+import { Initial1280 } from '../../components/Initial/1280'
 
 export const Home = () => {
   const [showHeader, setShowHeader] = useState(false)
+
+  const [showAnimationStart, setShowAnimationStart] = useState(true)
 
   //const { loading, error, data } = useQuery(HOME_QUERY)
 
@@ -324,19 +328,17 @@ export const Home = () => {
 
   const showScroll = (value) => {
     if (value === false) {
-      document.documentElement.style.overflow = 'hidden'
-      document.body.scroll = "no"
+      document.body.style.overflowY = 'hidden'
     } else {
-      document.documentElement.style.overflowY = 'visible'
-      document.body.scroll = "yes"
+      document.body.style.overflowY = 'visible'
     }
   }
 
-  const accptedWidths = [1200, 1366, 1600, 1920]
+  const accptedWidths = [1280, 1366, 1600, 1920]
   
-  const { width } = useWindowSize();
+  const { width } = useWindowSize()
 
-  const isMobile = width <= 768;
+  const isMobile = width <= 768
 
   const newWidth = isMobile ? 'mobile' : accptedWidths.reduce((prev, curr) => {
     return (curr > width && curr < prev || curr === width ) ? curr : prev
@@ -344,12 +346,11 @@ export const Home = () => {
 
 
   const SIZES_RES = {
-    'mobile': <Initial showScroll={showScroll} data={data.initial} setShowHeader={setShowHeader} />,
-    1366: <Initial1366 showScroll={showScroll} data={data.initial} setShowHeader={setShowHeader} />,
-    1200: <Initial showScroll={showScroll} data={data.initial} setShowHeader={setShowHeader} />,
-    1600: <Initial showScroll={showScroll} data={data.initial} setShowHeader={setShowHeader} />,
-    // DONE
-    1920: <Initial showScroll={showScroll} data={data.initial} setShowHeader={setShowHeader} />
+    'mobile': <Initial1920 showAnimationStart={showAnimationStart} setShowAnimationStart={setShowAnimationStart} showScroll={showScroll} data={data.initial} setShowHeader={setShowHeader} />,
+    1280: <Initial1280 showAnimationStart={showAnimationStart} setShowAnimationStart={setShowAnimationStart}  showScroll={showScroll} data={data.initial} setShowHeader={setShowHeader} />,
+    1366: <Initial1366 showAnimationStart={showAnimationStart} setShowAnimationStart={setShowAnimationStart}  showScroll={showScroll} data={data.initial} setShowHeader={setShowHeader} />,
+    1600: <Initial1600 showAnimationStart={showAnimationStart} setShowAnimationStart={setShowAnimationStart}  showScroll={showScroll} data={data.initial} setShowHeader={setShowHeader} />,
+    1920: <Initial1920 showAnimationStart={showAnimationStart} setShowAnimationStart={setShowAnimationStart}  showScroll={showScroll} data={data.initial} setShowHeader={setShowHeader} />
   }
 
   console.log(newWidth)

@@ -10,6 +10,13 @@ export const Brandlab = ({ text, brands }) => {
   const [showBrands, setShowBrands] = useState(false)
   const [indexCurrent, setIndexCurrent] = useState(0)
 
+  const playVideo = () => {
+    const videos = document.querySelectorAll('.video-brandlab')
+    videos.forEach((video) => {
+      video.play()
+    })
+}
+
   useEffect(() => {
     gsap.to('.brandlab-circle', {
       display: 'flex',
@@ -21,6 +28,7 @@ export const Brandlab = ({ text, brands }) => {
         once: true,
       },
     })
+
 
     gsap.to('.brandlab-circle', {
       y: '60vh',
@@ -41,19 +49,22 @@ export const Brandlab = ({ text, brands }) => {
 
         setTimeout(function () {
           setShowTextSecondary(true)
+          playVideo()
         }, 1000)
 
         setTimeout(function () {
           setShowBrands(true)
-          brands.map((_brand, index) => {
-            setTimeout(function () {
-              setIndexCurrent(index)
-            }, 200 * index)
-          })
+          if(!showBrands){
+            brands.map((_brand, index) => {
+              setTimeout(function () {
+                setIndexCurrent(index)
+              }, 200 * index)
+            })
+          }
         }, 1500)
       }
     })
-  }, [brands])
+  }, [brands, showBrands])
 
   return (
     <>

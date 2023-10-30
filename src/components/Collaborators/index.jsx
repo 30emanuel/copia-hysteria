@@ -10,6 +10,7 @@ export const Collaborators = ({ text }) => {
         gsap.to('.bigger-circle', {
             y: '0vh',
             x: '0vw',
+            visibility: 'visible',
             scrollTrigger: {
                 trigger: '#transition-img-2',
                 start: "center center",
@@ -101,7 +102,7 @@ export const Collaborators = ({ text }) => {
                     </div>
                 </div>
             </div>
-            <div className="brand-background">
+            <div className="collaborators-background">
                 <div className='bigger-circle'>
                     <div className="smaller-circle">
                         <div className='background-blur'></div>

@@ -151,3 +151,28 @@
         margin-top: -112vh;
     }
 }
+
+@media(max-width: 1290px){
+    .contact{
+        margin-top: 20vh;
+        .text{
+            div {
+                h3 {
+                    font-size: 40px;
+                }
+                h4 {
+                    font-size: 32px;
+                }
+
+                svg{
+                    width: 50px;
+                    height: 50px;
+                }
+
+            }
+        }
+    }
+    .contact-background{
+        margin-top: -125vh;
+    }
+}

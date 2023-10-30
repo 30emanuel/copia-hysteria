@@ -1,7 +1,8 @@
 import './styles.scss'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { ModalProject } from '../ModalProject'
 import { Project } from '../Project'
+import { gsap } from 'gsap'
 
 export const Projects = ({ showScroll, projects }) => {
   const [showModal, setShowModal] = useState(false)
@@ -56,13 +57,29 @@ export const Projects = ({ showScroll, projects }) => {
   const toggleModal = (index) => {
     setShowModal(!showModal)
     setSelectedProject(index)
+    showScroll(false)
   }
+
+  useEffect(() => {
+    gsap.to('.project-title', {
+      className: `project-title show`,
+      ease: 'power1.easeInOut',
+      scrollTrigger: {
+        trigger: '.projects',
+        start: 'top center+=30%',
+        scrub: 1,
+        once: true
+      },
+    })
+  }, [])
+
+
 
 
   return (
     <>
       <div className='projects' id='projects'>
-        <div className='title'>
+        <div className='project-title'>
           <h1 className='titles'>projetos</h1>
         </div>
         <div className='list-project'>

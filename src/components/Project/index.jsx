@@ -66,10 +66,10 @@ export const Project = ({ project, toggleModal }) => {
             ease: 'power1.easeInOut',
             scrollTrigger: {
                 trigger: projectDiv,
-                start: 'top center',
-                end: 'top center',
+                start: 'top center+=30%',
+                end: 'top center+=30%',
+                once: true,
                 scrub: 1,
-                once: true
             },
         })
 
