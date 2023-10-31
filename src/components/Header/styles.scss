@@ -105,6 +105,20 @@ svg {
     }
 }
 
+@media (min-width: 2000px) {
+    .header {
+        div{
+            img{
+                width: 250px;
+            }
+            svg{
+                width: 35px;
+                height: 35px;
+            }
+        }
+    }
+}
+
 @media (max-height: 1050px){
     .menu{
         .menu-items {
@@ -121,6 +135,7 @@ svg {
         }
     }
 }
+
 @media (max-height: 900px){
     .menu{
         .menu-items {

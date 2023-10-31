@@ -500,6 +500,17 @@
         h2 {
             font-size: 144px;
         }
+        .modal-header {
+            div{
+                img{
+                    width: 250px;
+                }
+                svg{
+                    width: 35px;
+                    height: 35px;
+                }
+            }
+        }
         .project-modal {
             .project-about {
     
