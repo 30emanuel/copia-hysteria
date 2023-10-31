@@ -21,7 +21,7 @@ export const Initial1280 = ({  showAnimationStart, setShowAnimationStart, showSc
     const playAllVideos = () => {
         const videos = document.querySelectorAll('.video-initial')
         videos.forEach((video) => {
-            //video.play()
+            video.play()
         })
     }
 

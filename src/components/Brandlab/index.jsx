@@ -49,7 +49,7 @@ export const Brandlab = ({ text, brands }) => {
 
         setTimeout(function () {
           setShowTextSecondary(true)
-          //playVideo()
+          playVideo()
         }, 1000)
 
         setTimeout(function () {
