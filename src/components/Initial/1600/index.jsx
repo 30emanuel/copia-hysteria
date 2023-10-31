@@ -21,7 +21,7 @@ export const Initial1600 = ({ showAnimationStart, setShowAnimationStart, showScr
     const playAllVideos = () => {
         const videos = document.querySelectorAll('.video-initial')
         videos.forEach((video) => {
-            video.play()
+            //video.play()
         })
     }
 
@@ -117,8 +117,10 @@ export const Initial1600 = ({ showAnimationStart, setShowAnimationStart, showScr
                 y: '-50vh',
                 ease: 'power1.easeInOut',
                 scrollTrigger: {
-                    trigger: '.center-container',
+                    trigger: '.start',
                     start: "bottom bottom",
+                    endTrigger: '#about',
+                    end: 'top top',
                     scrub: 1,
                 },
             })
@@ -130,38 +132,22 @@ export const Initial1600 = ({ showAnimationStart, setShowAnimationStart, showScr
                 ease: 'power1.easeInOut',
                 transition: 'none',
                 scrollTrigger: {
-                    trigger: '.center-container',
+                    trigger: '.start',
                     start: "bottom bottom",
+                    endTrigger: '#about',
+                    end: 'top top',
                     scrub: 1,
                 },
             })
             gsap.to('.center-container', {
                 opacity: '0',
+                y: '-50vh',
                 scrollTrigger: {
                     trigger: '#transition-logo-1',
                     start: "top top",
                     end: "top top",
                     scrub: 1,
                 },
-            })
-            gsap.to('.circle', {
-                ease: 'power1.easeInOut',
-                scrollTrigger: {
-                    trigger: '.center-container',
-                    start: "bottom bottom",
-                    scrub: 1,
-                },
-                onComplete: () => {
-                    gsap.to('.circle', {
-                        y: '-50vh',
-                        scrollTrigger: {
-                            trigger: '#transition-logo-1',
-                            start: "top top",
-                            end: "top top",
-                            scrub: 0.5,
-                        },
-                    })
-                }
             })
             gsap.to('.circle-top', {
                 y: '80vh',
@@ -172,8 +158,10 @@ export const Initial1600 = ({ showAnimationStart, setShowAnimationStart, showScr
                 transition: 'transform 0.5s ease-out',
                 ease: 'power1.easeInOut',
                 scrollTrigger: {
-                    trigger: '.center-container',
+                    trigger: '.start',
                     start: "bottom bottom",
+                    endTrigger: '#about',
+                    end: 'top top',
                     scrub: 1,
                 },
                 onComplete: () => {
@@ -196,7 +184,7 @@ export const Initial1600 = ({ showAnimationStart, setShowAnimationStart, showScr
                                 y: '50vh',
                                 x: '-36.2vw',
                                 scrollTrigger: {
-                                    trigger: '.list-projects',
+                                    trigger: '.list-project',
                                     start: "center center",
                                     endTrigger: '#brandlab',
                                     end: 'top top',
@@ -241,8 +229,10 @@ export const Initial1600 = ({ showAnimationStart, setShowAnimationStart, showScr
                 transition: 'transform 0.5s ease-out',
                 ease: 'power1.easeInOut',
                 scrollTrigger: {
-                    trigger: '.center-container',
+                    trigger: '.start',
                     start: "bottom bottom",
+                    endTrigger: '#about',
+                    end: 'top top',
                     scrub: 1,
                 },
                 onComplete: () => {
@@ -266,7 +256,7 @@ export const Initial1600 = ({ showAnimationStart, setShowAnimationStart, showScr
                                 x: '94vw',
                                 transition: 'transform 0.5s ease-out',
                                 scrollTrigger: {
-                                    trigger: '.list-projects',
+                                    trigger: '.list-project',
                                     start: "center center",
                                     endTrigger: '#brandlab',
                                     end: 'top top',

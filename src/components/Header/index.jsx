@@ -6,6 +6,7 @@ import { useState } from 'react'
 
 export const Header = () => {
     const [showMenu, setShowMenu] = useState(false)
+    const [disableAnchors, setDisableAnchors] = useState(false)
 
     const toggleMenu = () => {
         setShowMenu((prev) => !prev)
@@ -13,9 +14,27 @@ export const Header = () => {
 
     const scrollToSection = (sectionId) => {
         const section = document.getElementById(sectionId)
-        if (section) {
-            section.scrollIntoView({ behavior: 'smooth' })
-            toggleMenu()
+        const currentScrollY = window.scrollY
+        console.log(currentScrollY)
+        if (section && disableAnchors === false) {
+            setDisableAnchors(true)
+            if (sectionId === 'brandlab' && currentScrollY < 2980) {
+                const aboutSection = document.getElementById('about')
+                aboutSection.scrollIntoView()
+                setTimeout(function () {
+                    const projectsSecition = document.getElementById('projects')
+                    projectsSecition.scrollIntoView()
+                    setTimeout(function () {
+                        section.scrollIntoView()
+                        toggleMenu()
+                        setDisableAnchors(false)
+                    }, 500)
+                }, 500)
+            } else {
+                section.scrollIntoView()
+                setDisableAnchors(false)
+                toggleMenu()
+            }
         }
     }
 
