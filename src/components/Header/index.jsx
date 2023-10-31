@@ -14,18 +14,19 @@ export const Header = () => {
 
     const scrollToSection = (sectionId) => {
         const section = document.getElementById(sectionId)
-        const currentScrollY = window.scrollY
-        console.log(currentScrollY)
+        
         if (section && disableAnchors === false) {
             setDisableAnchors(true)
-            if (sectionId === 'brandlab' && currentScrollY < 2980) {
+            const projectsSecition = document.getElementById('projects')
+            const targetOffset = projectsSecition.offsetTop
+            if (sectionId === 'brandlab' && window.scrollY < targetOffset) {
                 const aboutSection = document.getElementById('about')
                 aboutSection.scrollIntoView()
                 setTimeout(function () {
                     const projectsSecition = document.getElementById('projects')
                     projectsSecition.scrollIntoView()
                     setTimeout(function () {
-                        section.scrollIntoView()
+                        section.scrollIntoView({block: 'end'})
                         toggleMenu()
                         setDisableAnchors(false)
                     }, 500)

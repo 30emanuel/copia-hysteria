@@ -495,6 +495,67 @@
     }
 }
 
+@media(min-width: 2000px) {
+    .modalproject {
+        h2 {
+            font-size: 144px;
+        }
+        .project-modal {
+            .project-about {
+    
+                .text {
+                    max-width: 930px;
+                    .paragraph {
+                        font-size: 32px;
+                    }
+                    .credits {
+                        .credit {
+                            p {
+                                font-size: 28px;
+                            }
+                        }
+                    }
+                }
+                .image{
+                    width: 100%;
+                }
+            }
+        }
+        .footer {
+            .title {
+                font-size: 160px;
+                .arrow-container {
+                    margin-top: 60px;
+                    scale: 1.5;
+                }
+            }
+    
+            .swiper-no-swiping {
+                touch-action: none;
+            }
+    
+            .outher-projects {
+                height: 700px;
+                .outher-project {
+                    .info {
+                        margin-top: -160px;
+    
+                        h3 {
+                            font-size: 52px;
+                        }
+    
+                        .text-project {
+                            p {
+                                font-size: 28px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 @media(max-width: 1680px) {
     .modalproject {
         h2 {

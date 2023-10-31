@@ -39,3 +39,16 @@
         }
     }
 }
+
+@media (max-width: 2560px){
+    .transition-logo{
+        .logo {
+            top: 40vh;
+    
+            img {
+                width: 100%;
+                height: 110%;
+            }
+        }
+    }
+}

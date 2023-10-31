@@ -222,6 +222,66 @@
     }
 }
 
+@media(min-width: 2000px) {
+    .collaborators {
+        .collaborators-title {
+            margin-top: 17vh;
+            margin-left: 8.5vw;
+            h2 {
+                font-size: 300px;
+            }
+        }
+
+        .collaborators-text {
+            .sub-title {
+                .circles-images {
+                    margin-top: -11vh;
+                    .up {
+                        width: 787px;
+                        height: 787px;
+                        margin-right: -50px;
+                    }
+
+                    .left {
+                        width: 564px;
+                        height: 564px;
+                        margin-top: 230px;
+                        margin-right: 400px;
+                    }
+
+                    .low {
+                        width: 364px;
+                        height: 364px;
+                        margin-top: 470px;
+                        margin-right: 200px;
+                    }
+                }
+
+                .paragraph {
+                    p {
+                        font-size: 40px;
+                        margin-left: 150px;
+                        max-width: 765px;
+                        line-height: normal;
+                    }
+                }
+            }
+        }
+
+        .collaborators-background  {
+            .bigger-circle {
+                width: 1773px;
+                height: 1773px;
+
+                .smaller-circle {
+                    width: 888px;
+                    height: 888px;
+                }
+            }
+        }
+    }
+}
+
 @media(max-width: 1600px) {
     .collaborators {
         .collaborators-title {

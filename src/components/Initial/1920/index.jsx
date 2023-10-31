@@ -185,7 +185,7 @@ export const Initial1920 = ({ showAnimationStart, setShowAnimationStart, showScr
                                 x: '-36.2vw',
                                 scrollTrigger: {
                                     trigger: '.list-project',
-                                    start: "center center",
+                                    start: "bottom bottom",
                                     endTrigger: '#brandlab',
                                     end: 'top top',
                                     scrub: 0.5,
@@ -257,7 +257,7 @@ export const Initial1920 = ({ showAnimationStart, setShowAnimationStart, showScr
                                 transition: 'transform 0.5s ease-out',
                                 scrollTrigger: {
                                     trigger: '.list-project',
-                                    start: "center center",
+                                    start: "bottom bottom",
                                     endTrigger: '#brandlab',
                                     end: 'top top',
                                     scrub: 0.5,

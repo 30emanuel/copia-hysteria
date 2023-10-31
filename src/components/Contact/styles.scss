@@ -107,6 +107,36 @@
     }
 }
 
+@media (min-width: 2000px) {
+    .contact-background{
+        margin-top: -112vh;
+    }
+    .contact {
+        .text {
+            margin-top: 50px;
+            margin-left: 150px;
+            div {
+                h3 {
+                    font-size: 72px;
+                }
+                h4 {
+                    font-size: 56px;
+                }
+
+                p {
+                    font-size: 40px;
+                }
+
+                svg{
+                    width: 80px;
+                    height: 80px;
+                }
+
+            }
+        }
+    }
+}
+
 @media (max-width: 1600px) {
     .contact {
         .text {

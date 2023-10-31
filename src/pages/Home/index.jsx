@@ -17,6 +17,7 @@ import { useWindowSize } from "@uidotdev/usehooks";
 import { Initial1920 } from '../../components/Initial/1920'
 import { Initial1600 } from '../../components/Initial/1600'
 import { Initial1280 } from '../../components/Initial/1280'
+import { Initial2560 } from '../../components/Initial/2560'
 
 export const Home = () => {
   const [showHeader, setShowHeader] = useState(false)
@@ -334,7 +335,7 @@ export const Home = () => {
     }
   }
 
-  const accptedWidths = [1280, 1366, 1600, 1920]
+  const accptedWidths = [1280, 1366, 1600, 1920, 2560]
   
   const { width } = useWindowSize()
 
@@ -350,7 +351,8 @@ export const Home = () => {
     1280: <Initial1280 showAnimationStart={showAnimationStart} setShowAnimationStart={setShowAnimationStart}  showScroll={showScroll} data={data.initial} setShowHeader={setShowHeader} />,
     1366: <Initial1366 showAnimationStart={showAnimationStart} setShowAnimationStart={setShowAnimationStart}  showScroll={showScroll} data={data.initial} setShowHeader={setShowHeader} />,
     1600: <Initial1600 showAnimationStart={showAnimationStart} setShowAnimationStart={setShowAnimationStart}  showScroll={showScroll} data={data.initial} setShowHeader={setShowHeader} />,
-    1920: <Initial1920 showAnimationStart={showAnimationStart} setShowAnimationStart={setShowAnimationStart}  showScroll={showScroll} data={data.initial} setShowHeader={setShowHeader} />
+    1920: <Initial1920 showAnimationStart={showAnimationStart} setShowAnimationStart={setShowAnimationStart}  showScroll={showScroll} data={data.initial} setShowHeader={setShowHeader} />,
+    2560: <Initial2560 showAnimationStart={showAnimationStart} setShowAnimationStart={setShowAnimationStart}  showScroll={showScroll} data={data.initial} setShowHeader={setShowHeader} />,
   }
 
   console.log(newWidth)

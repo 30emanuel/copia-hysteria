@@ -5,7 +5,7 @@ import Logo from '../../../assets/logo-black.png'
 import { gsap } from 'gsap'
 
 
-export const Initial1280 = ({  showAnimationStart, setShowAnimationStart, showScroll, data, setShowHeader }) => {
+export const Initial2560 = ({ showAnimationStart, setShowAnimationStart, showScroll, data, setShowHeader }) => {
     const [showFirstAnimation, setShowFirstAnimation] = useState(showAnimationStart)
     const [showSecondAnimation, setShowSecondAnimation] = useState(!showAnimationStart)
     const [showRest, setShowRest] = useState(!showAnimationStart)
@@ -72,8 +72,8 @@ export const Initial1280 = ({  showAnimationStart, setShowAnimationStart, showSc
     }
 
     const background = useSpring({
-        width: showRest ? '3000px' : '0px',
-        height: showRest ? '3000px' : '0px',
+        width: showRest ? '4000px' : '0px',
+        height: showRest ? '4000px' : '0px',
         config: { duration: 1000, easing: config.easeOut },
         onRest: () => {
             setBorderRadius('0%')
@@ -92,6 +92,7 @@ export const Initial1280 = ({  showAnimationStart, setShowAnimationStart, showSc
         onRest: () => {
             showScroll(true)
             setShowText(true)
+            playAllVideos()
             setShowHeader(true)
         },
     })
@@ -149,11 +150,11 @@ export const Initial1280 = ({  showAnimationStart, setShowAnimationStart, showSc
                 },
             })
             gsap.to('.circle-top', {
-                y: '80vh',
-                x: '-93vw',
+                y: '90vh',
+                x: '-96vw',
                 position: 'fixed',
-                width: '600px',
-                height: '600px',
+                width: '950px',
+                height: '950px',
                 transition: 'transform 0.5s ease-out',
                 ease: 'power1.easeInOut',
                 scrollTrigger: {
@@ -165,10 +166,10 @@ export const Initial1280 = ({  showAnimationStart, setShowAnimationStart, showSc
                 },
                 onComplete: () => {
                     gsap.to('.circle-top', {
-                        x: '14vw',
+                        x: '19vw',
                         y: '45vh',
-                        height: '780px',
-                        width: '780px',
+                        width: '1763px',
+                        height: '1763px',
                         transition: 'none',
                         scrollTrigger: {
                             trigger: '#transition-logo-1',
@@ -178,10 +179,10 @@ export const Initial1280 = ({  showAnimationStart, setShowAnimationStart, showSc
                         },
                         onComplete: () => {
                             gsap.to('.circle-top', {
-                                width: '580px',
-                                height: '580px',
+                                width: '1050px',
+                                height: '1050px',
                                 y: '50vh',
-                                x: '-35.2vw',
+                                x: '-36.2vw',
                                 scrollTrigger: {
                                     trigger: '.list-project',
                                     start: "bottom bottom",
@@ -220,11 +221,11 @@ export const Initial1280 = ({  showAnimationStart, setShowAnimationStart, showSc
                 }
             })
             gsap.to('.circle-bottom', {
-                y: '-33vh',
-                x: '13.3vw',
+                y: '-30vh',
+                x: '11.8vw',
                 position: 'fixed',
-                width: '680px',
-                height: '680px',
+                width: '1080px',
+                height: '1080px',
                 transition: 'transform 0.5s ease-out',
                 ease: 'power1.easeInOut',
                 scrollTrigger: {
@@ -236,10 +237,10 @@ export const Initial1280 = ({  showAnimationStart, setShowAnimationStart, showSc
                 },
                 onComplete: () => {
                     gsap.to('.circle-bottom', {
-                        y: '-78vh',
-                        x: '40.5vw',
-                        height: '1523px',
-                        width: '1523px',
+                        y: '-60vh',
+                        x: '47.5vw',
+                        height: '2723px',
+                        width: '2723px',
                         transition: 'none',
                         scrollTrigger: {
                             trigger: '#transition-logo-1',
@@ -249,10 +250,10 @@ export const Initial1280 = ({  showAnimationStart, setShowAnimationStart, showSc
                         },
                         onComplete: () => {
                             gsap.to('.circle-bottom', {
-                                width: '750px',
-                                height: '750px',
+                                width: '1444px',
+                                height: '1444px',
                                 y: '-72vh',
-                                x: '91vw',
+                                x: '90.8vw',
                                 transition: 'transform 0.5s ease-out',
                                 scrollTrigger: {
                                     trigger: '.list-project',
@@ -376,7 +377,7 @@ export const Initial1280 = ({  showAnimationStart, setShowAnimationStart, showSc
             {showCircles &&
                 <>
                     <div className='circle-top'></div>
-                    <div className='circle-bottom' ></div>
+                    <div className='circle-bottom'></div>
                 </>
             }
         </div >

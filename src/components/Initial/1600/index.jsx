@@ -185,10 +185,10 @@ export const Initial1600 = ({ showAnimationStart, setShowAnimationStart, showScr
                                 x: '-36.2vw',
                                 scrollTrigger: {
                                     trigger: '.list-project',
-                                    start: "center center",
+                                    start: "bottom bottom",
                                     endTrigger: '#brandlab',
                                     end: 'top top',
-                                    scrub: 0.5,
+                                    scrub: 0.5
                                 },
                                 onComplete: () => {
                                     gsap.to('.circle-top', {
@@ -257,7 +257,7 @@ export const Initial1600 = ({ showAnimationStart, setShowAnimationStart, showScr
                                 transition: 'transform 0.5s ease-out',
                                 scrollTrigger: {
                                     trigger: '.list-project',
-                                    start: "center center",
+                                    start: "bottom bottom",
                                     endTrigger: '#brandlab',
                                     end: 'top top',
                                     scrub: 0.5,

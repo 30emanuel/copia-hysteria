@@ -33,6 +33,19 @@
         font-size: 32px;
     }
 }
+
+@media (min-width: 2000px) {
+    .home {
+        .titles{
+            font-size: 304px;
+        }
+        .paragraphs{
+            font-size: 32px;
+            line-height: normal;
+        }
+    }
+}
+
 @media(max-width: 1600px){
     .home {
         .titles{
