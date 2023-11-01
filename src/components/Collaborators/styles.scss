@@ -489,6 +489,20 @@
     }
 }
 
+
+@media (max-width: 1300px) and (min-height: 880px) {
+    .collaborators {
+        .collaborators-background  {
+            .bigger-circle {
+                .smaller-circle {
+                    margin-top: 75vh !important;
+                }
+            }
+        }
+    }
+}
+
+
 @media(max-width: 1300px) {
     .collaborators {
         .collaborators-title {

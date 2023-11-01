@@ -755,3 +755,19 @@
 
     }
 }
+
+@media(max-width: 1300px) {
+    .modalproject {
+        .footer {
+            .outher-projects {
+                .outher-project {
+                    .info {
+                        h3 {
+                            font-size: 40px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
