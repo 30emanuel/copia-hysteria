@@ -49,7 +49,7 @@ export const Brandlab = ({ text, brands }) => {
 
         setTimeout(function () {
           setShowTextSecondary(true)
-          playVideo()
+          //playVideo()
         }, 1000)
 
         setTimeout(function () {
@@ -62,6 +62,15 @@ export const Brandlab = ({ text, brands }) => {
             })
           }
         }, 1500)
+        gsap.to('.brandlab', {
+          y: '-=50vh',
+          scrollTrigger: {
+            trigger: '.contact',
+            start: "top center",
+            end: 'top center',
+            scrub: 0.5,
+          },
+        })
       }
     })
   }, [brands, showBrands])
