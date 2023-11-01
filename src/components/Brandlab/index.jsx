@@ -62,7 +62,7 @@ export const Brandlab = ({ text, brands }) => {
             })
           }
         }, 1500)
-        gsap.to('.brandlab', {
+        gsap.to('.brandlab-circle', {
           y: '-=50vh',
           scrollTrigger: {
             trigger: '.contact',
