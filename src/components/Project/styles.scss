@@ -7,22 +7,23 @@
     position: relative;
     opacity: 0;
     display: flex;
-    
-    &.show{
+
+    &.show {
         opacity: 1;
         animation: move-project 1.2s ease-out;
     }
 
     &:hover {
-        .project-img{
+        .project-img {
             scale: 1.2;
-            video{
+
+            video {
                 z-index: 2;
             }
         }
     }
-    
-    .project-img{
+
+    .project-img {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -31,7 +32,8 @@
         position: absolute;
         transition: 1s ease-in;
 
-        video, img{
+        video,
+        img {
             position: absolute;
             width: 100%;
             height: 120%;
@@ -39,10 +41,12 @@
             object-position: center;
             transition: transform 0s ease-in-out;
         }
-        img{
+
+        img {
             z-index: 1;
         }
-        video{
+
+        video {
             z-index: 0;
         }
     }
@@ -100,5 +104,17 @@
     to {
         opacity: 1;
         transform: translateY(0px);
+    }
+}
+
+@media(max-width: 1300px) {
+    .project {
+        .text {
+
+            h3 {
+                font-size: 40px;
+            }
+        }
+
     }
 }
