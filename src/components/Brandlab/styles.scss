@@ -198,7 +198,51 @@
     }
 }
 
-@media (min-width: 2000px) {
+@media (min-width: 3000px){
+    #brandlab {
+        margin-top: 2vh;
+    }
+    .brandlab {
+        .brandlab-circle {
+            width: 3450px;
+            height: 3450px;
+            margin-top: -90vh;
+        }
+
+        .front {
+            .texts {
+                margin-top: 40vh;
+                margin-left: 10vw;
+                p {
+                    max-width: 1650px;
+                    line-height: normal;
+                }
+                h3{
+                    margin-top: 50px;
+                    font-size: 64px;
+                    line-height: normal;
+                    max-width: 1800px;
+                }
+                .brands {
+                    gap: 50px;
+                    .brand {
+                        max-width: 400px;
+                        max-height: 350px;
+                    }
+                }
+            }
+
+            .brandlab-video {
+                width: 1850px;
+                height: 1850px;
+                margin-bottom: -27vh;
+                margin-left: 49vw;
+            }
+        }
+    }
+}
+
+@media (min-width: 2000px) and (max-width: 3000px)  {
     .brandlab {
         .brandlab-circle {
             width: 2350px;

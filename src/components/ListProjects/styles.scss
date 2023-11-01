@@ -64,7 +64,18 @@
     }
 }
 
-@media (min-width: 2000px){
+@media (min-width: 3000px){
+    .projects{
+        .list-project{
+            margin-top: 1150px;
+            scale: 2;
+            margin-left: 50vw;
+            padding-bottom: 700px;
+        }
+    }
+}
+
+@media (min-width: 2000px)  and (max-width: 3000px){
     .projects{
         .project-title{
             width: 100%;

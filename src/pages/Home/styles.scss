@@ -34,7 +34,22 @@
     }
 }
 
-@media (min-width: 2000px) {
+@media (min-width: 3000px) {
+    .home {
+        .titles{
+            font-size: 504px;
+        }
+        .paragraphs{
+            font-size: 80px;
+            line-height: normal;
+        }
+        .loading{
+            scale: 3;
+        }
+    }
+}
+
+@media (min-width: 2000px) and (max-width: 3000px) {
     .home {
         .titles{
             font-size: 304px;
