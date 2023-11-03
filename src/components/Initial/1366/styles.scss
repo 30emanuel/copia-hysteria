@@ -171,8 +171,8 @@
         }
     }
 
-    .circle-top,
-    .circle-bottom{
+    .circle-top-1366,
+    .circle-bottom-1366{
         position: absolute;
         z-index: 7;
         width: 1156px;
@@ -185,7 +185,7 @@
         animation: fade 0.6s ease-in;
     }
 
-    .circle-top {
+    .circle-top-1366 {
         top: 0%;
         left: 108%;
         transform: translate(-50%, -50%);
@@ -197,7 +197,7 @@
         }
     }
 
-    .circle-bottom{
+    .circle-bottom-1366{
         top: 107%;
         left: -6%;
         transform: translate(-50%, -50%);
@@ -223,8 +223,8 @@
             }
         }
 
-        .circle-top,
-        .circle-bottom {
+        .circle-top-1366,
+        .circle-bottom-1366 {
             width: 900px;
             height: 900px;
         }
@@ -248,8 +248,8 @@
             }
         }
 
-        .circle-top,
-        .circle-bottom {
+        .circle-top-1366,
+        .circle-bottom-1366 {
             width: 1050px;
             height: 1050px;
         }
@@ -272,8 +272,8 @@
             }
         }
 
-        .circle-top,
-        .circle-bottom {
+        .circle-top-1366,
+        .circle-bottom-1366 {
             width: 950px;
             height: 950px;
         }
@@ -295,8 +295,8 @@
             }
         }
 
-        .circle-top,
-        .circle-bottom {
+        .circle-top-1366,
+        .circle-bottom-1366 {
             width: 900px;
             height: 900px;
         }
@@ -325,8 +325,8 @@
             }
         }
 
-        .circle-top,
-        .circle-bottom {
+        .circle-top-1366,
+        .circle-bottom-1366 {
             width: 800px;
             height: 800px;
         }
@@ -342,8 +342,8 @@
             }
         }
 
-        .circle-top,
-        .circle-bottom {
+        .circle-top-1366,
+        .circle-bottom-1366 {
             width: 750px;
             height: 750px;
         }
@@ -373,21 +373,21 @@
             }
         }
 
-        .circle-top,
-        .circle-bottom {
+        .circle-top-1366,
+        .circle-bottom-1366 {
             width: 850px;
             height: 850px;
             border: 0.476px solid #FFF;
 
         }
 
-        .circle-top {
+        .circle-top-1366 {
             top: -30%;
             left: 50%;
             transform: translate(-50%, -50%);
         }
 
-        .circle-bottom {
+        .circle-bottom-1366 {
             top: 127%;
             left: 50%;
             transform: translate(-50%, -50%);

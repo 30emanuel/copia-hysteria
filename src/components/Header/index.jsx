@@ -26,7 +26,7 @@ export const Header = () => {
                     const projectsSecition = document.getElementById('projects')
                     projectsSecition.scrollIntoView()
                     setTimeout(function () {
-                        section.scrollIntoView({block: 'end'})
+                        section.scrollIntoView()
                         toggleMenu()
                         setDisableAnchors(false)
                     }, 500)

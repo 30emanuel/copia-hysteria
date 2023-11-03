@@ -149,7 +149,7 @@ export const Initial3840 = ({ showAnimationStart, setShowAnimationStart, showScr
                     scrub: 1,
                 },
             })
-            gsap.to('.circle-top', {
+            gsap.to('.circle-top-3840', {
                 y: '90vh',
                 x: '-96vw',
                 position: 'fixed',
@@ -165,7 +165,7 @@ export const Initial3840 = ({ showAnimationStart, setShowAnimationStart, showScr
                     scrub: 1,
                 },
                 onComplete: () => {
-                    gsap.to('.circle-top', {
+                    gsap.to('.circle-top-3840', {
                         x: '14vw',
                         y: '53vh',
                         width: '2463px',
@@ -178,7 +178,7 @@ export const Initial3840 = ({ showAnimationStart, setShowAnimationStart, showScr
                             scrub: 0.5,
                         },
                         onComplete: () => {
-                            gsap.to('.circle-top', {
+                            gsap.to('.circle-top-3840', {
                                 width: '1850px',
                                 height: '1850px',
                                 y: '50vh',
@@ -191,7 +191,7 @@ export const Initial3840 = ({ showAnimationStart, setShowAnimationStart, showScr
                                     scrub: 0.5,
                                 },
                                 onComplete: () => {
-                                    gsap.to('.circle-top', {
+                                    gsap.to('.circle-top-3840', {
                                         border: '0.761px solid var(--bg-color-four)',
                                         transition: 'transform 0.5s ease-out',
                                         scrollTrigger: {
@@ -201,7 +201,7 @@ export const Initial3840 = ({ showAnimationStart, setShowAnimationStart, showScr
                                             scrub: 0.5,
                                         },
                                         onComplete: () => {
-                                            gsap.to('.circle-top', {
+                                            gsap.to('.circle-top-3840', {
                                                 y: '100vh',
                                                 x: '-107.2vw',
                                                 visibility: 'hidden',
@@ -220,7 +220,7 @@ export const Initial3840 = ({ showAnimationStart, setShowAnimationStart, showScr
                     })
                 }
             })
-            gsap.to('.circle-bottom', {
+            gsap.to('.circle-bottom-3840', {
                 y: '-30vh',
                 x: '11.8vw',
                 position: 'fixed',
@@ -234,7 +234,7 @@ export const Initial3840 = ({ showAnimationStart, setShowAnimationStart, showScr
                     scrub: 1,
                 },
                 onComplete: () => {
-                    gsap.to('.circle-bottom', {
+                    gsap.to('.circle-bottom-3840', {
                         y: '-79vh',
                         x: '42.5vw',
                         height: '4523px',
@@ -247,7 +247,7 @@ export const Initial3840 = ({ showAnimationStart, setShowAnimationStart, showScr
                             scrub: 0.5,
                         },
                         onComplete: () => {
-                            gsap.to('.circle-bottom', {
+                            gsap.to('.circle-bottom-3840', {
                                 width: '2444px',
                                 height: '2444px',
                                 y: '-72vh',
@@ -261,7 +261,7 @@ export const Initial3840 = ({ showAnimationStart, setShowAnimationStart, showScr
                                     scrub: 0.5,
                                 },
                                 onComplete: () => {
-                                    gsap.to('.circle-bottom', {
+                                    gsap.to('.circle-bottom-3840', {
                                         border: '1px solid var(--bg-color-four)',
                                         transition: 'transform 0.5s ease-out',
                                         scrollTrigger: {
@@ -271,7 +271,7 @@ export const Initial3840 = ({ showAnimationStart, setShowAnimationStart, showScr
                                             scrub: 0.5,
                                         },
                                         onComplete: () => {
-                                            gsap.to('.circle-bottom', {
+                                            gsap.to('.circle-bottom-3840', {
                                                 y: '-77vh',
                                                 x: '13.69vw',
                                                 visibility: 'hidden',
@@ -374,8 +374,8 @@ export const Initial3840 = ({ showAnimationStart, setShowAnimationStart, showScr
             }
             {showCircles &&
                 <>
-                    <div className='circle-top'></div>
-                    <div className='circle-bottom'></div>
+                    <div className='circle-top-3840'></div>
+                    <div className='circle-bottom-3840'></div>
                 </>
             }
         </div >

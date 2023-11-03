@@ -166,6 +166,7 @@
                     h2 {
                         margin-left: 799px;
                     }
+
                     h3 {
                         margin-left: 386px;
                         font-size: 400px;
@@ -175,7 +176,8 @@
                 .paragraph {
                     width: 2000px;
                     margin-left: 1300px;
-                    p{
+
+                    p {
                         width: 100%;
                     }
                 }
@@ -184,6 +186,7 @@
             .footer {
                 font-size: 72px;
                 margin-left: 22.5%;
+
                 a {
                     margin-left: 20px;
                 }
@@ -246,6 +249,17 @@
 
         .footer {
             margin-left: 19.35%;
+        }
+    }
+}
+
+@media(max-width: 1200px) {
+    .about {
+        .about-text {
+            .paragraph {
+                width: 500px;
+                margin-left: 160px;
+            }
         }
     }
 }

@@ -710,6 +710,23 @@
     }
 }
 
+@media (max-height: 720px) {
+    .modalproject{
+        .modal-header{
+            div{
+                img{
+                    width: 150px;
+                    height: 30px;
+                }
+                svg{
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+        }
+    }
+}
+
 @media(max-width: 1680px) {
     .modalproject {
         h2 {
