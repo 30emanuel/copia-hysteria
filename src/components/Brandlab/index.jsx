@@ -78,6 +78,7 @@ export const Brandlab = ({ text, brands }) => {
   return (
     <>
       <div id='brandlab'></div>
+      <div id='brandlab-navigation'></div>
       <div className='brandlab'>
         <div className="front">
           <div className="texts">

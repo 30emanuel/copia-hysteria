@@ -135,6 +135,14 @@
     }
 }
 
+#brandlab-navigation {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    margin-top: 50vh;
+    pointer-events: none;
+}
+
 #brandlab {
     position: absolute;
     width: 100%;

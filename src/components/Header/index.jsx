@@ -19,7 +19,7 @@ export const Header = () => {
             setDisableAnchors(true)
             const projectsSecition = document.getElementById('projects')
             const targetOffset = projectsSecition.offsetTop
-            if (sectionId === 'brandlab' && window.scrollY < targetOffset) {
+            if (sectionId === 'brandlab-navigation' && window.scrollY < targetOffset) {
                 const aboutSection = document.getElementById('about')
                 aboutSection.scrollIntoView()
                 setTimeout(function () {
@@ -29,7 +29,7 @@ export const Header = () => {
                         section.scrollIntoView()
                         toggleMenu()
                         setDisableAnchors(false)
-                    }, 500)
+                    }, 700)
                 }, 500)
             } else {
                 section.scrollIntoView()
@@ -52,7 +52,7 @@ export const Header = () => {
                     <a onClick={() => scrollToSection('home')}>home</a>
                     <a onClick={() => scrollToSection('about')}>quem é hysteria</a>
                     <a onClick={() => scrollToSection('projects')}>projetos</a>
-                    <a onClick={() => scrollToSection('brandlab')}>brand lab</a>
+                    <a onClick={() => scrollToSection('brandlab-navigation')}>brand lab</a>
                     <a onClick={() => scrollToSection('contact')}>contato</a>
                 </nav>
                 <div className="menu-footer">
