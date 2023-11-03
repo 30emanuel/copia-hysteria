@@ -356,7 +356,7 @@ export const Initial1920 = ({ showAnimationStart, setShowAnimationStart, showScr
                         </animated.div>
                     </div>
                     <div className='text'>
-                        <div className="text-container">
+                        <div className="text-container-one">
                             {showText &&
                                 <animated.h2 className='text-one' style={textAnimationOne}>{data.textUp}</animated.h2>
                             }
@@ -366,7 +366,7 @@ export const Initial1920 = ({ showAnimationStart, setShowAnimationStart, showScr
                                 <animated.h1 style={textAnimationTwo}>{data.textMiddle}</animated.h1>
                             }
                         </div>
-                        <div className="text-container">
+                        <div className="text-container-two">
                             {showThreeText &&
                                 <animated.h2 className='text-three' style={textAnimationThree}>{data.textLow}</animated.h2>
                             }

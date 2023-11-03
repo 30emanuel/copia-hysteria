@@ -45,11 +45,13 @@
             position: absolute;
             margin-left: 8vw;
             margin-top: 150px;
+            gap: 26px;
             color: white;
             min-height: 548px;
 
             h2 {
                 opacity: 0;
+                line-height: normal;
 
                 &.show {
                     animation: move-title-brand 1.5s ease-in-out forwards;
@@ -57,7 +59,6 @@
             }
 
             h3 {
-                margin-top: 30px;
                 font-family: var(--font-secondary);
                 font-weight: 700;
                 font-size: 25px;
@@ -72,10 +73,10 @@
             }
 
             p {
+                margin-top: -60px;
                 max-width: 900px;
                 margin-right: 50px;
                 opacity: 0;
-                margin-top: -30px;
 
                 &.show {
                     opacity: 1;
@@ -84,7 +85,6 @@
             }
 
             .brands {
-                margin-top: 37px;
                 display: flex;
                 gap: 20px;
                 opacity: 0;
@@ -227,7 +227,6 @@
                     line-height: normal;
                 }
                 h3{
-                    margin-top: 50px;
                     font-size: 64px;
                     line-height: normal;
                     max-width: 1800px;
@@ -299,7 +298,10 @@
         .front {
             .texts {
                 p {
-                    max-width: 50%;
+                    max-width: 45%;
+                }
+                h3{
+                    max-width: 45%;
                 }
             }
 
@@ -328,7 +330,7 @@
                 margin-top: 100px;
 
                 p {
-                    max-width: 48%;
+                    max-width: 45%;
                 }
 
                 .brands {
