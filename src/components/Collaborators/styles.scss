@@ -17,10 +17,10 @@
         display: flex;
         width: 100%;
         height: 200px;
-        margin-top: 20vh;
+        margin-top: 18vh;
         position: absolute;
         color: var(--color-text-third);
-        margin-left: 73px;
+        margin-left: 85px;
         z-index: 4;
         animation: fade-in 0.6s ease-in-out;
 
@@ -35,7 +35,7 @@
         display: flex;
         width: 100%;
         height: 100%;
-        margin-top: 20vh;
+        margin-top: 18vh;
         position: absolute;
         animation: fade-in 0.7s ease-in-out;
         z-index: 3;
@@ -50,7 +50,8 @@
             .circles-images {
                 width: 100%;
                 height: 100%;
-                margin-top: -10vh;
+                margin-top: -11.5vh;
+                margin-left: -1vw;
                 display: flex;
                 justify-content: end;
                 z-index: 1;
@@ -63,7 +64,7 @@
                     opacity: 0;
 
                     &.show {
-                        opacity: 0.75;
+                        opacity: 0.90;
                         transition: opacity 1s ease-in;
                         animation: move-images 1s ease-in-out;
                     }
@@ -73,13 +74,13 @@
                     width: 374px;
                     height: 374px;
                     position: absolute;
-                    margin-top: 250px;
-                    margin-right: 400px;
+                    margin-top: 240px;
+                    margin-right: 380px;
                     border-radius: 100%;
                     opacity: 0;
 
                     &.show {
-                        opacity: 0.7;
+                        opacity: 0.90;
                         transition: opacity 1s ease-in;
                         animation: move-images 1.1s ease-in-out;
                     }
@@ -89,12 +90,13 @@
                     width: 254px;
                     height: 253px;
                     border-radius: 100%;
-                    margin-top: 450px;
+                    margin-top: 440px;
                     margin-right: 300px;
                     opacity: 0;
+                    z-index: 10;
 
                     &.show {
-                        opacity: 0.8;
+                        opacity: 0.90;
                         transition: opacity 1s ease-in;
                         animation: move-images 1.2s ease-in-out;
                     }
@@ -152,10 +154,10 @@
             visibility: hidden;
 
             .smaller-circle {
-                margin-top: 81vh;
-                margin-left: -1vw;
-                width: 688px;
-                height: 688px;
+                margin-top: 56%;
+                margin-left: -2.5vw;
+                width: 658px;
+                height: 658px;
                 z-index: 0;
                 border-radius: 100%;
                 border: 1px solid white;
@@ -235,7 +237,7 @@
         .collaborators-text {
             .sub-title {
                 .circles-images {
-                    margin-top: -11vh;
+                    margin-top: -17vh;
                     .up {
                         width: 1187px;
                         height: 1187px;
@@ -253,16 +255,16 @@
                     .low {
                         width: 664px;
                         height: 664px;
-                        margin-top: 800px;
-                        margin-right: 400px;
+                        margin-top: 830px;
+                        margin-right: 430px;
                     }
                 }
 
                 .paragraph {
                     p {
                         font-size: 80px;
-                        margin-left: 150px;
-                        max-width: 1265px;
+                        margin-left: 0px;
+                        max-width: 1470px;
                         line-height: normal;
                     }
                 }
@@ -314,7 +316,7 @@
                         width: 364px;
                         height: 364px;
                         margin-top: 470px;
-                        margin-right: 200px;
+                        margin-right: 350px;
                     }
                 }
 
@@ -335,8 +337,8 @@
                 height: 1773px;
 
                 .smaller-circle {
-                    width: 888px;
-                    height: 888px;
+                    width: 858px;
+                    height: 858px;
                 }
             }
         }
@@ -368,18 +370,20 @@
                     margin-top: -12vh;
 
                     .up {
-                        width: 587px;
-                        height: 587px;
+                        width: 557px;
+                        height: 557px;
                     }
 
                     .left {
-                        width: 364px;
-                        height: 364px;
-                        margin-top: 230px;
+                        width: 334px;
+                        height: 334px;
+                        margin-top: 220px;
                     }
 
                     .low {
-                        margin-top: 370px;
+                        width: 234px;
+                        height: 234px;
+                        margin-top: 360px;
                     }
                 }
 
@@ -403,8 +407,8 @@
                 transform: translateY(-40vh) translateX(-20vw);
 
                 .smaller-circle {
-                    width: 588px;
-                    height: 588px;
+                    width: 568px;
+                    height: 568px;
                     transform: translateY(-40vh) translateX(-20vw);
                 }
             }
@@ -428,23 +432,19 @@
     }
 }
 
-
-@media(max-width: 1400px) {
+@media(max-width: 1450px) {
     .collaborators {
         .collaborators-title {
-            margin-top: 13vh;
-            margin-left: 33px;
-
-            h2 {
-                font-size: 172px;
-            }
+            margin-top: 21vh;
+            margin-left: 52px;
         }
 
         .collaborators-text {
             .sub-title {
-                margin-top: 22vh;
+                margin-top: 26vh;
                 .circles-images {
-                    margin-top: -16vh;
+                    margin-top: -13vh;
+                    margin-left: -4.9vw;
 
                     .up {
                         width: 487px;
@@ -453,22 +453,25 @@
                     }
 
                     .left {
-                        width: 334px;
-                        height: 334px;
-                        margin-right: 330px;
+                        width: 280px;
+                        height: 280px;
+                        margin-right: 300px;
                         margin-top: 160px;
                     }
 
                     .low {
+                        width: 215px;
+                        height: 215px;
                         margin-right: 230px;
-                        margin-top: 280px;
+                        margin-top: 285px;
                     }
                 }
 
                 .paragraph {
-                    margin-top: -70px;
+                    margin-top: -80px;
                     p{
                         max-width: 470px;
+                        margin-left: 60px;
                     }
                 }
 
@@ -477,12 +480,77 @@
 
         .collaborators-background  {
             .bigger-circle {
-                width: 1060px;
-                height: 1060px;
+                width: 1110px;
+                height: 1110px;
 
                 .smaller-circle {
-                    width: 508px;
-                    height: 508px;
+                    width: 520px;
+                    height: 520px;
+                    margin-top: 58.5%;
+                    margin-left: -2.5vw;
+                }
+            }
+        }
+    }
+}
+
+
+@media(max-width: 1400px) {
+    .collaborators {
+        .collaborators-title {
+            margin-top: 22vh;
+            margin-left: 50px;
+        }
+
+        .collaborators-text {
+            .sub-title {
+                margin-top: 27vh;
+                .circles-images {
+                    margin-top: -13vh;
+                    margin-left: -4.9vw;
+
+                    .up {
+                        width: 487px;
+                        height: 487px;
+                        margin-right: -40px;
+                    }
+
+                    .left {
+                        width: 280px;
+                        height: 280px;
+                        margin-right: 300px;
+                        margin-top: 160px;
+                    }
+
+                    .low {
+                        width: 215px;
+                        height: 215px;
+                        margin-right: 230px;
+                        margin-top: 285px;
+                    }
+                }
+
+                .paragraph {
+                    margin-top: -70px;
+                    p{
+                        max-width: 470px;
+                        margin-left: 20px;
+                    }
+                }
+
+            }
+        }
+
+        .collaborators-background  {
+            .bigger-circle {
+                width: 1070px;
+                height: 1070px;
+
+                .smaller-circle {
+                    width: 500px;
+                    height: 500px;
+                    margin-top: 58.5%;
+                    margin-left: -3.3vw;
                 }
             }
         }
@@ -506,12 +574,8 @@
 @media(max-width: 1300px) {
     .collaborators {
         .collaborators-title {
-            margin-top: 25vh;
-            margin-left: 20px;
-
-            h2 {
-                font-size: 150px;
-            }
+            margin-top: 24vh;
+            margin-left: 21px;
         }
 
         .collaborators-text {
@@ -521,29 +585,31 @@
                     margin-top: -16vh;
 
                     .up {
-                        width: 487px;
-                        height: 487px;
+                        width: 387px;
+                        height: 387px;
                         margin-top: -10px;
                         margin-right: -10px;
                     }
 
                     .left {
-                        width: 334px;
-                        height: 334px;
-                        margin-right: 300px;
-                        margin-top: 100px;
+                        width: 254px;
+                        height: 254px;
+                        margin-right: 270px;
+                        margin-top: 120px;
                     }
 
                     .low {
-                        margin-right: 230px;
-                        margin-top: 200px;
+                        width: 194px;
+                        height: 194px;
+                        margin-right: 150px;
+                        margin-top: 240px;
                     }
                 }
 
                 .paragraph {
                     margin-top: -110px;
                     p{
-                        margin-left: 0px;
+                        margin-left: 20px;
                         max-width: 470px;
                     }
                 }
@@ -553,13 +619,14 @@
 
         .collaborators-background  {
             .bigger-circle {
-                width: 1100px;
-                height: 1100px;
+                width: 1050px;
+                height: 1050px;
 
                 .smaller-circle {
-                    margin-top: 105vh;
-                    width: 500px;
-                    height: 500px;
+                    width: 420px;
+                    height: 420px;
+                    margin-top: 60%;
+                    margin-left: 2vw;
                 }
             }
         }

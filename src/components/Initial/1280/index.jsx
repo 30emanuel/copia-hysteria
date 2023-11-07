@@ -149,8 +149,8 @@ export const Initial1280 = ({  showAnimationStart, setShowAnimationStart, showSc
                 },
             })
             gsap.to('.circle-top-1280', {
-                y: '80vh',
-                x: '-93vw',
+                y: '86vh',
+                x: '-95vw',
                 position: 'fixed',
                 width: '600px',
                 height: '600px',
@@ -178,10 +178,10 @@ export const Initial1280 = ({  showAnimationStart, setShowAnimationStart, showSc
                         },
                         onComplete: () => {
                             gsap.to('.circle-top-1280', {
-                                width: '580px',
-                                height: '580px',
-                                y: '50vh',
-                                x: '-35.2vw',
+                                width: '550px',
+                                height: '550px',
+                                y: '48.5vh',
+                                x: '-33.2vw',
                                 scrollTrigger: {
                                     trigger: '.list-project',
                                     start: "bottom bottom",
@@ -220,8 +220,8 @@ export const Initial1280 = ({  showAnimationStart, setShowAnimationStart, showSc
                 }
             })
             gsap.to('.circle-bottom-1280', {
-                y: '-33vh',
-                x: '13.3vw',
+                y: '-36vh',
+                x: '14.3vw',
                 position: 'fixed',
                 width: '680px',
                 height: '680px',
@@ -236,7 +236,7 @@ export const Initial1280 = ({  showAnimationStart, setShowAnimationStart, showSc
                 },
                 onComplete: () => {
                     gsap.to('.circle-bottom-1280', {
-                        y: '-78vh',
+                        y: '-65vh',
                         x: '40.5vw',
                         height: '1523px',
                         width: '1523px',

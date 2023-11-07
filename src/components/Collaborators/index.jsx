@@ -41,8 +41,8 @@ export const Collaborators = ({ text }) => {
             },
             onComplete: () => {
                 gsap.to('.smaller-circle', {
-                    x: '8vw',
-                    y: '-58vh',
+                    x: '8.51vw',
+                    y: '-79.3958%',
                     scrollTrigger: {
                         trigger: '.collaborators-text',
                         start: "bottom bottom",
