@@ -149,8 +149,8 @@ export const Initial1366 = ({  showAnimationStart, setShowAnimationStart, showSc
                 },
             })
             gsap.to('.circle-top-1366', {
-                y: '80vh',
-                x: '-93vw',
+                y: '85vh',
+                x: '-94vw',
                 position: 'fixed',
                 width: '600px',
                 height: '600px',
@@ -165,10 +165,10 @@ export const Initial1366 = ({  showAnimationStart, setShowAnimationStart, showSc
                 },
                 onComplete: () => {
                     gsap.to('.circle-top-1366', {
-                        x: '32vw',
-                        y: '45vh',
-                        height: '1234px',
-                        width: '1234px',
+                        x: '23vw',
+                        y: '49vh',
+                        height: '1034px',
+                        width: '1034px',
                         transition: 'none',
                         scrollTrigger: {
                             trigger: '#transition-logo-1',
@@ -180,8 +180,8 @@ export const Initial1366 = ({  showAnimationStart, setShowAnimationStart, showSc
                             gsap.to('.circle-top-1366', {
                                 width: '580px',
                                 height: '580px',
-                                y: '50vh',
-                                x: '-35.2vw',
+                                y: '48.5vh',
+                                x: '-33.2vw',
                                 scrollTrigger: {
                                     trigger: '.list-project',
                                     start: "bottom bottom",
@@ -220,8 +220,8 @@ export const Initial1366 = ({  showAnimationStart, setShowAnimationStart, showSc
                 }
             })
             gsap.to('.circle-bottom-1366', {
-                y: '-30vh',
-                x: '9.79vw',
+                y: '-33vh',
+                x: '10.8vw',
                 position: 'fixed',
                 width: '780px',
                 height: '780px',
@@ -237,7 +237,7 @@ export const Initial1366 = ({  showAnimationStart, setShowAnimationStart, showSc
                 onComplete: () => {
                     gsap.to('.circle-bottom-1366', {
                         y: '-60vh',
-                        x: '39.5vw',
+                        x: '38.5vw',
                         height: '1723px',
                         width: '1723px',
                         transition: 'none',

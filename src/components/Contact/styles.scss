@@ -18,7 +18,7 @@
     .text {
         width: 57%;
         height: 100vh;
-        margin-left: 74px;
+        margin-left: 54px;
         display: flex;
         justify-content: center;
         align-items: left;
@@ -41,7 +41,7 @@
             animation: fade 1s ease-in;
 
             h3 {
-                font-size: 62px;
+                font-size: 58px;
                 font-style: normal;
                 font-weight: 200;
                 line-height: normal;
@@ -116,7 +116,7 @@
         margin-top: 10vh;
         .text {
             margin-top: -200px;
-            margin-left: 150px;
+            margin-left: 40px;
             div {
                 h3 {
                     font-size: 120px;
@@ -151,7 +151,7 @@
         margin-top: 20vh;
         .text {
             margin-top: -100px;
-            margin-left: 150px;
+            margin-left: 120px;
             div {
                 h3 {
                     font-size: 72px;
@@ -177,6 +177,8 @@
 @media (max-width: 1600px) {
     .contact {
         .text {
+            margin-top: 20px;
+            margin-left: 43px;
             div {
                 h3 {
                     font-size: 54px;
@@ -221,8 +223,9 @@
 
 @media(max-width: 1290px){
     .contact{
-        margin-top: 20vh;
+        margin-top: 15vh;
         .text{
+            margin-left: 23px;
             div {
                 h3 {
                     font-size: 40px;

@@ -39,15 +39,16 @@
 
             h2 {
                 animation: move-left 1.5s ease-in-out forwards;
-                margin-top: -50px;
+                margin-top: -40px;
+                margin-left: -90px;
             }
 
             h3 {
-                font-size: 210px;
+                font-size: 200px;
                 font-style: normal;
                 font-weight: 400;
                 line-height: normal;
-                margin-left: -183px;
+                margin-left: -284px;
                 animation: move-right 1.5s ease-in-out forwards;
             }
         }
@@ -164,12 +165,12 @@
 
                 .about-title {
                     h2 {
-                        margin-left: 799px;
+                        margin-left: 710px;
                     }
 
                     h3 {
-                        margin-left: 386px;
-                        font-size: 400px;
+                        margin-left: 346px;
+                        font-size: 392px;
                     }
                 }
 
@@ -207,11 +208,12 @@
                     color: var(--color-text-third);
 
                     h2 {
-                        margin-left: 70px;
+                        margin-left: -40px;
                     }
 
                     h3 {
-                        font-size: 240px;
+                        font-size: 264px;
+                        margin-left: -300px;
                     }
                 }
 
@@ -223,6 +225,7 @@
 
             .footer {
                 font-size: 28px;
+                margin-top: 40px;
                 margin-left: 15%;
             }
         }
@@ -237,13 +240,17 @@
 
             .about-title {
                 h3 {
-                    font-size: 184px;
-                    margin-left: -180px;
+                    font-size: 164px;
+                    margin-left: -150px;
                 }
 
                 h2 {
-                    margin-top: -50px;
+                    margin-left: 6px;
+                    margin-top: -30px;
                 }
+            }
+            .paragraph{
+                margin-top: 10px;
             }
         }
 
@@ -272,11 +279,44 @@
             .about-title {
                 h3 {
                     font-size: 140px;
-                    margin-left: -140px;
+                    margin-left: -132px;
                 }
 
                 h2 {
                     margin-top: -30px;
+                    margin-left: 10px;
+                }
+            }
+
+            .paragraph {
+                .paragraphs {
+                    font-size: 21px;
+                }
+            }
+        }
+
+        .footer {
+            margin-top: 50px;
+            font-size: 16px;
+            margin-left: 14.35%;
+        }
+    }
+}
+
+@media(max-width: 1280px) {
+    .about {
+        .about-text {
+            margin-top: -2%;
+
+            .about-title {
+                margin-left: 34px;
+                h3 {
+                    margin-left: -170px;
+                }
+
+                h2 {
+                    margin-top: -30px;
+                    margin-left: -20px;
                 }
             }
 

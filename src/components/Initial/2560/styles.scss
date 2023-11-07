@@ -29,7 +29,12 @@
         }
     }
 
-
+    #animation-start{
+        position: absolute;
+        width: 500px;
+        height: 500px;
+        margin-top: 60vh;
+    }
 
     .video {
         width: 100%;
@@ -225,7 +230,65 @@
     }
 }
 
-@media (min-width: 2000px){
+@media (min-width: 3000px) {
+    .start {
+
+        .animation {
+            .ball {
+                width: 5000px;
+                height: 5000px;
+            }
+            .logo{
+                scale: 3;
+            }
+        }
+
+        .center {
+            .circle {
+                width: 2467px;
+                height: 2467px ;
+            }
+        }
+
+        .circle-top-2560,
+        .circle-bottom-2560 {
+            width: 2250px;
+            height: 2250px;
+        }
+
+        .text-container-center {
+            height: 658px;
+        }
+
+        .text-container-one, .text-container-two {
+            height: 220px;
+        }
+        .text {
+            h1 {
+                font-size: 632px;
+                line-height: normal;
+                transition: transform 0.5s ease-out;
+            }
+
+            h2 {
+                font-size: 220px;
+                font-weight: 300;
+                line-height: 96px;
+                animation: fade-in 1.3s ease-in;
+            }
+
+            .text-one {
+                transition: transform 0.3s ease-out;
+            }
+
+            .text-three {
+                transition: transform 0.7s ease-out;
+            }
+        }
+    }
+}
+
+@media (min-width: 2000px) and (max-width: 3000px) {
     .start {
         .center {
             .circle {
@@ -243,8 +306,9 @@
         .text-container-center {
             height: 388px;
         }
-        .text-container {
-            height: 120px;
+
+        .text-container-one, .text-container-two {
+            height: 120px !important;
         }
 
         .text {
@@ -371,10 +435,24 @@
             }
         }
 
-        .circle-top-2560,
-        .circle-bottom-2560 {
+        .circle-top-1920,
+        .circle-bottom-1920 {
             width: 800px;
             height: 800px;
+        }
+
+        .text-container-one{
+            margin-bottom: -50px;
+        }
+        .text-container-two{
+            margin-top: -80px;
+        }
+    }
+}
+@media (max-width: 1280px){
+    .start{
+        #animation-start{
+            margin-top: 100vh;
         }
     }
 }
@@ -392,12 +470,6 @@
         .circle-bottom-2560 {
             width: 750px;
             height: 750px;
-        }
-        .text-container-one{
-            margin-bottom: -50px;
-        }
-        .text-container-two{
-            margin-top: -80px;
         }
     }
 }

@@ -58,7 +58,7 @@
         width: 100%;
         z-index: 4;
         height: 100%;
-        margin-top: -80px;
+        margin-top: -60px;
         transition: opacity 1s ease-in-out;
         padding-bottom: 200px;
     }
@@ -67,7 +67,7 @@
 @media (min-width: 3000px){
     .projects{
         .list-project{
-            margin-top: 1150px;
+            margin-top: 1230px;
             scale: 2;
             margin-left: 50vw;
             padding-bottom: 700px;
@@ -113,6 +113,17 @@
             .project{
                 max-width: 60vw;
             }
+        }
+        .list-project{
+            margin-top: -50px;
+        }
+    }
+}
+
+@media(max-width: 1280px){
+    .projects{
+        .list-project{
+            margin-top: -43px;
         }
     }
 }

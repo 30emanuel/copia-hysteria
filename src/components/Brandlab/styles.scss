@@ -44,7 +44,7 @@
             z-index: 50;
             position: absolute;
             margin-left: 8vw;
-            margin-top: 150px;
+            margin-top: 170px;
             gap: 26px;
             color: white;
             min-height: 548px;
@@ -220,8 +220,8 @@
 
         .front {
             .texts {
-                margin-top: 40vh;
-                margin-left: 10vw;
+                margin-top: 50vh;
+                margin-left: 7vw;
                 p {
                     max-width: 1650px;
                     line-height: normal;
@@ -234,17 +234,17 @@
                 .brands {
                     gap: 50px;
                     .brand {
-                        max-width: 400px;
-                        max-height: 350px;
+                        max-width: 350px;
+                        max-height: 300px;
                     }
                 }
             }
 
             .brandlab-video {
-                width: 1850px;
-                height: 1850px;
+                width: 1650px;
+                height: 1650px;
                 margin-bottom: -27vh;
-                margin-left: 49vw;
+                margin-left: 53vw;
             }
         }
     }
@@ -253,15 +253,16 @@
 @media (min-width: 2000px) and (max-width: 3000px)  {
     .brandlab {
         .brandlab-circle {
-            width: 2350px;
-            height: 2350px;
+            width: 2450px;
+            height: 2450px;
             margin-top: -70vh;
             transform: translate3d(-10vh);
         }
 
         .front {
             .texts {
-                margin-left: 19vw;
+                margin-top: 200px;
+                margin-left: 8vw;
                 p {
                     max-width: 1150px;
                     line-height: normal;
@@ -282,7 +283,7 @@
                 width: 1050px;
                 height: 1050px;
                 margin-bottom: -5vh;
-                margin-left: 49vw;
+                margin-left: 52vw;
             }
         }
     }
@@ -359,16 +360,24 @@
 
         .front {
             .texts {
+                margin-left: 7.5vw;
+                margin-top: 150px;
                 h3 {
                     font-size: 20px;
                     margin-left: -5px;
                     line-height: normal;
+                }
+                .brands {
+                    .brand {
+                        max-width: 120px;
+                    }
                 }
             }
 
             .brandlab-video {
                 width: 600px;
                 height: 600px;
+                margin-left: 53vw;
                 margin-bottom: 25vh;
             }
         }
@@ -382,13 +391,9 @@
             height: 1180px;
             margin-top: -126vh;
         }
-
         .front {
-            h2 {
-                font-size: 168px;
-            }
-
             .texts {
+                margin-left: 6vw;
                 h3 {
                     font-size: 20px;
                     line-height: normal;
@@ -397,14 +402,14 @@
 
                 .brands {
                     .brand {
-                        max-width: 110px;
+                        max-width: 100px;
                     }
                 }
             }
 
             .brandlab-video {
-                width: 580px;
-                height: 580px;
+                width: 550px;
+                height: 550px;
                 margin-bottom: 33vh;
             }
         }

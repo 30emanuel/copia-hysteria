@@ -150,8 +150,8 @@ export const Initial2560 = ({ showAnimationStart, setShowAnimationStart, showScr
                 },
             })
             gsap.to('.circle-top-2560', {
-                y: '90vh',
-                x: '-96vw',
+                y: '81vh',
+                x: '-94vw',
                 position: 'fixed',
                 width: '950px',
                 height: '950px',
@@ -166,10 +166,10 @@ export const Initial2560 = ({ showAnimationStart, setShowAnimationStart, showScr
                 },
                 onComplete: () => {
                     gsap.to('.circle-top-2560', {
-                        x: '19vw',
-                        y: '45vh',
-                        width: '1763px',
-                        height: '1763px',
+                        x: '16vw',
+                        y: '49vh',
+                        width: '1563px',
+                        height: '1563px',
                         transition: 'none',
                         scrollTrigger: {
                             trigger: '#transition-logo-1',
@@ -182,7 +182,7 @@ export const Initial2560 = ({ showAnimationStart, setShowAnimationStart, showScr
                                 width: '1050px',
                                 height: '1050px',
                                 y: '50vh',
-                                x: '-36.2vw',
+                                x: '-34.2vw',
                                 scrollTrigger: {
                                     trigger: '.list-project',
                                     start: "bottom bottom",
@@ -221,8 +221,8 @@ export const Initial2560 = ({ showAnimationStart, setShowAnimationStart, showScr
                 }
             })
             gsap.to('.circle-bottom-2560', {
-                y: '-30vh',
-                x: '11.8vw',
+                y: '-37vh',
+                x: '17vw',
                 position: 'fixed',
                 width: '1080px',
                 height: '1080px',
@@ -238,7 +238,7 @@ export const Initial2560 = ({ showAnimationStart, setShowAnimationStart, showScr
                 onComplete: () => {
                     gsap.to('.circle-bottom-2560', {
                         y: '-60vh',
-                        x: '47.5vw',
+                        x: '49.5vw',
                         height: '2723px',
                         width: '2723px',
                         transition: 'none',

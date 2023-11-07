@@ -150,8 +150,8 @@ export const Initial1920 = ({ showAnimationStart, setShowAnimationStart, showScr
                 },
             })
             gsap.to('.circle-top-1920', {
-                y: '80vh',
-                x: '-93vw',
+                y: '86vh',
+                x: '-95vw',
                 position: 'fixed',
                 width: '925px',
                 height: '925px',
@@ -181,8 +181,8 @@ export const Initial1920 = ({ showAnimationStart, setShowAnimationStart, showScr
                             gsap.to('.circle-top-1920', {
                                 width: '879.669px',
                                 height: '879.669px',
-                                y: '50vh',
-                                x: '-36.2vw',
+                                y: '49.5vh',
+                                x: '-34.2vw',
                                 scrollTrigger: {
                                     trigger: '.list-project',
                                     start: "bottom bottom",
@@ -221,8 +221,8 @@ export const Initial1920 = ({ showAnimationStart, setShowAnimationStart, showScr
                 }
             })
             gsap.to('.circle-bottom-1920', {
-                y: '-30vh',
-                x: '11.8vw',
+                y: '-36.9vh',
+                x: '12.8vw',
                 position: 'fixed',
                 width: '1080px',
                 height: '1080px',
