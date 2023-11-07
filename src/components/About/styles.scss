@@ -271,6 +271,37 @@
     }
 }
 
+@media(max-width: 1440px) {
+    .about {
+        .about-text {
+            margin-top: -2%;
+            .about-title {
+                h3 {
+                    font-size: 140px;
+                    margin-left: -22px;
+                }
+
+                h2 {
+                    margin-top: -30px;
+                    margin-left: 120px;
+                }
+            }
+
+            .paragraph {
+                .paragraphs {
+                    font-size: 21px;
+                }
+            }
+        }
+
+        .footer {
+            margin-top: 50px;
+            font-size: 16px;
+            margin-left: 14.35%;
+        }
+    }
+}
+
 @media(max-width: 1399px) {
     .about {
         .about-text {

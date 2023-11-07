@@ -19,6 +19,7 @@ import { Initial1600 } from '../../components/Initial/1600'
 import { Initial1280 } from '../../components/Initial/1280'
 import { Initial2560 } from '../../components/Initial/2560'
 import { Initial3840 } from '../../components/Initial/3840'
+import { Initial1440 } from '../../components/Initial/1440'
 
 export const Home = () => {
   const [showHeader, setShowHeader] = useState(false)
@@ -48,7 +49,7 @@ export const Home = () => {
     }
   }
 
-  const accptedWidths = [1280, 1366, 1600, 1920, 2560, 3840]
+  const accptedWidths = [1280, 1366, 1440, 1600, 1920, 2560, 3840]
   
   const { width } = useWindowSize()
 
@@ -63,13 +64,14 @@ export const Home = () => {
     'mobile': <Initial1280 showAnimationStart={showAnimationStart} setShowAnimationStart={setShowAnimationStart}  showScroll={showScroll} data={data?.initial} setShowHeader={setShowHeader} />,
     1280: <Initial1280 showAnimationStart={showAnimationStart} setShowAnimationStart={setShowAnimationStart}  showScroll={showScroll} data={data?.initial} setShowHeader={setShowHeader} />,
     1366: <Initial1366 showAnimationStart={showAnimationStart} setShowAnimationStart={setShowAnimationStart}  showScroll={showScroll} data={data?.initial} setShowHeader={setShowHeader} />,
+    1440: <Initial1440 showAnimationStart={showAnimationStart} setShowAnimationStart={setShowAnimationStart}  showScroll={showScroll} data={data?.initial} setShowHeader={setShowHeader} />,
     1600: <Initial1600 showAnimationStart={showAnimationStart} setShowAnimationStart={setShowAnimationStart}  showScroll={showScroll} data={data?.initial} setShowHeader={setShowHeader} />,
     1920: <Initial1920 showAnimationStart={showAnimationStart} setShowAnimationStart={setShowAnimationStart}  showScroll={showScroll} data={data?.initial} setShowHeader={setShowHeader} />,
     2560: <Initial2560 showAnimationStart={showAnimationStart} setShowAnimationStart={setShowAnimationStart}  showScroll={showScroll} data={data?.initial} setShowHeader={setShowHeader} />,
     3840: <Initial3840 showAnimationStart={showAnimationStart} setShowAnimationStart={setShowAnimationStart}  showScroll={showScroll} data={data?.initial} setShowHeader={setShowHeader} />,
   }
 
-  console.log(width)
+  console.log(newWidth)
   
 
   return (

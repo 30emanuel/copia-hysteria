@@ -350,6 +350,40 @@
     }
 }
 
+@media (max-width: 1450px){
+    .brandlab {
+        .brandlab-circle {
+            width: 1370px;
+            height: 1370px;
+            margin-top: -116vh;
+        }
+
+        .front {
+            .texts {
+                margin-left: 5.5vw;
+                margin-top: 250px;
+                h3 {
+                    font-size: 20px;
+                    margin-left: -5px;
+                    line-height: normal;
+                }
+                .brands {
+                    .brand {
+                        max-width: 120px;
+                    }
+                }
+            }
+
+            .brandlab-video {
+                width: 600px;
+                height: 600px;
+                margin-left: 55vw;
+                margin-bottom: 16vh;
+            }
+        }
+    }
+}
+
 @media (max-width: 1400px) and (max-height: 940px) {
     .brandlab {
         .brandlab-circle {

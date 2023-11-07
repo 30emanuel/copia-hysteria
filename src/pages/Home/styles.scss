@@ -71,6 +71,19 @@
         }
     }
 }
+
+@media(max-width: 1440px){
+    .home {
+        .titles{
+            font-size: 180px !important;
+        }
+        .paragraphs{
+            line-height: 30px;
+            font-size: 20px;
+        }
+    }
+}
+
 @media(max-width: 1400px){
     .home {
         .titles{

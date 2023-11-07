@@ -263,8 +263,8 @@
                 .paragraph {
                     p {
                         font-size: 80px;
-                        margin-left: 150px;
-                        max-width: 1265px;
+                        margin-left: 0px;
+                        max-width: 1470px;
                         line-height: normal;
                     }
                 }
@@ -432,6 +432,68 @@
     }
 }
 
+@media(max-width: 1450px) {
+    .collaborators {
+        .collaborators-title {
+            margin-top: 21vh;
+            margin-left: 52px;
+        }
+
+        .collaborators-text {
+            .sub-title {
+                margin-top: 26vh;
+                .circles-images {
+                    margin-top: -13vh;
+                    margin-left: -4.9vw;
+
+                    .up {
+                        width: 487px;
+                        height: 487px;
+                        margin-right: -40px;
+                    }
+
+                    .left {
+                        width: 280px;
+                        height: 280px;
+                        margin-right: 300px;
+                        margin-top: 160px;
+                    }
+
+                    .low {
+                        width: 215px;
+                        height: 215px;
+                        margin-right: 230px;
+                        margin-top: 285px;
+                    }
+                }
+
+                .paragraph {
+                    margin-top: -80px;
+                    p{
+                        max-width: 470px;
+                        margin-left: 60px;
+                    }
+                }
+
+            }
+        }
+
+        .collaborators-background  {
+            .bigger-circle {
+                width: 1110px;
+                height: 1110px;
+
+                .smaller-circle {
+                    width: 520px;
+                    height: 520px;
+                    margin-top: 58.5%;
+                    margin-left: -2.5vw;
+                }
+            }
+        }
+    }
+}
+
 
 @media(max-width: 1400px) {
     .collaborators {
@@ -454,15 +516,17 @@
                     }
 
                     .left {
-                        width: 324px;
-                        height: 324px;
+                        width: 280px;
+                        height: 280px;
                         margin-right: 300px;
                         margin-top: 160px;
                     }
 
                     .low {
+                        width: 215px;
+                        height: 215px;
                         margin-right: 230px;
-                        margin-top: 280px;
+                        margin-top: 285px;
                     }
                 }
 
@@ -470,7 +534,7 @@
                     margin-top: -70px;
                     p{
                         max-width: 470px;
-                        margin-left: 45px;
+                        margin-left: 20px;
                     }
                 }
 
