@@ -249,7 +249,8 @@
                     margin-top: -30px;
                 }
             }
-            .paragraph{
+
+            .paragraph {
                 margin-top: 10px;
             }
         }
@@ -275,6 +276,7 @@
     .about {
         .about-text {
             margin-top: -2%;
+
             .about-title {
                 h3 {
                     font-size: 140px;
@@ -341,6 +343,7 @@
 
             .about-title {
                 margin-left: 34px;
+
                 h3 {
                     margin-left: -170px;
                 }
@@ -373,22 +376,35 @@
         align-items: left;
 
         .about-text {
+            align-items: normal;
+            margin-top: -46vh;
             margin-left: 0;
-            padding-left: 20px;
+
+            .about-title {
+                h3{
+                    margin-left: 0px;
+                    font-size: 88px;
+                }
+                h2{
+                    margin-top: -10px;
+                    margin-left: 80px;
+                }
+            }
 
             .paragraph {
                 margin-top: 10px;
-                margin-left: 50px;
-                width: 70%;
-
-                .paragraphs {
-                    font-size: 16px;
-                }
+                margin-left: 120px;
+                width: 80%;
             }
         }
 
         .footer {
-            font-size: 14px;
+            font-size: 18px;
+            margin-top: 15px;
+            margin-left: 0px;
+            padding-right: 100px;
+            align-items: normal;
+            justify-content: right;
         }
     }
 }

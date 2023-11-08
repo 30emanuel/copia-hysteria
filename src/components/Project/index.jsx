@@ -99,6 +99,7 @@ export const Project = ({ project, toggleModal }) => {
                     <p className='bold'>{project.stream}</p>
                 </div>
             </div>
+            <div className="project-shadown"></div>
         </div>
     )
 }

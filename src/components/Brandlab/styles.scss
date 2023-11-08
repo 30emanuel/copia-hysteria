@@ -96,8 +96,9 @@
 
                 .brand {
                     display: none;
-                    max-width: 150px;
-                    max-height: 100px;
+                    justify-content: center;
+                    align-items: center;
+                    max-height: 60px;
                     animation: move-sub 1.3s ease-out;
 
                     &.show {
@@ -105,10 +106,7 @@
                     }
 
                     img {
-                        max-width: 100%;
-                        max-height: 100%;
                         object-fit: cover;
-                        object-position: center;
                     }
                 }
             }
@@ -195,6 +193,19 @@
     }
 }
 
+@keyframes move-brand-circle {
+    from {
+        opacity: 0;
+        transform: translateY(50vh);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0vh);
+    }
+}
+
+
 @keyframes move-sub {
     from {
         opacity: 0;
@@ -207,10 +218,11 @@
     }
 }
 
-@media (min-width: 3000px){
+@media (min-width: 3000px) {
     #brandlab {
         margin-top: 2vh;
     }
+
     .brandlab {
         .brandlab-circle {
             width: 3450px;
@@ -222,21 +234,23 @@
             .texts {
                 margin-top: 50vh;
                 margin-left: 7vw;
+
                 p {
                     max-width: 1650px;
                     line-height: normal;
                 }
-                h3{
+
+                h3 {
                     font-size: 64px;
                     line-height: normal;
                     max-width: 1800px;
                 }
+
                 .brands {
+                    margin-top: 20px;
                     gap: 50px;
-                    .brand {
-                        max-width: 350px;
-                        max-height: 300px;
-                    }
+                    scale: 2;
+                    margin-left: 33vw;
                 }
             }
 
@@ -250,7 +264,7 @@
     }
 }
 
-@media (min-width: 2000px) and (max-width: 3000px)  {
+@media (min-width: 2000px) and (max-width: 3000px) {
     .brandlab {
         .brandlab-circle {
             width: 2450px;
@@ -263,19 +277,15 @@
             .texts {
                 margin-top: 200px;
                 margin-left: 8vw;
+
                 p {
                     max-width: 1150px;
                     line-height: normal;
                 }
-                h3{
+
+                h3 {
                     font-size: 28px;
                     max-width: 900px;
-                }
-                .brands {
-                    .brand {
-                        max-width: 200px;
-                        max-height: 150px;
-                    }
                 }
             }
 
@@ -301,8 +311,17 @@
                 p {
                     max-width: 45%;
                 }
-                h3{
+
+                h3 {
                     max-width: 45%;
+                }
+
+                .brands {
+                    .brand {
+                        img {
+                            max-width: 200px;
+                        }
+                    }
                 }
             }
 
@@ -333,12 +352,6 @@
                 p {
                     max-width: 45%;
                 }
-
-                .brands {
-                    .brand {
-                        max-width: 130px;
-                    }
-                }
             }
 
             .brandlab-video {
@@ -350,7 +363,7 @@
     }
 }
 
-@media (max-width: 1450px){
+@media (max-width: 1450px) {
     .brandlab {
         .brandlab-circle {
             width: 1370px;
@@ -362,15 +375,11 @@
             .texts {
                 margin-left: 5.5vw;
                 margin-top: 250px;
+
                 h3 {
                     font-size: 20px;
                     margin-left: -5px;
                     line-height: normal;
-                }
-                .brands {
-                    .brand {
-                        max-width: 120px;
-                    }
                 }
             }
 
@@ -396,14 +405,18 @@
             .texts {
                 margin-left: 7.5vw;
                 margin-top: 150px;
+
                 h3 {
                     font-size: 20px;
                     margin-left: -5px;
                     line-height: normal;
                 }
+
                 .brands {
                     .brand {
-                        max-width: 120px;
+                        img {
+                            max-width: 150px;
+                        }
                     }
                 }
             }
@@ -425,19 +438,15 @@
             height: 1180px;
             margin-top: -126vh;
         }
+
         .front {
             .texts {
                 margin-left: 6vw;
+
                 h3 {
                     font-size: 20px;
                     line-height: normal;
                     max-width: 50%;
-                }
-
-                .brands {
-                    .brand {
-                        max-width: 100px;
-                    }
                 }
             }
 
@@ -451,9 +460,104 @@
 }
 
 @media (max-width: 1300px) and (min-height: 900px) {
-    .brandlab{
+    .brandlab {
         .front {
             margin-top: -76vh;
+        }
+    }
+}
+
+@media(max-width: 768px) {
+    .brandlab {
+        height: 100vh;
+        .brandlab-circle {
+            visibility: hidden;
+        }
+
+        .brandlab-circle-mobile {
+            display: none;
+            background-color: var(--bg-color-four);
+            border-radius: 100%;
+            width: 1200px;
+            height: 1200px;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            margin-top: 65vh;
+            margin-right: 45vw;
+            animation: move-brand-circle 1s ease-in-out;
+        }
+
+        .front {
+            margin-top: -73.5vh;
+
+            .texts {
+                margin-left: 0px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 0px;
+                gap: 12px;
+
+                h2 {
+                    width: 80%;
+                }
+
+                p {
+                    margin-top: -10px;
+                    max-width: none;
+                    width: 80%;
+                    margin-right: 0px;
+                }
+
+                h3 {
+                    max-width: none;
+                    width: 80%;
+                    margin-left: 0px;
+                }
+
+                .brands {
+                    flex-wrap: wrap;
+                    width: 80%;
+                    .brand {
+                        margin-top: 10px;
+                        img {
+                            max-width: 120px;
+                            max-height: 50px;
+                        }
+                    }
+                }
+            }
+
+            .brandlab-video {
+                margin-bottom: -111vh;
+                width: 800px;
+                height: 800px;
+
+                .video-circle {
+                    width: 1532.015px;
+                    height: 1532.015px;
+                    border-radius: 100%;
+                    position: absolute;
+                    border: 0.509px solid var(--bg-color-four);
+                    box-shadow: 0px 2.03433px 50.85825px 5.08583px rgba(0, 0, 0, 0.50);
+                    margin-left: -76vw;
+                    margin-top: -9vh;
+                    animation: move-brand-circle 1s ease-in-out;
+                }
+                .video-circle-bottom{
+                    width: 900px;
+                    height: 900px;
+                    border-radius: 100%;
+                    position: absolute;
+                    border: 0.509px solid var(--bg-color-four);
+                    box-shadow: 0px 2.03433px 50.85825px 5.08583px rgba(0, 0, 0, 0.50);
+                    animation: move-brand-circle 1s ease-in-out; 
+                    z-index: 6;
+                    margin-top: 8vh;
+                    margin-left: -2vw;
+                }
+            }
         }
     }
 }

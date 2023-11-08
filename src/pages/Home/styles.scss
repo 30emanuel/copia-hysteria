@@ -103,3 +103,14 @@
         }
     }
 }
+
+@media(max-width: 768px){
+    .home{
+        .titles{
+            font-size: 112px !important;
+        }
+        .paragraphs{
+            font-size: 20px !important;
+        }
+    }
+}
