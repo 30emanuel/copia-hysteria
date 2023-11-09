@@ -277,3 +277,48 @@
         margin-top: -10vh;
     }
 }
+
+@media(max-width: 768px){
+    .contact{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 0vh;
+        .text{
+            margin-top: 30%;
+            margin-left: 0px;
+            div {
+                display: flex;
+                margin-left: 0%;
+                h3 {
+                    margin-top: -10px;
+                    font-size: 25.214px;
+                }
+                h4 {
+                    margin-top: 5px;
+                    font-size: 15.047px;
+                }
+                p{
+                    margin-top: 5px;
+                    font-size: 9.76px;
+                }
+
+                .social{
+                    gap: 0px;
+                    margin-top: 5px;
+                    svg{
+                        width: 26.078px;
+                        height: 23.18px;
+                    }
+                    #svg-two{
+                        margin-left: -10px;
+                    }
+                }
+
+            }
+        }
+    }
+    .contact-background{
+        margin-top: -100vh;
+    }
+}

@@ -42,6 +42,12 @@ export const Home = () => {
     },
     "allBrands": [
       {
+        "name": "Del Valle",
+        "logo": {
+          "url": "https://www.datocms-assets.com/103984/1699472087-del-valle-1logos-brandlab.png"
+        }
+      },
+      {
         "name": "TikTok",
         "logo": {
           "url": "https://www.datocms-assets.com/103984/1699394848-tiktok-32-1logos-brandlab.png"

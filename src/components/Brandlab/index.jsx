@@ -94,7 +94,6 @@ export const Brandlab = ({ text, brands }) => {
           end: 'top center',
           scrub: 0.5,
           once: true,
-          markers: true
         },
         onStart: () => {
           setShowTitle(true)

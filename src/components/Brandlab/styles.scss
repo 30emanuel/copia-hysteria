@@ -45,7 +45,7 @@
             position: absolute;
             margin-left: 8vw;
             margin-top: 170px;
-            gap: 26px;
+            gap: 35px;
             color: white;
             min-height: 548px;
 
@@ -61,8 +61,8 @@
             h3 {
                 font-family: var(--font-secondary);
                 font-weight: 700;
-                font-size: 25px;
-                line-height: 39px;
+                font-size: 20px;
+                line-height: 40px;
                 max-width: 709px;
                 opacity: 0;
 
@@ -73,8 +73,8 @@
             }
 
             p {
-                margin-top: -60px;
-                max-width: 900px;
+                margin-top: -44px;
+                max-width: 811px;
                 margin-right: 50px;
                 opacity: 0;
 
@@ -106,6 +106,7 @@
                     }
 
                     img {
+                        max-width: 150px;
                         object-fit: cover;
                     }
                 }
@@ -192,7 +193,6 @@
         transform: translateY(0px);
     }
 }
-
 @keyframes move-brand-circle {
     from {
         opacity: 0;
@@ -204,7 +204,6 @@
         transform: translateY(0vh);
     }
 }
-
 
 @keyframes move-sub {
     from {
@@ -218,11 +217,10 @@
     }
 }
 
-@media (min-width: 3000px) {
+@media (min-width: 3000px){
     #brandlab {
         margin-top: 2vh;
     }
-
     .brandlab {
         .brandlab-circle {
             width: 3450px;
@@ -232,20 +230,18 @@
 
         .front {
             .texts {
-                margin-top: 50vh;
+                margin-top: 40vh;
                 margin-left: 7vw;
-
                 p {
-                    max-width: 1650px;
-                    line-height: normal;
+                    max-width: 1700px;
+                    line-height: 100px;
                 }
-
-                h3 {
-                    font-size: 64px;
-                    line-height: normal;
+                h3{
+                    font-size: 50px;
+                    line-height: 100px;
                     max-width: 1800px;
+                    margin-bottom: 40px;
                 }
-
                 .brands {
                     margin-top: 20px;
                     gap: 50px;
@@ -264,7 +260,7 @@
     }
 }
 
-@media (min-width: 2000px) and (max-width: 3000px) {
+@media (min-width: 2000px) and (max-width: 3000px)  {
     .brandlab {
         .brandlab-circle {
             width: 2450px;
@@ -277,15 +273,23 @@
             .texts {
                 margin-top: 200px;
                 margin-left: 8vw;
-
                 p {
                     max-width: 1150px;
-                    line-height: normal;
                 }
-
-                h3 {
+                h3{
                     font-size: 28px;
+                    line-height: 56px;
                     max-width: 900px;
+                }
+                .brands{
+                    gap: 50px;
+                    .brand{
+                        img{
+                            max-width: none;
+                            max-height: 120px;
+                            object-fit: none;
+                        }
+                    }
                 }
             }
 
@@ -311,15 +315,15 @@
                 p {
                     max-width: 45%;
                 }
-
-                h3 {
-                    max-width: 45%;
+                h3{
+                    font-size: 16px;
+                    line-height: 32px;
+                    max-width: 35%;
                 }
-
-                .brands {
+                .brands{
                     .brand {
-                        img {
-                            max-width: 200px;
+                        img{
+                            max-width: 120px;
                         }
                     }
                 }
@@ -363,7 +367,7 @@
     }
 }
 
-@media (max-width: 1450px) {
+@media (max-width: 1450px){
     .brandlab {
         .brandlab-circle {
             width: 1370px;
@@ -374,12 +378,16 @@
         .front {
             .texts {
                 margin-left: 5.5vw;
-                margin-top: 250px;
-
+                margin-top: 150px;
                 h3 {
-                    font-size: 20px;
-                    margin-left: -5px;
-                    line-height: normal;
+                    line-height: 32px;
+                }
+                .brands{
+                    .brand {
+                        img{
+                            max-height: 50px;
+                        }
+                    }
                 }
             }
 
@@ -404,20 +412,14 @@
         .front {
             .texts {
                 margin-left: 7.5vw;
-                margin-top: 150px;
-
+                margin-top: 75px;
                 h3 {
-                    font-size: 20px;
-                    margin-left: -5px;
-                    line-height: normal;
+                    font-size: 14px;
+                    line-height: 28px;
                 }
-
-                .brands {
-                    .brand {
-                        img {
-                            max-width: 150px;
-                        }
-                    }
+                .paragraphs{
+                    font-size: 14px;
+                    line-height: 28px;
                 }
             }
 
@@ -438,15 +440,20 @@
             height: 1180px;
             margin-top: -126vh;
         }
-
         .front {
             .texts {
                 margin-left: 6vw;
-
                 h3 {
-                    font-size: 20px;
-                    line-height: normal;
-                    max-width: 50%;
+                    margin-top: -15px;
+                    font-size: 14px;
+                    line-height: 28px;
+                }
+                .brands{
+                    .brand{
+                        img{
+                            max-height: 40px;
+                        }
+                    }
                 }
             }
 
@@ -460,7 +467,7 @@
 }
 
 @media (max-width: 1300px) and (min-height: 900px) {
-    .brandlab {
+    .brandlab{
         .front {
             margin-top: -76vh;
         }
@@ -558,6 +565,111 @@
                     margin-left: -2vw;
                 }
             }
+        }
+    }
+}
+
+@media(max-width: 600px){
+    .brandlab{
+        .brandlab-circle-mobile{
+            width: 900px;
+            height: 900px;
+        }
+        .front{
+            .texts{
+                .brands {
+                    .brand {
+                        margin-top: 10px;
+                        img {
+                            max-width: 100px;
+                            max-height: 40px;
+                        }
+                    }
+                }
+            }
+            .brandlab-video{
+                width: 500px;
+                height: 500px;
+                margin-bottom: -80vh;
+                .video-circle{
+                    width: 772.015px;
+                    height: 772.015px;
+                    margin-left: -50vw;
+                    margin-top: 0vh;
+                }
+                .video-circle-bottom{
+                    width: 500px;
+                    height: 500px;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 400px){
+    .brandlab{
+        .brandlab-circle-mobile{
+            width: 900px;
+            height: 900px;
+        }
+        .front{
+            .texts{
+                .brands {
+                    .brand {
+                        margin-top: 10px;
+                        img {
+                            max-width: 100px;
+                            max-height: 40px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(max-height: 850px){
+    .brandlab{
+        .brandlab-circle-mobile{
+            width: 850px;
+            height: 850px;
+        }
+        .front{
+            margin-top: -60vh;
+            .texts{
+                h3{
+                    margin-top: 20px;
+                }
+            }
+            .brandlab-video{
+                width: 450px;
+                height: 450px;
+                margin-bottom: -90vh;
+                .video-circle{
+                    width: 772.015px;
+                    height: 772.015px;
+                    margin-left: -70vw;
+                    margin-top: -15vh;
+                }
+                .video-circle-bottom{
+                    width: 500px;
+                    height: 500px;
+                }
+            }
+        }
+    }
+}
+
+@media(max-height: 700px){
+    .brandlab{
+        .front{
+            .texts{
+                p, h3{
+                    font-size: 12px !important;
+                    line-height: 24px !important;
+                }
+            }
+            
         }
     }
 }
