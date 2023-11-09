@@ -788,3 +788,19 @@
         }
     }
 }
+@media(max-width: 768px) {
+    .modalproject {
+	display: none;
+        .footer {
+            .outher-projects {
+                .outher-project {
+                    .info {
+                        h3 {
+                            font-size: 40px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
