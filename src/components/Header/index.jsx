@@ -1,16 +1,20 @@
 import './styles.scss'
 import LogoWhite from '../../assets/logo-white.png'
 import LogoMobile from '../../assets/logo-mobile.png'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { useWindowSize } from "@uidotdev/usehooks"
 
 
-export const Header = () => {
+export const Header = ({showScroll, heightMobile}) => {
     const [showMenu, setShowMenu] = useState(false)
     const [disableAnchors, setDisableAnchors] = useState(false)
 
     const toggleMenu = () => {
         setShowMenu((prev) => !prev)
+        showScroll(showMenu)
     }
+
+    const {width} = useWindowSize()
 
     const scrollToSection = (sectionId) => {
         const section = document.getElementById(sectionId)
@@ -41,7 +45,10 @@ export const Header = () => {
 
     return (
         <>
-            <header className={`menu ${showMenu ? 'active' : ''}`}>
+            <header className={`menu ${showMenu ? 'active' : ''}`}             
+            style={{
+                height: width <= 768 ? `${heightMobile}px` : '100vh',
+            }}>
                 <div className="menu-header">
                     <div>
                     </div>

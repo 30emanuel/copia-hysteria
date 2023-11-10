@@ -375,12 +375,29 @@
 @media (max-width: 768px) {
     .about {
         display: flex;
-        justify-content: left;
+        justify-content: start;
         align-items: left;
+        padding-bottom: 200px;
+        min-height: 100%;
+        #mobile-animation-about{
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            margin-top: -10%;
+            pointer-events: none;
+        }
+        .about-container{
+            margin-top: 20%;
+            min-height: 100%;
+            height: 100%;
+            justify-content: normal;
+        }
 
         .about-text {
+            margin-top: 0%;
+            justify-content: normal;
             align-items: normal;
-            margin-top: -46vh;
+            height: auto;
             margin-left: 0;
 
             .about-title {
@@ -398,6 +415,7 @@
             .paragraph {
                 margin-top: 10px;
                 margin-left: 20%;
+                height: max-content;
                 .paragraphs{
                     max-width: 339px;
                 }
@@ -405,7 +423,7 @@
         }
 
         .footer {
-            margin-top: 15px;
+            margin-top: 0px;
             margin-left: 75%;
             align-items: normal;
             justify-content: left;
@@ -416,20 +434,19 @@
 @media(max-width: 450px){
     .about{
         .about-text{
-            margin-top: -35vh;
             .about-title{
                 h2{
-                    font-size: 80px !important;
+                    font-size: 72px !important;
                 }
                 h3{
-                    font-size: 52px;
+                    font-size: 50px;
                 }
             }
             .paragraph{
                 .paragraphs{
-                    margin-left: 10px;
+                    margin-left: 5px;
                     max-width: none !important;
-                    width: 60%;
+                    width: 59%;
                 }
             }
         }
@@ -439,18 +456,12 @@
         }
     }
 }
-
-@media(max-height: 800px){
-    .about{
-        .about-text{
-            margin-top: -36vh;
-        }
-    }
-}
 @media(max-height: 700px){
     .about{
+        .about-container{
+            margin-top: 5%;
+        }
         .about-text{
-            margin-top: -35vh;
             .about-title{
                 h2{
                     font-size: 72px !important;

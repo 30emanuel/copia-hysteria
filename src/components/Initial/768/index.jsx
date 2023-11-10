@@ -3,6 +3,7 @@ import './styles.scss'
 import { useSpring, animated, config } from 'react-spring'
 import Logo from '../../../assets/logo-black.png'
 import { gsap } from 'gsap'
+import { useWindowSize } from "@uidotdev/usehooks"
 
 
 export const Initial768 = ({ showAnimationStart, setShowAnimationStart, showScroll, data, setShowHeader }) => {
@@ -24,6 +25,13 @@ export const Initial768 = ({ showAnimationStart, setShowAnimationStart, showScro
             //video.play()
         })
     }
+
+    const [maxHeight, setMaxHeight] = useState(window.innerHeight)
+
+    useEffect(() =>{
+        console.log(maxHeight)
+    },[maxHeight])
+    
 
     const ballProps = useSpring({
         transform: 'scale(1)',
@@ -100,11 +108,11 @@ export const Initial768 = ({ showAnimationStart, setShowAnimationStart, showScro
         if (showCircles) {
             playAllVideos()
             gsap.to('.video-right', {
-                y: '-20vh',
+                y: `-=${maxHeight * 0.2}px`,
                 ease: 'power1.easeInOut',
                 scrollTrigger: {
-                    trigger: '.start-768',
-                    start: "bottom bottom",
+                    trigger: '.videos-container',
+                    start: "center center",
                     endTrigger: '#about',
                     end: 'top top',
                     scrub: 1,
@@ -113,19 +121,20 @@ export const Initial768 = ({ showAnimationStart, setShowAnimationStart, showScro
 
             gsap.to('.center-container', {
                 position: 'fixed',
-                y: '49vh',
-                x: '-5vw',
+                y: `+=${maxHeight * 0.6}px`,
+                x: '-10vw',
                 ease: 'power1.easeInOut',
                 transition: 'none',
                 scrollTrigger: {
-                    trigger: '.start-768',
-                    start: "bottom bottom",
-                    endTrigger: '#about',
-                    end: 'top top',
+                    trigger: '.animation-start',
+                    start: "top center",
+                    endTrigger: '.about',
+                    end: 'top center',
                     scrub: 1,
+                    markers: true
                 },
                 onComplete: () => {
-                    gsap.to('.center-container', {
+                    /*gsap.to('.center-container', {
                         opacity: '0',
                         y: '-50vh',
                         scrollTrigger: {
@@ -134,35 +143,34 @@ export const Initial768 = ({ showAnimationStart, setShowAnimationStart, showScro
                             end: "top top",
                             scrub: 1,
                         },
-                    })
+                    })*/
                 }
             })
             gsap.to('.circle', {
                 border: '2px solid #FFF',
                 scrollTrigger: {
-                    trigger: '.start-768',
-                    start: "bottom bottom",
-                    endTrigger: '.start-768',
-                    end: 'bottom bottom',
+                    trigger: '.animation-start',
+                    start: "top center",
+                    endTrigger: '.about',
+                    end: 'top center',
                     scrub: 1,
                 },
             })
             gsap.to('.circle-top-768', {
-                y: '140vh',
-                x: '-35vw',
+                y: `+=${maxHeight * 1.5}px`,
+                left: '-15%',
                 position: 'fixed',
-                scale: '0.85',
                 transition: 'transform 0.5s ease-out',
                 ease: 'power1.easeInOut',
                 border: '2px solid #FFF',
                 scrollTrigger: {
-                    trigger: '.start-768',
-                    start: "bottom bottom",
-                    endTrigger: '#about',
-                    end: 'top top',
+                    trigger: '.animation-start',
+                    start: "top center",
+                    endTrigger: '.about',
+                    end: 'top center',
                     scrub: 1,
                 },
-                onComplete: () => {
+                /*onComplete: () => {
                     gsap.to('.circle-top-768', {
                         y: '-=100vh',
                         scrollTrigger: {
@@ -172,25 +180,24 @@ export const Initial768 = ({ showAnimationStart, setShowAnimationStart, showScro
                             scrub: 1,
                         },
                     })
-                }
+                }*/
             })
             gsap.to('.circle-bottom-768', {
-                y: '-23vh',
-                x: '-48.3vw',
+                y: `-=${maxHeight * 0.1}px`,
+                left: '-35%',
                 position: 'fixed',
-                scale: '0.85',
                 border: '2px solid #FFF',
                 transition: 'transform 0.5s ease-out',
                 ease: 'power1.easeInOut',
                 scrollTrigger: {
-                    trigger: '.start-768',
-                    start: "bottom bottom",
-                    endTrigger: '#about',
-                    end: 'top top',
+                    trigger: '.animation-start',
+                    start: "top center",
+                    endTrigger: '.about',
+                    end: 'top center',
                     scrub: 1,
                 },
                 onComplete: () => {
-                    gsap.to('.circle-bottom-768', {
+                    /*sap.to('.circle-bottom-768', {
                         y: '-=100vh',
                         scrollTrigger: {
                             trigger: '.projects',
@@ -198,11 +205,11 @@ export const Initial768 = ({ showAnimationStart, setShowAnimationStart, showScro
                             end: 'top top',
                             scrub: 1,
                         },
-                    })
+                    })*/
                 }
             })
         }
-    }, [showCircles])
+    }, [maxHeight, showCircles])
 
     const textAnimationOne = useSpring({
         translateY: showText ? '0' : '300px',
@@ -232,7 +239,8 @@ export const Initial768 = ({ showAnimationStart, setShowAnimationStart, showScro
     })
 
     return (
-        <div className='start-768' id='home'>
+        <div className='start-768' style={{height: `${maxHeight}px`}} id='home'>
+            <div className="animation-start"></div>
             {showFirstAnimation &&
                 <div className="animation">
                     <animated.img style={logoProps} src={Logo} alt="Logo" className="logo" />

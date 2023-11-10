@@ -26,6 +26,7 @@ export const Home = () => {
   const [showHeader, setShowHeader] = useState(false)
 
   const [showAnimationStart, setShowAnimationStart] = useState(true)
+  const [maxHeight, setMaxHeight] = useState(window.innerHeight)
 
   //const { loading, error, data } = useQuery(HOME_QUERY)
   const data = {
@@ -397,7 +398,7 @@ export const Home = () => {
       {!loading && !error &&
         <>
           {showHeader &&
-            <Header />
+            <Header showScroll={showScroll} heightMobile={maxHeight}/>
           }
           {SIZES_RES[newWidth]}
           <About text={data.about} />

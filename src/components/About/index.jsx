@@ -1,49 +1,100 @@
 import { useEffect, useState } from 'react'
 import './styles.scss'
 import { gsap } from 'gsap'
+import { useWindowSize } from "@uidotdev/usehooks"
 
 export const About = ({ text }) => {
     const [showFooter, setShowFooter] = useState(false)
+    const [maxHeight, setMaxHeight] = useState(window.innerHeight)
+    const { width } = useWindowSize()
 
     useEffect(() => {
-        gsap.to('.about-container', {
-            display: 'flex',
-            scrollTrigger: {
-                trigger: '.about',
-                start: "top center 10vh",
-                end: 'top center 10vh',
-                scrub: 0.5,
-                once: true
-            },
-        })
-        gsap.to('.paragraphs', {
-            className: 'paragraphs animation',
-            scrollTrigger: {
-                trigger: '.about-container',
-                start: "top +=100vh",
-                end: 'top +=100vh',
-                scrub: 0.5,
-                once: true
-            },
-        })
-        gsap.to('.footer', {
-            opacity: '1',
-            scrollTrigger: {
-                trigger: '.about-container',
-                start: "top +=100vh",
-                end: 'top +=100vh',
-                scrub: 0.5,
-                once: true
-            },
-            onComplete: () => {
-                setShowFooter(true)
-            }
-        })
+        if (width > 768) {
+            gsap.to('.about-container', {
+                display: 'flex',
+                scrollTrigger: {
+                    trigger: '.about',
+                    start: "top center 10vh",
+                    end: 'top center 10vh',
+                    scrub: 0.5,
+                    once: true
+                },
+            })
+            gsap.to('.paragraphs', {
+                className: 'paragraphs animation',
+                scrollTrigger: {
+                    trigger: '.about-container',
+                    start: "top +=100vh",
+                    end: 'top +=100vh',
+                    scrub: 0.5,
+                    once: true
+                },
+            })
+            gsap.to('.footer', {
+                opacity: '1',
+                scrollTrigger: {
+                    trigger: '.about-container',
+                    start: "top +=100vh",
+                    end: 'top +=100vh',
+                    scrub: 0.5,
+                    once: true
+                },
+                onComplete: () => {
+                    setShowFooter(true)
+                }
+            })
+        }
+    }, [width])
+
+    useEffect(() => {
+        if (width <= 768) {
+            gsap.to('.about-container', {
+                display: 'flex',
+                scrollTrigger: {
+                    trigger: '#mobile-animation-about',
+                    start: "top center",
+                    end: 'top center',
+                    scrub: 0.5,
+                    once: true
+                },
+            })
+            gsap.to('.paragraphs', {
+                className: 'paragraphs animation',
+                scrollTrigger: {
+                    trigger: '#mobile-animation-about',
+                    start: "top center",
+                    end: 'top center',
+                    scrub: 0.5,
+                    once: true
+                },
+            })
+            gsap.to('.footer', {
+                opacity: '1',
+                scrollTrigger: {
+                    trigger: '#mobile-animation-about',
+                    start: "top center",
+                    end: 'top center',
+                    scrub: 0.5,
+                    once: true,
+                    markers: true
+                },
+                onComplete: () => {
+                    setShowFooter(true)
+                }
+            })
+        }
     }, [])
 
     return (
         <>
-            <div id='about'></div><div className='about'>
+            <div id='about'></div>
+            <div className='about' 
+            style={{
+                height: width <= 768 ? `${maxHeight}px` : 'auto',
+            }}>
+                {width < 768 &&
+                    <div id='mobile-animation-about'></div>
+                }
                 <div className='about-container'>
                     <div className="about-text">
                         <div className="about-title">

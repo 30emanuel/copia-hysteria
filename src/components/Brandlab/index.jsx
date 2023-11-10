@@ -72,17 +72,18 @@ export const Brandlab = ({ text, brands }) => {
     }
   }, [width])
 
-  useEffect(() => {
+  const animationBrand = () =>{
     setTimeout(function () {
-      if (showBrands === true) {
+      if (showBrands === false) {
         brands.map((_brand, index) => {
           setTimeout(function () {
             setIndexCurrent(index)
           }, 200 * index)
         })
+        setShowBrands(true)
       }
     }, 1500)
-  }, [brands, showBrands])
+  }
 
   useEffect(() => {
     if (width <= 768) {
@@ -102,7 +103,7 @@ export const Brandlab = ({ text, brands }) => {
             setShowParagraph(true)
           }, 700)
 
-          setShowBrands(true)
+          animationBrand()
 
           setTimeout(function () {
             setShowTextSecondary(true)

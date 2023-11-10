@@ -8,6 +8,14 @@
     background-color: black;
     z-index: 10;
 
+    .animation-start{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        margin-top: 300%;
+        pointer-events: none;
+    }
+
     .animation {
         width: 100%;
         height: 100%;
@@ -277,18 +285,34 @@
     }
 }
 
-@media(max-height: 850px){
+@media(max-height: 900px){
     .start-768{
         .center{
             .circle{
-                width: 580px;
-                height: 580px;
+                width: 720px;
+                height: 720px;
             }
         }
         .circle-top-768,
         .circle-bottom-768{
-            width: 800px !important;
-            height: 800px !important;
+            width: 870px !important;
+            height: 870px !important;
+        }
+    }
+}
+
+@media(max-height: 850px){
+    .start-768{
+        .center{
+            .circle{
+                width: 550px;
+                height: 550px;
+            }
+        }
+        .circle-top-768,
+        .circle-bottom-768{
+            width: 760px !important;
+            height: 760px !important;
         }
     }
 }
