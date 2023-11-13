@@ -5,7 +5,6 @@ import { useWindowSize } from "@uidotdev/usehooks"
 
 export const About = ({ text }) => {
     const [showFooter, setShowFooter] = useState(false)
-    const [maxHeight, setMaxHeight] = useState(window.innerHeight)
     const { width } = useWindowSize()
 
     useEffect(() => {
@@ -76,7 +75,6 @@ export const About = ({ text }) => {
                     end: 'top center',
                     scrub: 0.5,
                     once: true,
-                    markers: true
                 },
                 onComplete: () => {
                     setShowFooter(true)
@@ -88,10 +86,7 @@ export const About = ({ text }) => {
     return (
         <>
             <div id='about'></div>
-            <div className='about' 
-            style={{
-                height: width <= 768 ? `${maxHeight}px` : 'auto',
-            }}>
+            <div className='about' >
                 {width < 768 &&
                     <div id='mobile-animation-about'></div>
                 }

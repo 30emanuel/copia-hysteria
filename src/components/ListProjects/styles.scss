@@ -178,8 +178,12 @@
             display: flex;
             justify-content: left;
             align-items: left;
-            padding-left: 20px;
             margin-top: 200px;
+            margin-left: 10px;
+            .titles{
+                padding-left: 0px;
+                margin-left: 0px;
+            }
         }
 
         .list-project {

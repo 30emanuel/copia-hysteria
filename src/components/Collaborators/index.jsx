@@ -100,8 +100,8 @@ export const Collaborators = ({ text }) => {
                 onComplete: () => {
                     gsap.to('.bigger-circle-mobile', {
                         y: '102vh',
-                        x: '-43vw',
-                        scale: '1.05',
+                        x: '-63vw',
+                        scale: 0.849,
                         scrollTrigger: {
                             trigger: '.circles-images',
                             start: "center center",
@@ -122,8 +122,8 @@ export const Collaborators = ({ text }) => {
                 },
                 onComplete: () => {
                     gsap.to('.smaller-circle-mobile', {
-                        x: '-11.5vw',
-                        y: '-104%',
+                        x: '8.5vw',
+                        y: '-136%',
                         scrollTrigger: {
                             trigger: '.circles-images',
                             start: "center center",

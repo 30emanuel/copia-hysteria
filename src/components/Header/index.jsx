@@ -14,7 +14,6 @@ export const Header = ({showScroll, heightMobile}) => {
         showScroll(showMenu)
     }
 
-    const {width} = useWindowSize()
 
     const scrollToSection = (sectionId) => {
         const section = document.getElementById(sectionId)
@@ -45,10 +44,7 @@ export const Header = ({showScroll, heightMobile}) => {
 
     return (
         <>
-            <header className={`menu ${showMenu ? 'active' : ''}`}             
-            style={{
-                height: width <= 768 ? `${heightMobile}px` : '100vh',
-            }}>
+            <header className={`menu ${showMenu ? 'active' : ''}`}>
                 <div className="menu-header">
                     <div>
                     </div>

@@ -656,15 +656,16 @@
         }
 
         .collaborators-text {
-            margin-top: 5vh;
+            margin-top: 7vh;
+            margin-left: 15px;
             .sub-title {
                 flex-direction: column-reverse;
                 justify-content: right;
                 align-items: right;
                 text-align: right;
                 .circles-images {
-                    margin-right: 50%;
-                    margin-top: -23vh;
+                    margin-right: 20%;
+                    margin-top: -25vh;
                     .up {
                         width: 305.492px;
                         height: 305.492px;
@@ -675,7 +676,7 @@
                     .left {
                         width: 179.363px;
                         height: 178.883px;
-                        margin-right: 250px;
+                        margin-right: 200px;
                         margin-top: 110px;
                     }
 
@@ -690,10 +691,9 @@
                 .paragraph {
                     justify-content: right;
                     align-items: right;
-                    margin-right: -200px;
                     margin-bottom: 200px;
                     p{
-                        max-width: 309px;
+                        width: 299px;
                     }
                 }
 
@@ -701,8 +701,8 @@
         }
 
         .collaborators-background  {
-            margin-top: 7vh;
-            margin-left: 40vw;
+            margin-top: 8.5vh;
+            margin-left: 35vw;
             .bigger-circle {
                 display: none;
             }
@@ -713,6 +713,7 @@
                 position: absolute;
                 z-index: 0;
                 border-radius: 100%;
+                margin-left: 50vw;
                 border: 0.4px solid white;
                 box-shadow: 5px 24px 15px 0px #00000046;
                 transform: translateY(-100vh) translateX(-20vw);
@@ -726,8 +727,8 @@
                     border-radius: 100%;
                     border: 0.4px solid white;
                     box-shadow: 5px 24px 15px 0px #00000046;
-                    margin-top: 52% !important;
-                    margin-left: 8vw;
+                    margin-top: 60% !important;
+                    margin-left: -5vw;
                     .background-blur-mobile {
                         display: flex;
                         opacity: 0;
@@ -816,6 +817,16 @@
                     margin-top: 55% !important;
                     margin-left: 5vw;
                 }
+            }
+        }
+    }
+}
+
+@media(max-width: 370px){
+    .collaborators{
+        .collaborators-title{
+            h2{
+                width: 302px;
             }
         }
     }

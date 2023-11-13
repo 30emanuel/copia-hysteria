@@ -108,7 +108,7 @@ export const Initial768 = ({ showAnimationStart, setShowAnimationStart, showScro
         if (showCircles) {
             playAllVideos()
             gsap.to('.video-right', {
-                y: `-=${maxHeight * 0.2}px`,
+                y: `-20vh`,
                 ease: 'power1.easeInOut',
                 scrollTrigger: {
                     trigger: '.videos-container',
@@ -121,8 +121,9 @@ export const Initial768 = ({ showAnimationStart, setShowAnimationStart, showScro
 
             gsap.to('.center-container', {
                 position: 'fixed',
-                y: `+=${maxHeight * 0.6}px`,
-                x: '-10vw',
+                y: `+=48vh`,
+                x: '-14vw',
+                scale: 1.218,
                 ease: 'power1.easeInOut',
                 transition: 'none',
                 scrollTrigger: {
@@ -131,20 +132,7 @@ export const Initial768 = ({ showAnimationStart, setShowAnimationStart, showScro
                     endTrigger: '.about',
                     end: 'top center',
                     scrub: 1,
-                    markers: true
                 },
-                onComplete: () => {
-                    /*gsap.to('.center-container', {
-                        opacity: '0',
-                        y: '-50vh',
-                        scrollTrigger: {
-                            trigger: '.projects',
-                            start: "top top",
-                            end: "top top",
-                            scrub: 1,
-                        },
-                    })*/
-                }
             })
             gsap.to('.circle', {
                 border: '2px solid #FFF',
@@ -157,8 +145,9 @@ export const Initial768 = ({ showAnimationStart, setShowAnimationStart, showScro
                 },
             })
             gsap.to('.circle-top-768', {
-                y: `+=${maxHeight * 1.5}px`,
-                left: '-15%',
+                y: `+=95vh`,
+                x: '-=27vw',
+                scale: 0.945,
                 position: 'fixed',
                 transition: 'transform 0.5s ease-out',
                 ease: 'power1.easeInOut',
@@ -166,25 +155,15 @@ export const Initial768 = ({ showAnimationStart, setShowAnimationStart, showScro
                 scrollTrigger: {
                     trigger: '.animation-start',
                     start: "top center",
-                    endTrigger: '.about',
+                    endTrigger: '#about',
                     end: 'top center',
                     scrub: 1,
                 },
-                /*onComplete: () => {
-                    gsap.to('.circle-top-768', {
-                        y: '-=100vh',
-                        scrollTrigger: {
-                            trigger: '.projects',
-                            start: "top top",
-                            end: 'top top',
-                            scrub: 1,
-                        },
-                    })
-                }*/
             })
             gsap.to('.circle-bottom-768', {
-                y: `-=${maxHeight * 0.1}px`,
-                left: '-35%',
+                y: `-=7vh`,
+                x: '-=48vw',
+                scale: 0.945,
                 position: 'fixed',
                 border: '2px solid #FFF',
                 transition: 'transform 0.5s ease-out',
@@ -192,21 +171,10 @@ export const Initial768 = ({ showAnimationStart, setShowAnimationStart, showScro
                 scrollTrigger: {
                     trigger: '.animation-start',
                     start: "top center",
-                    endTrigger: '.about',
+                    endTrigger: '#about',
                     end: 'top center',
                     scrub: 1,
                 },
-                onComplete: () => {
-                    /*sap.to('.circle-bottom-768', {
-                        y: '-=100vh',
-                        scrollTrigger: {
-                            trigger: '.projects',
-                            start: "top top",
-                            end: 'top top',
-                            scrub: 1,
-                        },
-                    })*/
-                }
             })
         }
     }, [maxHeight, showCircles])
@@ -239,7 +207,7 @@ export const Initial768 = ({ showAnimationStart, setShowAnimationStart, showScro
     })
 
     return (
-        <div className='start-768' style={{height: `${maxHeight}px`}} id='home'>
+        <div className='start-768' id='home'>
             <div className="animation-start"></div>
             {showFirstAnimation &&
                 <div className="animation">

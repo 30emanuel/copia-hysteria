@@ -5,7 +5,6 @@ import { useWindowSize } from "@uidotdev/usehooks"
 import { useState } from 'react'
 
 export const TransitionLogo = ({ id, data }) => {
-    const [maxHeight, setMaxHeight] = useState(window.innerHeight)
     const { width } = useWindowSize()
 
     useEffect(() => {
@@ -61,10 +60,7 @@ export const TransitionLogo = ({ id, data }) => {
     }, [id, width])
 
     return (
-        <div className={`transition-logo`}  id={`transition-logo-${id}`}
-        style={{
-            height: width <= 768 ? `${maxHeight * 1.2}px` : 'auto',
-        }}>
+        <div className={`transition-logo`}  id={`transition-logo-${id}`}>
             <div className="transition-background">
                 <img className='transition-img' id={`transition-img-${id}`} src={data.img.url} alt="Background" />
             </div>

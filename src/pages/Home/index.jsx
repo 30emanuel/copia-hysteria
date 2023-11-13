@@ -356,9 +356,9 @@ export const Home = () => {
 
   const showScroll = (value) => {
     if (value === false) {
-      document.body.style.overflowY = 'hidden'
+      document.documentElement.style.overflowY = 'hidden'
     } else {
-      document.body.style.overflowY = 'visible'
+      document.documentElement.style.overflowY = 'visible'
     }
   }
 
