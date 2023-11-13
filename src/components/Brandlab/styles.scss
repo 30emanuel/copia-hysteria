@@ -661,7 +661,7 @@
     }
 }
 
-@media(max-height: 850px) {
+@media(max-height: 850px) and (max-width: 768px) {
     .brandlab {
         .brandlab-circle-mobile {
             margin-top: 53vh;
@@ -704,7 +704,7 @@
     }
 }
 
-@media(max-height: 700px) {
+@media(max-height: 700px) and (max-width: 768px) {
     .brandlab {
         .front {
             .texts {
