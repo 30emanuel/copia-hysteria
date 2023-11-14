@@ -3,7 +3,6 @@ import './styles.scss'
 import { useSpring, animated, config } from 'react-spring'
 import Logo from '../../../assets/logo-black.png'
 import { gsap } from 'gsap'
-import { useWindowSize } from "@uidotdev/usehooks"
 
 
 export const Initial768 = ({ showAnimationStart, setShowAnimationStart, showScroll, data, setShowHeader }) => {
@@ -22,15 +21,9 @@ export const Initial768 = ({ showAnimationStart, setShowAnimationStart, showScro
     const playAllVideos = () => {
         const videos = document.querySelectorAll('.video-initial')
         videos.forEach((video) => {
-            //video.play()
+            video.play()
         })
     }
-
-    const [maxHeight, setMaxHeight] = useState(window.innerHeight)
-
-    useEffect(() =>{
-        console.log(maxHeight)
-    },[maxHeight])
     
 
     const ballProps = useSpring({
@@ -177,7 +170,7 @@ export const Initial768 = ({ showAnimationStart, setShowAnimationStart, showScro
                 },
             })
         }
-    }, [maxHeight, showCircles])
+    }, [showCircles])
 
     const textAnimationOne = useSpring({
         translateY: showText ? '0' : '300px',

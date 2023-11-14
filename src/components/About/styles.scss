@@ -431,7 +431,24 @@
     }
 }
 
-@media(max-width: 370px){
+@media(max-height: 800px){
+    .about{
+        .about-container{
+            margin-top: 15%;
+        }
+    }
+}
+
+@media(max-height: 700px) {
+    .about{
+        .footer{
+            font-size: 12px;
+        }
+    }
+}
+
+
+@media(max-width: 390px){
     .about{
         .about-text{
             .about-title {
@@ -445,16 +462,42 @@
             }
             .paragraph{
                 .paragraphs{
-                    max-width: 300px;
+                    margin-top: -15px;
+                    max-width: 290px;
                 }
             }
         }
         .footer{
             margin-top: 0px;
             margin-left: 60%;
-            p{
-                font-size: 12px;
+        }
+    }
+}
+
+
+@media(max-height: 450px){
+    .about{
+        height: 150vh;
+        .about-text{
+            .about-title {
+                h3{
+                    font-size: 40px;
+                }
+                h2{
+                    margin-top: -10px;
+                    margin-left: 7%;
+                }
             }
+            .paragraph{
+                .paragraphs{
+                    margin-top: -15px;
+                    max-width: 290px;
+                }
+            }
+        }
+        .footer{
+            font-size: 8px;
+            line-height: 16px;
         }
     }
 }

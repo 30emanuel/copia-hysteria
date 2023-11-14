@@ -137,7 +137,7 @@
 }
 
 
-@media(max-width: 370px) {
+@media(max-height: 700px) {
     .home {
         .titles {
             font-size: 72px !important;
@@ -145,7 +145,20 @@
 
         .paragraphs {
             font-size: 12px !important;
-            line-height: 24px;
+            line-height: 24px !important;
+        }
+    }
+}
+
+@media(max-height: 450px) {
+    .home {
+        .titles {
+            font-size: 50px !important;
+        }
+
+        .paragraphs {
+            font-size: 8px !important;
+            line-height: 16px !important;
         }
     }
 }

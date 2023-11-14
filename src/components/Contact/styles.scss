@@ -315,11 +315,55 @@
                         margin-left: -10px;
                     }
                 }
-
             }
         }
     }
     .contact-background{
         margin-top: -101vh;
+    }
+}
+
+@media(max-height: 570px){
+    .contact-background{
+        height: 120vh;
+    }
+}
+
+@media(max-height: 570px){
+    .contact{
+        .text{
+            margin-left: -20%;
+            margin-top: 25%;
+            div {
+                margin-top: 5px;
+                display: flex;
+                margin-left: 0%;
+                h3 {
+                    margin-top: -10px;
+                    font-size: 15px;
+                }
+                h4 {
+                    margin-top: 5px;
+                    font-size: 12px;
+                }
+                p{
+                    margin-top: 5px;
+                    font-size: 7px;
+                }
+
+                .social{
+                    gap: 0px;
+                    margin-top: 5px;
+                    svg{
+                        width: 26.078px;
+                        height: 23.18px;
+                    }
+                    #svg-two{
+                        margin-left: -10px;
+                    }
+                }
+
+            }
+        }
     }
 }

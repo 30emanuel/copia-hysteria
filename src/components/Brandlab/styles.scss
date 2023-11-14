@@ -651,8 +651,8 @@
                         margin-top: 10px;
 
                         img {
-                            max-width: 100px;
-                            max-height: 40px;
+                            max-width: 80px;
+                            max-height: 30px;
                         }
                     }
                 }
@@ -684,7 +684,7 @@
             .brandlab-video {
                 width: 447.384px;
                 height: 447.384px;
-                margin-bottom: -65vh;
+                margin-bottom: -80vh;
 
                 .video-circle {
                     width: 632.015px;
@@ -708,7 +708,7 @@
     .brandlab {
         .front {
             .texts {
-
+                margin-top: -20%;
                 p,
                 h3 {
                     font-size: 12px !important;
@@ -716,19 +716,62 @@
                 }
             }
 
+            .brandlab-video {
+                width: 420px;
+                height: 420px;
+                margin-bottom: -70vh;
+                .video-circle {
+                    width: 650px;
+                    height: 650px;
+                    margin-left: -57vw;
+                    margin-top: -5vh;
+                }
+
+                .video-circle-bottom {
+                    margin-top: 5vh;
+                    margin-left: 0vw;
+                    width: 447.384px;
+                    height: 447.384px;
+                }
+            }
+
         }
     }
 }
 
-@media(max-width: 370px) {
+@media(max-height: 450px){
     .brandlab {
-        .front {
-            h3 {
-                font-size: 12px !important;
-                line-height: 24px !important;
-            }
+        .brandlab-circle-mobile {
+            width: 625px;
+            height: 625px;
         }
+        .front {
+            .texts {
+                gap: 10px;
+                margin-top: -40%;
+                p,
+                h3 {
+                    font-size: 8px !important;
+                    line-height: 16px !important;
+                }
+            }
 
+            .brandlab-video {
+                width: 350px;
+                height: 350px;
+                margin-bottom: -40vh;
+                .video-circle {
+                    width: 500px;
+                    height: 500px;
+                }
 
+                .video-circle-bottom {
+                    margin-left: -5vw;
+                    width: 350px;
+                    height: 350px;
+                }
+            }
+
+        }
     }
 }
