@@ -1,11 +1,10 @@
 import './styles.scss'
 import LogoWhite from '../../assets/logo-white.png'
 import LogoMobile from '../../assets/logo-mobile.png'
-import { useEffect, useState } from 'react'
-import { useWindowSize } from "@uidotdev/usehooks"
+import { useState } from 'react'
 
 
-export const Header = ({showScroll, heightMobile}) => {
+export const Header = ({showScroll}) => {
     const [showMenu, setShowMenu] = useState(false)
     const [disableAnchors, setDisableAnchors] = useState(false)
 
