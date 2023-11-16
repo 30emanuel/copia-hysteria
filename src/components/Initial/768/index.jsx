@@ -24,7 +24,7 @@ export const Initial768 = ({ showAnimationStart, setShowAnimationStart, showScro
             video.play()
         })
     }
-    
+
 
     const ballProps = useSpring({
         transform: 'scale(1)',
@@ -140,6 +140,17 @@ export const Initial768 = ({ showAnimationStart, setShowAnimationStart, showScro
                     end: 'top center',
                     scrub: 1,
                 },
+                onComplete: () => {
+                    gsap.to('.circle-top-768', {
+                        visibility: 'hidden',
+                        scrollTrigger: {
+                            trigger: '.list-project',
+                            start: "center center",
+                            end: 'center center',
+                            scrub: 1,
+                        },
+                    })
+                }
             })
             gsap.to('.circle-bottom-768', {
                 y: `-=7vh`,
@@ -154,6 +165,17 @@ export const Initial768 = ({ showAnimationStart, setShowAnimationStart, showScro
                     end: 'top center',
                     scrub: 1,
                 },
+                onComplete: () => {
+                    gsap.to('.circle-bottom-768', {
+                        visibility: 'hidden',
+                        scrollTrigger: {
+                            trigger: '.list-project',
+                            start: "center center",
+                            end: 'center center',
+                            scrub: 1,
+                        },
+                    })
+                }
             })
         }
     }, [showCircles])
