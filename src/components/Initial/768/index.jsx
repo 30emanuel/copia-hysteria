@@ -127,23 +127,12 @@ export const Initial768 = ({ showAnimationStart, setShowAnimationStart, showScro
                     scrub: 1,
                 },
             })
-            gsap.to('.circle', {
-                border: '2px solid #FFF',
-                scrollTrigger: {
-                    trigger: '.animation-start',
-                    start: "top center",
-                    endTrigger: '.about',
-                    end: 'top center',
-                    scrub: 1,
-                },
-            })
             gsap.to('.circle-top-768', {
                 y: `+=95vh`,
                 x: '-=27vw',
                 scale: 0.945,
                 position: 'fixed',
                 transition: 'none',
-                border: '2px solid #FFF',
                 scrollTrigger: {
                     trigger: '.animation-start',
                     start: "top center",
@@ -157,7 +146,6 @@ export const Initial768 = ({ showAnimationStart, setShowAnimationStart, showScro
                 x: '-=48vw',
                 scale: 0.945,
                 position: 'fixed',
-                border: '2px solid #FFF',
                 transition: 'none',
                 scrollTrigger: {
                     trigger: '.animation-start',

@@ -2,13 +2,14 @@
     cursor: pointer;
     color: white;
     align-items: end;
-    border-radius: 50px;
+    border-radius: 50px !important;
     overflow: hidden;
     position: relative;
     opacity: 0;
     display: flex;
 
     &.show {
+        border-radius: 50px;
         opacity: 1;
         animation: move-project 1.2s ease-out;
     }

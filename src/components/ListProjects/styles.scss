@@ -151,6 +151,7 @@
             padding-left: 0px;
 
             .project {
+                border-radius: 50px;
                 width: 95vw !important;
                 height: 500px !important;
             }
@@ -164,6 +165,7 @@
             padding-right: 0px;
 
             .project {
+                border-radius: 50px;
                 max-width: none;
                 width: 95vw !important;
                 height: 500px !important;
@@ -200,6 +202,7 @@
             gap: 23px;
 
             .project {
+                border-radius: 50px;
                 width: 95vw !important;
                 height: 500px !important;
             }
@@ -213,6 +216,7 @@
             padding-right: 0px;
 
             .project {
+                border-radius: 50px;
                 max-width: none;
                 width: 95vw !important;
                 height: 500px !important;
@@ -225,12 +229,14 @@
     .projects {
         .row {
             .project {
+                border-radius: 50px;
                 height: 299.725px !important;
             }
         }
 
         .group-projects {
             .project {
+                border-radius: 50px;
                 height: 299.725px !important;
             }
         }

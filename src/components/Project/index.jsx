@@ -1,8 +1,6 @@
 import './styles.scss'
 import { useRef, useEffect } from 'react'
 import gsap from 'gsap'
-import { useWindowSize } from "@uidotdev/usehooks"
-import { useState } from 'react'
 
 export const Project = ({ project, toggleModal }) => {
     const imgDivRef = useRef(null)

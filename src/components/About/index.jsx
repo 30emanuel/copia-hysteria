@@ -83,6 +83,18 @@ export const About = ({ text }) => {
         }
     }, [])
 
+    useEffect(() => {
+        gsap.to('.about', {
+            visibility: 'hidden',
+            scrollTrigger: {
+                trigger: '.projects',
+                start: "top center",
+                end: 'top center',
+                scrub: 0.5,
+            },
+        })
+    }, [])
+
     return (
         <>
             <div id='about'></div>
