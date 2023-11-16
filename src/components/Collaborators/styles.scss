@@ -822,7 +822,7 @@
     }
 }
 
-@media(max-height: 650px){
+@media(max-height: 650px)  and (max-width: 768px){
     .collaborators{
         .collaborators-title{
             margin-top: 16vh;
@@ -847,7 +847,7 @@
     }
 }
 
-@media(max-height: 700px){
+@media(max-height: 700px) and (max-width: 768px){
     .collaborators{
         .collaborators-title{
             h2{
@@ -890,7 +890,7 @@
     }
 }
 
-@media(max-height: 450px){
+@media(max-height: 450px)  and (max-width: 768px){
     .collaborators{
         .collaborators-title{
             margin-top: 30vh;

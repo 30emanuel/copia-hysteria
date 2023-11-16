@@ -323,13 +323,13 @@
     }
 }
 
-@media(max-height: 570px){
+@media(max-height: 570px)  and (max-width: 768px){
     .contact-background{
         height: 120vh;
     }
 }
 
-@media(max-height: 570px){
+@media(max-height: 570px)  and (max-width: 768px){
     .contact{
         .text{
             margin-left: -20%;

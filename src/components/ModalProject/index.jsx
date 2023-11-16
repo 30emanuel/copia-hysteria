@@ -56,7 +56,7 @@ export const ModalProject = ({ index = 0, setSelectedProject, showModal, toggleM
 
     useEffect(() => {
         const transitionStyles = {
-            transform: `translateX(-${currentIndex * 100}%)`,
+            transform: `translateX(-${currentIndex * 75}%)`,
             transition: 'transform 0.5s ease-out',
         }
         if (swiperRef.current) {

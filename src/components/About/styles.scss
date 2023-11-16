@@ -9,7 +9,6 @@
     position: sticky;
     top: 0;
     z-index: 20;
-    padding-bottom: 15vh;
 
     .about-container {
         width: 100%;
@@ -431,7 +430,7 @@
     }
 }
 
-@media(max-height: 800px){
+@media(max-height: 800px) and (max-width: 768px){
     .about{
         .about-container{
             margin-top: 15%;
@@ -439,7 +438,7 @@
     }
 }
 
-@media(max-height: 700px) {
+@media(max-height: 700px) and (max-width: 768px) {
     .about{
         .footer{
             font-size: 12px;
@@ -475,7 +474,7 @@
 }
 
 
-@media(max-height: 450px){
+@media(max-height: 450px)  and (max-width: 768px){
     .about{
         height: 150vh;
         .about-text{

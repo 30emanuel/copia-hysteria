@@ -739,7 +739,7 @@
     }
 }
 
-@media(max-height: 450px){
+@media(max-height: 450px)  and (max-width: 768px){
     .brandlab {
         .brandlab-circle-mobile {
             width: 625px;
