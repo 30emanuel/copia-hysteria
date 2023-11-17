@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import './styles.scss'
 import { gsap } from 'gsap'
 import { useWindowSize } from "@uidotdev/usehooks"
+import VideoBackground from '../../assets/hysteria-—home.mp4'
 
 export const Brandlab = ({ text, brands }) => {
   const [showTitle, setShowTitle] = useState(false)
@@ -137,7 +138,7 @@ export const Brandlab = ({ text, brands }) => {
             <div className="brandlab-video">
               <div className='video-circle'></div>
               <div className="video-circle-bottom"></div>
-              <video className='video-brandlab' muted loop src={text.videoUrl}></video>
+              <video className='video-brandlab' muted loop src={VideoBackground}></video>
             </div>
           }
         </div>
