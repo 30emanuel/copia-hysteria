@@ -361,7 +361,6 @@
 
 @media (max-width: 1400px) {
     .start {
-
         .text {
             h1 {
                 font-size: 200px !important;
@@ -388,6 +387,14 @@
         .circle-bottom-1280 {
             width: 750px;
             height: 750px;
+        }
+    }
+}
+
+@media(max-width: 1200px){
+    .start{
+        .text-container-center {
+            overflow: visible;
         }
     }
 }
