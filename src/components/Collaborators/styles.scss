@@ -828,6 +828,26 @@
     }
 }
 
+
+@media(max-width: 768px) {
+    .collaborators {
+        .collaborators-text {
+            .sub-title {
+                .paragraph {
+                    justify-content: right;
+                    align-items: right;
+                    margin-top: -100px;
+                    margin-bottom: 200px;
+                    p{
+                        width: 299px;
+                    }
+                }
+
+            }
+        }
+    }
+}
+
 @media (min-height: 1110px) and (max-width: 868px){
     .collaborators{
         .collaborators-title{
