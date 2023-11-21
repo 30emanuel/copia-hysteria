@@ -86,6 +86,8 @@
 
             .brands {
                 display: flex;
+                flex-wrap: wrap;
+                max-width: 54vw;
                 gap: 20px;
                 opacity: 0;
 
@@ -546,6 +548,7 @@
                 .brands {
                     flex-wrap: wrap;
                     width: 80%;
+                    max-width: none;
 
                     .brand {
                         margin-top: 5px;
