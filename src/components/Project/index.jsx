@@ -1,7 +1,6 @@
 import './styles.scss'
 import { useRef, useEffect } from 'react'
 import gsap from 'gsap'
-import VideoBackground from '../../assets/hysteria-—home.mp4'
 
 export const Project = ({ project, toggleModal }) => {
     const imgDivRef = useRef(null)
@@ -86,7 +85,7 @@ export const Project = ({ project, toggleModal }) => {
         >
             <div className='project-img'>
                 {project.prevVideo &&
-                    <video muted loop src={VideoBackground} ref={videoRef}></video>
+                    <video muted loop src={project?.prevVideo} ref={videoRef}></video>
                 }
                 <img src={project.imageMain.url} alt={`${project.name} imagem`} ref={imgDivRef} />
             </div>

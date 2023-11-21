@@ -3,7 +3,6 @@ import './styles.scss'
 import { useSpring, animated, config } from 'react-spring'
 import Logo from '../../../assets/logo-black.png'
 import { gsap } from 'gsap'
-import VideoBackground from '../../../assets/hysteria-—home.mp4'
 
 
 export const Initial768 = ({ showAnimationStart, setShowAnimationStart, showScroll, data, setShowHeader }) => {
@@ -234,10 +233,10 @@ export const Initial768 = ({ showAnimationStart, setShowAnimationStart, showScro
                         <animated.div className="background-ball" style={{ ...background, borderRadius: showAnimationStart ? borderRadius : '0%', }}>
                             <animated.div className='videos-container' >
                                 <animated.div className="video-left" style={leftSlide}>
-                                    <video muted loop src={VideoBackground} className='video video-initial'></video>
+                                    <video muted loop src={data.videoUrl} className='video video-initial'></video>
                                 </animated.div>
                                 <animated.div className="video-right" style={rightSlide}>
-                                    <video muted loop src={VideoBackground} className='video video-initial'></video>
+                                    <video muted loop src={data.videoUrl} className='video video-initial'></video>
                                 </animated.div>
                             </animated.div>
                         </animated.div>

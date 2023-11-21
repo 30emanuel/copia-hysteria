@@ -229,7 +229,7 @@
     }
 }
 
-@media(max-width: 700px){
+@media(max-width: 900px){
     .start-768{
         .text{
             h1{
@@ -298,6 +298,39 @@
         }
     }
 }
+
+@media(max-height: 1200px){
+    .start-768{
+        .center{
+            .circle{
+                width: 850px;
+                height: 850px;
+            }
+        }
+        .circle-top-768,
+        .circle-bottom-768{
+            width: 750px;
+            height: 750px;
+        }
+    }
+}
+
+@media(max-height: 1050px){
+    .start-768{
+        .center{
+            .circle{
+                width: 780px;
+                height: 780px;
+            }
+        }
+        .circle-top-768,
+        .circle-bottom-768{
+            width: 650px;
+            height: 650px;
+        }
+    }
+}
+
 @media(max-height: 960px){
     .start-768{
         .center{
